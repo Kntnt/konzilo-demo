@@ -1,0 +1,16 @@
+---
+// The search page, which the core's integration puts at /search/, the address site-description.json declares:
+// the core's Search, its form, its results and its messages, in the site's words (astro.config.mjs). A plain
+// stand-in for the design's search page.
+import Search from '@kntnt/konzilo/astro/Search.astro';
+import { pageTexts } from '@kntnt/konzilo/astro/languages';
+import Site from '../layouts/Site.astro';
+
+const { title } = pageTexts(Astro.url).search;
+---
+<Site title={title}>
+  <div class="kn-body-text">
+    <h1>{title}</h1>
+    <Search />
+  </div>
+</Site>

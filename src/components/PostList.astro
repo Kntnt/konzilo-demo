@@ -1,0 +1,25 @@
+---
+// Every presentation the site description declares, `cards`, `featured`, `filtered` and `rows`, as one plain
+// stand-in until the design's presentations take their places (astro.config.mjs names each): each post's
+// title, linked to it, and what it says of itself, then the core's pager for the one list with pages of its
+// own. Konzilo gives it `posts`, each { entry, url }; `options`, the presentation's options as the list sets
+// them; `empty`, the text for a list that matches nothing; `pager`; and in the live preview the list's mark,
+// which it places on its root.
+import { ownSummary } from '@kntnt/konzilo/astro';
+import Pager from '@kntnt/konzilo/astro/Pager.astro';
+
+const { posts, empty, pager, 'data-konzilo-block': block } = Astro.props;
+---
+<div data-konzilo-block={block}>
+  {posts.length === 0 ? <p>{empty}</p> : (
+    <ul>
+      {posts.map(({ entry, url }) => (
+        <li>
+          {url ? <a href={url}>{entry.data.title}</a> : entry.data.title}
+          {ownSummary(entry.data) && <p>{ownSummary(entry.data)}</p>}
+        </li>
+      ))}
+    </ul>
+  )}
+  {pager && <Pager pager={pager} />}
+</div>

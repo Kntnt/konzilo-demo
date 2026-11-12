@@ -1,0 +1,26 @@
+---
+// A page at its address, /<path>/: the slugs of its parents and its own (site-description.json). A plain
+// stand-in for the design's page, which draws the page's title in its hero: here the title as the page's
+// heading, then its body through the core's Body, which renders each post list with its presentation and each
+// form with the site's form, then the cookie declaration, which the core writes on the page chosen as the
+// cookie policy alone. A page whose post list has pages of its own has them at <address>page/2/ and on.
+import Body from '@kntnt/konzilo/astro/Body.astro';
+import CookieDeclaration from '@kntnt/konzilo/astro/CookieDeclaration.astro';
+import { entryPages } from '@kntnt/konzilo/astro/languages';
+import { render } from 'astro:content';
+import Site from '../layouts/Site.astro';
+
+export function getStaticPaths() {
+  return entryPages('pages', 'page');
+}
+
+const { entry, page } = Astro.props;
+const { Content } = await render(entry);
+---
+<Site entry={entry} page={page}>
+  <div class="kn-body-text">
+    <h1>{entry.data.title}</h1>
+    <Body post={entry} page={page}><Content /></Body>
+    <CookieDeclaration />
+  </div>
+</Site>

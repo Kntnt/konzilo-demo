@@ -1,0 +1,23 @@
+---
+// A case study, the site's own type `case-study`, at its address, /customers/<slug>/ (site-description.json).
+// A plain stand-in for the design's case study: its customer, its headline and its body through the core's
+// Body.
+import Body from '@kntnt/konzilo/astro/Body.astro';
+import { entryPages } from '@kntnt/konzilo/astro/languages';
+import { render } from 'astro:content';
+import Site from '../layouts/Site.astro';
+
+export function getStaticPaths() {
+  return entryPages('case-studies', 'caseStudy');
+}
+
+const { entry, page } = Astro.props;
+const { Content } = await render(entry);
+---
+<Site entry={entry} page={page}>
+  <div class="kn-body-text">
+    <p>{entry.data.customer}</p>
+    <h1>{entry.data.headline}</h1>
+    <Body post={entry} page={page}><Content /></Body>
+  </div>
+</Site>

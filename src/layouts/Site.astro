@@ -1,0 +1,61 @@
+---
+// Every page's frame, as a plain stand-in until the design's frame takes its place: Konzilo Design's Page,
+// Header and Footer, as its docs/spec/konzilo.md shows. It writes what the core needs on every page, its head
+// (Head), its consent banner and its consent controls, and shows what the content gives the frame, so that a
+// built page shows it is there: the design's logo from public/logos/, the main menu, the search box and the
+// header's call to action above; the footer's words, the social links and the legal pages below. A canvas has
+// neither header nor footer.
+//
+// The page's one <main> is here, as Konzilo Design's Page holds it, so the templates write none.
+import design from '../../design/site.design.json';
+import { publicSite } from '@kntnt/konzilo/astro';
+import ConsentBanner from '@kntnt/konzilo/astro/ConsentBanner.astro';
+import ConsentControls from '@kntnt/konzilo/astro/ConsentControls.astro';
+import Head from '@kntnt/konzilo/astro/Head.astro';
+import SearchBox from '@kntnt/konzilo/astro/SearchBox.astro';
+import { builtInType, legalPages } from '@kntnt/konzilo/astro/helpers';
+import { startPage } from '@kntnt/konzilo/astro/languages';
+import { siteMenu, siteSettings } from '@kntnt/konzilo/astro/site-settings';
+import { logoAddresses } from '@kntnt/konzilo-design/design-props';
+import MenuEntries from '../components/MenuEntries.astro';
+
+const { entry, title, page } = Astro.props;
+const framed = builtInType(entry) !== 'canvas';
+const settings = (await siteSettings(Astro.url)) ?? {};
+const main = (await siteMenu('main', Astro.url)) ?? [];
+const social = (await siteMenu('social', Astro.url)) ?? [];
+const legal = legalPages(settings).map((one) => ({ ...one, items: [] }));
+const logos = logoAddresses(design.project, { base: import.meta.env.BASE_URL });
+const lines = (text) => (text ?? '').split('\n');
+---
+<html lang={publicSite(Astro.url).languageTag}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <Head entry={entry} title={title} page={page} />
+  </head>
+  <body>
+    <ConsentBanner />
+    {framed && (
+      <header>
+        <a href={startPage()}>{logos.light ? <img src={logos.light} alt={settings.title ?? ''} /> : settings.title}</a>
+        {main.length > 0 && <nav aria-label="Main menu"><MenuEntries items={main} /></nav>}
+        <SearchBox />
+        {settings.headerActionLabel && settings.headerActionPage && <a href={settings.headerActionPage.url}>{settings.headerActionLabel}</a>}
+      </header>
+    )}
+    <main>
+      <slot />
+    </main>
+    {framed && (
+      <footer>
+        {settings.footerAbout && <p>{settings.footerAbout}</p>}
+        {social.length > 0 && <nav aria-label="Social links"><MenuEntries items={social} /></nav>}
+        {settings.footerAddress && <p>{lines(settings.footerAddress).map((line) => <>{line}<br /></>)}</p>}
+        {settings.footerNote && <p>{lines(settings.footerNote).map((line) => <>{line}<br /></>)}</p>}
+        {legal.length > 0 && <nav aria-label="Legal pages"><MenuEntries items={legal} /></nav>}
+        <ConsentControls links={false} />
+      </footer>
+    )}
+  </body>
+</html>

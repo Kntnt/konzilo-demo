@@ -1,0 +1,24 @@
+---
+// A term's page, which the core's integration puts at the address of each taxonomy that declares one
+// (site-description.json): an author at /insights/author/<slug>/, a category at /insights/category/<path>/, a
+// topic at /insights/topic/<slug>/. The core's termPages() gives each term its posts of every type that takes
+// the taxonomy, newest first, nine a page as the design has them, with the later pages at <address>page/2/ and
+// on. A plain stand-in for the design's term page: the term's name and description, and its posts as the
+// stand-in presentation shows them.
+import { termPages } from '@kntnt/konzilo/astro/post-lists';
+import Site from '../layouts/Site.astro';
+import PostList from './PostList.astro';
+
+export async function getStaticPaths({ routePattern }) {
+  return termPages(routePattern, { number: 9 });
+}
+
+const { term, page, posts, pager, empty } = Astro.props;
+---
+<Site entry={term} page={page}>
+  <div class="kn-body-text">
+    <h1>{term.data.name}</h1>
+    {term.data.description && <p>{term.data.description}</p>}
+    <PostList posts={posts} options={{}} empty={empty} pager={pager} />
+  </div>
+</Site>

@@ -1,0 +1,21 @@
+---
+// A vacancy, the site's own type `job`, at its address, /about/careers/<slug>/ (site-description.json). A
+// plain stand-in for the design's vacancy: its title and its body through the core's Body.
+import Body from '@kntnt/konzilo/astro/Body.astro';
+import { entryPages } from '@kntnt/konzilo/astro/languages';
+import { render } from 'astro:content';
+import Site from '../layouts/Site.astro';
+
+export function getStaticPaths() {
+  return entryPages('jobs', 'job');
+}
+
+const { entry, page } = Astro.props;
+const { Content } = await render(entry);
+---
+<Site entry={entry} page={page}>
+  <div class="kn-body-text">
+    <h1>{entry.data.title}</h1>
+    <Body post={entry} page={page}><Content /></Body>
+  </div>
+</Site>

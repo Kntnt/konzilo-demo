@@ -9,3 +9,9 @@ design/export/*.zip
 
 # Screenshots of the mockups are made again by one command
 design/mockups/shots/
+
+# The site's made files: its demo content, by scripts/demo-content.mjs from design/; the content it is built
+# from, a copy of the demo content; and the design's logos, by `npm run logos`
+/demo-content/
+/content/
+/public/logos/

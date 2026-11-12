@@ -1,0 +1,20 @@
+---
+// A canvas, the core's blank page, at its address, /go/<slug>/ (site-description.json). The frame gives it
+// neither header nor footer, so its body, through the core's Body, is the whole page.
+import Body from '@kntnt/konzilo/astro/Body.astro';
+import { entryPages } from '@kntnt/konzilo/astro/languages';
+import { render } from 'astro:content';
+import Site from '../layouts/Site.astro';
+
+export function getStaticPaths() {
+  return entryPages('canvases', 'canvas');
+}
+
+const { entry, page } = Astro.props;
+const { Content } = await render(entry);
+---
+<Site entry={entry} page={page}>
+  <div class="kn-body-text">
+    <Body post={entry} page={page}><Content /></Body>
+  </div>
+</Site>

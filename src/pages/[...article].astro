@@ -1,0 +1,24 @@
+---
+// An article at its address, /insights/<slug>/ (site-description.json). A plain stand-in for the design's
+// article: its main headline, its meta line, by the format the site settings give articles, and its body
+// through the core's Body.
+import Body from '@kntnt/konzilo/astro/Body.astro';
+import { entryPages } from '@kntnt/konzilo/astro/languages';
+import { render } from 'astro:content';
+import MetaLine from '../components/MetaLine.astro';
+import Site from '../layouts/Site.astro';
+
+export function getStaticPaths() {
+  return entryPages('articles', 'article');
+}
+
+const { entry, page } = Astro.props;
+const { Content } = await render(entry);
+---
+<Site entry={entry} page={page}>
+  <div class="kn-body-text">
+    <h1>{entry.data.headline}</h1>
+    <MetaLine entry={entry} />
+    <Body post={entry} page={page}><Content /></Body>
+  </div>
+</Site>

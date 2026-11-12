@@ -1,0 +1,329 @@
+{
+  "language": "en_GB",
+  "search": {
+    "address": "/search/"
+  },
+  "images": {
+    "smallestWidth": 400,
+    "displayWidth": 1400
+  },
+  "components": {
+    "hero": {
+      "label": "Hero",
+      "form": "container",
+      "body": "blocks",
+      "attributes": {
+        "surface": {
+          "type": "string",
+          "label": "Surface",
+          "values": ["page", "raised", "inverse", "tint", "brand", "accent"]
+        }
+      }
+    },
+    "section": {
+      "label": "Section",
+      "form": "container",
+      "body": "blocks",
+      "attributes": {
+        "surface": {
+          "type": "string",
+          "label": "Surface",
+          "values": ["page", "raised", "inverse", "tint", "brand", "accent"],
+          "default": "page"
+        },
+        "anchor": {
+          "type": "string",
+          "label": "Anchor",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        }
+      }
+    },
+    "aside": {
+      "label": "Fact box",
+      "form": "container",
+      "body": "blocks",
+      "attributes": {
+        "anchor": {
+          "type": "string",
+          "label": "Anchor",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        }
+      }
+    },
+    "list": {
+      "label": "Series",
+      "form": "container",
+      "body": "blocks",
+      "attributes": {
+        "type": {
+          "type": "string",
+          "label": "Kind",
+          "values": ["description", "values", "logos", "actions"]
+        },
+        "markers": {
+          "type": "string",
+          "label": "Markers"
+        }
+      }
+    },
+    "cards": {
+      "label": "Cards",
+      "form": "container",
+      "body": "blocks",
+      "attributes": {
+        "type": {
+          "type": "string",
+          "label": "Kind",
+          "values": ["navigation"]
+        },
+        "markers": {
+          "type": "string",
+          "label": "Markers"
+        },
+        "picture": {
+          "type": "string",
+          "label": "Picture",
+          "values": ["behind"]
+        },
+        "symbol": {
+          "type": "string",
+          "label": "Symbol",
+          "values": ["item", "heading"]
+        }
+      }
+    },
+    "accordion": {
+      "label": "Accordion",
+      "form": "container",
+      "body": "blocks",
+      "attributes": {
+        "first": {
+          "type": "string",
+          "label": "First item",
+          "values": ["open", "closed"]
+        },
+        "expand": {
+          "type": "string",
+          "label": "Open at once",
+          "values": ["one", "many"]
+        }
+      }
+    },
+    "tabs": {
+      "label": "Tabs",
+      "form": "container",
+      "body": "blocks"
+    },
+    "toc": {
+      "label": "Contents",
+      "form": "container",
+      "body": "blocks"
+    },
+    "choice": {
+      "label": "Choice",
+      "form": "container",
+      "body": "blocks"
+    },
+    "eyebrow": {
+      "label": "Eyebrow",
+      "form": "leaf",
+      "body": "text"
+    },
+    "small": {
+      "label": "Small print",
+      "form": "leaf",
+      "body": "text"
+    },
+    "breadcrumbs": {
+      "label": "Breadcrumbs",
+      "form": "leaf",
+      "body": "none"
+    }
+  },
+  "types": {
+    "page": {
+      "collection": "pages",
+      "hierarchical": true,
+      "address": "/{path}/",
+      "editor": "structure",
+      "elements": [
+        "paragraph", "heading", "list", "quote", "table", "image", "gallery", "post-list", "form",
+        "hero", "section", "aside", "list-directive", "cards", "accordion", "tabs", "toc", "choice", "eyebrow", "small", "breadcrumbs"
+      ]
+    },
+    "canvas": {
+      "collection": "canvases",
+      "address": "/go/{slug}/",
+      "editor": "structure",
+      "elements": [
+        "paragraph", "heading", "list", "image", "form",
+        "hero", "section", "aside", "list-directive", "cards", "accordion", "tabs", "toc", "choice", "eyebrow", "small", "breadcrumbs"
+      ]
+    },
+    "article": {
+      "collection": "articles",
+      "address": "/insights/{slug}/",
+      "feed": "/insights/feed/",
+      "elements": [
+        "paragraph", "heading", "list", "quote", "table", "footnotes", "embed", "image", "gallery",
+        "aside", "eyebrow", "list-directive"
+      ]
+    },
+    "case-study": {
+      "label": "Case study",
+      "plural": "Case studies",
+      "collection": "case-studies",
+      "address": "/customers/{slug}/",
+      "structuredDataTypes": ["Article"],
+      "elements": [
+        "paragraph", "heading", "list", "quote", "table", "footnotes", "image", "gallery",
+        "aside", "eyebrow"
+      ],
+      "fields": {
+        "date": {},
+        "modified": {},
+        "image": {},
+        "headline": { "required": true },
+        "standfirst": {},
+        "excerpt": {},
+        "customer": { "label": "Customer", "type": "string", "control": "text", "required": true },
+        "industry": {
+          "label": "Industry",
+          "type": "string",
+          "control": "select",
+          "options": ["Logistics and warehousing", "Manufacturing", "Retail and commercial property"]
+        },
+        "location": { "label": "Location", "type": "string", "control": "text" },
+        "built": { "label": "What we built", "type": "string", "control": "text" },
+        "solarCapacity": { "label": "Solar capacity, MWp", "type": "number", "control": "number" },
+        "storageCapacity": { "label": "Storage capacity, MWh", "type": "number", "control": "number" },
+        "chargePoints": { "label": "Charge points", "type": "integer", "control": "number" },
+        "contract": {
+          "label": "How it was paid for",
+          "type": "string",
+          "control": "select",
+          "options": ["Bought outright", "Power purchase agreement"]
+        },
+        "inService": { "label": "In service since", "type": "date", "control": "date" },
+        "featured": { "label": "Featured", "type": "boolean", "control": "toggle" },
+        "topics": { "taxonomy": "topics" },
+        "seo": {}
+      }
+    },
+    "job": {
+      "label": "Vacancy",
+      "plural": "Vacancies",
+      "collection": "jobs",
+      "address": "/about/careers/{slug}/",
+      "elements": ["paragraph", "heading", "list", "list-directive"],
+      "fields": {
+        "date": {},
+        "modified": {},
+        "excerpt": {},
+        "location": {
+          "label": "Office",
+          "type": "string",
+          "control": "select",
+          "options": ["Gothenburg", "Malmö", "Rotterdam", "Leeds"]
+        },
+        "team": { "label": "Team", "type": "string", "control": "text" },
+        "employment": {
+          "label": "Employment",
+          "type": "string",
+          "control": "select",
+          "options": ["Permanent, full time", "Permanent, part time", "Fixed term"]
+        },
+        "closingDate": { "label": "Last day to apply", "type": "date", "control": "date" },
+        "seo": {}
+      }
+    }
+  },
+  "taxonomies": {
+    "authors": { "address": "/insights/author/{slug}/" },
+    "category": { "address": "/insights/category/{path}/" },
+    "topics": { "address": "/insights/topic/{slug}/" }
+  },
+  "presentations": {
+    "cards": { "label": "Cards", "options": {} },
+    "featured": { "label": "Featured", "options": {} },
+    "filtered": {
+      "label": "Filtered",
+      "options": {
+        "filters": { "label": "Filters", "type": "string", "control": "text" }
+      }
+    },
+    "rows": { "label": "Rows", "options": {} }
+  },
+  "menus": {
+    "main": { "label": "Main menu" },
+    "social": { "label": "Social links" }
+  },
+  "settings": {
+    "headerActionLabel": { "label": "Header: call to action", "type": "string", "control": "text" },
+    "headerActionPage": { "label": "Header: page the call to action leads to", "type": "post", "control": "post" },
+    "footerAbout": { "label": "Footer: about the company", "type": "string", "control": "textarea" },
+    "footerAddress": { "label": "Footer: address", "type": "string", "control": "textarea" },
+    "footerNote": { "label": "Footer: note beside the address", "type": "string", "control": "textarea" }
+  },
+  "forms": {
+    "contact": {
+      "label": "Contact us",
+      "fields": [
+        { "name": "name", "label": "Your name", "kind": "text", "required": true },
+        { "name": "company", "label": "Company", "kind": "text", "required": false },
+        { "name": "email", "label": "E-mail", "kind": "email", "required": true },
+        { "name": "telephone", "label": "Telephone", "kind": "tel", "required": false, "help": "If you would rather we call you." },
+        {
+          "name": "subject",
+          "label": "What it concerns",
+          "kind": "select",
+          "required": true,
+          "options": ["A new system for our site", "A system you already run for us", "Ampfield Pilot", "Working at Ampfield", "Press", "Something else"]
+        },
+        { "name": "message", "label": "Message", "kind": "textarea", "required": true, "maxLength": 3000, "help": "If it is about a site, tell us where it is, what the building is used for and roughly how much electricity it uses a year." },
+        { "name": "privacy", "label": "I have read the privacy policy", "kind": "acceptance", "help": "It says what we keep of this message, and for how long." }
+      ]
+    },
+    "assessment": {
+      "label": "Book a site assessment",
+      "fields": [
+        { "name": "name", "label": "Your name", "kind": "text", "required": true },
+        { "name": "company", "label": "Company", "kind": "text", "required": true },
+        { "name": "email", "label": "E-mail", "kind": "email", "required": true },
+        { "name": "telephone", "label": "Telephone", "kind": "tel", "required": true, "help": "The engineer calls you to agree a day for the visit." },
+        {
+          "name": "building",
+          "label": "Kind of building",
+          "kind": "select",
+          "required": true,
+          "options": ["Distribution centre or warehouse", "Factory", "Cold store or food production", "Retail park or shopping centre", "Office or other commercial building", "Something else"]
+        },
+        {
+          "name": "roof",
+          "label": "Roughly how large is the roof?",
+          "kind": "radio",
+          "required": true,
+          "options": ["Under 2,000 m²", "2,000 to 10,000 m²", "10,000 to 30,000 m²", "Over 30,000 m²", "I don't know"]
+        },
+        { "name": "consumption", "label": "Yearly electricity use", "kind": "text", "required": false, "maxLength": 100, "help": "In MWh, from your bills. A rough figure is enough, and you can leave it empty." },
+        {
+          "name": "interests",
+          "label": "Which solutions interest you?",
+          "kind": "checkboxes",
+          "required": false,
+          "options": ["Rooftop solar", "Battery storage", "Fleet charging", "Ampfield Pilot", "Not sure yet"],
+          "help": "Tick as many as you like. The engineer looks at all four either way."
+        },
+        { "name": "message", "label": "Anything we should know", "kind": "textarea", "required": false, "maxLength": 3000, "help": "Such as the roof's age, plans to extend the building, or a date you need power by." },
+        { "name": "privacy", "label": "I have read the privacy policy", "kind": "acceptance", "help": "It says what we keep of this booking, and for how long." }
+      ]
+    },
+    "newsletter": {
+      "label": "Newsletter",
+      "fields": [
+        { "name": "email", "label": "E-mail", "kind": "email", "required": true },
+        { "name": "privacy", "label": "Send me Ampfield's newsletter. I have read the privacy policy.", "kind": "acceptance", "help": "One e-mail at the start of each month. Every issue has a link to unsubscribe." }
+      ]
+    }
+  }
+}

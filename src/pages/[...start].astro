@@ -1,0 +1,28 @@
+---
+// The start page, at /. The core keeps / for the site's own start page, so the Home page of design/content/
+// stands as a page at /home/ (LEFT_OUT.home in scripts/demo-content.mjs), and this stand-in shows that page's
+// title and body here, until it is settled whether an editor may choose a page for the start page. The head is
+// the start page's own, from the site's title and description, not the page's.
+import Body from '@kntnt/konzilo/astro/Body.astro';
+import { entriesIn, entryAddress, startPages } from '@kntnt/konzilo/astro/languages';
+import { render } from 'astro:content';
+import Site from '../layouts/Site.astro';
+
+// Where the Home page stands, as scripts/demo-content.mjs puts it.
+const HOME = '/home/';
+
+export function getStaticPaths() {
+  return startPages('start');
+}
+
+const { language } = Astro.props;
+const home = (await entriesIn('pages', language)).find((entry) => entryAddress(entry) === HOME);
+if (!home) throw new Error(`The start page shows the page at ${HOME}, and the content has none.`);
+const { Content } = await render(home);
+---
+<Site>
+  <div class="kn-body-text">
+    <h1>{home.data.title}</h1>
+    <Body post={home}><Content /></Body>
+  </div>
+</Site>
