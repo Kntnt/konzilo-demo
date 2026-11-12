@@ -23,7 +23,8 @@ What the demo site shows, who the fictional company is, and which pages are desi
 - **Founded:** 2014, in Gothenburg. **Offices:** Gothenburg (head office), Malmö, Rotterdam and Leeds. **Works in:** Sweden, Denmark, the Netherlands and the United Kingdom.
 - **Figures:** 140 employees, 610 sites, 420 MWp of solar, 95 MWh of storage, 3,800 charge points.
 - **Slogan:** On-site energy for industry.
-- **Addresses:** e-mail at `ampfield.example`; telephone numbers only from series reserved for fiction (Sweden: 031-390 06 00 to 99).
+- **Head office:** Fältverksgatan 6, 417 64 Gothenburg, Sweden, a street that does not exist. **Registration number:** 559214-3871, which fails the checksum of a real one. **VAT number:** SE559214387101.
+- **Addresses:** e-mail at `ampfield.example`; telephone numbers only from series reserved for fiction (Sweden: 031-390 06 00 to 99); street names that do not exist in their towns.
 
 ### People
 

@@ -17,6 +17,7 @@ The look: natural light, calm and matter-of-fact, as a company's own photographe
 | `fleet-charging` | Electric vans or trucks charging in a depot | Fleet charging, hero |
 | `charger-detail` | Close view of a commercial charger or a connector plugged in | Fleet charging |
 | `energy-management` | A person following energy data on a laptop or tablet, or a control room; no readable interface of a real product | Ampfield Pilot, hero |
+| `pilot-controller` | An open electrical cabinet with meters, a small industrial computer and network cabling | Ampfield Pilot |
 | `solutions-overview` | An industrial site in which roof, yard and vehicles are all in view | Solutions |
 | `industry-logistics` | A large distribution warehouse, outside | Logistics and warehousing, hero |
 | `industry-logistics-inside` | Inside a distribution warehouse: racking, forklifts or conveyors | Logistics and warehousing |

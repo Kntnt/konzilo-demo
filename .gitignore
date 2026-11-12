@@ -3,3 +3,6 @@ dist/
 .astro/
 .DS_Store
 *.bak.json
+
+# What Konzilo Design exports is made again by one command
+design/export/*.zip
