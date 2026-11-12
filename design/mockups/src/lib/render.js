@@ -366,7 +366,12 @@ function cards(attrs, children, ctx) {
     const id = intro.length ? nextId(ctx, 'navigation') : undefined;
     return tag('nav', { class: 'kn-cards-nav', 'aria-labelledby': id },
       intro.length ? tag('div', { class: 'kn-cards-label', id }, intro.map((node) => tag('p', { 'data-kn-type': 'label' }, inner(node)))) : '',
-      tag('ul', { class: 'kn-card-grid kn-cards', role: 'list' }, items.map((item) => tag('li', {}, card(item, options, ctx)))));
+      // The series' own facts stand on the list, as on any series (directives.md, `cards`).
+      tag('ul', {
+        class: 'kn-card-grid kn-cards', role: 'list',
+        'data-kn-picture': options.behind ? 'behind' : undefined,
+        'data-kn-symbol': options.symbol,
+      }, items.map((item) => tag('li', {}, card(item, options, ctx)))));
   }
   return renderBlocks(intro, ctx) + tag('div', {
     class: 'kn-card-grid kn-cards',

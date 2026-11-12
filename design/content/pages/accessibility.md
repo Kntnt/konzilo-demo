@@ -7,13 +7,21 @@ teaser: {"headline":"Accessibility statement","text":"How accessible this site i
 description: "How accessible the Ampfield Energy site is, its known limitations, and how to report a problem or ask for content in another form."
 ---
 
-:::hero{surface="page"}
+:::hero{surface="tint"}
 
 ::breadcrumbs
 
 How accessible this site is, what we know falls short, and how to tell us about a problem. Updated 12 November 2026.
 
 :::
+
+:::::section
+
+::::toc
+
+On this page
+
+## What we aim for
 
 We want everyone who runs a building or a budget to be able to use this site, whether they see, hear, move or read in the ordinary way or not. We aim to meet level AA of the Web Content Accessibility Guidelines, version 2.2.
 
@@ -44,3 +52,7 @@ We are working on the first three, and this page will say when they are fixed.
 ## Tell us about a problem
 
 If something on the site does not work for you, or you need content in another form, write to accessibility@ampfield.example or call +46 31 390 06 00. Tell us which page, and what went wrong. We answer within five working days, and where we cannot fix the problem at once, we give you the content another way.
+
+::::
+
+:::::

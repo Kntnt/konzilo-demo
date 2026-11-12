@@ -35,6 +35,6 @@ The header's search box: the field's label is *Search the site*, and its empty f
 5. The case study of Brantevik Foods, whose two sites have a 4 MWh battery, and every article in the topic Storage.
 6. *Every vehicle full by morning, on the connection you have*, the Fleet charging page, where a battery covers trucks' noon charging.
 
-The result line reads: *{count} results for “battery”*. Each result shows the page's teaser headline and teaser text, with the matched words marked.
+The result line reads: *{count} results for “battery”*, with *, page 1 of 2* since nineteen published posts hold the word and the core shows ten a page. Each result shows what the core's search shows: the post's title, an article's main headline in its place, its type and its date, and a snippet of eight words on each side of the first match in its text, the matched word marked.
 
 **A query that finds nothing:** `hydrogen` finds no page, and the page shows the text of `site.search.nothingFound` above.

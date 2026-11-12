@@ -21,6 +21,11 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A vacancy marked up as a job posting for search engines | The vacancies | Nothing: a site's own type may offer only the structured data types the core knows |
 | An author's portrait | The author's page, an article's byline | Nothing from content: an author term holds a name and a biography |
 | A source under a simple table | The articles | A footnote on the paragraph before the table, or a structured table with a caption |
+| Topics in an article's opening | The articles | Pills at the end of the meta line; `directives.md` has no part for them |
+| A list of vacancies | Careers, a vacancy | A presentation `rows` of the mockups' own, made from the Content Loop; `directives.md` has only `cards`, `featured` and `filtered` |
+| A person's card with a portrait | Team | Ordinary cards with pictures cut to their wide format; the Card's `person` variant has no directive |
+| Two options compared side by side under a head that is not centred | Home | A table |
+| Words of a template that an editor can change | The case study's closing band, the term pages' newsletter band | Fixed words in the templates |
 
 ## Faults and shortcomings in Konzilo Design
 
@@ -36,6 +41,19 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A hero's logo cannot follow the Surface it stands on | `.kn-hero-logo` is one picture that the editor chooses, while the header's logo changes with the mode; the light logo on a dark picture is hard to read |
 | Neither `directives.md` nor `konzilo.md` says where a page without a hero puts its title and breadcrumbs | The mockups put them in a section's head before the body |
 | `konzilo.css` does not style the core's button that opens the lightbox | `button.konzilo-lightbox-open` is styled only by the core's `modal.css` |
+| Layout rule 6 centres a section's head for a reason no visitor can see | A head over two cards, two featured posts, cards without pictures or reasons is centred, on a page whose other heads start at the edge |
+| A hero without a picture keeps its height | A title and one sentence stand at the bottom of an empty band two thirds of the window high; seen on term pages, the 404 page and the legal pages |
+| A link in a Content Loop inside body text looks like a body link | `.kn-body-text a` outweighs `.kn-content-link`; the Card avoids it with `.kn-card .kn-card-link` |
+| A gallery's columns follow its width, not the number of its pictures | Four pictures stand three and one; `.konzilo-gallery` uses `auto-fill` |
+| A choice's answers do not fill their rows | Four answers fall three and one |
+| A table at phone width squeezes its columns word by word | It needs a least column width and a box that scrolls |
+| A structured table narrower than its column does not stretch | Its rules end in the middle of the column |
+| A fact box in a section's body spans the whole content width | The text beside it keeps the narrow measure |
+| A long value in a value list breaks in the middle of a word | An e-mail address in a quarter column; `a[data-kn-contact]` in a half-width card too |
+| A symbol cannot take the accent colour or follow the mode | Konzilo writes it as an `<img>` |
+| The megamenu draws an entry without children as an empty column | Customers, before it was given the case studies |
+| The design reads a table's column alignment from `data-kn-align`, which nothing writes | Konzilo writes `style="text-align: …"`, which its own policy on inline styles blocks (ADR 0051) |
+| The core's default meta line and the design's do not match | The core writes one sentence, "Published on {date} in {category} by {authors}"; the design draws three spans with dots between |
 | The hero directive's default Surface is `raised` | The design's own default for a hero without a picture is `none` |
 | A design resolved by an older generator passes `design-check` and `fromDesign` | A file resolved by 0.2.0 passes under 0.3.0, though 0.3.0 changed the dark-mode values |
 | `resolve` keeps role settings that the chosen typeface lacks | The new design's Mona Sans axes stay after a change of typeface; only the tool prunes them |

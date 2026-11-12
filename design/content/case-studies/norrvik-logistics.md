@@ -5,7 +5,7 @@ modified: 2026-08-25T07:00:00Z
 image: {"src":"image:case-norrvik","alt":"A large distribution centre with solar panels across its roof and trucks at its loading docks"}
 headline: "Six roofs that give a logistics company 38% of its electricity"
 standfirst: "Norrvik Logistics runs six distribution centres in Sweden around the clock. We put 9.4 MWp of solar on their roofs and 212 charge points in their yards without closing a single dock."
-excerpt: "9.4 MWp of rooftop solar and 212 depot charge points across six distribution centres, built while every one of them kept working. Solar now covers 38% of Norrvik's electricity."
+excerpt: "9.4 MWp of rooftop solar and 212 depot charge points on six distribution centres that never closed. Solar now covers 38% of their electricity."
 customer: "Norrvik Logistics"
 industry: "Logistics and warehousing"
 location: "Jönköping and five other sites, Sweden"
@@ -55,12 +55,10 @@ Norrvik bought the systems outright. We run them under a service agreement from 
 
 ![Rows of solar panels stretching across a very large flat roof](image:case-norrvik-roof)\
 Jönköping's roof carries 3.2 MWp, the largest of the six systems.
-![Electric vans and trucks connected to chargers in a depot yard](image:case-norrvik-charging)\
-Vans charge overnight at 11 kW; trucks at up to 150 kW.
-![Inverters mounted in a row on a plant room wall](image:case-norrvik-inverters)\
-78 string inverters, on the walls of the centres' plant rooms.
-![Installers fitting solar panels on a flat roof](image:case-norrvik-team)\
-Material went up by crane on Sunday mornings, when the yards are quietest.
+![An electric lorry beside a fast charger with two cables in a depot yard](image:case-norrvik-charging)\
+Trucks charge at up to 150 kW, vans overnight at 11 kW.
+![Two grey solar inverters and a switch box on a steel frame under a row of solar panels](image:case-norrvik-inverters)\
+String inverters turn the panels' direct current into the alternating current the centres use.
 Norrvik Logistics, six centres in fifteen months
 
 ## Building around centres that never close
@@ -71,6 +69,9 @@ A distribution centre has no quiet season, and Norrvik's six never close. We pla
 - The system rests on ballast, so nothing was drilled through roofs above stored goods.
 - Cable trenches for the chargers were dug in sections, each closed for at most three nights and covered with steel plates by day.
 - Each centre was connected to its new supply in one planned stop of under four hours, early on a Sunday morning.
+
+![Four installers in hard hats carry and fit solar panels on a large industrial roof](image:case-norrvik-team)\
+Material went up by crane on Sunday mornings, when the yards are quietest.
 
 The survey found one surprise. At Borås, the older half of the roof had been re-roofed in 2012 with thicker insulation, and the extra weight had used up most of its margin. We moved those panels to the extension built in 2016. It cost a week of design and nothing on site.
 

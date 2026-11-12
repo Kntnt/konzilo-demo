@@ -3,7 +3,7 @@ type: page
 title: "Page not found"
 ---
 
-::::hero{surface="page"}
+::::hero{surface="tint"}
 
 ::eyebrow[Error 404]
 

@@ -2,10 +2,10 @@
 title: "Brantevik Foods"
 date: 2026-05-19T07:00:00Z
 modified: 2026-05-19T07:00:00Z
-image: {"src":"image:case-brantevik","alt":"A food factory with a large cold store building beside it"}
+image: {"src":"image:case-brantevik","alt":"Workers in hairnets and green coats sorting produce along conveyor lines in a large food hall"}
 headline: "Cold stores that cool ahead on solar power"
 standfirst: "Brantevik Foods makes and freezes food at two sites in Skåne. A 4 MWh battery and 3.1 MWp of solar cut its peak demand by 27%, and its cold stores now keep the sun's power as cold."
-excerpt: "3.1 MWp of rooftop solar and a 4 MWh battery at two sites in Skåne. Peak demand is down 27%, and the cold stores pre-cool on solar power."
+excerpt: "3.1 MWp of rooftop solar and a 4 MWh battery in Skåne. Peak demand is down 27%, and the cold stores pre-cool on solar power."
 customer: "Brantevik Foods"
 industry: "Manufacturing"
 location: "Tomelilla and Kristianstad, Sweden"

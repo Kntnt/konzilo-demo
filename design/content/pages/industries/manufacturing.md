@@ -18,11 +18,11 @@ A factory's load is steady through the working day, which suits a solar roof. It
 :::list{type="actions"}
 
 - **[Book a site assessment](/go/site-assessment/)**
-- [Manufacturing case studies](#case-studies)
+- [A customer's story](#case-studies)
 
 :::
 
-![A modern factory floor with a production line under even overhead light](image:industry-manufacturing)
+![An automated production line of white machines and conveyors on a clean factory floor](image:industry-manufacturing)
 
 ::::
 
@@ -66,16 +66,6 @@ Shows use per line and per hour, and finds the waste in nights and weekends.
 
 ::::
 
-:::section
-
-::eyebrow[A customer's view]
-
-> The grid operator told us a larger connection would take three years. The battery was running in five months, our grid fees are 22% lower, and we have room to add the new line.
->
-> <cite>Marieke de Wit, Plant Manager, Kessel Packaging, Dordrecht</cite>
-
-:::
-
 ::::section{surface="brand"}
 
 ## A typical factory
@@ -97,15 +87,28 @@ What we usually find at a factory with 20,000 m² of roof.
 
 ::::
 
-:::section{anchor="case-studies"}
+::::section{anchor="case-studies"}
 
-## Case studies from manufacturing
+![Stacks of planed timber and wooden workpieces on trestles in a large wood workshop](image:case-lindhagen)
 
-::post-list{type="case-study" include="industries:manufacturing" presentation="cards" empty="Our case studies from manufacturing are being written. Ask us for references from sites like yours."}
+::eyebrow[Case study]
+
+## Almost a third of a factory's power, with nothing paid up front
+
+> We make furniture, not power. Fifteen years at a price we know was worth more to us than owning the panels, and the roof has worked for us since the day it was finished.
+>
+> <cite>Maria Lindhagen, Chief Executive, Lindhagen Furniture</cite>
+
+:::list{type="actions"}
+
+- [Read the case study](/customers/lindhagen-furniture/)
+- [All case studies](/customers/)
 
 :::
 
-::::section{surface="brand"}
+::::
+
+::::section{surface="accent"}
 
 ## Find out what your factory can do
 

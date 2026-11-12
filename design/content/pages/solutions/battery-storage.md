@@ -24,13 +24,11 @@ Much of your grid fee is set by the highest peak of the month, often a quarter o
 
 ::small[From 500 kWh to 10 MWh on one site. We run 95 MWh of storage today.]
 
-![A grey battery storage container on a concrete pad beside an industrial building](image:battery-storage)
+![A crane lifting a dark green battery container into place](image:battery-storage)
 
 ::::
 
 :::section
-
-![Battery racks in rows inside an open storage container, with cabling and switchgear](image:battery-detail)
 
 ## What you get
 
@@ -43,6 +41,8 @@ A battery also lets you add machines or chargers on the grid connection you have
 :::
 
 ::::section{surface="tint"}
+
+![A close view of a row of battery cells with red and blue terminal caps](image:battery-detail)
 
 ## Why our customers add a battery
 
@@ -157,7 +157,7 @@ Three sizes, each able to run at full power for two hours.
 
 :::list{type="actions"}
 
-- **[All questions and answers](/faq/)**
+- [All questions and answers](/faq/)
 
 :::
 
@@ -197,19 +197,24 @@ By then the cells hold about 70% of their first capacity. You can keep using the
 
 ::::section
 
-## A battery at work
+![Workers in hairnets and green coats sorting fruit along conveyor lines in a food packing hall](image:case-brantevik)
 
-::post-list{type="case-study" include="topics:storage" number="3" presentation="cards" empty="Our case studies of battery storage are being written. Ask us for references from sites like yours."}
+::eyebrow[A battery at work]
+
+## Cold stores that cool ahead on solar power
+
+Brantevik Foods makes and freezes food at two sites in Skåne. A 4 MWh battery and 3.1 MWp of solar cut its peak demand by 27%, and its cold stores now keep the sun's power as cold.
 
 :::list{type="actions"}
 
-- **[All case studies](/customers/)**
+- [Read the case study](/customers/brantevik-foods/)
+- [All case studies](/customers/)
 
 :::
 
 ::::
 
-::::section{surface="brand"}
+::::section{surface="accent"}
 
 ## Find out what a battery would save you
 

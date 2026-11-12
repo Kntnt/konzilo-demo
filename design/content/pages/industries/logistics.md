@@ -18,17 +18,15 @@ A distribution centre has the largest flat roof in its area, a yard full of vehi
 :::list{type="actions"}
 
 - **[Book a site assessment](/go/site-assessment/)**
-- [Logistics case studies](#case-studies)
+- [A customer's story](#case-studies)
 
 :::
 
-![A large distribution warehouse seen from outside, lorries at the loading docks](image:industry-logistics)
+![Large distribution warehouses seen from above, with loading docks and lorry trailers in a snow-covered industrial area](image:industry-logistics)
 
 ::::
 
 :::section
-
-![Inside a distribution warehouse: tall racking, a forklift and conveyors under bright lights](image:industry-logistics-inside)
 
 ## What matters in a distribution centre
 
@@ -44,7 +42,7 @@ Warehouses change hands and tenants more often than factories. We write agreemen
 
 ## Solutions that fit
 
-:::cards{symbol="heading"}
+:::cards{symbol="item"}
 
 ### [Rooftop solar](/solutions/rooftop-solar/)
 
@@ -54,7 +52,7 @@ The roof covers 30% to 45% of a distribution centre's yearly electricity.
 
 ### [Fleet charging](/solutions/fleet-charging/)
 
-![Symbol of a charging plug](image:icon-charging)
+![Symbol of a charging station](image:icon-charging)
 
 Slow chargers for vans overnight, fast ones for trucks at the docks.
 
@@ -73,16 +71,6 @@ Shares the connection between building and vehicles, minute by minute.
 :::
 
 ::::
-
-:::section
-
-::eyebrow[A customer's view]
-
-> We had six roofs, about 60,000 m² in all, that did nothing for us. Now they give us 38% of the electricity we use in a year, and our vans charge in the same yards they load in. One company answers for all of it, which is what I wanted.
->
-> <cite>Karin Öberg, Head of Property, Norrvik Logistics</cite>
-
-:::
 
 ::::section{surface="brand"}
 
@@ -105,15 +93,28 @@ What we usually find at a warehouse of 30,000 m² in Sweden, Denmark, the Nether
 
 ::::
 
-:::section{anchor="case-studies"}
+::::section{anchor="case-studies"}
 
-## Case studies from logistics
+![A long distribution centre seen from above, its roof covered with solar panels and lorries at its loading docks](image:case-norrvik)
 
-::post-list{type="case-study" include="industries:logistics" presentation="cards" empty="Our case studies from logistics are being written. Ask us for references from sites like yours."}
+::eyebrow[Case study]
+
+## Six roofs that give a logistics company 38% of its electricity
+
+> We had six roofs, about 60,000 m² in all, that did nothing for us. Now they give us 38% of the electricity we use in a year, and our vans charge in the same yards they load in. One company answers for all of it, which is what I wanted.
+>
+> <cite>Karin Öberg, Head of Property, Norrvik Logistics</cite>
+
+:::list{type="actions"}
+
+- [Read the case study](/customers/norrvik-logistics/)
+- [All case studies](/customers/)
 
 :::
 
-::::section{surface="brand"}
+::::
+
+::::section{surface="accent"}
 
 ## Find out what your warehouse can do
 

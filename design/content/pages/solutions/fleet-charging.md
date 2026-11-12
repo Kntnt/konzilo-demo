@@ -24,13 +24,11 @@ Sixty vans plugged in at once would draw 660 kW. Spread over a ten-hour night th
 
 ::small[3,800 charge points in operation, 212 of them at Norrvik Logistics' distribution centres.]
 
-![Electric delivery vans parked in a row at chargers in a depot yard at dusk](image:fleet-charging)
+![A black electric van charging in a yard beside a commercial building, its cable running to a charger on the wall](image:fleet-charging)
 
 ::::
 
 :::section
-
-![A charging cable plugged into the side of an electric van, with the charger's display beside it](image:charger-detail)
 
 ## What you get
 
@@ -43,6 +41,8 @@ Drivers plug in and leave. Your fleet manager sees each vehicle's charge, and ea
 :::
 
 ::::section{surface="tint"}
+
+![A charging connector plugged into the charging port of a car](image:charger-detail)
 
 ## Why our customers charge with us
 
@@ -173,7 +173,7 @@ Three depots as we often build them, each charging overnight.
 
 :::list{type="actions"}
 
-- **[All questions and answers](/faq/)**
+- [All questions and answers](/faq/)
 
 :::
 
@@ -209,19 +209,24 @@ If you pay per kilowatt-hour, the agreement runs for 8 to 12 years. At its end y
 
 ::::section
 
-## Charging at work
+![A long distribution centre seen from above, its roof covered with solar panels and lorries at its loading docks](image:case-norrvik)
 
-::post-list{type="case-study" include="topics:charging" number="3" presentation="cards" empty="Our case studies of fleet charging are being written. Ask us for references from depots like yours."}
+::eyebrow[Charging at work]
+
+## Six roofs that give a logistics company 38% of its electricity
+
+Norrvik Logistics runs six distribution centres in Sweden around the clock. We put 9.4 MWp of solar on their roofs and 212 charge points in their yards without closing a single dock.
 
 :::list{type="actions"}
 
-- **[All case studies](/customers/)**
+- [Read the case study](/customers/norrvik-logistics/)
+- [All case studies](/customers/)
 
 :::
 
 ::::
 
-::::section{surface="brand"}
+::::section{surface="accent"}
 
 ## Find out what your fleet needs
 

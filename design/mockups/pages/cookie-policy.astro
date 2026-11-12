@@ -1,0 +1,69 @@
+---
+// The cookie policy: the content file's body, then the core's cookie declaration, which the page template places below
+// it (Konzilo's CookieDeclaration.astro), as the core writes it once its script has run and found no choice; then the
+// text design/content/README.md gives for after the declaration. The declaration's markup is Konzilo Design's
+// test/fixtures/konzilo-page.html, its words the core's (src/catalogues/en.json), and its services the ones the privacy
+// and cookie policies name: the consent record, Matomo run by Ampfield, and YouTube. konzilo.css draws it. It stands in
+// a Reading Area whose menu side is empty, so that its column lines up with the policy's text above it.
+import Site from '../src/layouts/Site.astro';
+import Markdown from '../src/components/Markdown.astro';
+import { postByFile } from '../src/lib/content.js';
+
+const post = postByFile('pages/cookie-policy.md');
+const address = post.address;
+
+const row = (cells) => `<tr>${cells.map((cell) => `<td>${cell}</td>`).join('')}</tr>`;
+const table = (service, rows) => `<table><caption>What ${service} stores in your browser</caption><thead><tr><th scope="col">Name</th><th scope="col">Type</th><th scope="col">How long</th><th scope="col">Set by</th></tr></thead><tbody>${rows.map(row).join('')}</tbody></table>`;
+const facts = (pairs) => `<dl>${pairs.map(([term, value]) => `<dt>${term}</dt><dd>${value}</dd>`).join('')}</dl>`;
+const service = (id, name, pairs, stores) => `<section class="konzilo-declaration-service" id="konzilo-declaration-service-${id}" aria-labelledby="konzilo-declaration-service-${id}-name"><h4 id="konzilo-declaration-service-${id}-name">${name}</h4>${facts(pairs)}${stores}</section>`;
+const category = (id, name, description, services) => `<section class="konzilo-declaration-category" aria-labelledby="konzilo-declaration-category-${id}"><h3 id="konzilo-declaration-category-${id}">${name}</h3><p>${description}</p>${services.join('')}</section>`;
+
+const declaration = `<div class="konzilo-declaration" data-konzilo-declaration="">`
+  + `<section class="konzilo-declaration-consent" aria-labelledby="konzilo-declaration-consent"><h2 id="konzilo-declaration-consent">Your choice</h2>`
+  + `<p class="konzilo-declaration-none">You have not made a choice yet, or your last one no longer applies.</p>`
+  + `<div class="konzilo-consent-buttons"><button type="button" class="konzilo-consent-secondary" data-konzilo-consent-action="change">Change privacy settings</button></div></section>`
+  + `<section class="konzilo-declaration-services" aria-labelledby="konzilo-declaration-services"><h2 id="konzilo-declaration-services">Services and what they store</h2>`
+  + `<p class="konzilo-declaration-revised">The list was last changed on <time datetime="2026-11-12">12 November 2026</time>.</p>`
+  + category('necessary', 'Necessary', 'What the site needs to work and to remember your choice. Always on.', [
+    service('consent', 'Consent', [
+      ['Provider', 'This site. <a href="/privacy-policy/">Privacy policy</a>'],
+      ['Purpose', 'Remembers which categories and services you allowed, and when, so that the site respects your choice.'],
+      ['Why it is needed', 'Without it the site could not keep to your choice, and would ask you on every page.'],
+      ['Addresses your browser contacts', 'None but this site\'s own'],
+      ['Transfers outside the EU and EEA', 'None'],
+    ], table('Consent', [['<code>konzilo-consent</code>', 'local storage', '12 months', 'This site']])),
+  ])
+  + category('statistics', 'Statistics', 'Counting visits, so that we can see how the site is used and improve it.', [
+    service('matomo', 'Matomo', [
+      ['Provider', 'This site. <a href="/privacy-policy/#visitor-statistics">Privacy policy</a>'],
+      ['Purpose', 'Tells a returning visitor from a new one, and ties together the pages of a single visit.'],
+      ['Addresses your browser contacts', 'None but this site\'s own'],
+      ['Transfers outside the EU and EEA', 'None'],
+    ], table('Matomo', [['<code>_pk_id</code>', 'cookie', '13 months', 'This site'], ['<code>_pk_ses</code>', 'cookie', '30 minutes', 'This site']])),
+  ])
+  + category('marketing', 'Marketing', 'Content from services whose providers may use what they learn about you for their own advertising or profiling.', [
+    service('youtube', 'YouTube', [
+      ['Provider', 'Google Ireland Limited, Ireland. <a href="https://policies.google.com/privacy">Google Ireland Limited\'s privacy policy</a>'],
+      ['Purpose', 'Plays videos from YouTube in the page.'],
+      ['Addresses your browser contacts', '<ul><li><code>www.youtube-nocookie.com</code></li></ul>'],
+      ['Transfers outside the EU and EEA', '<ul><li>United States, on the basis of an adequacy decision</li></ul>'],
+    ], '<p>Its provider lists nothing that it stores.</p>'),
+  ])
+  + `</section>`
+  + `<section class="konzilo-declaration-departures" aria-labelledby="konzilo-declaration-departures"><h2 id="konzilo-declaration-departures">What this site does without your consent</h2>`
+  + `<ul><li>The site's statistics count each visit from the first page you see, before you make a choice, without storing anything in your browser and without reading your device's properties. They store in your browser only once you allow statistics. A browser that sends Global Privacy Control or Do Not Track is not counted at all.</li></ul></section>`
+  + `</div>`
+  + `<p>Your browser may also keep things the site does not ask it to, such as its cache. You can remove what a site has stored in your browser's settings; that also removes your choice and any objection, and the site will ask again. Questions about this policy: <a href="mailto:privacy@ampfield.example">privacy@ampfield.example</a>.</p>`;
+---
+<Site title={post.data.title} address={address}>
+  <Markdown file="pages/cookie-policy.md" title={post.data.title} address={address} />
+  <section class="kn-band kn-section">
+    <div class="kn-band-content">
+      <div class="kn-section-body kn-body-text">
+        <div class="kn-reading-area" data-kn-side="start" data-kn-stack="before">
+          <div class="kn-reading-area-flow" set:html={declaration} />
+        </div>
+      </div>
+    </div>
+  </section>
+</Site>

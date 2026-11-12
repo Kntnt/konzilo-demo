@@ -22,7 +22,7 @@ Ampfield was founded in Gothenburg in 2014 to build solar on industrial roofs an
 
 :::
 
-![Engineers in work clothes talking on a flat roof among solar panels, seen from behind](image:about-site-team)
+![Seven people in hard hats and high-visibility clothing on the concrete deck of a building site, seen from above](image:about-site-team)
 
 ::::
 
@@ -40,7 +40,7 @@ What has not changed is the idea: one company that designs the system, builds it
 
 ::::section{surface="tint"}
 
-![Two technicians checking the mounting of a row of panels on a flat roof](image:rooftop-install)
+![Two installers fixing solar panels to aluminium rails on a flat roof](image:rooftop-install)
 
 ![Certified to ISO 9001, quality management](image:badge-iso-9001)
 
@@ -109,7 +109,7 @@ How we got here
 
 ## Ampfield in figures
 
-As of November 2026.
+140 people in four countries. As of November 2026.
 
 :::list{type="values"}
 
@@ -121,10 +121,6 @@ As of November 2026.
   - 95 MWh
 - Charge points
   - 3,800
-- Employees
-  - 140
-- Countries
-  - 4
 
 :::
 
@@ -132,7 +128,7 @@ As of November 2026.
 
 ::::section
 
-![A bright open office with people working at desks and a workshop bench by the window](image:about-office)
+![A bright open-plan office with brick walls and wood panelling, where a few people work at standing desks](image:about-office)
 
 ## Four offices
 
@@ -178,12 +174,12 @@ Sales, design and installation for the United Kingdom. About 15 people.
 
 ## Work with us
 
-We hire engineers, installers, technicians and analysts in all four countries, and train installers who come from other trades.
+We hire engineers, installers, technicians and analysts in all four countries, and train installers who come from other trades. Meet the people you would work beside, or see what is open now.
 
 :::list{type="actions"}
 
-- **[See open positions](/about/careers/)**
-- [Meet the team](/about/team/)
+- **[Meet the team](/about/team/)**
+- [See open positions](/about/careers/)
 
 :::
 

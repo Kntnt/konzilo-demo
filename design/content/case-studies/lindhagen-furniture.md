@@ -2,10 +2,10 @@
 title: "Lindhagen Furniture"
 date: 2026-04-21T07:00:00Z
 modified: 2026-04-21T07:00:00Z
-image: {"src":"image:case-lindhagen","alt":"A furniture workshop with workbenches and woodworking machines on the factory floor"}
+image: {"src":"image:case-lindhagen","alt":"Stacks of planed timber and wooden workpieces on trestles in a large wood workshop"}
 headline: "Almost a third of a factory's power, with nothing paid up front"
 standfirst: "Lindhagen Furniture wanted solar on its factory in Värnamo and a new machining line in the same two years. A 15-year power purchase agreement let it have both."
-excerpt: "2.2 MWp of rooftop solar on a furniture factory in Värnamo, owned and run by Ampfield under a 15-year power purchase agreement. It gives 31% of the factory's electricity, with nothing paid up front."
+excerpt: "2.2 MWp of rooftop solar on a furniture factory in Värnamo, under a 15-year power purchase agreement: 31% of its electricity, with nothing paid up front."
 customer: "Lindhagen Furniture"
 industry: "Manufacturing"
 location: "Värnamo, Sweden"

@@ -24,13 +24,11 @@ A flat roof of 10,000 m² holds about 1.5 MWp of panels, which produce some 1,40
 
 ::small[From 200 kWp to 10 MWp on one site. We have built 420 MWp since 2014.]
 
-![Long rows of solar panels on a flat commercial roof under a pale sky](image:rooftop-solar)
+![Rows of solar panels on a flat commercial roof, running towards a city skyline](image:rooftop-solar)
 
 ::::
 
 :::section
-
-![Two technicians in harnesses fitting a row of panels on a flat roof](image:rooftop-install)
 
 ## What you get
 
@@ -43,6 +41,8 @@ The panels connect to inverters on a wall inside the building, and from there to
 :::
 
 ::::section{surface="tint"}
+
+![Two installers fixing solar panels to aluminium rails on a flat roof](image:rooftop-install)
 
 ## Why our customers build solar
 
@@ -76,7 +76,7 @@ The system on the roof is the same either way. What differs is who owns it, and 
 
 ::::tabs
 
-Two ways to pay
+Who owns the system
 
 ### Buy the system
 
@@ -175,9 +175,6 @@ Three sizes of system, as we build them most often.
 
 :::
 
-![Close view of solar panels in low east–west rows on aluminium frames, held down by concrete ballast blocks](image:rooftop-detail)\
-East–west rows on a flat roof: low frames held by ballast, with no holes in the roof membrane.
-
 ::::
 
 ::::section{surface="tint"}
@@ -188,7 +185,7 @@ The six we hear at almost every site assessment.
 
 :::list{type="actions"}
 
-- **[All questions and answers](/faq/)**
+- [All questions and answers](/faq/)
 
 :::
 
@@ -224,19 +221,24 @@ You choose. Extend it at a lower price, since the system is paid for by then; bu
 
 ::::section
 
-## A rooftop system at work
+![Stacks of planed timber and wooden workpieces on trestles in a large wood workshop](image:case-lindhagen)
 
-::post-list{type="case-study" include="topics:solar" number="3" presentation="cards" empty="Our case studies of rooftop solar are being written. Ask us for references from sites like yours."}
+::eyebrow[A rooftop system at work]
+
+## Almost a third of a factory's power, with nothing paid up front
+
+Lindhagen Furniture wanted solar on its factory in Värnamo and a new machining line in the same two years. A 15-year power purchase agreement let it have both.
 
 :::list{type="actions"}
 
-- **[All case studies](/customers/)**
+- [Read the case study](/customers/lindhagen-furniture/)
+- [All case studies](/customers/)
 
 :::
 
 ::::
 
-::::section{surface="brand"}
+::::section{surface="accent"}
 
 ## Find out what your roof can produce
 

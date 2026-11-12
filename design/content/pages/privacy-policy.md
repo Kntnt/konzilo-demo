@@ -6,7 +6,7 @@ teaser: {"headline":"Privacy policy","text":"What Ampfield Energy keeps about yo
 description: "How Ampfield Energy handles personal data on this site: forms, the newsletter, visitor statistics, consent, search, and your rights."
 ---
 
-:::hero{surface="page"}
+:::hero{surface="tint"}
 
 ::breadcrumbs
 
@@ -14,11 +14,15 @@ What we keep about you when you visit this site or write to us, why we keep it, 
 
 :::
 
+:::::section
+
+::::toc
+
+On this page
+
+## In short
+
 :::aside{anchor="in-short"}
-
-::eyebrow[In short]
-
-## What this policy says
 
 - We keep what you write in a form for 90 days, and use it only to answer you.
 - We count visits without storing anything in your browser, and you can object to it.
@@ -88,3 +92,7 @@ If you think we handle your data wrongly, you can complain to the data protectio
 ## Changes to this policy
 
 When we change what we keep, we change this page and its date. If a change touches something you consented to, the site asks for your consent again.
+
+::::
+
+:::::

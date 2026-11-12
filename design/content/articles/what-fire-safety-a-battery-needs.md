@@ -2,7 +2,7 @@
 title: "What fire safety a battery needs"
 date: 2026-08-18T07:00:00Z
 modified: 2026-10-02T13:10:00Z
-image: {"src":"image:article-battery-fire-safety","alt":"Battery storage containers behind a fence with safety signs, on a concrete pad at an industrial site"}
+image: {"src":"image:article-battery-fire-safety","alt":"A high-voltage warning sign and a hard-hat sign on the green steel fence of an electrical installation"}
 eyebrow: "Battery storage"
 headline: "What fire safety a battery on site needs"
 subheadline: "Cells, distance, detection, and a plan the fire service has seen"

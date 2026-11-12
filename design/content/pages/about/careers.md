@@ -22,11 +22,13 @@ We hire engineers, installers, technicians and analysts in Gothenburg, Malmö, R
 
 :::
 
-![Colleagues gathered round a table with drawings and a laptop, working something out together](image:careers)
+![Two colleagues leaning over a table, pointing at printed drawings](image:careers)
 
 ::::
 
 ::::section
+
+![A technician in orange workwear and a helmet working at the top of a pole among overhead lines](image:careers-field)
 
 ## Why people stay
 
@@ -52,18 +54,21 @@ Anyone may stop a job they think unsafe, and is thanked for it. Our Head of Peop
 
 :::
 
-![A technician in a hard hat working on a cable tray outdoors, seen from the side](image:careers-field)
-![A bright office with people at desks and a workshop bench by the window](image:about-office)
-![Battery racks inside an open storage container](image:battery-detail)
-On a roof, at a desk, in a battery container: where the work happens.
+::eyebrow[From one of us]
+
+> I came in 2016 as the fifth engineer. Now I lead a team of sixty, and I still go up on a roof every week. What has kept me here is that we build things we will look after for thirty years, so nobody asks you to cut a corner.
+>
+> <cite>Priya Raman, Head of Engineering and Delivery</cite>
 
 ::::
 
 :::section{surface="tint" anchor="open-positions"}
 
+![A bright open-plan office with brick walls and wood panelling, where a few people work at standing desks](image:about-office)
+
 ## Open positions
 
-::post-list{type="job" presentation="cards" empty="No position is open just now. Write to careers@ampfield.example and tell us what you do; we keep good letters for a year, with your permission."}
+::post-list{type="job" presentation="featured" empty="No position is open just now. Write to careers@ampfield.example and tell us what you do; we keep good letters for a year, with your permission."}
 
 :::
 
@@ -95,16 +100,6 @@ Within a week of the meeting, yes or no, and why. If yes, we ask for two referen
 
 ::::
 
-:::section
-
-::eyebrow[From one of us]
-
-> I came in 2016 as the fifth engineer. Now I lead a team of sixty, and I still go up on a roof every week. What has kept me here is that we build things we will look after for thirty years, so nobody asks you to cut a corner.
->
-> <cite>Priya Raman, Head of Engineering and Delivery</cite>
-
-:::
-
 ::::section{surface="raised"}
 
 ## Questions about working here?
@@ -113,7 +108,7 @@ Daniel Okafor, our Head of People and Safety, answers them, whether or not a pos
 
 :::list{type="actions"}
 
-- **[Write to careers@ampfield.example](mailto:careers@ampfield.example)**
+- [Write to careers@ampfield.example](mailto:careers@ampfield.example)
 - [Meet the team](/about/team/)
 
 :::

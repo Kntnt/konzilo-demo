@@ -2,7 +2,7 @@
 title: "The last Westerport roof goes live"
 date: 2026-09-24T07:00:00Z
 modified: 2026-09-24T07:00:00Z
-image: {"src":"image:article-company-news","alt":"People in high-visibility jackets on a newly finished solar roof at a handover"}
+image: {"src":"image:article-company-news","alt":"A man standing on a flat roof covered with newly installed solar panels, with a city skyline in the distance"}
 eyebrow: "Westerport Retail Parks"
 headline: "All eleven Westerport parks now run on their own roofs"
 subheadline: "6.8 MWp and 340 charge points across the north of England, built in nineteen months"

@@ -2,7 +2,7 @@
 title: "Charging a fleet on a limited grid connection"
 date: 2026-09-08T07:00:00Z
 modified: 2026-09-08T07:00:00Z
-image: {"src":"image:article-electric-truck","alt":"An electric truck at a loading bay of a distribution warehouse"}
+image: {"src":"image:article-electric-truck","alt":"Three white electric lorries at the loading bays of a distribution centre in low evening sun"}
 eyebrow: "Depot charging"
 headline: "What a limited grid connection means for charging a fleet"
 subheadline: "Most depots can charge more vehicles than their connection suggests, if the chargers take turns"

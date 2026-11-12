@@ -7,7 +7,7 @@ teaser: {"headline":"Team","text":"The nine people who lead Ampfield Energy's en
 description: "Meet the people who lead Ampfield Energy: its founders, its heads of engineering, energy services, finance and safety, its country managers and its energy market analyst."
 ---
 
-::::hero{surface="page"}
+::::hero{surface="tint"}
 
 ::breadcrumbs
 
@@ -110,26 +110,12 @@ Follows electricity prices, grid tariffs and balancing markets, and turns them i
 
 ## Four of us write for Insights
 
-:::cards{type="navigation"}
+[Priya Raman](/insights/author/priya-raman/) writes on designing and building systems: roofs, structures, grid connections.
 
-Articles by
+[Elias Forsberg](/insights/author/elias-forsberg/) writes on running systems: faults, yields and what a service agreement should hold.
 
-### [Priya Raman](/insights/author/priya-raman/)
+[Hannah Whitcombe](/insights/author/hannah-whitcombe/) writes on the UK: retail property, grid connections and the market there.
 
-On designing and building systems: roofs, structures, grid connections.
-
-### [Elias Forsberg](/insights/author/elias-forsberg/)
-
-On running systems: faults, yields and what a service agreement should hold.
-
-### [Hannah Whitcombe](/insights/author/hannah-whitcombe/)
-
-On the UK: retail property, grid connections and the market there.
-
-### [Lena Bergqvist](/insights/author/lena-bergqvist/)
-
-On prices, grid tariffs and balancing markets, and what they mean for a buyer.
-
-:::
+[Lena Bergqvist](/insights/author/lena-bergqvist/) writes on prices, grid tariffs and balancing markets, and what they mean for a buyer.
 
 ::::

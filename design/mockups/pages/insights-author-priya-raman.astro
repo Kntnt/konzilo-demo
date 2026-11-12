@@ -1,0 +1,10 @@
+---
+// The term page of authors/priya-raman, by the site's term page template (src/lib/terms.js).
+import Site from '../src/layouts/Site.astro';
+import { termPage } from '../src/lib/terms.js';
+
+const { title, address, html } = termPage('authors', 'priya-raman');
+---
+<Site title={title} address={address}>
+  <Fragment set:html={html} />
+</Site>

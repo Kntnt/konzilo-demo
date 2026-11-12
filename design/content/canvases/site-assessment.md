@@ -9,7 +9,7 @@ description: "Book a free site assessment from Ampfield Energy: an engineer visi
 
 ::::hero{surface="raised"}
 
-![Ampfield Energy](logo:ampfield)
+![Ampfield Energy](logo:ampfield-logo-dark)
 
 ::eyebrow[Free site assessment]
 
@@ -23,11 +23,13 @@ An engineer spends half a day at your site. Within two weeks you have a report w
 
 ::small[Free, with no obligation to buy. In Sweden, Denmark, the Netherlands and the United Kingdom.]
 
-![An engineer with a tablet surveying a flat roof before any panels are fitted](image:site-assessment)
+![Two people in hard hats on a flat roof by its guard rail, looking at a tablet together](image:site-assessment)
 
 ::::
 
 ::::section
+
+![A large flat roof with a grey membrane, ventilation units and other plant, before any panels are fitted](image:article-roof-survey)
 
 ## What the engineer looks at
 
@@ -57,13 +59,23 @@ Where a battery could stand, where chargers could go, and the routes and standin
 
 ## What happens next
 
-:::list{markers="1."}
+:::cards{markers="1"}
 
-1. You send the form below.
-2. An engineer calls you within two working days to agree a day for the visit.
-3. The visit takes half a day. The engineer needs someone who can open the roof hatch and the switchboard room.
-4. Within two weeks you have the report: the systems that fit your site, what each would produce and save month by month, and its price bought outright and per kilowatt-hour under a power purchase agreement.
-5. The engineer spends an hour going through it with you, on site or on a call. What you do next is up to you.
+### You send the form below
+
+An engineer calls you within two working days to agree a day for the visit.
+
+### The visit
+
+Half a day on site. The engineer needs someone who can open the roof hatch and the switchboard room.
+
+### The report
+
+Within two weeks: the systems that fit your site, what each would produce and save month by month, and its price bought outright and per kilowatt-hour under a power purchase agreement.
+
+### Going through it
+
+The engineer spends an hour going through the report with you, on site or on a call. What you do next is up to you.
 
 :::
 

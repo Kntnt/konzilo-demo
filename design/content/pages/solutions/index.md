@@ -22,7 +22,7 @@ Each system pays for itself on its own. Built on the same site, they share one g
 
 :::
 
-![An industrial site with solar panels on the roof, a battery container in the yard and electric trucks at the loading bays](image:solutions-overview)
+![Two long warehouses seen from above, solar panels on their roofs and lorries at the loading docks in the yard between them](image:solutions-overview)
 
 ::::
 
@@ -32,23 +32,31 @@ Each system pays for itself on its own. Built on the same site, they share one g
 
 Every system is designed by our engineers, built by our own installers and run from our operations centre in Gothenburg.
 
-:::cards{type="navigation"}
+:::cards{type="navigation" symbol="item"}
 
 Our solutions
 
 ### [Rooftop solar](/solutions/rooftop-solar/)
 
+![Symbol of a solar panel](image:icon-solar)
+
 Panels on the roof you already have, sized to what the building uses during the day. From 200 kWp to 10 MWp on one site.
 
 ### [Battery storage](/solutions/battery-storage/)
+
+![Symbol of a battery](image:icon-battery)
 
 A battery beside the building that covers your peaks, so you pay a lower grid fee and need no larger connection. From 500 kWh to 10 MWh.
 
 ### [Fleet charging](/solutions/fleet-charging/)
 
+![Symbol of a charging station](image:icon-charging)
+
 Chargers for vans and trucks in your depot, sharing the grid connection so that every vehicle is full by morning.
 
 ### [Ampfield Pilot](/solutions/ampfield-pilot/)
+
+![Symbol of a line chart](image:icon-pilot)
 
 The software that measures every system once a minute, controls them together, and reports energy and emissions site by site.
 
@@ -82,6 +90,10 @@ A day in May
 ::::
 
 :::::section{anchor="which-first"}
+
+![Two people in hard hats on a flat roof by its guard rail, looking at a tablet together](image:site-assessment)
+
+## Which one first?
 
 ::::choice
 
@@ -141,7 +153,7 @@ Pilot reads the meters you already have, shows use and peaks per building and pe
 
 :::::
 
-::::section{surface="brand"}
+::::section{surface="accent"}
 
 ## Find out what your site can do
 

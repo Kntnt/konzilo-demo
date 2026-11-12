@@ -13,7 +13,7 @@ The site's articles, case studies and vacancies, and the terms that sort them: w
 
 - **Content-file form.** Each post is front matter and a body as `content-format.md` gives a content file: the keys in the order the type declares them, every value on one line, a text, list or object as JSON, a moment and a day unquoted. The terms are JSON as `JSON.stringify(value, null, 2)` writes them.
 - **Pictures by id.** A picture in a body is `![alt](image:<id>)`, and a post's main image is `image: {"src":"image:<id>","alt":"…"}`, each id from `design/images/shot-list.md`. The build replaces `image:<id>` with the master's path, `../media/<slug>-<hash>.webp`.
-- **Alt texts and captions follow the shot list**, since no photograph is chosen yet. Each must be checked against the photograph once it is.
+- **Alt texts and captions say what the photograph shows**, as `design/images/credits.json` describes it, checked against each picture on 12 November 2026. A caption tells what the text needs but claims nothing the picture does not show. Two of Norrvik's pictures differ from what the text says was built, and want replacing: `case-norrvik-inverters` shows inverters on a frame under a ground-mounted array, where the text has them on plant room walls, and `case-norrvik-team` shows panels clamped to a profiled sheet roof, where the text has a ballasted system on membrane roofs.
 - **Style.** British English. Per cent without a space, `38%`, as the other pages have it. Straight apostrophes, as typed. Units after an ordinary space; the build may make that space U+00A0, which the format allows.
 
 ## The site's own types
@@ -65,7 +65,7 @@ Structured data types: none of the core's fits a vacancy (see Wishes). Body elem
 ## The showpiece and the scheduled article
 
 - **The showpiece** is `articles/can-your-roof-carry-solar-panels.md`, by Priya Raman. Its body holds crossheads at level 2 with four at level 3 under one of them, a bulleted list, a numbered list, a quotation with its source, a simple table, a picture with a caption, three footnotes and a fact box.
-- **The case study drawn in full** is `case-studies/norrvik-logistics.md`: a gallery of `case-norrvik-roof`, `case-norrvik-charging`, `case-norrvik-inverters` and `case-norrvik-team`, each with its caption and the gallery's own, a structured table with a caption and a footer, a fact box and a quotation.
+- **The case study drawn in full** is `case-studies/norrvik-logistics.md`: a gallery of `case-norrvik-roof`, `case-norrvik-charging` and `case-norrvik-inverters`, each with its caption and the gallery's own, a picture of its own, `case-norrvik-team`, with its caption under the works, a structured table with a caption and a footer, a fact box and a quotation. The gallery holds three, since the design sets a gallery's columns by the width and not by the number of pictures: in the reading column it has three, and four would leave one alone on a second row.
 - **The scheduled article** is `articles/grid-capacity-is-now-the-scarce-resource.md`, dated 1 December 2026 at 07:00 UTC. As a content file it cannot exist before that day, since a build writes only a post whose date has come. In the source repository it is a source file with `status: scheduled` and that date, so that the editor shows it as scheduled and it goes live on its own.
 
 ## Every post

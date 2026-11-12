@@ -78,7 +78,29 @@
       },
       {
         "title": "Customers",
-        "url": "/customers/"
+        "url": "/customers/",
+        "items": [
+          {
+            "title": "Norrvik Logistics",
+            "url": "/customers/norrvik-logistics/",
+            "description": "Six distribution centres: 9.4 MWp of solar and 212 charge points."
+          },
+          {
+            "title": "Brantevik Foods",
+            "url": "/customers/brantevik-foods/",
+            "description": "Cold stores in Skåne: 3.1 MWp of solar and a 4 MWh battery."
+          },
+          {
+            "title": "Lindhagen Furniture",
+            "url": "/customers/lindhagen-furniture/",
+            "description": "A factory in Värnamo: 2.2 MWp under a power purchase agreement."
+          },
+          {
+            "title": "Westerport Retail Parks",
+            "url": "/customers/westerport-retail-parks/",
+            "description": "Eleven retail parks: 6.8 MWp of solar and 340 charge points."
+          }
+        ]
       },
       {
         "title": "Insights",

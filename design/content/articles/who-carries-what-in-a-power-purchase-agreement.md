@@ -2,7 +2,7 @@
 title: "Who carries what in a power purchase agreement"
 date: 2026-07-14T07:00:00Z
 modified: 2026-07-14T07:00:00Z
-image: {"src":"image:article-ppa-meeting","alt":"Three people at a table going through printed contract documents and drawings"}
+image: {"src":"image:article-ppa-meeting","alt":"Two people at a white table going through a printed document, one holding a pen"}
 eyebrow: "Buying the power, not the plant"
 headline: "Who carries what in an on-site power purchase agreement"
 subheadline: "The price, the risks and the way out, clause by clause"

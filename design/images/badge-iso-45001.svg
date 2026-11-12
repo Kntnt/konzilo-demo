@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img">
+<!-- A plain badge of Ampfield's own, drawn for the demo: no certification body's mark. One colour: the brand's green, and a light green where the browser is in dark mode. -->
+<style>.ring{fill:none;stroke:#0f5c4d}.text{fill:#0f5c4d;font-family:"Mona Sans",Helvetica,Arial,sans-serif;font-weight:700;text-anchor:middle}@media (prefers-color-scheme:dark){.ring{stroke:#80c4b2}.text{fill:#80c4b2}}</style>
+<circle class="ring" cx="32" cy="32" r="30" stroke-width="2.5"/>
+<circle class="ring" cx="32" cy="32" r="25.5" stroke-width="1"/>
+<text class="text" x="32" y="28" font-size="10" letter-spacing="1">ISO</text>
+<text class="text" x="32" y="43" font-size="13">45001</text>
+</svg>

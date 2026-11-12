@@ -24,13 +24,11 @@ Pilot reads your meters, solar inverters, batteries and chargers once a minute. 
 
 ::small[Included for the first year with every system we build. On its own from €95 per site and month.]
 
-![A person at a desk following a site's energy use in charts on a laptop](image:energy-management)
+![A person at a desk with several monitors in a dimly lit control room, seen from behind](image:energy-management)
 
 ::::
 
 :::section
-
-![An open electrical cabinet with energy meters, a small industrial computer and network cabling on its rails](image:pilot-controller)
 
 ## What you get
 
@@ -43,6 +41,8 @@ We wrote Pilot ourselves in 2020, because no product we could buy controlled a b
 :::
 
 ::::section{surface="tint"}
+
+![An open electrical cabinet with power supplies, a programmable controller, network switches and rows of labelled terminals](image:pilot-controller)
 
 ## Why our customers use Pilot
 
@@ -154,7 +154,7 @@ It suits every site with a battery or more than a few chargers, and it is how we
 
 :::list{type="actions"}
 
-- **[All questions and answers](/faq/)**
+- [All questions and answers](/faq/)
 
 :::
 
@@ -190,19 +190,24 @@ Pilot on its own runs month by month, with three months' notice. When you leave,
 
 ::::section
 
-## Pilot at work
+![Parking bays marked for electric vehicles in front of a charging post](image:case-westerport)
 
-::post-list{type="case-study" include="topics:reporting" number="3" presentation="cards" empty="Every case study on this site runs on Pilot. Read them under Customers."}
+::eyebrow[Pilot at work]
+
+## Eleven retail parks that run on their own roofs by day
+
+Westerport Retail Parks owns eleven parks in the north of England. Their roofs now cover the landlord supply in daylight, and their car parks hold 340 charge points for visitors.
 
 :::list{type="actions"}
 
-- **[All case studies](/customers/)**
+- [Read the case study](/customers/westerport-retail-parks/)
+- [All case studies](/customers/)
 
 :::
 
 ::::
 
-::::section{surface="brand"}
+::::section{surface="accent"}
 
 ## See your own site in Pilot
 

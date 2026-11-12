@@ -7,7 +7,7 @@ teaser: {"headline":"Industries","text":"Distribution centres, factories and ret
 description: "On-site energy for logistics and warehousing, manufacturing, and retail and commercial property: how solar, storage, charging and Pilot fit each kind of building."
 ---
 
-::::hero{surface="tint"}
+::::hero
 
 ::breadcrumbs
 
@@ -22,6 +22,8 @@ We work for three kinds of building: distribution centres, factories and retail 
 
 :::
 
+![A long aisle between tall racks stacked with boxes in a brightly lit warehouse](image:industry-logistics-inside)
+
 ::::
 
 ::::section
@@ -32,19 +34,19 @@ We work for three kinds of building: distribution centres, factories and retail 
 
 ### [Logistics and warehousing](/industries/logistics/)
 
-![A large distribution warehouse with loading docks along one side](image:industry-logistics)
+![Large distribution warehouses seen from above, with loading docks and lorry trailers in a snow-covered industrial area](image:industry-logistics)
 
 Large roofs, vans that charge overnight, and cold stores that run all day.
 
 ### [Manufacturing](/industries/manufacturing/)
 
-![A modern factory floor with a production line and overhead lighting](image:industry-manufacturing)
+![An automated production line of white machines and conveyors on a clean factory floor](image:industry-manufacturing)
 
 Steady daytime loads, and the peaks that set the grid bill.
 
 ### [Retail and commercial property](/industries/retail/)
 
-![A retail park seen from its car park, with the stores' flat roofs behind](image:industry-retail)
+![A retail park seen from above, with a long row of large shop units beside a full car park](image:industry-retail)
 
 Landlord supply, tenants' power, and charging for visitors.
 
@@ -52,7 +54,7 @@ Landlord supply, tenants' power, and charging for visitors.
 
 ::::
 
-:::section{surface="raised" anchor="what-fits"}
+:::section{surface="tint" anchor="what-fits"}
 
 ## Which solution fits which building
 
@@ -80,7 +82,7 @@ Each also has someone who must report its energy use and emissions, and someone 
 
 :::
 
-::::section{surface="brand"}
+::::section{surface="accent"}
 
 ## Find out what your building can do
 

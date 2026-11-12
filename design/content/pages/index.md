@@ -22,7 +22,23 @@ For warehouses, factories and retail parks in Sweden, Denmark, the Netherlands a
 
 ::small[The assessment is free. An engineer spends half a day on site, and you have the report within two weeks.]
 
-![A distribution warehouse seen from above, its flat roof covered in rows of solar panels](image:hero-home)
+![Two long warehouses seen from above, their flat roofs covered with rows of solar panels](image:hero-home)
+
+::::
+
+::::section{surface="raised"}
+
+:::list{type="logos"}
+
+Some of the companies whose sites we run
+
+- ![Norrvik Logistics](logo:norrvik-logistics)
+- ![Brantevik Foods](logo:brantevik-foods)
+- ![Lindhagen Furniture](logo:lindhagen-furniture)
+- ![Westerport Retail Parks](logo:westerport-retail-parks)
+- ![Kessel Packaging](logo:kessel-packaging)
+
+:::
 
 ::::
 
@@ -38,25 +54,25 @@ Each one pays for itself on its own. Built on the same site, they share one grid
 
 ### [Rooftop solar](/solutions/rooftop-solar/)
 
-![Rows of solar panels on a wide, flat commercial roof](image:rooftop-solar)
+![Rows of solar panels on a flat commercial roof, running towards a city skyline](image:rooftop-solar)
 
 Produces 850 to 1,000 kWh a year for every kilowatt installed, most of it used in the building.
 
 ### [Battery storage](/solutions/battery-storage/)
 
-![A battery storage container standing on a concrete pad beside an industrial building](image:battery-storage)
+![A crane lifting a dark green battery container into place](image:battery-storage)
 
 Takes the top off your peaks, which lowers the grid fee you pay each month.
 
 ### [Fleet charging](/solutions/fleet-charging/)
 
-![Electric vans connected to chargers in a depot yard](image:fleet-charging)
+![A black electric van charging in a yard beside a commercial building, its cable running to a charger on the wall](image:fleet-charging)
 
 Charges vans and trucks overnight on the grid connection you already have.
 
 ### [Ampfield Pilot](/solutions/ampfield-pilot/)
 
-![A person following a site's energy use on a laptop](image:energy-management)
+![A person at a desk with several monitors in a dimly lit control room, seen from behind](image:energy-management)
 
 Measures every system once a minute, controls them together, and writes the monthly report.
 
@@ -94,13 +110,13 @@ Pilot watches every system once a minute. When a fault stops production, a techn
 
 ::::section
 
-::eyebrow[Case study]
+::eyebrow[Case studies]
 
-## What a finished project looks like
+## What finished projects look like
 
 What we built, what it cost up front, and what it gives back each year.
 
-::post-list{type="case-study" where="featured=true" number="1" presentation="featured"}
+::post-list{type="case-study" order="featured" direction="descending" number="3" presentation="featured"}
 
 :::list{type="actions"}
 
@@ -114,7 +130,7 @@ What we built, what it cost up front, and what it gives back each year.
 
 ## Ampfield in figures
 
-Twelve years of work in four countries. Figures as of November 2026.
+Twelve years of work by 140 people in four countries. Figures as of November 2026.
 
 :::list{type="values"}
 
@@ -126,24 +142,10 @@ Twelve years of work in four countries. Figures as of November 2026.
   - 95 MWh
 - Charge points
   - 3,800
-- Employees
-  - 140
 
 :::
 
 ::::
-
-:::list{type="logos"}
-
-Some of the companies whose sites we run
-
-- ![Norrvik Logistics](logo:norrvik-logistics)
-- ![Brantevik Foods](logo:brantevik-foods)
-- ![Lindhagen Furniture](logo:lindhagen-furniture)
-- ![Westerport Retail Parks](logo:westerport-retail-parks)
-- ![Kessel Packaging](logo:kessel-packaging)
-
-:::
 
 ::::section
 
@@ -151,35 +153,24 @@ Some of the companies whose sites we run
 
 The system is the same either way. What differs is who owns it, and who carries the cost and the risk.
 
-:::cards
-
-### Buy the system
-
-You pay for the system when it is built and own it from the first day. Every kilowatt-hour it produces is yours, free.
-
-- Payback in six to nine years, where most of the power is used on site
-- Panels that keep 87% of their output after 30 years
-- Service from us under a separate agreement, if you want it
-
-### Buy the power
-
-We build, own, insure and run the system on your roof. You pay nothing up front and buy what it produces, at a price per kilowatt-hour fixed for 10 to 20 years.
-
-- A price set below what the same kilowatt-hour costs from the grid today
-- Service, repairs and insurance included
-- When the term ends: extend it, buy the system, or have it removed
-
-:::
+|  | Buy the system | Buy the power |
+| --- | --- | --- |
+| **Paid up front** | The system's price, when it is built | Nothing |
+| **Who owns it** | You, from the first day | We do: we build, own, insure and run it |
+| **What its power costs** | Nothing: every kilowatt-hour is yours | A price per kilowatt-hour fixed for 10 to 20 years, below what the grid charges today |
+| **Pays for itself** | In six to nine years, where most of the power is used on site | From the first month |
+| **Service and repairs** | From us under a separate agreement, if you want it | Included, with insurance |
+| **In the long run** | Panels that keep 87% of their output after 30 years | When the term ends: extend it, buy the system, or have it removed |
 
 :::list{type="actions"}
 
-- [Compare the two on the FAQ page](/faq/#buying-or-power-purchase)
+- [Questions about the two, answered](/faq/#buying-or-power-purchase)
 
 :::
 
 ::::
 
-::::section
+::::section{surface="raised"}
 
 ## From Insights
 
@@ -195,7 +186,7 @@ What we have learned about prices, grids and building on roofs, written by the p
 
 ::::
 
-::::section{surface="brand"}
+::::section{surface="accent"}
 
 ## Find out what your site can do
 

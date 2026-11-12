@@ -38,7 +38,10 @@ How a content page is drawn, by its type:
 | `page` | The site's frame and the body's bands. A body with no `:::hero` gets the title as an H1, with its trail, in a section's head before the rest (the mockups' reading of the page template; directives.md does not say). |
 | `canvas` | The body's bands, with no header or footer. |
 | `article` | By its fields (directives.md, An article): the opening, the body with the following menu "In this article", and Read more (`src/lib/article.js`). |
-| `case-study`, `job` | As a page, until a page file gives them a template of their own. |
+| `case-study` | By its fields, made like an article (`src/lib/types.js`): the opening with the main image and the customer as its eyebrow, the body with the project's facts in its Aside, More case studies, and a band that leads on to a site assessment. |
+| `job` | By its fields (`src/lib/types.js`): an opening on tint with the title, the excerpt, the fields as a value list and "How to apply", the body with its following menu "On this page", and the other vacancies as rows. |
+
+Pages that are no content file, each a page file of its own: the term pages `insights-category-guides` and `insights-author-priya-raman` (`src/lib/terms.js`, `termPage(collection, slug)`, which draws any category, topic or author), and the search page `search` (`src/lib/search.js`). See The editorial templates, below.
 
 ## Adding a page
 
@@ -82,9 +85,22 @@ const ctx = context({ design, title: post.data.title, address: post.address, tra
 - `<Site title address>` is the frame; `address` marks the menu's current entry. `<Canvas title>` has none.
 - `<Markdown source={…}>` draws Konzilo Markdown; `<Markdown file="…">` draws a content file's body. `title` is the page's title: a hero holds it as its H1, and a body with no hero gets it, with the trail, in a section of its own first; leave it out where the page writes its title itself, as above. `address` (and `trail`, `[{ label, href }, …, { label }]`) give the trail that `::breadcrumbs` draws, which `trailFor(address, label)` makes from the levels above. With `body`, the blocks stand as inside a section's body, for a band you write yourself. Ids stay unique across the `<Markdown>` blocks of a page.
 - `<Post file="…">` is the whole page a content file makes, as the build makes it.
-- `src/lib/article.js` gives `opening(post, ctx)`, `body(post, ctx)` and `readMore(post, ctx)` as HTML, for any type with an article's fields (`image`, `eyebrow`, `headline`, `subheadline`, `standfirst`, `date`, `authors`, `category`).
+- `src/lib/article.js` gives `opening(post, ctx, { label, after, surface })`, `body(post, ctx, { aside, menu, label })` and `readMore(post, ctx, { heading, more, surface, chosen })` as HTML, for any type with an article's fields (`image`, `eyebrow`, `headline`, `subheadline`, `standfirst`, `date`, `authors`, `category`, `topics`). The case study and the vacancy are made of them.
 - Write Markdown in a template literal; `String.raw` keeps a backslash, as `pages/catalogue.astro` does with `const md = String.raw`.
 - The core writes some things no directive gives: the search page, the cookie declaration, the pager and a page's term list. Their markup is in Konzilo Design's `test/fixtures/konzilo-page.html`; write it into the page as HTML, and `konzilo.css` draws it.
+
+## The editorial templates
+
+The article, the case study, the vacancy, the term page and the search page, as `src/lib/article.js`, `types.js`, `terms.js` and `search.js` draw them, and the post lists of `posts.js`. Each is made of the design's parts only; where a page wanted more, the nearest part stands in, as said below.
+
+- **One composition for every text page.** The opening is a Hero, its picture the main image (behind the text, as the design has it); a post without one, the vacancy, has its Hero on `tint`. The body is a band holding a Reading Area, the Aside at the start before the flow (`data-kn-side="start"`, `data-kn-stack="before"`), so on a phone the Aside comes first: an article's following menu "In this article", a vacancy's "On this page", a case study's facts. What follows the body stands on `raised`, so it does not join the body's band; a band that leads on to an action stands last on `tint`, never on `brand`, since the footer's first band is `brand`.
+- **The article** (directives.md, An article). The meta line holds the date, the byline and, where the eyebrow takes the category's place, the category, the authors and the category linked to their pages as the core's `metaLine()` links them. The topics, which the core's template lists after the meta line and directives.md gives no part, end the meta line as Content Metadata's pills (`.kn-pill`), each linked to its topic's page: as a part of their own they would stand a column gap below it. Read more is up to three related articles, ranked as the core ranks them (ADR 0070), on `raised`.
+- **The case study.** The customer is the eyebrow; there is no meta line, since the core gives a type of the site's own none unless an Admin sets a format. The type's fields stand in the Aside as an Aside Block on `raised` holding a Value List: customer, industry (linked to its industry page), location, what was built, the capacities it has, how it was paid for and the day in service. Then More case studies, the related ones filled up to three, and the band "Find out what your site can do", the template's own words.
+- **The vacancy.** The opening holds the title, the excerpt as the deck, the four fields as a Value List (two by two beside the reading measure) and one main action, "How to apply", to the body's crosshead of that name. Then the body, and Other vacancies on `raised`, as rows.
+- **Term pages** (`termPage('categories', 'guides')`, `'authors'`, `'topics'`). No Hero: at the design's two-thirds of the window a name and a sentence would stand at the bottom of an empty band. The opening is a section's head on `tint`: the trail, the eyebrow (Category, Topic or Author), the term's name as the H1 and its description as the deck. Then its posts of every type that takes the taxonomy (a topic's case studies too), newest first, ten a page, as teaser cards with the core's pager where they fill more than a page, and the newsletter band Insights ends with. An author's portrait cannot be shown: a term holds a name and a description.
+- **The search page.** The title band (trail and H1), then the core's `.konzilo-search` as its script leaves it, in the reading column: the form with the query, the status, ten results a page and the link to the next. Each result is what the core's search shows, a post's title (an article's headline), its type, its date and eight words on each side of the first match, marked; the order is system/search.md's for its example query, then the core's weights.
+- **Post lists** follow the core's evaluator: no post dated after today (the scheduled article), and a post shown by a list above is left out of the lists below it (`leaveOutShown`), so Insights' Earlier articles leave out the three Latest. `pages="true"` shows the first `number` posts and the core's pager (`.konzilo-pager`). A teaser's text is the core's `ownSummary()`: the excerpt, else the teaser's text, else the standfirst; a case study's label is its customer.
+- **`rows`** is a presentation of the site's own, Konzilo Design's Content Loop as rows without pictures, for vacancies: office and team above the title, employment and last day to apply below, the excerpt under them. Inside a section's body its title takes Body Text's link look, a fault of the package's (`.kn-body-text a` outweighs `.kn-content-link`).
 
 ## Placing each renderer
 
@@ -101,7 +117,7 @@ const ctx = context({ design, title: post.data.title, address: post.address, tra
 | `:::accordion{first expand}` | Items at headings; all questions draws questions and answers. |
 | `:::tabs`, `:::choice`, `:::toc` | Items at headings; the intro is the label, the question, the menu's label. Headings under a tab or an answer are written a level lower and raised. |
 | `::eyebrow[…]`, `::small[…]`, `::breadcrumbs` | The text roles, wherever they stand. |
-| `::post-list{type presentation number include exclude where order direction offset}` | Teaser cards from `../content/`: `cards`, `featured` or `filtered`. |
+| `::post-list{type presentation number include exclude where order direction offset pages empty}` | The published posts of `../content/` (none dated after today), as the core evaluates a list: a post shown by a list above on the page is left out of the lists below it. `cards`, `featured` and `filtered` are the design's teaser cards. `rows` is the site's own presentation, Konzilo Design's Content Loop as rows without pictures, for vacancies above all: each vacancy's office and team, its title as the link, its employment and last day to apply, and its excerpt. `pages="true"` shows the first `number` posts and the core's pager. |
 | `::form{name}` | The core's form, from `site.json`'s `forms`. |
 
 A container's fence is one colon longer than the longest inside it: `::::section` around `:::cards`, `:::::section` around `::::cards` that holds a `:::list`. A fence too short ends the outer container early and leaves `:::` standing as text on the page.
@@ -111,6 +127,7 @@ A container's fence is one colon longer than the longest inside it: `::::section
 - In Markdown, as the text writes them: `![Alt text](image:hero-home)` for `../images/hero-home.jpg`, and `![Name](logo:norrvik-logistics)` for a file in `../logo/` or `../logo/customers/`.
 - In a page file: `<Picture id="hero-home" alt="…" width="card" />`, or `picture('hero-home', 'hero')` from `src/lib/pictures.js` wherever an address is wanted.
 - The width follows the place: `behind` 2400, `hero` 1600, `section` and `figure` 1400, `tab` 1000, `card` 900, `portrait` 640 pixels, or a number. The build makes `dist/images/<id>-<width>.jpg` from the original once, as a JPEG, and remakes it when the original changes.
+- A drawing, such as a card's symbol or a badge, is `../images/<id>.svg`, written `image:<id>` like a photograph and copied as it is to `dist/images/<id>.svg` at every width.
 - A picture that has not arrived shows a grey placeholder with its id, `dist/images/missing-<id>.svg`, and the build does not fail. Build the page again once the picture is there.
 
 ## Working beside other agents
@@ -126,7 +143,8 @@ A container's fence is one colon longer than the longest inside it: `::::section
 ```text
 pages/                    page files, one per page that is not a plain content file
 src/lib/                  the reader (markdown.js), the renderers (render.js, article.js, posts.js, forms.js),
-                          the frame's content (site.js), content, pictures, paths
+                          the templates (types.js, terms.js, search.js), the frame's content (site.js), content,
+                          pictures, paths
 src/layouts/              Site.astro and Canvas.astro
 src/components/           Post, Markdown, Picture, and the catalogue's Note
 src/routes/content.astro  the one route every content page is built by

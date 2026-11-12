@@ -18,11 +18,11 @@ A retail park's roofs are wide and flat, and its car park is where visitors stan
 :::list{type="actions"}
 
 - **[Book a site assessment](/go/site-assessment/)**
-- [Retail case studies](#case-studies)
+- [A customer's story](#case-studies)
 
 :::
 
-![A retail park seen from its car park, the stores' flat roofs behind a row of parked cars](image:industry-retail)
+![A retail park seen from above, with a long row of large shop units beside a full car park](image:industry-retail)
 
 ::::
 
@@ -42,33 +42,29 @@ Visitors with electric cars choose where to shop by where they can charge. Charg
 
 ## Solutions that fit
 
-:::cards
+:::cards{symbol="item"}
 
 ### [Rooftop solar](/solutions/rooftop-solar/)
+
+![Symbol of a solar panel](image:icon-solar)
 
 Covers the landlord supply in daylight on most parks, with little left over for the grid.
 
 ### [Fleet charging](/solutions/fleet-charging/)
 
+![Symbol of a charging station](image:icon-charging)
+
 Chargers for visitors and staff, with payment by card or app at a price you set.
 
 ### [Ampfield Pilot](/solutions/ampfield-pilot/)
+
+![Symbol of a line chart](image:icon-pilot)
 
 Energy and emissions per park and per unit, ready for your tenants' reports.
 
 :::
 
 ::::
-
-:::section
-
-::eyebrow[A customer's view]
-
-> In daylight the roofs now cover the landlord supply on all eleven of our parks. Our tenants ask what their units' emissions are, and we can tell them, park by park. The chargers bring drivers who stay for an hour.
->
-> <cite>James Holroyd, Head of Sustainability, Westerport Retail Parks</cite>
-
-:::
 
 ::::section{surface="brand"}
 
@@ -91,15 +87,28 @@ What we usually find at a park of ten to fifteen stores.
 
 ::::
 
-:::section{anchor="case-studies"}
+::::section{anchor="case-studies"}
 
-## Case studies from retail property
+![Parking bays marked for electric vehicles in front of a charging post](image:case-westerport)
 
-::post-list{type="case-study" include="industries:retail" presentation="cards" empty="Our case studies from retail property are being written. Ask us for references from sites like yours."}
+::eyebrow[Case study]
+
+## Eleven retail parks that run on their own roofs by day
+
+> In daylight the roofs now cover the landlord supply on all eleven of our parks. Our tenants ask what their units' emissions are, and we can tell them, park by park. The chargers bring drivers who stay for an hour.
+>
+> <cite>James Holroyd, Head of Sustainability, Westerport Retail Parks</cite>
+
+:::list{type="actions"}
+
+- [Read the case study](/customers/westerport-retail-parks/)
+- [All case studies](/customers/)
 
 :::
 
-::::section{surface="brand"}
+::::
+
+::::section{surface="accent"}
 
 ## Find out what your property can do
 

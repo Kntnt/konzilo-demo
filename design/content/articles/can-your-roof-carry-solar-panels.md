@@ -2,7 +2,7 @@
 title: "Can your roof carry solar panels?"
 date: 2026-10-13T07:00:00Z
 modified: 2026-10-15T09:20:00Z
-image: {"src":"image:article-roof-survey","alt":"A flat membrane roof with roof lights and ventilation units, before any solar panels are fitted"}
+image: {"src":"image:article-roof-survey","alt":"A large flat roof with a grey membrane, ventilation units and other plant, and no solar panels yet"}
 eyebrow: "Before the first panel"
 headline: "Can your roof carry solar panels?"
 subheadline: "What a roof survey checks, and what it costs to find out late"
@@ -19,16 +19,16 @@ A solar system on a flat roof adds 12 to 20 kg per m², about the weight of five
 
 The weight depends mostly on how the system is held down. On a membrane roof we prefer not to drill: the system rests on the roof and is held against the wind by concrete ballast, more of it near the edges and corners, where the wind lifts hardest.[^2]
 
-| Mounting | Added load | Holes in the membrane | Suits |
+| Mounting | kg per m² | Holes in the membrane | Suits |
 | --- | ---: | --- | --- |
-| Ballasted, east–west at 10° | 12–20 kg per m² | None | Most membrane roofs |
-| Ballasted, south-facing at 15° | 18–30 kg per m² | None | Low buildings in sheltered places |
-| Fixed to the deck, east–west | 9–13 kg per m² | Several hundred, each sealed | Roofs with little spare capacity |
-| Clamped to metal sheeting | 9–12 kg per m² | None, the clamps grip the seams | Standing-seam and profiled sheet roofs |
+| Ballasted, east–west at 10° | 12–20 | None | Most membrane roofs |
+| Ballasted, south-facing at 15° | 18–30 | None | Low buildings in sheltered places |
+| Fixed to the deck, east–west | 9–13 | Several hundred, each sealed | Roofs with little spare capacity |
+| Clamped to metal sheeting | 9–12 | None, the clamps grip the seams | Standing-seam and profiled sheet roofs |
 
 East–west rows lean against each other, catch less wind and need less ballast, and they spread the day's output over the morning and the afternoon. A south-facing row gives about a tenth more per panel, but fewer panels fit, and each needs more weight.
 
-![Close view of solar panel rows and their mounting rails on a flat roof](image:rooftop-detail)\
+![Close view of solar panels on aluminium rails and frames on a wet flat membrane roof](image:rooftop-detail)\
 Panel rows on rails that rest on the roof. On a membrane roof, ballast holds them down, so nothing goes through it.
 
 ## What the survey checks

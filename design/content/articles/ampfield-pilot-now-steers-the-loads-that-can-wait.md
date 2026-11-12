@@ -2,7 +2,7 @@
 title: "Ampfield Pilot now steers the loads that can wait"
 date: 2026-10-28T07:00:00Z
 modified: 2026-10-28T07:00:00Z
-image: {"src":"image:article-switchgear","alt":"A switch room with grey electrical cabinets in a commercial building"}
+image: {"src":"image:article-switchgear","alt":"A long aisle between two rows of grey switchgear cabinets in an industrial hall"}
 eyebrow: "Ampfield Pilot"
 headline: "Pilot now steers the loads that can wait"
 subheadline: "Cold stores, compressed air and water heating join the battery and the chargers, and limits can change by the hour"

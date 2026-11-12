@@ -16,7 +16,7 @@ Tell us about your site, or ask what you want to know before you book anything. 
 
 ::small[A fault on a system we already run for you? Call our operations centre on +46 31 390 06 99, day and night.]
 
-![The glass entrance and reception of an office building in daylight](image:contact-office)
+![The glazed corner entrance of a modern office building, framed by ornamental grasses](image:contact-office)
 
 :::
 
@@ -32,7 +32,7 @@ Tell us about your site, or ask what you want to know before you book anything. 
 
 ::::section
 
-![Gothenburg's harbour on a clear day, with quays, cranes and the old town behind](image:about-gothenburg)
+![Gothenburg's harbour in daylight, with red-roofed sheds in front, cranes along the quay and the city across the water](image:about-gothenburg)
 
 ## Our offices
 
@@ -49,7 +49,7 @@ Fältverksgatan 6\
 
 [+46 31 390 06 00](tel:+46313900600)
 
-[hello@ampfield.example](mailto:hello@ampfield.example)
+E-mail [hello@ampfield.example](mailto:hello@ampfield.example)
 
 ### Malmö
 
@@ -60,7 +60,7 @@ Kranbalksvägen 4\
 
 [+46 31 390 06 40](tel:+46313900640)
 
-[malmo@ampfield.example](mailto:malmo@ampfield.example)
+E-mail [malmo@ampfield.example](mailto:malmo@ampfield.example)
 
 ### Rotterdam
 
@@ -71,7 +71,7 @@ Werfkade 31\
 
 [+46 31 390 06 60](tel:+46313900660)
 
-[rotterdam@ampfield.example](mailto:rotterdam@ampfield.example)
+E-mail [rotterdam@ampfield.example](mailto:rotterdam@ampfield.example)
 
 ### Leeds
 
@@ -82,7 +82,7 @@ Leeds LS1 4BR, United Kingdom
 
 [+44 113 496 0420](tel:+441134960420)
 
-[leeds@ampfield.example](mailto:leeds@ampfield.example)
+E-mail [leeds@ampfield.example](mailto:leeds@ampfield.example)
 
 :::
 
@@ -92,7 +92,7 @@ Leeds LS1 4BR, United Kingdom
 
 ## Already a customer?
 
-:::list{type="values"}
+:::list{type="description"}
 
 Faults, service and invoices
 

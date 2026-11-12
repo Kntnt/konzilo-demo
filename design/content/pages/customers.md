@@ -48,7 +48,7 @@ Some of the companies whose sites we run
 
 :::
 
-::::section{surface="brand"}
+::::section{surface="tint"}
 
 ## Your site could be the next one
 

@@ -6,13 +6,21 @@ teaser: {"headline":"Cookie policy","text":"What this site stores in your browse
 description: "What the Ampfield Energy site stores in your browser and loads from other services, with your current choice and every service listed."
 ---
 
-:::hero{surface="page"}
+:::hero{surface="tint"}
 
 ::breadcrumbs
 
 What this site stores in your browser, what it loads from other services, and how you change your choice. Updated 12 November 2026.
 
 :::
+
+:::::section
+
+::::toc
+
+On this page
+
+## In short
 
 This site stores in your browser only what it needs to work and to remember your choice, unless you allow more. Before you make a choice, its statistics count your visit without storing anything in your browser; our [privacy policy](/privacy-policy/#visitor-statistics) says what is counted, and how you object to it. Your choice holds for 12 months on this site, and you can change it or withdraw it at the bottom of every page.
 
@@ -33,3 +41,7 @@ Nothing, until you allow it. The site's pages, pictures, fonts and scripts all c
 ## Below: your choice, and every service
 
 Below is your own choice, which you can change or withdraw there, and then every service the site uses, category by category: who provides it, what it is for, which addresses your browser contacts, whether data leaves the EU and EEA, and what it stores in your browser and for how long. The list is made from the same facts as the privacy settings, so the two always agree.
+
+::::
+
+:::::

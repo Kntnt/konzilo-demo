@@ -113,7 +113,13 @@ async function asset(token) {
   let result;
   if (kind === 'image') {
     const source = ['jpg', 'jpeg', 'png', 'webp'].map((ext) => join(DESIGN, 'images', `${name}.${ext}`)).find(existsSync);
-    if (source) {
+    // A drawing, such as a card's symbol or a badge, is design/images/<id>.svg, copied as it is at every width.
+    const drawing = join(DESIGN, 'images', `${name}.svg`);
+    if (!source && existsSync(drawing)) {
+      const target = join(out, 'images', `${name}.svg`);
+      if (await newer(drawing, target)) await atomicWrite(target, await readFile(drawing));
+      result = { src: `images/${name}.svg` };
+    } else if (source) {
       const target = join(out, 'images', `${name}-${width}.jpg`);
       if (await newer(source, target)) {
         const buffer = await sharp(source).rotate().resize({ width: Number(width), withoutEnlargement: true }).jpeg({ quality: 78, mozjpeg: true }).toBuffer();

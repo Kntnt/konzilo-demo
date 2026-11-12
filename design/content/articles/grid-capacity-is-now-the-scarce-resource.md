@@ -2,7 +2,7 @@
 title: "Grid capacity is now the scarce resource"
 date: 2026-12-01T07:00:00Z
 modified: 2026-12-01T07:00:00Z
-image: {"src":"image:article-grid","alt":"Overhead power lines and a substation at dusk"}
+image: {"src":"image:article-grid","alt":"High-voltage pylons and power lines across open fields at dusk"}
 eyebrow: "Before next year's tariffs"
 headline: "Grid capacity is now the scarce resource"
 subheadline: "Why the peak on your bill weighs more each year, and what to do about it"

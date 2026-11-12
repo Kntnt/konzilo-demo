@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<!-- Lucide "battery-full", lucide-static 1.70.0, ISC licence, Lucide Icons and Contributors. One colour: the design's accent on a light Surface, and on a dark one where the browser is in dark mode. -->
+<style>*{stroke:#895900}@media (prefers-color-scheme:dark){*{stroke:#f2a93b}}</style>
+<path d="M10 10v4" />
+<path d="M14 10v4" />
+<path d="M22 14v-4" />
+<path d="M6 10v4" />
+<rect x="2" y="6" width="16" height="12" rx="2" />
+</svg>

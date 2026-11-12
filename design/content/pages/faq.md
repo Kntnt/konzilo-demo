@@ -162,7 +162,7 @@ If you want them to. Chargers can be kept for your own vehicles, opened to staff
 
 :::::
 
-::::section{surface="brand"}
+::::section{surface="accent"}
 
 ## Didn't find your question?
 

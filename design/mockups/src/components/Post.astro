@@ -1,14 +1,15 @@
 ---
 // A whole page from a content file in design/content/, as the site would render it: its frame by its type (a canvas
 // has none), its title and trail from its frontmatter and address, and its body drawn by the design's renderers. An
-// article is laid out by its fields (src/lib/article.js). `file` is the file's path in design/content, or `name` the
-// mockup's name for it.
+// article is laid out by its fields (src/lib/article.js), and so are the site's own types, the case study and the
+// vacancy (src/lib/types.js). `file` is the file's path in design/content, or `name` the mockup's name for it.
 import Site from '../layouts/Site.astro';
 import Canvas from '../layouts/Canvas.astro';
 import { design } from '../lib/design.js';
 import { postByFile, postByName } from '../lib/content.js';
 import { context, renderMarkdown } from '../lib/render.js';
 import { renderArticle } from '../lib/article.js';
+import { renderCaseStudy, renderJob } from '../lib/types.js';
 import { EMAIL, FORMS, trailFor } from '../lib/site.js';
 
 interface Props { file?: string; name?: string; mode?: 'light' | 'dark' }
@@ -18,7 +19,8 @@ if (!post) throw new Error(`No content file ${file ?? name} in design/content.`)
 const address = post.address ?? '/';
 const title = post.data.headline ?? post.data.title ?? post.name;
 const ctx = context({ design, title: post.data.title, address, trail: trailFor(address, post.data.breadcrumb ?? post.data.title), forms: FORMS, email: EMAIL, post });
-const html = post.type === 'article' ? renderArticle(post, ctx) : renderMarkdown(post.body, ctx);
+const TEMPLATES = { article: renderArticle, 'case-study': renderCaseStudy, job: renderJob };
+const html = TEMPLATES[post.type] ? TEMPLATES[post.type](post, ctx) : renderMarkdown(post.body, ctx);
 const Frame = post.type === 'canvas' ? Canvas : Site;
 ---
 <Frame title={title} address={address} mode={mode}>

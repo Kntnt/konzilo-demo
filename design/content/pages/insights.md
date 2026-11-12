@@ -35,13 +35,13 @@ Written by the people who design, build and run our systems, and by our energy m
 
 :::section
 
-## All articles
+## Earlier articles
 
-::post-list{type="article" number="9" pages="true" presentation="cards" empty="No more articles yet. The newsletter tells you when the next one is out."}
+::post-list{type="article" number="3" pages="true" presentation="cards" empty="No earlier articles yet. The newsletter tells you when the next one is out."}
 
 :::
 
-:::section{surface="brand" anchor="newsletter"}
+:::section{surface="tint" anchor="newsletter"}
 
 ## One e-mail a month
 
