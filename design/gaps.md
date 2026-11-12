@@ -55,6 +55,9 @@ What the design phase wanted and could not have, and the faults it found on the 
 | The design reads a table's column alignment from `data-kn-align`, which nothing writes | Konzilo writes `style="text-align: …"`, which its own policy on inline styles blocks (ADR 0051) |
 | The core's default meta line and the design's do not match | The core writes one sentence, "Published on {date} in {category} by {authors}"; the design draws three spans with dots between |
 | A test fixture writes the embed placeholder's policy link without the attribute the core adds | `test/fixtures/konzilo-page.html` lacks `data-konzilo-consent-policy` |
+| The export for agents carries no stylesheet | `DESIGN.md` describes the look; no export bundles the real CSS of a site (the design's core, `konzilo.css`, the components, the font faces) as one file, so an agent can only rebuild it by hand |
+| `directives.md` says "No inline style", and the components write one | `Band.astro` writes the hero's picture as `style="--kn-picture-image:url(…)"`, and a relative address there resolves against the stylesheet's folder; `--kn-hero-screen` is not in `DESIGN.md` |
+| The icon files of the export and the components' icon set use different names | `brand-linkedin` and `triangle-exclamation-point` in the export; `linkedin` and `triangle-alert` in the set |
 | The hero directive's default Surface is `raised` | The design's own default for a hero without a picture is `none` |
 | A design resolved by an older generator passes `design-check` and `fromDesign` | A file resolved by 0.2.0 passes under 0.3.0, though 0.3.0 changed the dark-mode values |
 | `resolve` keeps role settings that the chosen typeface lacks | The new design's Mona Sans axes stay after a change of typeface; only the tool prunes them |
