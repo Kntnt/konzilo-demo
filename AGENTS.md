@@ -15,3 +15,13 @@ Precedence over any conflicting skill, README, or other doc unless the user over
 
 - Thomas dictates: `/[ck]on[csz]ilo/i` means Konzilo.
 - `design/site.design.json` is the design file, made with Konzilo Design. Change its inputs, then run `konzilo-design resolve` on it; never edit its `resolved` part.
+- No real person stands for an invented one: a picture in which a face can be recognised is generated, and `design/images/credits.json` says so.
+
+## References
+
+- `docs/agents/status.md` — read first when starting or resuming work
+- `docs/agents/orchestration.md` — read when planning work, briefing a subagent, or judging what one delivered
+- `docs/agents/build-phase.md` — read when planning the build phase, or deciding where a piece of it belongs
+- `design/README.md` — read when a page, a text, a picture or the design file is touched
+- `design/feedback.md` — read before changing anything Thomas has given feedback on
+- `design/gaps.md` — read when a page wants what the design system or the core cannot give, or when choosing what to put right in them

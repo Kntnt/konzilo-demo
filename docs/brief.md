@@ -38,7 +38,7 @@ The work will find problems, shortcomings and bugs in Konzilo and Konzilo Design
 
 ## What Thomas settled on 2026-11-12
 
-When the design was presented, he settled these.
+When the design was presented, and in the hours after, he settled these.
 
 - **The name** Ampfield Energy stays, though a company called Ampfield Aktiebolag exists in Stockholm, in another business.
 - **Pictures of people** are made by an image model, through Codex, from the stock photograph that was chosen: much the same picture, with an invented person's face. No real person stands for an invented one.
@@ -47,6 +47,8 @@ When the design was presented, he settled these.
 - **Releases** of Konzilo and Konzilo Design may be made when the demo needs them and their own gates pass.
 - **A possibly better solution** gets an issue as its feature request, and a pull request with code only where the change is small.
 - **Statistics and video:** one article embeds a video, so that the consent placeholder shows. The site counts no visits, and its policies say nothing of Matomo.
+- **The repository** is public, under the AGPL as Konzilo is. Its history was made anew without the stock photographs of real people before it was published.
+- **The design** is approved. `design/feedback.md` holds what he asked for on the way, point by point.
 
 ## How the work is done
 
