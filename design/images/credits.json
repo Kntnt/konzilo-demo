@@ -2,14 +2,22 @@
   {
     "id": "hero-home",
     "file": "hero-home.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/industrial-warehouse-with-solar-roof-panels-G73Y_MLPmuI",
-    "author": "Bernd 📷 Dittrich",
-    "authorPage": "https://unsplash.com/@hdbernd",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
-    "fetched": "2026-11-12",
-    "shows": "An aerial view of two long logistics warehouses whose flat roofs are covered with rows of solar panels, set among stubble fields with a motorway and an industrial estate behind under a hazy sky."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Unsplash",
+      "page": "https://unsplash.com/photos/industrial-warehouse-with-solar-roof-panels-G73Y_MLPmuI",
+      "author": "Bernd 📷 Dittrich",
+      "authorPage": "https://unsplash.com/@hdbernd",
+      "licence": "Unsplash License",
+      "licenceUrl": "https://unsplash.com/license",
+      "fetched": "2026-11-12"
+    },
+    "shows": "An aerial view of two long logistics warehouses whose flat roofs are covered with rows of solar panels, among stubble fields beside a motorway, with an industrial estate, a small town and flat farmland behind under a hazy late-summer sky.",
+    "changes": "A new photograph of the stock photograph's scene, generated with it as reference: the same composition and light, with plain facades in place of the signs and brand panels, and flat farmland in place of the hills on the horizon. Cropped from 1536 × 1024 to 1518 × 1024 and scaled to 2400 × 1619 pixels."
   },
   {
     "id": "rooftop-solar",
@@ -26,14 +34,22 @@
   {
     "id": "rooftop-install",
     "file": "rooftop-install.jpg",
-    "source": "Pexels",
-    "page": "https://www.pexels.com/photo/selective-focus-of-installing-on-solar-panels-8853499/",
-    "author": "Los Muertos Crew",
-    "authorPage": "https://www.pexels.com/@cristian-rojas",
-    "licence": "Pexels License",
-    "licenceUrl": "https://www.pexels.com/license/",
-    "fetched": "2026-11-12",
-    "shows": "Two installers in gloves and a hard hat fix solar panels to aluminium rails on a flat roof."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Pexels",
+      "page": "https://www.pexels.com/photo/selective-focus-of-installing-on-solar-panels-8853499/",
+      "author": "Los Muertos Crew",
+      "authorPage": "https://www.pexels.com/@cristian-rojas",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "fetched": "2026-11-12"
+    },
+    "shows": "Two installers in navy work jackets with high-visibility details fasten solar panels to aluminium rails on a flat warehouse roof, one leaning in from the left foreground, the other in a white hard hat behind, with birch and pine trees under an overcast sky.",
+    "changes": "A new photograph of the stock photograph's scene, generated with it as reference: the same composition, poses, hands and tools, with the setting moved to a northern European warehouse roof and plain workwear; both installers are invented, and neither face is seen. Cropped from 1536 × 1024 to 1533 × 1024 and scaled to 2400 × 1603 pixels."
   },
   {
     "id": "battery-detail",
@@ -112,14 +128,22 @@
   {
     "id": "industry-logistics-inside",
     "file": "industry-logistics-inside.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/a-large-warehouse-filled-with-lots-of-shelves-h3pVxOIpnzk",
-    "author": "Lance Chang",
-    "authorPage": "https://unsplash.com/@carmendis",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
-    "fetched": "2026-11-12",
-    "shows": "A long aisle between tall shelving racks stacked with cardboard boxes in a brightly lit warehouse."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Unsplash",
+      "page": "https://unsplash.com/photos/a-large-warehouse-filled-with-lots-of-shelves-h3pVxOIpnzk",
+      "author": "Lance Chang",
+      "authorPage": "https://unsplash.com/@carmendis",
+      "licence": "Unsplash License",
+      "licenceUrl": "https://unsplash.com/license",
+      "fetched": "2026-11-12"
+    },
+    "shows": "A long aisle between tall pallet racks loaded with plain cartons and film-wrapped pallets in a brightly lit distribution warehouse, ending at a closed roller door.",
+    "changes": "A new photograph of the stock photograph's scene, generated with it as reference: the same perspective and light, with plain goods, blank rack markers and a roller door in place of a retailer's flat-pack boxes, labels and banner. Scaled from 1536 × 1024 to 2400 × 1600 pixels."
   },
   {
     "id": "industry-manufacturing",
@@ -273,14 +297,22 @@
   {
     "id": "article-roof-survey",
     "file": "article-roof-survey.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/rooftop-view-of-apartment-buildings-and-hvac-units-Aw_bQxkFgpE",
-    "author": "Muhammet Cengiz",
-    "authorPage": "https://unsplash.com/@herasun",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
-    "fetched": "2026-11-12",
-    "shows": "A large flat roof with a grey membrane, ventilation units and other rooftop plant, with apartment blocks behind."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Unsplash",
+      "page": "https://unsplash.com/photos/rooftop-view-of-apartment-buildings-and-hvac-units-Aw_bQxkFgpE",
+      "author": "Muhammet Cengiz",
+      "authorPage": "https://unsplash.com/@herasun",
+      "licence": "Unsplash License",
+      "licenceUrl": "https://unsplash.com/license",
+      "fetched": "2026-11-12"
+    },
+    "shows": "A large flat warehouse roof before any solar panels are fitted: a grey bitumen membrane, two rows of rooflights, ventilation units, ducts and a yellow-railed walkway, overlooking an industrial estate, a granite outcrop and pine and birch forest under a pale sky.",
+    "changes": "Generated with the stock photograph as reference for its raised camera across a wide roof with plant; a Swedish industrial estate in place of the apartment blocks, without the colour cast. Cropped from 1448 × 1086 to 1447 × 1086 and scaled to 2400 × 1801 pixels."
   },
   {
     "id": "article-reporting",
@@ -297,14 +329,22 @@
   {
     "id": "article-battery-fire-safety",
     "file": "article-battery-fire-safety.jpg",
-    "source": "Pexels",
-    "page": "https://www.pexels.com/photo/solar-energy-panels-and-electrical-boxes-outdoors-35425767/",
-    "author": "Giant Asparagus",
-    "authorPage": "https://www.pexels.com/@GiantAsparagus",
-    "licence": "Pexels License",
-    "licenceUrl": "https://www.pexels.com/license/",
-    "fetched": "2026-11-12",
-    "shows": "A row of grey steel equipment cabinets with high-voltage danger labels and metering boxes stands beside ground-mounted solar panels."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Pexels",
+      "page": "https://www.pexels.com/photo/solar-energy-panels-and-electrical-boxes-outdoors-35425767/",
+      "author": "Giant Asparagus",
+      "authorPage": "https://www.pexels.com/@GiantAsparagus",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "fetched": "2026-11-12"
+    },
+    "shows": "A close view along a white battery storage container: safety pictograms on its door, a fire extinguisher and an emergency-stop button beside it, and at the far end, inside a mesh fence, a technician in a hard hat and high-visibility vest checking a panel with a tablet, seen from behind.",
+    "changes": "Generated with the stock photograph as reference for its close camera and steep perspective; a battery container with its fire safety equipment in place of grey cabinets among solar panels. The technician is invented and seen from behind, and the pictograms carry no words. Scaled from 1448 × 1086 to 2400 × 1800 pixels."
   },
   {
     "id": "case-norrvik",
@@ -758,14 +798,22 @@
   {
     "id": "industry-retail",
     "file": "industry-retail.jpg",
-    "source": "Pexels",
-    "page": "https://www.pexels.com/photo/aerial-photography-of-a-city-9250513/",
-    "author": "Altaf Shah",
-    "authorPage": "https://www.pexels.com/@None",
-    "licence": "Pexels License",
-    "licenceUrl": "https://www.pexels.com/license/",
-    "fetched": "2026-11-12",
-    "shows": "An aerial view of a retail park with a long row of large shop units, a full car park and a dual carriageway beside a field."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Pexels",
+      "page": "https://www.pexels.com/photo/aerial-photography-of-a-city-9250513/",
+      "author": "Altaf Shah",
+      "authorPage": "https://www.pexels.com/@None",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "fetched": "2026-11-12"
+    },
+    "shows": "An aerial view of a retail park in the north of England: a long row of large shop units beside a full car park, an access road, a dual carriageway along a field of ripe wheat, red-brick houses and trees.",
+    "changes": "A new photograph of the stock photograph's scene, generated with it as reference: the same composition and light, with no shop signs, names or brand panels. Cropped from 1536 × 1024 to 1536 × 864 and scaled to 2400 × 1350 pixels."
   },
   {
     "id": "rooftop-detail",
@@ -782,39 +830,62 @@
   {
     "id": "battery-storage",
     "file": "battery-storage.jpg",
-    "source": "Pexels",
-    "page": "https://www.pexels.com/photo/vast-solar-farm-under-blue-sky-in-rural-landscape-35425766/",
-    "author": "Giant Asparagus",
-    "authorPage": "https://www.pexels.com/@GiantAsparagus",
-    "licence": "Pexels License",
-    "licenceUrl": "https://www.pexels.com/license/",
-    "fetched": "2026-11-12",
-    "shows": "Rows of grey steel equipment cabinets with warning labels stand among ground-mounted solar panels in a dry meadow, in hazy daylight."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Pexels",
+      "page": "https://www.pexels.com/photo/vast-solar-farm-under-blue-sky-in-rural-landscape-35425766/",
+      "author": "Giant Asparagus",
+      "authorPage": "https://www.pexels.com/@GiantAsparagus",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "fetched": "2026-11-12"
+    },
+    "shows": "Four white battery storage containers with cooling units stand in a diagonal row on a fenced concrete pad beside the dark grey wall of a factory with solar panels on its roof, with a transformer at the far end and birch trees behind under a pale sky.",
+    "changes": "Generated with the stock photograph as reference for its camera and the diagonal of the units; battery containers in a factory yard in place of equipment cabinets in a solar field. Scaled from 1448 × 1086 to 2400 × 1800 pixels."
   },
   {
     "id": "article-roof-ballast",
     "file": "article-roof-ballast.jpg",
-    "source": "Pexels",
-    "page": "https://www.pexels.com/photo/modern-home-with-rooftop-solar-panels-29206495/",
-    "author": "Stefan de Vries",
-    "authorPage": "https://www.pexels.com/@SDVmovies",
-    "licence": "Pexels License",
-    "licenceUrl": "https://www.pexels.com/license/",
-    "fetched": "2026-11-12",
-    "shows": "A close view of a low-tilt solar array on a flat bituminous roof, its rails held down by rows of concrete ballast blocks beside a building with large windows."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Pixabay",
+      "page": "https://pixabay.com/photos/solar-solar-energy-solar-power-4824555/",
+      "author": "Solarimo",
+      "authorPage": "https://pixabay.com/users/Solarimo-15097051/",
+      "licence": "Pixabay Content License",
+      "licenceUrl": "https://pixabay.com/service/license-summary/",
+      "fetched": "2026-11-12"
+    },
+    "shows": "A close view along a valley of an east–west solar array on a grey membrane roof: aluminium base rails on black rubber pads and concrete ballast blocks in galvanised trays, with the low ridges of the array and industrial buildings behind under an overcast sky.",
+    "changes": "Generated with the Pixabay photograph of a real east–west array as reference for its geometry, rails and ballast; the camera is lower and closer, and the roof is a membrane instead of gravel. Scaled from 1448 × 1086 to 2400 × 1800 pixels."
   },
   {
     "id": "article-electric-truck",
     "file": "article-electric-truck.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/white-and-brown-rv-trailer-HfYk04kY0ZQ",
-    "author": "Pascal Meier",
-    "authorPage": "https://unsplash.com/@zhpix",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
-    "fetched": "2026-11-12",
-    "shows": "Three white electric lorries with canvas bodies stand side by side at the loading bays of a distribution centre in low evening sun.",
-    "changes": "The maker's logos and the number plates on the trucks, and signs on the building, blurred."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Unsplash",
+      "page": "https://unsplash.com/photos/white-and-brown-rv-trailer-HfYk04kY0ZQ",
+      "author": "Pascal Meier",
+      "authorPage": "https://unsplash.com/@zhpix",
+      "licence": "Unsplash License",
+      "licenceUrl": "https://unsplash.com/license",
+      "fetched": "2026-11-12"
+    },
+    "shows": "Three white electric lorries with grey canvas bodies stand side by side at the loading bays of a distribution centre, seen from the front in low evening sun, with yellow bay lines leading to them.",
+    "changes": "A new photograph of the stock photograph's scene, generated with it as reference: the same frontal composition and light, the lorries larger in the frame, with closed fronts and no logos, fleet numbers, number plates or blurred patches. Scaled from 1536 × 1024 to 2400 × 1600 pixels."
   },
   {
     "id": "article-company-news",
@@ -839,67 +910,102 @@
   {
     "id": "article-solar-costs",
     "file": "article-solar-costs.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/a-group-of-solar-panels-sitting-on-top-of-a-roof-9XNbOxsSIrw",
-    "author": "Michael Pointner",
-    "authorPage": "https://unsplash.com/@pino_rumbero",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
-    "fetched": "2026-11-12",
-    "shows": "A close view of rows of low-tilt solar panels clamped to their mounting rails on a gravel-covered flat roof, in warm low sunlight.",
-    "changes": "Scaled from 5917 × 3945 to 2400 × 1600 pixels."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Unsplash",
+      "page": "https://unsplash.com/photos/a-group-of-solar-panels-sitting-on-top-of-a-roof-9XNbOxsSIrw",
+      "author": "Michael Pointner",
+      "authorPage": "https://unsplash.com/@pino_rumbero",
+      "licence": "Unsplash License",
+      "licenceUrl": "https://unsplash.com/license",
+      "fetched": "2026-11-12"
+    },
+    "shows": "Pallets of solar panels in plain cardboard packaging, wrapped in film, and bundles of aluminium mounting rails stand on a flat warehouse roof in low evening sun, with a few rails already laid out and pine and birch woods beyond.",
+    "changes": "Generated with the stock photograph as reference for its light and its gravel-and-membrane roof; the scene of panels waiting on pallets to be fitted is new, and the packaging carries no print. Scaled from 1536 × 1024 to 2400 × 1600 pixels."
   },
   {
     "id": "article-depot-winter",
     "file": "article-depot-winter.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/electric-car-charging-station-covered-in-snow-bxVlTV7ZdQ8",
-    "author": "tammy higgins",
-    "authorPage": "https://unsplash.com/@candybars4u",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
-    "fetched": "2026-11-12",
-    "shows": "A free-standing charging post with its cables hanging, between two green bollards in deep snow in front of a snow-capped stone retaining wall.",
-    "changes": "The maker's name on the post, the QR and model label and an embossed logo blurred; the strong blue cast of the original reduced to a cool, natural winter tone. Scaled from 5184 × 3888 to 2400 × 1800 pixels."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Unsplash",
+      "page": "https://unsplash.com/photos/electric-car-charging-station-covered-in-snow-bxVlTV7ZdQ8",
+      "author": "tammy higgins",
+      "authorPage": "https://unsplash.com/@candybars4u",
+      "licence": "Unsplash License",
+      "licenceUrl": "https://unsplash.com/license",
+      "fetched": "2026-11-12"
+    },
+    "shows": "A row of four charging posts with their cables hanging stands in snow at the edge of a depot yard, with three white vans parked in front of a grey distribution warehouse and pine forest in low winter sun.",
+    "changes": "Generated with the stock photograph as reference for its snow, low winter light and charging post; the depot yard is new, the posts are a generic design, and the vans carry no marks. Scaled from 1448 × 1086 to 2400 × 1800 pixels."
   },
   {
     "id": "article-fleet-report",
     "file": "article-fleet-report.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/white-vans-parked-in-mossingen-3vlGNkDep4E",
-    "author": "Markus Winkler",
-    "authorPage": "https://unsplash.com/@markuswinkler",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
-    "fetched": "2026-11-12",
-    "shows": "A long row of white panel vans parked side by side on a tree-lined yard in Mössingen, Germany, seen from the front at an angle, with more vans facing them on the right.",
-    "changes": "The makers' badges and number plates on all vans, the lettering and contact details on one van's side and a sign in the background blurred. Scaled from 3999 × 2666 to 2400 × 1600 pixels."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Unsplash",
+      "page": "https://unsplash.com/photos/white-vans-parked-in-mossingen-3vlGNkDep4E",
+      "author": "Markus Winkler",
+      "authorPage": "https://unsplash.com/@markuswinkler",
+      "licence": "Unsplash License",
+      "licenceUrl": "https://unsplash.com/license",
+      "fetched": "2026-11-12"
+    },
+    "shows": "A row of nine white panel vans parked side by side in a depot yard, seen from behind and above, with a second row facing them under tall trees in spring sunlight.",
+    "changes": "Generated with the stock photograph as reference for its yard, trees and light; the camera is raised and behind the vans, which carry no badges, lettering or number plates. Scaled from 1536 × 1024 to 2400 × 1600 pixels."
   },
   {
     "id": "article-grid-connection",
     "file": "article-grid-connection.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/gray-and-black-industrial-machine-RQpeu8lbti4",
-    "author": "American Public Power Association",
-    "authorPage": "https://unsplash.com/@publicpowerorg",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
-    "fetched": "2026-11-12",
-    "shows": "Two large power transformers with cooling fans and radiators stand on gravel-filled concrete bunds in front of the plain wall of an industrial building.",
-    "changes": "The maker's name on one transformer and the makers' rating plates on both blurred. Scaled from 4909 × 2649 to 2400 × 1295 pixels."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Unsplash",
+      "page": "https://unsplash.com/photos/gray-and-black-industrial-machine-RQpeu8lbti4",
+      "author": "American Public Power Association",
+      "authorPage": "https://unsplash.com/@publicpowerorg",
+      "licence": "Unsplash License",
+      "licenceUrl": "https://unsplash.com/license",
+      "fetched": "2026-11-12"
+    },
+    "shows": "A small substation, a grey concrete transformer kiosk with louvred doors and a pad-mounted transformer, stands on gravel inside a mesh fence with a gate, in front of the plain grey wall of an industrial building.",
+    "changes": "Generated with the stock photograph as reference for its frontal camera, gravel and building wall; a small substation for one site in place of two large transformers, with a lightning pictogram and no words. Cropped from 1536 × 1024 to 1536 × 829 and scaled to 2400 × 1295 pixels."
   },
   {
     "id": "article-depot-lease",
     "file": "article-depot-lease.jpg",
-    "source": "Pexels",
-    "page": "https://www.pexels.com/photo/electric-renault-car-charging-5967550/",
-    "author": "Cesare Elettrico",
-    "authorPage": "https://www.pexels.com/@cesare-elettrico-6461083",
-    "licence": "Pexels License",
-    "licenceUrl": "https://www.pexels.com/license/",
-    "fetched": "2026-11-12",
-    "shows": "A small white electric car stands in a marked parking bay, charging from a socket box and isolator mounted on the plain red outside wall of a commercial building.",
-    "changes": "The car maker's badges on the charging flap and wheel and the label on the socket box blurred. Scaled from 4608 × 3456 to 2400 × 1800 pixels."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Pexels",
+      "page": "https://www.pexels.com/photo/electric-renault-car-charging-5967550/",
+      "author": "Cesare Elettrico",
+      "authorPage": "https://www.pexels.com/@cesare-elettrico-6461083",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "fetched": "2026-11-12"
+    },
+    "shows": "Three wall-mounted chargers, fed by a cable tray from a distribution box, hang on the grey-clad outside wall of a warehouse above marked parking bays; a white van in the middle bay is plugged in.",
+    "changes": "Generated with the stock photograph as reference for its side-on camera and a vehicle charging at a wall; a warehouse wall with a row of chargers in place of one car at an improvised socket box on a red wall. Scaled from 1448 × 1086 to 2400 × 1800 pixels."
   },
   {
     "id": "article-roof-maintenance",
@@ -917,28 +1023,42 @@
   {
     "id": "article-battery-containers",
     "file": "article-battery-containers.jpg",
-    "source": "Wikimedia Commons",
-    "page": "https://commons.wikimedia.org/wiki/File:Sunlight_Solar_(53655792862).jpg",
-    "author": "Bureau of Land Management California",
-    "authorPage": "https://www.flickr.com/people/blmcalifornia/",
-    "licence": "Public domain (work of the US Bureau of Land Management)",
-    "licenceUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov-BLM",
-    "fetched": "2026-11-12",
-    "shows": "Long rows of white battery storage containers with vent grilles and warning labels on a gravel pad in a desert battery park, under a cloudy sky with mountains behind.",
-    "changes": "Cropped to 2600 × 1462 pixels to bring the containers forward, then scaled to 2400 × 1350; the maker's name along the top of the nearest container blurred."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Wikimedia Commons",
+      "page": "https://commons.wikimedia.org/wiki/File:Sunlight_Solar_(53655792862).jpg",
+      "author": "Bureau of Land Management California",
+      "authorPage": "https://www.flickr.com/people/blmcalifornia/",
+      "licence": "Public domain (work of the US Bureau of Land Management)",
+      "licenceUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov-BLM",
+      "fetched": "2026-11-12"
+    },
+    "shows": "Seen from above, four white battery storage containers with cooling units stand on a fenced concrete pad beside a factory with solar panels on its roof, with a transformer kiosk, a ditch, a road lined with poplars and flat Dutch polder land under broken cloud.",
+    "changes": "Generated with the stock photograph as reference for its white containers and its sky; the raised view and the Dutch factory site are new, in place of a desert battery park. Cropped from 1536 × 1024 to 1536 × 864 and scaled to 2400 × 1350 pixels."
   },
   {
     "id": "article-meters",
     "file": "article-meters.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/gray-and-black-digital-device-g4PJkWiAmVo",
-    "author": "Jon Moore",
-    "authorPage": "https://unsplash.com/@thejmoore",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
-    "fetched": "2026-11-12",
-    "shows": "A wall-mounted bank of round electricity meters with digital displays and numbered sockets, three by three, in a grey metal meter panel.",
-    "changes": "Cropped to the central nine meters, 4300 × 2870 pixels, then scaled to 2400 × 1602; the maker's logo, product name and model line on every meter blurred."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Unsplash",
+      "page": "https://unsplash.com/photos/gray-and-black-digital-device-g4PJkWiAmVo",
+      "author": "Jon Moore",
+      "authorPage": "https://unsplash.com/@thejmoore",
+      "licence": "Unsplash License",
+      "licenceUrl": "https://unsplash.com/license",
+      "fetched": "2026-11-12"
+    },
+    "shows": "An open grey steel meter cabinet in a plant room, seen at an angle, holds six European electronic electricity meters with LCD displays on a DIN rail, with circuit breakers above and their cables dressed into white trunking.",
+    "changes": "Generated with the stock photograph as reference for its cool grey palette; European meters in a used plant room, seen at an angle, in place of a bank of round American meters, with blank labels and no makers' names. Cropped from 1536 × 1024 to 1534 × 1024 and scaled to 2400 × 1602 pixels."
   },
   {
     "id": "article-packaging-plant",
@@ -956,15 +1076,22 @@
   {
     "id": "article-solar-noon",
     "file": "article-solar-noon.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/solar-panels-on-a-roof-omfN1pW-n2Y",
-    "author": "Soren H",
-    "authorPage": "https://unsplash.com/@hosoren",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
-    "fetched": "2026-11-12",
-    "shows": "Rows of solar panels on a roof seen low along their surface, under a bright blue sky with thin high cloud.",
-    "changes": "Scaled from 6000 × 4000 to 2400 × 1600 pixels."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Unsplash",
+      "page": "https://unsplash.com/photos/solar-panels-on-a-roof-omfN1pW-n2Y",
+      "author": "Soren H",
+      "authorPage": "https://unsplash.com/@hosoren",
+      "licence": "Unsplash License",
+      "licenceUrl": "https://unsplash.com/license",
+      "fetched": "2026-11-12"
+    },
+    "shows": "Rows of solar panels on a flat roof, seen low along their surface under a clear blue sky with thin high cloud, with the midday sun reflected as a bright glare in the glass.",
+    "changes": "A new photograph of the stock photograph's scene, generated with it as reference: the same camera, panels and sky, with the sun now reflected in the panels. Scaled from 1536 × 1024 to 2400 × 1600 pixels."
   },
   {
     "id": "article-building-sale",
@@ -982,28 +1109,42 @@
   {
     "id": "article-fast-chargers",
     "file": "article-fast-chargers.jpg",
-    "source": "Pexels",
-    "page": "https://www.pexels.com/photo/electric-car-charging-at-station-with-multiple-chargers-37576187/",
-    "author": "Giant Asparagus",
-    "authorPage": "https://www.pexels.com/@giantasparagus",
-    "licence": "Pexels License",
-    "licenceUrl": "https://www.pexels.com/license/",
-    "fetched": "2026-11-12",
-    "shows": "A grey electric car plugged into the first of a row of tall fast chargers along a grass verge in a retail car park, with the brick wall of a large store behind.",
-    "changes": "The maker's name on every charger and the badge on the car's wheel blurred. Scaled from 5184 × 3888 to 2400 × 1800 pixels."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Pexels",
+      "page": "https://www.pexels.com/photo/electric-car-charging-at-station-with-multiple-chargers-37576187/",
+      "author": "Giant Asparagus",
+      "authorPage": "https://www.pexels.com/@giantasparagus",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "fetched": "2026-11-12"
+    },
+    "shows": "A dark grey electric hatchback charges from the first of a row of five slim grey fast chargers on a grass verge in a retail car park, with young trees, lamp posts and the brick and grey-clad wall of a large store behind.",
+    "changes": "A new photograph of the stock photograph's scene, generated with it as reference: the same camera and diagonal row of chargers, with generic chargers and car in place of one maker's, and a northern European retail park in place of an American one. Scaled from 1448 × 1086 to 2400 × 1800 pixels."
   },
   {
     "id": "case-norrvik-charging",
     "file": "case-norrvik-charging.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/a-blue-truck-with-a-door-open-Y1bx_aq-Vfw",
-    "author": "Netze BW",
-    "authorPage": "https://unsplash.com/@netzebw",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
-    "fetched": "2026-11-12",
-    "shows": "An electric lorry, its battery pack visible under the chassis, stands beside a fast charger with two cables in a depot yard.",
-    "changes": "Cropped to remove the truck maker's lettering; the operator's name on the charger blurred."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Unsplash",
+      "page": "https://unsplash.com/photos/a-blue-truck-with-a-door-open-Y1bx_aq-Vfw",
+      "author": "Netze BW",
+      "authorPage": "https://unsplash.com/@netzebw",
+      "licence": "Unsplash License",
+      "licenceUrl": "https://unsplash.com/license",
+      "fetched": "2026-11-12"
+    },
+    "shows": "Six light grey electric vans stand nose-in at a kerbed island in the wet yard of a distribution centre, each plugged into its own charging pedestal, with loading doors and pine trees behind.",
+    "changes": "Generated in two steps: first with the stock photograph as reference for its charger colour, tarmac and light, then with the best result as reference to give every van its own pedestal and cable. The vans and chargers are generic and unmarked. Cropped from 1536 × 1024 to 1536 × 717 and scaled to 2400 × 1120 pixels."
   },
   {
     "id": "case-norrvik-inverters",
@@ -1022,8 +1163,8 @@
     "id": "case-norrvik-team",
     "file": "case-norrvik-team.jpg",
     "source": "Generated",
-    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.1, driven by gpt-6-sol",
-    "author": "An AI agent in the design phase, for this demo, with an image model",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
     "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
     "made": "2026-11-12",
     "basedOn": {
@@ -1035,21 +1176,28 @@
       "licenceUrl": "https://www.pexels.com/license/",
       "fetched": "2026-11-12"
     },
-    "shows": "Four installers in plain orange and yellow workwear, two of them in white hard hats, carry and fit solar panels on a corrugated industrial roof.",
-    "changes": "A new photograph of the stock photograph's scene, generated with it as reference; all four people are invented, and the workwear and helmets carry no company marks. Two small badges on chests and faint lettering on one back, which the model left, softened by hand. Scaled from 1536 × 1024 to 2400 × 1600 pixels."
+    "shows": "Four installers in plain orange and yellow workwear, two in white hard hats, carry a solar panel to its rails on the metal roof of a very large distribution centre, with pine and birch forest and a lake beyond.",
+    "changes": "Generated in the build phase with the design phase's picture, itself generated from the stock photograph, as reference: the same people's poses and workwear, with the setting moved from a tropical one to a Swedish distribution centre's roof by a lake. All four people are invented, and the workwear carries no marks. Scaled from 1536 × 1024 to 2400 × 1600 pixels."
   },
   {
     "id": "case-westerport",
     "file": "case-westerport.jpg",
-    "source": "Pexels",
-    "page": "https://www.pexels.com/photo/electric-vehicle-charging-station-in-urban-setting-29163104/",
-    "author": "Craig Adderley",
-    "authorPage": "https://www.pexels.com/@ThatGuyCraig000",
-    "licence": "Pexels License",
-    "licenceUrl": "https://www.pexels.com/license/",
-    "fetched": "2026-11-12",
-    "shows": "Green parking bays marked 'Electric vehicle only' in front of a charging post, with trees and a building behind.",
-    "changes": "The maker's name on the charging post blurred."
+    "source": "Generated",
+    "model": "gpt-image, OpenAI's image model, as the pictures' own content credentials name it; made through the built-in image generation tool of Codex CLI 0.167.2, driven by gpt-6-sol",
+    "author": "An AI agent in the build phase, for this demo, with an image model",
+    "licence": "Made for this project with an image model; the photograph it was based on is used under the licence in basedOn",
+    "made": "2026-11-12",
+    "basedOn": {
+      "source": "Pexels",
+      "page": "https://www.pexels.com/photo/electric-vehicle-charging-station-in-urban-setting-29163104/",
+      "author": "Craig Adderley",
+      "authorPage": "https://www.pexels.com/@ThatGuyCraig000",
+      "licence": "Pexels License",
+      "licenceUrl": "https://www.pexels.com/license/",
+      "fetched": "2026-11-12"
+    },
+    "shows": "A dark grey electric car charges in one of two green parking bays marked with an electric-car pictogram in a retail park's car park, with a long row of grey retail units with glazed fronts behind and a few shoppers far away.",
+    "changes": "Generated with the stock photograph as reference for its low frontal camera and green bays; a retail park in place of a hotel garden, with no painted words, shop names or filter. The shoppers are invented and too small to recognise. Mirrored, so that the empty bay rather than the car stands behind the case study's heading. Scaled from 1536 × 1024 to 2400 × 1600 pixels."
   },
   {
     "id": "icon-solar",
