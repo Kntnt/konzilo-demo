@@ -34,7 +34,7 @@ import { searchTexts } from '../src/lib/search-texts.js';
 // waits for. To put one back, delete its entry and the code that names it (`LEFT_OUT.<name>`).
 export const LEFT_OUT = {
   scheduled: {
-    what: 'A post dated after the moment the content is made at: the scheduled article, grid-capacity-is-now-the-scarce-resource.md, dated 2026-12-01.',
+    what: 'A post dated after the moment the content is made at: the scheduled article, grid-capacity-is-now-the-scarce-resource.md, dated 2027-12-01.',
     waits: 'Demo content that can hold a scheduled post: a content file has no status, and Compose\'s seed writes every demo post as published (src/demo-source.js:125 in the core).',
   },
   menuDescriptions: {
@@ -78,6 +78,11 @@ const META_LINE_FORMAT = 'By {authors} • Published {date} in {category}';
 
 // Where a post of each kind is in design/content/, by the folder, and the post type it is.
 const POST_FOLDERS = { pages: 'page', canvases: 'canvas', articles: 'article', 'case-studies': 'case-study', jobs: 'job' };
+// A type whose eyebrow, the label its teaser shows where it has no category (Konzilo Design's teaserOf()), is a field
+// of its own where design/content/ leaves the eyebrow out: a case study's customer, as the design shows it. The field
+// stays, since the core lets a site neither label its eyebrow for an editor nor require it, and the case study's facts
+// show the customer as a value of its own.
+const EYEBROW_FROM = { 'case-study': 'customer' };
 // The files in design/content/ that are no post or term: what describes the content, and the search page's words.
 const NOT_POSTS = new Set(['README.md', 'editorial.md', 'site.json', 'system/search.md']);
 // The post an Admin chooses for addresses not found.
@@ -93,13 +98,15 @@ const CACHE = join(ROOT, 'node_modules/.cache/konzilo-demo');
 const WORK = join(CACHE, 'demo-content');
 // What the last run made from what: { inputs, output }, each a digest.
 const MADE = join(CACHE, 'demo-content.json');
-const INPUTS = ['design/content', 'design/images', 'design/logo', 'site-description.json', 'scripts/demo-content.mjs', 'scripts/lib', 'package-lock.json'];
+// package-lock.json stands for the packages, the core and Konzilo Design, whose intake and directive checks run.
+const INPUTS = ['design/content', 'design/images', 'design/logo', 'design/site.design.json', 'site-description.json', 'scripts/demo-content.mjs', 'scripts/lib', 'package-lock.json'];
 
 // One digest of everything demo-content/ is made from.
 function inputsDigest() {
   const hash = createHash('sha256');
   for (const input of INPUTS) {
     const at = join(ROOT, input);
+    if (!existsSync(at)) continue;
     const paths = statSync(at).isDirectory() ? filesIn(at).map((path) => `${input}/${path}`) : [input];
     for (const path of paths) hash.update(`${path}\0`).update(readFileSync(join(ROOT, path))).update('\0');
   }
@@ -295,6 +302,8 @@ async function makeSource(site, out) {
       else if (field.kind === 'seo') stop(`${path}: sets seo, which this script does not carry over; write description`);
       else written[key] = value;
     }
+    const eyebrowFrom = EYEBROW_FROM[type.name];
+    if (eyebrowFrom && written.eyebrow === undefined && written[eyebrowFrom] !== undefined) written.eyebrow = written[eyebrowFrom];
     write(`${type.collection}/${post.id}.md`, postFile(written, bodyOf(post)), path);
   }
 
@@ -307,10 +316,10 @@ async function makeSource(site, out) {
 
   // The settings and the menus, from design/content/site.json.
   const given = JSON.parse(read('site.json'));
-  const known = ['title', 'description', 'publisher', 'header', 'menu', 'footer', 'forms', ...FRAME_ONLY.filter((one) => !one.includes('.'))];
+  const known = ['title', 'description', 'publisher', 'header', 'menu', 'footer', 'forms', 'cookieDeclaration', ...FRAME_ONLY.filter((one) => !one.includes('.'))];
   const unknown = Object.keys(given).filter((key) => !known.includes(key));
-  const carried = new Set(['header.cta', 'header.menuWord', 'header.search', 'header.search.word', 'header.search.links', 'footer.upper.b1', 'footer.upper.a2', 'footer.lower.a1', 'footer.lower.b1', 'footer.lower.a2']);
-  for (const [at, part] of Object.entries({ header: given.header, 'header.search': given.header.search ?? {}, 'footer.upper': given.footer.upper, 'footer.lower': given.footer.lower })) {
+  const carried = new Set(['cookieDeclaration.note', 'header.cta', 'header.menuWord', 'header.search', 'header.search.word', 'header.search.links', 'footer.upper.b1', 'footer.upper.a2', 'footer.lower.a1', 'footer.lower.b1', 'footer.lower.a2']);
+  for (const [at, part] of Object.entries({ header: given.header, 'header.search': given.header.search ?? {}, 'footer.upper': given.footer.upper, 'footer.lower': given.footer.lower, cookieDeclaration: given.cookieDeclaration ?? {} })) {
     unknown.push(...Object.keys(part).map((key) => `${at}.${key}`).filter((key) => !carried.has(key) && !FRAME_ONLY.includes(key)));
   }
   if (unknown.length > 0) stop(`site.json: holds ${unknown.join(', ')}, which this script does not carry over`);
@@ -358,6 +367,7 @@ async function makeSource(site, out) {
   const extra = declaredForms.filter((name) => !Object.hasOwn(given.forms, name));
   if (extra.length > 0) stop(`site-description.json declares the forms ${extra.join(', ')}, which site.json has not got`);
 
+  const trailCurrent = JSON.parse(readFileSync(join(DESIGN, 'site.design.json'), 'utf8')).resolved?.breadcrumbs?.current === true;
   const settings = {
     title: given.title,
     logo: { src: picture(`logo:${IDENTITY.logo}`, 'the site\'s logo'), alt: given.title },
@@ -369,8 +379,13 @@ async function makeSource(site, out) {
     footerAbout: given.footer.upper.a2.text,
     footerAddress: given.footer.lower.a1.text,
     footerNote: given.footer.lower.b1.text,
+    // The words after the cookie policy's declaration, where site.json gives them (design/content/README.md asks for them).
+    cookieDeclarationNote: given.cookieDeclaration?.note,
     search: { description: given.description, publisher: given.publisher },
     metaLine: { types: { article: { format: META_LINE_FORMAT } } },
+    // Whether a trail ends with the page itself is the core's setting by type, which wins over the design's where it
+    // leaves the page out: each type takes the design file's choice (breadcrumbs.current).
+    breadcrumbs: { types: Object.fromEntries(Object.keys(site.types).map((name) => [name, { current: trailCurrent }])) },
     legalPages,
     forms,
     notFound: { page: notFound.id },

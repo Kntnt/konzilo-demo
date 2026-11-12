@@ -1,0 +1,56 @@
+---
+// The presentation `rows` of a post list, the site's own, which Konzilo Design does not ship: its Content Loop as rows
+// without pictures, for posts read by their facts rather than their pictures, such as vacancies, as the mockups draw it
+// (design/mockups/src/lib/posts.js, presentation 'rows'). Each post's heading links to it, its facts above and below the
+// heading, and its own words under them:
+//   a vacancy: its office and team above; its employment and its last day to apply below;
+//   a case study: its customer above; its industry below;
+//   an article: its category, linked to its page, above; its date and its authors, linked to theirs, below.
+// It writes one `div.kn-post-list`, with its mark in the live preview, and the core's pager last in it where the list has
+// pages of its own; a list that matches nothing writes its text and nothing else, as the design's presentations do.
+// The core hands it { posts, options, empty, pager }, each post { entry, url }.
+import { ownSummary } from '@kntnt/konzilo/astro';
+import Pager from '@kntnt/konzilo/astro/Pager.astro';
+import { longDate } from '@kntnt/konzilo/astro/helpers';
+import ContentLoop from '@kntnt/konzilo-design/components/ContentLoop.astro';
+import { getEntries } from 'astro:content';
+import description from '../../site-description.json';
+
+const { posts = [], empty, pager, 'data-konzilo-block': block } = Astro.props;
+// The words before a vacancy's last day to apply, the site's own.
+const APPLY_BY = 'Apply by';
+
+const day = (date) => ({ text: longDate(date, Astro.url), datetime: date.toISOString().slice(0, 10) });
+async function factsOf(entry) {
+  const { data } = entry;
+  if (entry.collection === 'jobs') {
+    return {
+      meta1: [data.location, data.team].filter(Boolean).map((text) => ({ text })),
+      meta2: [data.employment && { text: data.employment }, data.closingDate && { ...day(data.closingDate), text: `${APPLY_BY} ${longDate(data.closingDate, Astro.url)}` }].filter(Boolean),
+    };
+  }
+  if (entry.collection === 'case-studies') {
+    return { meta1: data.customer ? [{ text: data.customer }] : [], meta2: data.industry ? [{ text: data.industry }] : [] };
+  }
+  const [category] = data.category?.length ? await getEntries(data.category) : [];
+  const authors = data.authors?.length ? await getEntries(data.authors) : [];
+  // A term's page, at its taxonomy's address in the site description.
+  const taxonomyOf = { authors: 'authors', categories: 'category' };
+  const pageOf = (term) => `${import.meta.env.BASE_URL}${description.taxonomies[taxonomyOf[term.collection]].address.replace(/\{(slug|path)\}/, term.id).replace(/^\//, '')}`;
+  return {
+    meta1: category ? [{ text: category.data.name, href: pageOf(category), kind: 'category' }] : [],
+    meta2: [data.date && { ...day(data.date), kind: 'date' }, ...authors.map((author) => ({ text: author.data.name, href: pageOf(author), kind: 'author' }))].filter(Boolean),
+  };
+}
+
+const items = await Promise.all(posts.map(async ({ entry, url }) => ({
+  title: entry.data.headline ?? entry.data.title,
+  href: url ?? '',
+  text: ownSummary(entry.data) || undefined,
+  ...(await factsOf(entry)),
+})));
+---
+<div class="kn-post-list" data-kn-presentation="rows" data-konzilo-block={block}>
+  {items.length === 0 ? <p>{empty}</p> : <ContentLoop items={items} presentation="rows" images={false} columns={3} />}
+  {pager && <Pager pager={pager} />}
+</div>

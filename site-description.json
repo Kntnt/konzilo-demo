@@ -7,139 +7,8 @@
     "smallestWidth": 400,
     "displayWidth": 1400
   },
-  "components": {
-    "hero": {
-      "label": "Hero",
-      "form": "container",
-      "body": "blocks",
-      "attributes": {
-        "surface": {
-          "type": "string",
-          "label": "Surface",
-          "values": ["page", "raised", "inverse", "tint", "brand", "accent"]
-        }
-      }
-    },
-    "section": {
-      "label": "Section",
-      "form": "container",
-      "body": "blocks",
-      "attributes": {
-        "surface": {
-          "type": "string",
-          "label": "Surface",
-          "values": ["page", "raised", "inverse", "tint", "brand", "accent"],
-          "default": "page"
-        },
-        "anchor": {
-          "type": "string",
-          "label": "Anchor",
-          "pattern": "^[a-z][a-z0-9-]*$"
-        }
-      }
-    },
-    "aside": {
-      "label": "Fact box",
-      "form": "container",
-      "body": "blocks",
-      "attributes": {
-        "anchor": {
-          "type": "string",
-          "label": "Anchor",
-          "pattern": "^[a-z][a-z0-9-]*$"
-        }
-      }
-    },
-    "list": {
-      "label": "Series",
-      "form": "container",
-      "body": "blocks",
-      "attributes": {
-        "type": {
-          "type": "string",
-          "label": "Kind",
-          "values": ["description", "values", "logos", "actions"]
-        },
-        "markers": {
-          "type": "string",
-          "label": "Markers"
-        }
-      }
-    },
-    "cards": {
-      "label": "Cards",
-      "form": "container",
-      "body": "blocks",
-      "attributes": {
-        "type": {
-          "type": "string",
-          "label": "Kind",
-          "values": ["navigation"]
-        },
-        "markers": {
-          "type": "string",
-          "label": "Markers"
-        },
-        "picture": {
-          "type": "string",
-          "label": "Picture",
-          "values": ["behind"]
-        },
-        "symbol": {
-          "type": "string",
-          "label": "Symbol",
-          "values": ["item", "heading"]
-        }
-      }
-    },
-    "accordion": {
-      "label": "Accordion",
-      "form": "container",
-      "body": "blocks",
-      "attributes": {
-        "first": {
-          "type": "string",
-          "label": "First item",
-          "values": ["open", "closed"]
-        },
-        "expand": {
-          "type": "string",
-          "label": "Open at once",
-          "values": ["one", "many"]
-        }
-      }
-    },
-    "tabs": {
-      "label": "Tabs",
-      "form": "container",
-      "body": "blocks"
-    },
-    "toc": {
-      "label": "Contents",
-      "form": "container",
-      "body": "blocks"
-    },
-    "choice": {
-      "label": "Choice",
-      "form": "container",
-      "body": "blocks"
-    },
-    "eyebrow": {
-      "label": "Eyebrow",
-      "form": "leaf",
-      "body": "text"
-    },
-    "small": {
-      "label": "Small print",
-      "form": "leaf",
-      "body": "text"
-    },
-    "breadcrumbs": {
-      "label": "Breadcrumbs",
-      "form": "leaf",
-      "body": "none"
-    }
-  },
+  "componentsFrom": "@kntnt/konzilo-design/directives/components.json",
+  "componentChecks": "@kntnt/konzilo-design/directives/checks",
   "types": {
     "page": {
       "collection": "pages",
@@ -183,10 +52,11 @@
         "date": {},
         "modified": {},
         "image": {},
+        "eyebrow": {},
         "headline": { "required": true },
         "standfirst": {},
         "excerpt": {},
-        "customer": { "label": "Customer", "type": "string", "control": "text", "required": true },
+        "customer":{ "label": "Customer", "type": "string", "control": "text", "required": true },
         "industry": {
           "label": "Industry",
           "type": "string",
@@ -249,7 +119,7 @@
     "filtered": {
       "label": "Filtered",
       "options": {
-        "filters": { "label": "Filters", "type": "string", "control": "text" }
+        "filters": { "label": "Rows", "type": "string", "control": "text" }
       }
     },
     "rows": { "label": "Rows", "options": {} }
@@ -266,7 +136,8 @@
     "headerSearchWord": { "label": "Header: the word in the empty search field", "type": "string", "control": "text" },
     "footerAbout": { "label": "Footer: about the company", "type": "string", "control": "textarea" },
     "footerAddress": { "label": "Footer: address", "type": "string", "control": "textarea" },
-    "footerNote": { "label": "Footer: note beside the address", "type": "string", "control": "textarea" }
+    "footerNote": { "label": "Footer: note beside the address", "type": "string", "control": "textarea" },
+    "cookieDeclarationNote": { "label": "Cookie policy: the note after the declaration", "type": "string", "control": "textarea" }
   },
   "forms": {
     "contact": {

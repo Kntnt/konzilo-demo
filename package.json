@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@kntnt/konzilo": "github:Kntnt/konzilo#v0.4.0",
-    "@kntnt/konzilo-design": "file:vendor/kntnt-konzilo-design-0.6.1.tgz",
+    "@kntnt/konzilo-design": "file:vendor/kntnt-konzilo-design-0.7.0.tgz",
     "astro": "7.4.2"
   },
   "devDependencies": {

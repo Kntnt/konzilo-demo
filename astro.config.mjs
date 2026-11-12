@@ -1,15 +1,11 @@
 import { defineConfig } from 'astro/config';
 import konzilo from '@kntnt/konzilo/astro';
-import { fromDesign } from '@kntnt/konzilo-design/konzilo';
+import { DESIGN_DIRECTIVES, DESIGN_PRESENTATIONS, fromDesign } from '@kntnt/konzilo-design/konzilo';
 import { searchTexts } from './src/lib/search-texts.js';
 
 // Every page is built for the site's public host, which the build's environment names. A local copy answers at
 // Astro's dev server.
 process.env.KONZILO_ORIGIN ??= 'http://localhost:4321';
-
-// The component of each presentation the site description declares. All four are one plain stand-in until the
-// design's presentations come; give a presentation its own by changing its path.
-const POST_LIST_STAND_IN = './src/components/PostList.astro';
 
 export default defineConfig({
   integrations: [konzilo({
@@ -17,8 +13,10 @@ export default defineConfig({
     // the typefaces in design/fonts/, and the colours the core takes as the site's theme. Its logos are in
     // public/logos/, which `npm run logos` writes from the design file before every build.
     ...await fromDesign('./design/site.design.json'),
-    presentations: { cards: POST_LIST_STAND_IN, featured: POST_LIST_STAND_IN, filtered: POST_LIST_STAND_IN, rows: POST_LIST_STAND_IN },
-    directives: { form: './src/components/Form.astro' },
+    // The design's components for its directives, and the site's own form, which wraps the core's.
+    directives: { ...DESIGN_DIRECTIVES, form: './src/components/Form.astro' },
+    // The design's presentations of a post list, and `rows`, the site's own, which the design does not ship.
+    presentations: { ...DESIGN_PRESENTATIONS, rows: './src/components/Rows.astro' },
     searchPage: './src/components/SearchPage.astro',
     termPage: './src/components/TermPage.astro',
     // The search page's and the search box's words, from design/content/system/search.md.

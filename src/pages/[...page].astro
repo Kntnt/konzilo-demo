@@ -1,15 +1,17 @@
 ---
-// A page at its address, /<path>/: the slugs of its parents and its own (site-description.json). A plain
-// stand-in for the design's page, which draws the page's title in its hero: here the title as the page's
-// heading, then its body through the core's Body, which renders each post list with its presentation and each
-// form with the site's form, then the cookie declaration, which the core writes on the page chosen as the
-// cookie policy alone. A page whose post list has pages of its own has them at <address>page/2/ and on.
-import Body from '@kntnt/konzilo/astro/Body.astro';
-import CookieDeclaration from '@kntnt/konzilo/astro/CookieDeclaration.astro';
+// A page at its address, /<path>/: the slugs of its parents and its own (site-description.json). Its body is bands,
+// heroes and sections, which Konzilo Design's components draw, so it stands in Page's <main> with nothing around it,
+// the page's context given first (src/lib/design-page.js): the hero shows the page's title as its H1, and the trail its
+// levels. Blocks outside a hero or a section stand in a section of their own (PageBody.astro). Each post list stands in
+// the presentation it names, and each form in the site's form. On the page the site settings choose as the cookie
+// policy, the core's cookie declaration follows the body. A page whose post list has pages of its own has them at
+// <address>page/2/ and on.
 import { entryPages } from '@kntnt/konzilo/astro/languages';
 import { render } from 'astro:content';
-import StandIn from '../components/StandIn.astro';
+import CookiePolicyDeclaration from '../components/CookiePolicyDeclaration.astro';
+import PageBody from '../components/PageBody.astro';
 import Site from '../layouts/Site.astro';
+import { givePageContext } from '../lib/design-page.js';
 
 export function getStaticPaths() {
   return entryPages('pages', 'page');
@@ -17,11 +19,9 @@ export function getStaticPaths() {
 
 const { entry, page } = Astro.props;
 const { Content } = await render(entry);
+await givePageContext(Astro, { entry });
 ---
 <Site entry={entry} page={page}>
-  <StandIn>
-    <h1>{entry.data.title}</h1>
-    <Body post={entry} page={page}><Content /></Body>
-    <CookieDeclaration />
-  </StandIn>
+  <PageBody post={entry} page={page}><Content /></PageBody>
+  <CookiePolicyDeclaration entry={entry} />
 </Site>

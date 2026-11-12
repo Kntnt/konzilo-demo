@@ -93,7 +93,7 @@ The privacy policy, the cookie policy and the forms' fine print state facts the 
 - **Hosting:** a server in Sweden, backups in the EU. The web server keeps no log of visits, as the core's Caddyfile writes none; the log of addresses not found that Konzilo's ADR 0040 decides is not built, and the privacy policy says there is none.
 - **No copy of a choice, and no reports kept:** the public site's pages send the record of each choice to `/_konzilo/consent` and each violation of the security policy to `/_konzilo/violations`, but the core's service takes neither yet (Konzilo's ADR 0044 keeps records for 13 months and reports for 30 days), so the privacy policy says Ampfield keeps no copy of a visitor's choice. When the core keeps them, the privacy policy must say so.
 - **The consent texts** are the core's defaults.
-- **The text after the cookie declaration**, which the template places below it: "Your browser may also keep things the site does not ask it to, such as its cache. You can remove what a site has stored in your browser's settings; that also removes your choice, and the site will ask again. Questions about this policy: privacy@ampfield.example."
+- **The text after the cookie declaration**, which the template places below it, is `cookieDeclaration.note` in `site.json`: "Your browser may also keep things the site does not ask it to, such as its cache. You can remove what a site has stored in your browser's settings; that also removes your choice, and the site will ask again. Questions about this policy: privacy@ampfield.example."
 
 ## Telephone numbers and addresses
 

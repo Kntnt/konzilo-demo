@@ -1,28 +1,27 @@
 ---
-// The 404 page, which Astro builds as 404.html and the web server shows at every address the site has nothing
-// at: the page an Admin chose in the site settings, its title and its body through the core's Body, so that its
-// components, post lists and forms render as on any page; or, where none is chosen or it cannot serve, the
-// core's plain text. A plain stand-in for the design's 404 page.
-import Body from '@kntnt/konzilo/astro/Body.astro';
+// The 404 page, which Astro builds as 404.html and the web server shows at every address the site has nothing at: the
+// page an Admin chose in the site settings, its body drawn by Konzilo Design's components as any page's, its title the
+// hero's H1, with no trail; or, where none is chosen or it cannot serve, the core's plain text in a band of its own.
 import { pageTexts, startPage } from '@kntnt/konzilo/astro/languages';
 import { notFoundPage } from '@kntnt/konzilo/astro/site-settings';
 import { render } from 'astro:content';
+import PageBody from '../components/PageBody.astro';
 import StandIn from '../components/StandIn.astro';
 import Site from '../layouts/Site.astro';
+import { givePageContext } from '../lib/design-page.js';
 
 const plain = pageTexts(Astro.url).notFound;
 const page = await notFoundPage(Astro.url);
 const Content = page ? (await render(page)).Content : null;
 const heading = page?.data.title ?? plain.title;
+if (page) await givePageContext(Astro, { title: heading });
 ---
 <Site title={heading}>
-  <StandIn>
-    <h1>{heading}</h1>
-    {Content ? <Body post={page}><Content /></Body> : (
-      <>
-        <p>{plain.text}</p>
-        <p><a href={startPage()}>{plain.start}</a></p>
-      </>
-    )}
-  </StandIn>
+  {Content ? <PageBody post={page}><Content /></PageBody> : (
+    <StandIn>
+      <h1>{heading}</h1>
+      <p>{plain.text}</p>
+      <p><a href={startPage()}>{plain.start}</a></p>
+    </StandIn>
+  )}
 </Site>

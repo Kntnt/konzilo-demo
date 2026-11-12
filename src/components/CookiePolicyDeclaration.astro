@@ -1,0 +1,34 @@
+---
+// The core's cookie declaration on the page the site settings choose as the cookie policy, after its body, in a band of
+// its own in the reading column, as the mockup places it (design/mockups/pages/cookie-policy.astro), and nothing on any
+// other page. After it, where the site settings give one, the note design/content/README.md asks for ("What the legal
+// pages assume"), a link written in it as Markdown drawn as a link, and an e-mail address standing alone linked to it,
+// as GFM links one in body text and the mockup has it.
+import CookieDeclaration from '@kntnt/konzilo/astro/CookieDeclaration.astro';
+import { entryUrl } from '@kntnt/konzilo/astro/languages';
+import { siteSettings } from '@kntnt/konzilo/astro/site-settings';
+
+const { entry } = Astro.props;
+const settings = (await siteSettings(Astro.url)) ?? {};
+const chosen = settings.legalPages?.cookiePolicy?.url;
+const here = chosen !== undefined && chosen === entryUrl(entry);
+const escape = (text) => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const LINK_OR_ADDRESS = /\[([^\]]+)\]\(([^)\s]+)\)|([A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,})/g;
+const note = settings.cookieDeclarationNote
+  ? escape(settings.cookieDeclarationNote).replace(LINK_OR_ADDRESS, (_, label, href, address) => (address ? `<a href="mailto:${address}">${address}</a>` : `<a href="${href}">${label}</a>`))
+  : null;
+---
+{here && (
+  <section class="kn-band kn-section">
+    <div class="kn-band-content">
+      <div class="kn-section-body kn-body-text">
+        <div class="kn-reading-area" data-kn-side="start" data-kn-stack="before">
+          <div class="kn-reading-area-flow">
+            <CookieDeclaration />
+            {note && <p set:html={note} />}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}

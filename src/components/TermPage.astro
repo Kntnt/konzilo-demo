@@ -1,25 +1,37 @@
 ---
 // A term's page, which the core's integration puts at the address of each taxonomy that declares one
-// (site-description.json): an author at /insights/author/<slug>/, a category at /insights/category/<path>/, a
-// topic at /insights/topic/<slug>/. The core's termPages() gives each term its posts of every type that takes
-// the taxonomy, newest first, nine a page as the design has them, with the later pages at <address>page/2/ and
-// on. A plain stand-in for the design's term page: the term's name and description, and its posts as the
-// stand-in presentation shows them.
+// (site-description.json): an author at /insights/author/<slug>/, a category at /insights/category/<path>/, a topic at
+// /insights/topic/<slug>/. The core's termPages() gives each term its posts of every type that takes the taxonomy,
+// newest first, nine a page as the design has them, with the later pages at <address>page/2/ and on.
+//
+// Its posts stand in the design's `filtered` presentation, which the page calls itself with the term it settles, so that
+// the row of that taxonomy goes and a search keeps to the term: a category's page has the rows Topic and Search, a
+// topic's Category and Search, and an author's all three (design/feedback.md, point 21). The term's opening, its name
+// and description, is a plain stand-in until Konzilo Design's page parts for templates give it.
+import Filtered from '@kntnt/konzilo-design/presentations/Filtered.astro';
 import { termPages } from '@kntnt/konzilo/astro/post-lists';
-import StandIn from './StandIn.astro';
 import Site from '../layouts/Site.astro';
-import PostList from './PostList.astro';
+import { givePageContext } from '../lib/design-page.js';
+import StandIn from './StandIn.astro';
 
 export async function getStaticPaths({ routePattern }) {
   return termPages(routePattern, { number: 9 });
 }
 
+// The taxonomy of a term, by its collection.
+const TAXONOMIES = { authors: 'authors', categories: 'category', topics: 'topics' };
+
 const { term, page, posts, pager, empty } = Astro.props;
+await givePageContext(Astro, { entry: term, title: term.data.name });
 ---
 <Site entry={term} page={page}>
   <StandIn>
     <h1>{term.data.name}</h1>
     {term.data.description && <p>{term.data.description}</p>}
-    <PostList posts={posts} options={{}} empty={empty} pager={pager} />
   </StandIn>
+  <section class="kn-band kn-section">
+    <div class="kn-band-content">
+      <Filtered posts={posts} pager={pager} empty={empty} options={{ filters: 'category topics search' }} settled={{ taxonomy: TAXONOMIES[term.collection], term: term.id }} />
+    </div>
+  </section>
 </Site>

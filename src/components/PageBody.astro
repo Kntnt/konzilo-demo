@@ -1,0 +1,11 @@
+---
+// A body drawn as bands, for a page, a canvas, the start page and the 404 page: the core's Body, with each run of
+// loose blocks at its top level first put in a section of its own, as the page's template writes it
+// (src/lib/loose-blocks.js). Used as Body is: <PageBody post={entry} page={page}><Content /></PageBody>.
+import Body from '@kntnt/konzilo/astro/Body.astro';
+import { withLooseBlocksInSections } from '../lib/loose-blocks.js';
+
+const { post, page } = Astro.props;
+const html = withLooseBlocksInSections(await Astro.slots.render('default'));
+---
+<Body post={post} page={page} html={html} />

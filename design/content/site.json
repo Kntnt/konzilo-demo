@@ -259,5 +259,8 @@
       ],
       "confirmation": "Thank you. Your first newsletter arrives at the start of next month."
     }
+  },
+  "cookieDeclaration": {
+    "note": "Your browser may also keep things the site does not ask it to, such as its cache. You can remove what a site has stored in your browser's settings; that also removes your choice, and the site will ask again. Questions about this policy: privacy@ampfield.example."
   }
 }

@@ -7,6 +7,7 @@ import { entryPages } from '@kntnt/konzilo/astro/languages';
 import { render } from 'astro:content';
 import StandIn from '../components/StandIn.astro';
 import Site from '../layouts/Site.astro';
+import { givePageContext } from '../lib/design-page.js';
 
 export function getStaticPaths() {
   return entryPages('case-studies', 'caseStudy');
@@ -14,6 +15,7 @@ export function getStaticPaths() {
 
 const { entry, page } = Astro.props;
 const { Content } = await render(entry);
+await givePageContext(Astro, { entry, title: entry.data.headline });
 ---
 <Site entry={entry} page={page}>
   <StandIn>
