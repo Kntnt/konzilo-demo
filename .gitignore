@@ -15,3 +15,6 @@ design/mockups/shots/
 /demo-content/
 /content/
 /public/logos/
+
+# Screenshots of the built site, by `npm run shoot`
+/shots/

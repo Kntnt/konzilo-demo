@@ -23,7 +23,13 @@
     },
     "search": {
       "label": "Search the site",
-      "word": "Search"
+      "word": "Search",
+      "links": [
+        { "label": "Rooftop solar", "href": "/solutions/rooftop-solar/" },
+        { "label": "Battery storage", "href": "/solutions/battery-storage/" },
+        { "label": "Case studies", "href": "/customers/" },
+        { "label": "Contact", "href": "/contact/" }
+      ]
     },
     "menuWord": "Menu"
   },

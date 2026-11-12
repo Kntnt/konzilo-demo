@@ -28,6 +28,7 @@ import { parseArgs } from 'node:util';
 import { creditsOfMasters } from './lib/credits.mjs';
 import { digestOf, filesIn, replaceWithCopy, sameFiles } from './lib/files.mjs';
 import { coreModule, countsOf, DEMO_MOMENT, ROOT, runIntake, shortfalls } from './lib/intake.mjs';
+import { searchTexts } from '../src/lib/search-texts.js';
 
 // What the core cannot hold yet, and so is left out of the demo content, or stood in for, each with what it
 // waits for. To put one back, delete its entry and the code that names it (`LEFT_OUT.<name>`).
@@ -37,8 +38,8 @@ export const LEFT_OUT = {
     waits: 'Demo content that can hold a scheduled post: a content file has no status, and Compose\'s seed writes every demo post as published (src/demo-source.js:125 in the core).',
   },
   menuDescriptions: {
-    what: 'The line of description under each second-level entry of the main menu, in design/content/site.json.',
-    waits: 'A description on a menu entry in the core: its intake writes an entry as title, url and items alone (src/intake/menus.js), and its content schema refuses any other key.',
+    what: 'The line of description under each second-level entry of the main menu, in design/content/site.json, is left out of the menu file. The frame stands in for it: withDescriptionsStandIn() in src/lib/frame.js takes the lines from site.json by each entry\'s address.',
+    waits: 'A description on a menu entry in the core, whose intake writes an entry as title, url and items alone (src/intake/menus.js), and Konzilo Design\'s menuProps passing it on; then this script writes it, and the stand-in goes.',
   },
   labelLinks: {
     what: 'The link in a form field\'s label, "[privacy policy](/privacy-policy/)" in each acceptance field; site-description.json gives the label as its words alone.',
@@ -60,11 +61,11 @@ export const LEFT_OUT = {
 
 // What design/content/site.json holds that is no content file's, and why it is not carried over here.
 //  - `slogan`: the design file's `project.slogan` holds it, and Konzilo Design's header reads it from there.
-//  - `header.search`: its `label` is the search texts' (design/content/system/search.md, read by
-//    astro.config.mjs); its `word`, and `header.menuWord`, are the frame's words.
+//  - `header.search.label`: the search texts' `label` (design/content/system/search.md, read by astro.config.mjs),
+//    which the core's search box and the header's both take; this script holds the two to the same words.
 //  - `footer.upper.a1`, `footer.upper.b2` and `footer.lower.b2` describe cells the frame fills from the design,
 //    the main menu and the core's consent controls.
-const FRAME_ONLY = ['slogan', 'header.search', 'header.menuWord', 'footer.upper.a1', 'footer.upper.b2', 'footer.lower.b2'];
+const FRAME_ONLY = ['slogan', 'header.search.label', 'footer.upper.a1', 'footer.upper.b2', 'footer.lower.b2'];
 
 // The legal pages the core's settings choose, by their addresses; the footer's legal links must be these.
 const LEGAL_PAGES = { privacyPolicy: '/privacy-policy/', cookiePolicy: '/cookie-policy/', accessibilityStatement: '/accessibility/' };
@@ -308,11 +309,14 @@ async function makeSource(site, out) {
   const given = JSON.parse(read('site.json'));
   const known = ['title', 'description', 'publisher', 'header', 'menu', 'footer', 'forms', ...FRAME_ONLY.filter((one) => !one.includes('.'))];
   const unknown = Object.keys(given).filter((key) => !known.includes(key));
-  const carried = new Set(['header.cta', 'footer.upper.b1', 'footer.upper.a2', 'footer.lower.a1', 'footer.lower.b1', 'footer.lower.a2']);
-  for (const [at, part] of Object.entries({ header: given.header, 'footer.upper': given.footer.upper, 'footer.lower': given.footer.lower })) {
+  const carried = new Set(['header.cta', 'header.menuWord', 'header.search', 'header.search.word', 'header.search.links', 'footer.upper.b1', 'footer.upper.a2', 'footer.lower.a1', 'footer.lower.b1', 'footer.lower.a2']);
+  for (const [at, part] of Object.entries({ header: given.header, 'header.search': given.header.search ?? {}, 'footer.upper': given.footer.upper, 'footer.lower': given.footer.lower })) {
     unknown.push(...Object.keys(part).map((key) => `${at}.${key}`).filter((key) => !carried.has(key) && !FRAME_ONLY.includes(key)));
   }
   if (unknown.length > 0) stop(`site.json: holds ${unknown.join(', ')}, which this script does not carry over`);
+  // The search field's label is the core's search texts', which the header takes too.
+  const { label: searchLabel } = searchTexts();
+  if (given.header.search?.label !== undefined && given.header.search.label !== searchLabel) stop(`site.json: header.search.label is "${given.header.search.label}", and design/content/system/search.md gives site.search.label as "${searchLabel}"; the header's search field takes the latter`);
   const postId = (address, where) => (postAt.get(address) ?? stop(`${where}: names ${address}, which no post is at`)).id;
   const notFound = posts.find((post) => post.notFound) ?? stop(`${NOT_FOUND} is missing`);
 
@@ -327,6 +331,9 @@ async function makeSource(site, out) {
   });
   write('menus/main.json', jsonFile({ items: entries(given.menu.items, 'main') }), 'site.json');
   write('menus/social.json', jsonFile({ items: entries(given.footer.upper.b1.links.map(({ label, href }) => ({ title: label, url: href })), 'social') }), 'site.json');
+  // The links under the search box, where site.json gives them.
+  const searchLinks = given.header.search?.links ?? [];
+  if (searchLinks.length > 0) write('menus/search.json', jsonFile({ items: entries(searchLinks.map(({ label, href }) => ({ title: label, url: href })), 'search') }), 'site.json');
 
   // The footer's legal links are the legal pages, each by its post's title, as the frame shows them.
   const legalLinks = given.footer.lower.a2.links;
@@ -357,6 +364,8 @@ async function makeSource(site, out) {
     icon: { src: picture(`logo:${IDENTITY.icon}`, 'the site icon') },
     headerActionLabel: given.header.cta.label,
     headerActionPage: postId(given.header.cta.url, 'site.json: header.cta'),
+    headerMenuWord: given.header.menuWord,
+    headerSearchWord: given.header.search?.word,
     footerAbout: given.footer.upper.a2.text,
     footerAddress: given.footer.lower.a1.text,
     footerNote: given.footer.lower.b1.text,

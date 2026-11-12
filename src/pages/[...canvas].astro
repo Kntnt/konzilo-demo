@@ -4,6 +4,7 @@
 import Body from '@kntnt/konzilo/astro/Body.astro';
 import { entryPages } from '@kntnt/konzilo/astro/languages';
 import { render } from 'astro:content';
+import StandIn from '../components/StandIn.astro';
 import Site from '../layouts/Site.astro';
 
 export function getStaticPaths() {
@@ -14,7 +15,7 @@ const { entry, page } = Astro.props;
 const { Content } = await render(entry);
 ---
 <Site entry={entry} page={page}>
-  <div class="kn-body-text">
+  <StandIn>
     <Body post={entry} page={page}><Content /></Body>
-  </div>
+  </StandIn>
 </Site>

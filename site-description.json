@@ -256,11 +256,14 @@
   },
   "menus": {
     "main": { "label": "Main menu" },
-    "social": { "label": "Social links" }
+    "social": { "label": "Social links" },
+    "search": { "label": "Links under the search box" }
   },
   "settings": {
     "headerActionLabel": { "label": "Header: call to action", "type": "string", "control": "text" },
     "headerActionPage": { "label": "Header: page the call to action leads to", "type": "post", "control": "post" },
+    "headerMenuWord": { "label": "Header: the menu button's word", "type": "string", "control": "text" },
+    "headerSearchWord": { "label": "Header: the word in the empty search field", "type": "string", "control": "text" },
     "footerAbout": { "label": "Footer: about the company", "type": "string", "control": "textarea" },
     "footerAddress": { "label": "Footer: address", "type": "string", "control": "textarea" },
     "footerNote": { "label": "Footer: note beside the address", "type": "string", "control": "textarea" }

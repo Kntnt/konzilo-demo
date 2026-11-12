@@ -6,6 +6,7 @@
 // on. A plain stand-in for the design's term page: the term's name and description, and its posts as the
 // stand-in presentation shows them.
 import { termPages } from '@kntnt/konzilo/astro/post-lists';
+import StandIn from './StandIn.astro';
 import Site from '../layouts/Site.astro';
 import PostList from './PostList.astro';
 
@@ -16,9 +17,9 @@ export async function getStaticPaths({ routePattern }) {
 const { term, page, posts, pager, empty } = Astro.props;
 ---
 <Site entry={term} page={page}>
-  <div class="kn-body-text">
+  <StandIn>
     <h1>{term.data.name}</h1>
     {term.data.description && <p>{term.data.description}</p>}
     <PostList posts={posts} options={{}} empty={empty} pager={pager} />
-  </div>
+  </StandIn>
 </Site>

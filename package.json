@@ -15,11 +15,16 @@
     "prebuild": "npm run --silent logos && npm run --silent demo-content && konzilo-demo-content",
     "build": "astro build",
     "check": "node scripts/check.mjs",
-    "check:seed": "node scripts/check-seed.mjs"
+    "check:seed": "node scripts/check-seed.mjs",
+    "shoot": "node scripts/shoot.mjs"
   },
   "dependencies": {
     "@kntnt/konzilo": "github:Kntnt/konzilo#v0.4.0",
     "@kntnt/konzilo-design": "file:vendor/kntnt-konzilo-design-0.6.1.tgz",
     "astro": "7.4.2"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.1",
+    "puppeteer-core": "25.16.0"
   }
 }

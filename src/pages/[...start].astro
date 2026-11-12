@@ -6,6 +6,7 @@
 import Body from '@kntnt/konzilo/astro/Body.astro';
 import { entriesIn, entryAddress, startPages } from '@kntnt/konzilo/astro/languages';
 import { render } from 'astro:content';
+import StandIn from '../components/StandIn.astro';
 import Site from '../layouts/Site.astro';
 
 // Where the Home page stands, as scripts/demo-content.mjs puts it.
@@ -21,8 +22,8 @@ if (!home) throw new Error(`The start page shows the page at ${HOME}, and the co
 const { Content } = await render(home);
 ---
 <Site>
-  <div class="kn-body-text">
+  <StandIn>
     <h1>{home.data.title}</h1>
     <Body post={home}><Content /></Body>
-  </div>
+  </StandIn>
 </Site>

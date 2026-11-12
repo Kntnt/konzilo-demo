@@ -4,13 +4,14 @@
 // stand-in for the design's search page.
 import Search from '@kntnt/konzilo/astro/Search.astro';
 import { pageTexts } from '@kntnt/konzilo/astro/languages';
+import StandIn from './StandIn.astro';
 import Site from '../layouts/Site.astro';
 
 const { title } = pageTexts(Astro.url).search;
 ---
 <Site title={title}>
-  <div class="kn-body-text">
+  <StandIn>
     <h1>{title}</h1>
     <Search />
-  </div>
+  </StandIn>
 </Site>

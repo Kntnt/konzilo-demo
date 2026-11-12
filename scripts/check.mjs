@@ -82,7 +82,7 @@ const table = readme.slice(readme.indexOf('## The site'), readme.indexOf('### Th
 const rows = table.split('\n').filter((line) => /^\| (`\/|any other)/.test(line)).map((line) => line.split('|')[1].trim().replace(/`/g, ''));
 const results = [];
 const page = (address) => (address === 'any other' ? join(DIST, '404.html') : join(DIST, address, 'index.html'));
-const isBuilt = (file) => existsSync(file) && readFileSync(file, 'utf8').includes('<main>');
+const isBuilt = (file) => existsSync(file) && /<main[\s>]/.test(readFileSync(file, 'utf8'));
 for (const row of rows) {
   if (!row.includes('{slug}')) {
     results.push({ address: row, built: isBuilt(page(row)) });

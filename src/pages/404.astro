@@ -7,6 +7,7 @@ import Body from '@kntnt/konzilo/astro/Body.astro';
 import { pageTexts, startPage } from '@kntnt/konzilo/astro/languages';
 import { notFoundPage } from '@kntnt/konzilo/astro/site-settings';
 import { render } from 'astro:content';
+import StandIn from '../components/StandIn.astro';
 import Site from '../layouts/Site.astro';
 
 const plain = pageTexts(Astro.url).notFound;
@@ -15,7 +16,7 @@ const Content = page ? (await render(page)).Content : null;
 const heading = page?.data.title ?? plain.title;
 ---
 <Site title={heading}>
-  <div class="kn-body-text">
+  <StandIn>
     <h1>{heading}</h1>
     {Content ? <Body post={page}><Content /></Body> : (
       <>
@@ -23,5 +24,5 @@ const heading = page?.data.title ?? plain.title;
         <p><a href={startPage()}>{plain.start}</a></p>
       </>
     )}
-  </div>
+  </StandIn>
 </Site>

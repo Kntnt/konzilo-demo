@@ -37,11 +37,8 @@ export const LOGOS = logoAddresses(design.project, { base: '.' });
 
 const search = {
   action: '/search/', label: site.header?.search?.label ?? 'Search the site', word: site.header?.search?.word ?? 'Search',
-  // The links under the search box, where the design shows them: the most asked-for pages. PROVISIONAL.
-  links: [
-    { label: 'Rooftop solar', href: '/solutions/rooftop-solar/' }, { label: 'Battery storage', href: '/solutions/battery-storage/' },
-    { label: 'Case studies', href: '/customers/' }, { label: 'Contact', href: '/contact/' },
-  ],
+  // The links under the search box: the most asked-for pages.
+  links: site.header?.search?.links ?? [],
 };
 const cta = { label: site.header?.cta?.label ?? 'Book a site assessment', href: site.header?.cta?.url ?? '/go/site-assessment/' };
 
