@@ -28,7 +28,7 @@ The weight depends mostly on how the system is held down. On a membrane roof we 
 
 East–west rows lean against each other, catch less wind and need less ballast, and they spread the day's output over the morning and the afternoon. A south-facing row gives about a tenth more per panel, but fewer panels fit, and each needs more weight.
 
-![Close view of solar panels on aluminium rails and frames on a wet flat membrane roof](image:rooftop-detail)\
+![Close view of an east–west solar array on a wet membrane roof, its rails on rubber pads and held down by concrete ballast blocks](image:article-roof-ballast)\
 Panel rows on rails that rest on the roof. On a membrane roof, ballast holds them down, so nothing goes through it.
 
 ## What the survey checks

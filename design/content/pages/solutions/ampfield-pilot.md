@@ -190,7 +190,7 @@ Pilot on its own runs month by month, with three months' notice. When you leave,
 
 ::::section
 
-![Parking bays marked for electric vehicles in front of a charging post](image:case-westerport)
+![An electric car charging in a green parking bay marked for electric vehicles](image:case-westerport)
 
 ::eyebrow[Pilot at work]
 

@@ -2,7 +2,7 @@
 title: "Which meters a site needs"
 date: 2026-05-05T07:00:00Z
 modified: 2026-05-05T07:00:00Z
-image: {"src":"image:article-meters","alt":"Rows of electricity meters with digital displays in a metal meter panel"}
+image: {"src":"image:article-meters","alt":"A row of six electricity meters with digital displays in an open metal cabinet"}
 eyebrow: "Before the figures"
 headline: "Which meters a site needs before it adds solar, a battery or chargers"
 subheadline: "Five meters, where each goes, and the mistakes that spoil a year of figures"

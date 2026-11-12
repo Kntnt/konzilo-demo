@@ -2,7 +2,7 @@
 title: "A year of charging at Norrvik's Jönköping depot"
 date: 2026-01-27T07:00:00Z
 modified: 2026-01-27T07:00:00Z
-image: {"src":"image:article-depot-winter","alt":"A charging post with its cables hanging, in deep snow beside a stone wall"}
+image: {"src":"image:article-depot-winter","alt":"A row of charging posts with their cables hanging, in snow in front of three white vans"}
 eyebrow: "Norrvik Logistics"
 headline: "A year of charging at Norrvik's Jönköping depot, in figures"
 subheadline: "What the vans and trucks took, what the cold added, and what broke"

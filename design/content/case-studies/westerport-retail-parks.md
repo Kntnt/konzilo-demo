@@ -2,7 +2,7 @@
 title: "Westerport Retail Parks"
 date: 2026-10-20T07:00:00Z
 modified: 2026-10-20T07:00:00Z
-image: {"src":"image:case-westerport","alt":"Green parking bays marked for electric vehicles in front of a charging post, with trees and a building behind"}
+image: {"src":"image:case-westerport","alt":"An electric car charging in a green parking bay marked for electric vehicles, with a retail park's shop units behind"}
 headline: "Eleven retail parks that run on their own roofs by day"
 standfirst: "Westerport Retail Parks owns eleven parks in the north of England. Their roofs now cover the landlord supply in daylight, and their car parks hold 340 charge points for visitors."
 excerpt: "6.8 MWp of rooftop solar and 340 charge points across eleven retail parks in the north of England. By day, the roofs cover the landlord supply."

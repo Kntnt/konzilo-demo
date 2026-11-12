@@ -96,25 +96,3 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A term page does not tell its list what the page settles | A category's page must leave its Category row out and send `category=<slug>` with a search, a topic's page its topic, an author's page `author=<slug>`; `termPages()` passes nothing of it |
 | The search page takes no taxonomy | `search-client.js` reads `q`, `page` and `type` only, and filters Typesense by type alone; a search from a filtered list sends `category`, `topic`, `author` and a site's own taxonomies, which the search page and the index must take, joined as the rows are, OR within a row and AND between rows, and show as chosen |
 | A form field's label cannot hold a link | The site description's `label` is plain text; an acceptance field needs a link to the policy it accepts, as Markdown in the label or a field of its own |
-
-## Pictures that are compromises
-
-The picture agents' own judgement, from their reports on 2026-11-12, of the pictures that do not show what their page wanted. No free photograph that fits was found on Unsplash, Pexels, Pixabay or Wikimedia Commons, so a key to a service's interface does not by itself find a better one. Thomas settled the same day that each is searched for anew and, where no free photograph fits, generated (`docs/brief.md`). Check each against the picture as it is now before replacing it; `images/shot-list.md` says what each was meant to show, and `images/credits.json` what it shows.
-
-| Picture | What is wrong with it |
-|---|---|
-| `article-fast-chargers` | A car park in the USA, and the chargers' shape is recognisably one maker's, though the name is blurred |
-| `article-solar-costs` | Panels clamped to their rails on a gravel roof; the article wanted panels on pallets on a roof, waiting to be fitted |
-| `article-depot-winter` | One charging post in deep snow by a stone wall, not a depot's yard |
-| `article-grid-connection` | Two large transformers against an industrial building, where a small substation behind a fence was wanted; an organisation's account |
-| `article-depot-lease` | One improvised socket box and one car, not a warehouse with a row of chargers |
-| `article-battery-containers` | Battery containers in a Californian desert, with no fence and no concrete pad |
-| `article-meters` | A bank of round meters as in the USA, not a European meter cabinet |
-| `article-solar-noon`, `article-fleet-report` | Near what was wanted: no sun stands in the panels, and the vans are seen from the front |
-| `battery-storage`, `article-battery-fire-safety` | Two frames of the same row of equipment cabinets in a solar field; nothing shows that they hold batteries, the place is no industrial yard, and the two look alike |
-| `article-electric-truck` | The lorries are small in the frame and carry several blurred patches |
-| `case-norrvik-charging` | One lorry at a fast charger, cut to a wide strip, where a depot of vans was wanted; taken by a company's own account, as `fleet-charging` is |
-| `case-westerport` | Looks like a hotel's car park more than a retail park's, under a warm, grainy filter |
-| `article-roof-ballast` | Not plainly an east–west array |
-| `rooftop-install`, `article-roof-survey`, `case-norrvik-team` | The setting looks like Asia, eastern Europe or the tropics, not northern Europe; `case-norrvik-team` was since generated from such a photograph |
-| `hero-home`, `industry-retail`, `industry-logistics-inside` | Small signs remain: on the warehouses, on the shops, and one in Chinese far down the aisle |

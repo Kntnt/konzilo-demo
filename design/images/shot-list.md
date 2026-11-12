@@ -2,7 +2,7 @@
 
 The pictures the pages need. A picture's file is `<id>.jpg` in this folder, and `credits.json` records where it came from. The text refers to a picture by its id.
 
-The look: natural light, calm and matter-of-fact, as a company's own photographer would take them on a working day. Cool and neutral tones that sit well beside deep green and amber. No heavy filters, no staged stock scenes, no visible brands, logos or number plates of others, and no real person's recognisable face: where a face can be recognised, the picture is made by an image model from the chosen photograph, with an invented person's face, and `credits.json` says so.
+The look: natural light, calm and matter-of-fact, as a company's own photographer would take them on a working day. Cool and neutral tones that sit well beside deep green and amber. No heavy filters, no staged stock scenes, no visible brands, logos or number plates of others, and no real person's recognisable face: where a face can be recognised, the picture is made by an image model from the chosen photograph, with an invented person's face, and `credits.json` says so. Where no free photograph shows what a page wants, the picture is generated in the same way, from the photograph that is nearest in composition and light.
 
 ## Places and work, landscape
 

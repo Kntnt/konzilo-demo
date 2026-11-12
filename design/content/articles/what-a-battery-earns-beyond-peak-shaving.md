@@ -2,7 +2,7 @@
 title: "What a battery earns beyond peak shaving"
 date: 2026-04-14T07:00:00Z
 modified: 2026-04-14T07:00:00Z
-image: {"src":"image:article-battery-containers","alt":"Rows of white battery storage containers on a gravel pad"}
+image: {"src":"image:article-battery-containers","alt":"Four white battery containers on a fenced concrete pad beside a factory"}
 eyebrow: "Battery storage"
 headline: "What a battery earns beyond peak shaving, and where it earns little"
 subheadline: "Six jobs a battery can do, what each paid in 2025, and why they cannot share the same hour"

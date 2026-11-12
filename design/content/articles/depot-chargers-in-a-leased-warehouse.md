@@ -2,7 +2,7 @@
 title: "Depot chargers in a leased warehouse"
 date: 2026-03-10T07:00:00Z
 modified: 2026-03-10T07:00:00Z
-image: {"src":"image:article-depot-lease","alt":"A car charging from a socket box on the outside wall of a commercial building, in a marked parking bay"}
+image: {"src":"image:article-depot-lease","alt":"A white van charging from one of three wall chargers on the outside wall of a warehouse, in a marked parking bay"}
 eyebrow: "Landlord and tenant"
 headline: "Depot chargers in a leased warehouse: who pays, who owns, who bills"
 subheadline: "The capacity, the meters and the lease clauses to settle before the first trench is dug"

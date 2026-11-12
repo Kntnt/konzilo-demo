@@ -55,7 +55,7 @@ Norrvik bought the systems outright. We run them under a service agreement from 
 
 ![Rows of solar panels stretching across a very large flat roof](image:case-norrvik-roof)\
 Jönköping's roof carries 3.2 MWp, the largest of the six systems.
-![An electric lorry beside a fast charger with two cables in a depot yard](image:case-norrvik-charging)\
+![Six electric vans in a wet depot yard, each plugged into its own charging post](image:case-norrvik-charging)\
 Trucks charge at up to 150 kW, vans overnight at 11 kW.
 ![An inverter and three grey electrical cabinets with cable conduits on the outside wall of a building](image:case-norrvik-inverters)\
 An inverter on a wall beside three cabinets. The string inverters turn the panels' direct current into the alternating current the centres use.
