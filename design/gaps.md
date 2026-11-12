@@ -33,6 +33,9 @@ What the design phase wanted and could not have, and the faults it found on the 
 | The menu's descriptions have no source | `Megamenu.astro` draws `child.description`; the core's menu holds `title`, `url` and `items`, and `menuProps` passes no description |
 | `directives.md` does not say whether a fact box's own heading is a stop in the following table of contents | Both are written as `h2`, so the box could be listed |
 | `directives.md` says the meta line is the date and the byline | Its markup and the next rule put the category there too |
+| A hero's logo cannot follow the Surface it stands on | `.kn-hero-logo` is one picture that the editor chooses, while the header's logo changes with the mode; the light logo on a dark picture is hard to read |
+| Neither `directives.md` nor `konzilo.md` says where a page without a hero puts its title and breadcrumbs | The mockups put them in a section's head before the body |
+| `konzilo.css` does not style the core's button that opens the lightbox | `button.konzilo-lightbox-open` is styled only by the core's `modal.css` |
 | The hero directive's default Surface is `raised` | The design's own default for a hero without a picture is `none` |
 | A design resolved by an older generator passes `design-check` and `fromDesign` | A file resolved by 0.2.0 passes under 0.3.0, though 0.3.0 changed the dark-mode values |
 | `resolve` keeps role settings that the chosen typeface lacks | The new design's Mona Sans axes stay after a change of typeface; only the tool prunes them |
@@ -56,6 +59,7 @@ What the design phase wanted and could not have, and the faults it found on the 
 | Only one person is seeded | `anna`, an Admin; the Editor and Reviewer roles cannot be shown without more accounts |
 | Only the hostname `localhost` is accepted | `origin()` in `src/astro/public-site.js` refuses `127.0.0.1` and `*.localhost` |
 | A component that draws its items from its tree loses nested components and the lightbox | Issue #55; tabs, accordions and cards can hold only text, lists and pictures |
+| A component that splits its body cannot place what the core rendered | A section, tabs and cards get nested components in their `content` tree only as the core's plain rendering, so each must draw every other directive from the tree itself. ADR 0068 leaves a way for the core to render part of a tree until a design asks for it; this design does |
 | A form's button text cannot be set | ADR 0045 says an editor may; the site description and `::form` have no field for it |
 | An acceptance test nests fences the wrong way round | `acceptance/preview-components.test.js` puts the longer fence inside the shorter |
 | `content-format.md` does not say whether a site's own type may use the built-in `topics` taxonomy | The case studies and the pages that list them assume it may |
