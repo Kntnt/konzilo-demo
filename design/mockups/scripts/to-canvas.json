@@ -4,8 +4,8 @@
     "title": "Ampfield Energy",
     "namespace": "ampfield",
     "artifact": "https://claude.ai/artifact/1Wi9WBtK6o9KX2gk7Jp8TQ",
-    "version": "1794494827-eede",
-    "copiedAt": "2026-11-12T14:53:01Z",
+    "version": "1794515033-4ce6",
+    "copiedAt": "2026-11-12T20:28:28Z",
     "stylesheet": "components/bundle.css",
     "files": [
       "components/bundle.css",
@@ -22,6 +22,7 @@
     "v": 1,
     "at": "2026-11-12T10:12:23Z"
   },
+  "approved": "2026-11-12",
   "uploads": {
     "images/about-gothenburg.jpg": {
       "sha256": "4018ca7c772498db412065caaddcef5a10b424fa30ff3bdea717db8e3f9dcfd4",
@@ -288,128 +289,128 @@
       "url": "/_blob/f3f6f4d9a0eb051bde35067c1a97930b"
     },
     "shots/about-1440.webp": {
-      "sha256": "1d14b6e3b2b19fd3ff98a598e19650ffff10b323b97993f1519d3f6c51a166b2",
-      "url": "/_blob/88118e395d43a50d8675da6dadb399e4"
+      "sha256": "39df331a463b395917485733351605b1075356dbfc9828918fcdf772fd8372a4",
+      "url": "/_blob/7f2841c6b6c6f86f3ef503f653c489e3"
     },
     "shots/about-careers-1440.webp": {
-      "sha256": "62255527754c5b473218e2b22a4dd0a2ef696906fea3a941f216af96fc1851c3",
-      "url": "/_blob/fa188b78aca02386612cec719ec643f6"
+      "sha256": "0c9b260df2e153f2c1f184281db39ce66c0dc95bd206364dc445153954dac0ed",
+      "url": "/_blob/dc8f6c35404432eb1c7e21fcca461ab9"
     },
     "shots/about-careers-electrical-design-engineer-gothenburg-1440.webp": {
-      "sha256": "49867695501048ee62c17b56dbb8269c78e26bc25ebd7a1cbeffa4cb9c61ce85",
-      "url": "/_blob/c5a34c3eb61109c211b4f219963915bb"
+      "sha256": "f762e16284c173ad3bd9cd94d5d6c7ea5e072a7c69999c13ac208230f5fa7d83",
+      "url": "/_blob/7a4b9cd65b60859bb154eed66b55b808"
     },
     "shots/about-team-1440.webp": {
-      "sha256": "212f40c911ec746659c90f7598944610337fdbb384058f7c57077afddd75f87d",
-      "url": "/_blob/283026bf54f8c64f25f6cee237b2dfbc"
+      "sha256": "9ec6ae9c3d4611367a139ed25cbdb652fa021582ab46ca8d49c7d4645113cbe9",
+      "url": "/_blob/05161332cca11d995687d92df1f214a8"
     },
     "shots/contact-1440.webp": {
-      "sha256": "f136e3dfe14fbc5814f17a34325d86303a7a4a86b60333a844ab9dc8162046a0",
-      "url": "/_blob/43161d69a4bbe57e0dbcb459b6d15b0a"
+      "sha256": "90a138a5a8644bd2a8c262f906d712d3efe8df799782d9f96deae3e400e481f6",
+      "url": "/_blob/088bbf7e60e3340455aee8c78f0f693e"
     },
     "shots/contact-390.webp": {
-      "sha256": "7acc206ce4e1009fecb04cb161b2e75225ab16433b207fc397af9c5a8d256f75",
-      "url": "/_blob/fddad6e3984d2a14726b29885ed0aa29"
+      "sha256": "85f069f88e43460e2792fb19b718875699e6abd3bf25f7fc82a6ee231025ca1a",
+      "url": "/_blob/5fe3c29797b5e2d23d075ebdd7eecc57"
     },
     "shots/customers-1440.webp": {
-      "sha256": "0badc37752b8464a33b517887495679e55632f85b2768496b6d946abd7287cee",
-      "url": "/_blob/0e6d61c45e76595cff83dafcd52f59bb"
+      "sha256": "3747eb75b0ed84b6f4afb2c9ae1902e1a02dc43eb952f96ccac937ae042d94e6",
+      "url": "/_blob/f73feb902d6095e93eec4dcad7592cda"
     },
     "shots/customers-norrvik-logistics-1440.webp": {
-      "sha256": "5aaf0896f02f5226b9e6a039242e896e3b94eb3da861c2ef866262d1f06d00dd",
-      "url": "/_blob/9bf5c2b0a65b2c71ee14f43e9b999f79"
+      "sha256": "a028f7e9c16d8ff259758f6b3d969f81849053e2a0b902dd82697b7d34403f9a",
+      "url": "/_blob/27ce363cf71f0dceaea10b534218dbdd"
     },
     "shots/faq-1440.webp": {
-      "sha256": "95d3bdf1eee0e3629382b424e9de93a155ac9e8a76b5cd41f33bc919fb56b587",
-      "url": "/_blob/97952c6d4ac749e41794e82ec65edf9b"
+      "sha256": "4b2ff55b12d97ad1c320cf8e1a897e96ba1cd9f9d83195bf8310a8e558bc2d21",
+      "url": "/_blob/cb25da68a36670bf5efe9ee3098899b5"
     },
     "shots/go-site-assessment-1440.webp": {
       "sha256": "aece9f5ddbd88d25831bb2f23909ae482e92a48c19b6d2eb5d9ad52ea9c1ab38",
       "url": "/_blob/e2929dee8f168074096a7f46788c1ba7"
     },
     "shots/home-1440-menu.webp": {
-      "sha256": "70f42d7f1b5a57782a3e4827d0deb8b4ad5a34ff205c76807ff53d7c84f177a0",
-      "url": "/_blob/0643a32523aa38f41b6a3c1240a1bb61"
+      "sha256": "6d9c726ef06ff162b532794eec46f1f976e156e233ccd649333f03ec465aae7b",
+      "url": "/_blob/ab2be4cd3ace0f3034abd83469173953"
     },
     "shots/home-1440-scrolled.webp": {
       "sha256": "a1dbfcde03e2215393eacd4d2aea079b4d7d663c490dca3e18a944e9c562270c",
       "url": "/_blob/b696d3e3d67b271696a48cb730ee2a2a"
     },
     "shots/home-1440-search.webp": {
-      "sha256": "e3d9fe5365e0c0f336f553460d353bf0a7ecc3d10c7be4310d2e8c50cb758cc7",
-      "url": "/_blob/eb1bd78c9e5eebe26a2ac9f06879284b"
+      "sha256": "705bc80135fffbeb610159b1a76d7b2df13499c7c4bdb2cc0b78f9e7f6273846",
+      "url": "/_blob/acf06a27643e1cd2d1603b12e1226a27"
     },
     "shots/home-1440.webp": {
-      "sha256": "dbc86fd595389765711fa469be33249fdc490451126b71e48db9fd4f261f4eb7",
-      "url": "/_blob/aa99e12d073e23c0f3c79d4ed65c07d5"
+      "sha256": "e38d7ba921baa764f949f3e3450c1cfdfb03e5e152a6fed941d331bb4e391eda",
+      "url": "/_blob/98a979a052bf1433f6a623f1500799d1"
     },
     "shots/home-390-menu.webp": {
-      "sha256": "ab93c5631529d480e0d1e198df3217fdaeba26c7adf285038701d02b25c6b435",
-      "url": "/_blob/a7bc53f5a30c926341104d4d197a4873"
+      "sha256": "fe1de753499642f358cf52a85a9393bb87c4c550423f763b7f501523e6b7ba78",
+      "url": "/_blob/1b87ecef48fd2fec5eb1b5ba1b9b9668"
     },
     "shots/home-390-scrolled.webp": {
       "sha256": "59585c49cf3d4b39175a05f031d9aee89f34b5e6e6fa201466ca15946a123986",
       "url": "/_blob/f1707c121c1d47f7b406a9d123ac87d7"
     },
     "shots/home-390-search.webp": {
-      "sha256": "e930814841fe998728d52e74742a041550f0190aadbfa681c4e52473d2909426",
-      "url": "/_blob/0d87e836b4b3dfd52e1f23d26aaca558"
+      "sha256": "83867ad2716a33c2a4a44b3ea99b3ebc496eab9ec8f42b3553627108e34fd00e",
+      "url": "/_blob/5dc0b263ac2395325210628b796dfe7e"
     },
     "shots/home-390.webp": {
-      "sha256": "92f2f68af504990d9ba598f2f1d1f6ded68f7b49eea3666a218caffb2006f14d",
-      "url": "/_blob/f1157cd635ab01b53150052e047381b9"
+      "sha256": "96ec30f6b52bbf62eec3e180027cd48237d65da4241630140c2e5547225dc4fc",
+      "url": "/_blob/9f9290ef5723b7baef1acd2bfeca4ead"
     },
     "shots/industries-logistics-1440.webp": {
-      "sha256": "f09217dfc8ac03b9aa329014dd900bcd606a0d2d1d77d6d42466faeeae44066b",
-      "url": "/_blob/8ffbc2446187853230c4d66df22bed60"
+      "sha256": "34511899c39410ae30048f6ec9ec9e9f55a6a121100f6495a3fc64efce54d95d",
+      "url": "/_blob/1655b9e4e8d428b5182208d4f8fce810"
     },
     "shots/insights-1440.webp": {
-      "sha256": "1a743e6094ee8a34e9400cfc209b0e9ea572a6e5bae6335d15f8a7e5fc2078e3",
-      "url": "/_blob/77b01e3d3bc3925fe391e3206ccedc40"
+      "sha256": "5c589a69207d8dc375dd89431a0ae0313ac369f4448d92daebc5070d0fb7fc28",
+      "url": "/_blob/0fe2cc43b3acd275a535fceb4ba5a650"
     },
     "shots/insights-author-priya-raman-1440.webp": {
-      "sha256": "6f9786cbad398932d92a75e62160fbe8509caf0f75f91f1e40c5c4340a07d577",
-      "url": "/_blob/7fe74b664cc25c2ac4f8105fc1c06090"
+      "sha256": "a997a087808a7fd57888287226b20a2cf2ed56623658066ee9f049765d08a36f",
+      "url": "/_blob/86810ee29bb1e8e5f748445a1be0aa0b"
     },
     "shots/insights-can-your-roof-carry-solar-panels-1440.webp": {
-      "sha256": "1d0453969e6f841fb3658ab9351c7eb8d568d723d58e97dce466b893f7c24e9f",
-      "url": "/_blob/74b1ee25c9b639295055c14e10326723"
+      "sha256": "2715d32b5ce8b09cc4b23473960a842913dda3c282110de150b71459b600b21a",
+      "url": "/_blob/7a57227f387dc7b5617e811416b911d2"
     },
     "shots/insights-can-your-roof-carry-solar-panels-390.webp": {
-      "sha256": "d48a983faf34b0d9da517db52fe8f6d092eab957570677002aad4a1d59c38791",
-      "url": "/_blob/22c8b45e248a182acb0a7804caa409a4"
+      "sha256": "35e91de131c48ec645e9013074c95d0416abc95ac1ef8e26d222ff2a09d67daf",
+      "url": "/_blob/be36081e73935a1d6dcce9d9444b1af2"
     },
     "shots/insights-category-guides-1440.webp": {
-      "sha256": "53635901505a151bf5c58b45ca3ab1185b3087e1ca3d9d87b88fcf5dc0afde8f",
-      "url": "/_blob/96083213a39439caf270c42901780b3e"
+      "sha256": "8d8e6fe3b14addb6212784c48febe93e0cade8772e7ca6add15ffb646075cade",
+      "url": "/_blob/cb38829e63cf09a2aa91b50c67cac8bf"
     },
     "shots/not-found-1440.webp": {
-      "sha256": "dbbb56ab886dd4958b40891811dc38739510d4157349c13c5290bbaba7ad558d",
-      "url": "/_blob/5829bd84f1e7233e1711e9caca58a9c0"
+      "sha256": "b4fe21590cbeb70fc58c203a8740ed523cf3e88931e9a5741fbf06adc21d046b",
+      "url": "/_blob/bf75ea1aea3ad1ef60a0a6ea4113dd53"
     },
     "shots/privacy-policy-1440.webp": {
-      "sha256": "ee697e2eef3889106aab56d1378fbcb0f8a9cd3c5e12e4ca54baf9709d2d7dde",
-      "url": "/_blob/1e0894a8f061e6dcb3b479a3de225eb9"
+      "sha256": "3845082378a7942e79e4b0f24973c928a488e27518947609f8c27618f6e052a4",
+      "url": "/_blob/9c3f23586014c105fadc92e17385934e"
     },
     "shots/search-1440.webp": {
-      "sha256": "06b7c15193e83ef5c07e1cb072ccaf53e8f9501a47b5d58f17d55f144df9b9d8",
-      "url": "/_blob/da4f4847669ac99b5bbf786c918924af"
+      "sha256": "843cac728493d809283249d5b062791ec09a49eeffec7e680e96c4aa82918b82",
+      "url": "/_blob/1bbdb9c485b1807308a95d4955f58fc8"
     },
     "shots/solutions-1440.webp": {
-      "sha256": "3a4ffa939207fe4953487006936e59dac1b60675fe70c06be4526d3f545ad1c5",
-      "url": "/_blob/859803527e8e1cab77a72856a40f6992"
+      "sha256": "997fd43552f7dc0a31bdd12341d4be7edfd58d50085e716e7207c7d34f4aad07",
+      "url": "/_blob/3086caf5338c65c13d9c87a553618314"
     },
     "shots/solutions-rooftop-solar-1440.webp": {
-      "sha256": "e9e7b281bcae9e12f62655d5c50ad4e4490eddafb0348a4f9f6edca66ef4398c",
-      "url": "/_blob/275c6012b2cc0532e77fe9557c81764d"
+      "sha256": "f06f1ae9a39ebba264d0bc967ace9f877fca7453b1afa79bb5f27f63e1d097fb",
+      "url": "/_blob/6258c527ba5755a25d37168e34112d17"
     },
     "shots/solutions-rooftop-solar-390.webp": {
-      "sha256": "589f0ae1fac2239179ee1813eab8c2144e28e3a4d119df34efa40eab09ac3a68",
-      "url": "/_blob/ddb08a3fdd95aaf0bf5ecee1fc8fc753"
+      "sha256": "10b5aafb1e41cdb44bf149779839315869489202ddd126eb6ce24cfa085c4538",
+      "url": "/_blob/b39b2af3fc66dc51fefaddf2b139d059"
     },
     "styles/canvas-patch.css": {
-      "sha256": "56f3ac511b7efe473d9a749ba6e7e7abafcd0d47f7afff3b4e6797b3f8aee0c8",
-      "url": "/_blob/ca924742a22dd6426ff257b06c667c5e"
+      "sha256": "eddf3da750bd5741fe9a10ef0319cf3f71461cba3298679c0f6c4f2080b13b5c",
+      "url": "/_blob/170f7309a32acd2ba4d46b44ec9c8502"
     }
   }
 }

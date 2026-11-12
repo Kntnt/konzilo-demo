@@ -16,6 +16,7 @@
 //                                                                compared with shots/ (default: six boards)
 //   --index <file>   the canvas's project/canvas.json as read from the canvas: entries and keys the script does not
 //                    own are kept (a revision of a canvas others have worked on)
+//   --shots <folder> where the shots are, when not in shots/ (npm run shoot -- … --out <folder>)
 //   --ds <folder>    preview: where the design system's files were read to (the folder holding its project/)
 //   --with ds        preview: draw the artboards with the design system's stylesheet and fonts in place of kn.css
 //                    and the helmet's fonts, to see whether they render the same
@@ -37,7 +38,6 @@ import sharp from 'sharp';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = join(ROOT, 'dist');
-const SHOTS = join(ROOT, 'shots');
 const RECORD = join(ROOT, 'scripts', 'to-canvas.json');
 
 const TITLE = 'Ampfield Energy website';
@@ -47,7 +47,13 @@ const GAP = 80;                                  // between frames in a row
 const ROW_GAP = 400;                             // between rows: 120, and room for the row's title
 const TITLE_ABOVE = 280;                         // a row title's top above its row
 const PAGES = [{ id: 'design', name: 'Design' }, { id: 'screenshots', name: 'Screenshots' }];
-const NOTE = 'The design of the Ampfield Energy demo site, drawn with the components of its design system. '
+// The canvas's one note. `approved` in the record is the day the design was approved; the version is the Konzilo
+// Design the mockups are built with.
+const KONZILO_DESIGN = JSON.parse(await readFile(join(ROOT, 'node_modules', '@kntnt', 'konzilo-design', 'package.json'), 'utf8')).version;
+const longDate = (day) => new Date(`${day}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const note = (approved) => (approved
+  ? `The approved design of the Ampfield Energy demo site, ${longDate(approved)}, built with Konzilo Design ${KONZILO_DESIGN} and drawn with the components of its design system. `
+  : 'The design of the Ampfield Energy demo site, drawn with the components of its design system. ')
   + 'The page Screenshots holds the same pages as they render in a browser. '
   + 'Comments left on an artboard reach the people working on it.';
 
@@ -107,6 +113,7 @@ const option = (name) => { const at = args.indexOf(name); if (at < 0) return und
 const outArg = option('--out');
 const indexArg = option('--index');
 const dsArg = option('--ds');
+const SHOTS = resolve(option('--shots') ?? join(ROOT, 'shots'));
 const withArg = option('--with');
 const dry = args.includes('--dry') && args.splice(args.indexOf('--dry'), 1);
 const command = ['record', 'check', 'preview', 'unused', 'forget'].includes(args[0]) ? args.shift() : 'convert';
@@ -140,6 +147,7 @@ const fileOf = (b, shot = false) => {
   if (!shot && b === first) return 'Main.dc.html';
   return `${shotName(b)}${shot ? '-shot' : ''}.dc.html`;
 };
+const restFile = (b) => `${shotName(b)}-continued.dc.html`;
 const titleOf = (b) => `${b.name}, ${b.width}`;
 const boards = ROWS.flatMap((row) => row.boards.map((b) => ({ ...b, row: row.id })));
 for (const row of ROWS) row.boards = boards.filter((b) => b.row === row.id);
@@ -157,6 +165,9 @@ async function measure() {
     b.scale = height > MAX_FRAME ? MAX_FRAME / height : 1;   // the screenshot's frame
     b.sw = Math.round(b.width * b.scale);
     b.sh = Math.min(height, MAX_FRAME);
+    // A page taller than a frame goes on in a second live frame beside it, the rest of the page to its end, footer and
+    // all: the page drawn from where the first frame ends.
+    if (b.cut && !b.state) b.rest = { offset: MAX_FRAME, h: Math.min(height - MAX_FRAME, MAX_FRAME) };
   }
 }
 
@@ -419,7 +430,7 @@ function patchCss(css) {
 const escapeJson = (value) => JSON.stringify(value).replace(/&/g, '&amp;').replace(/'/g, '&#39;');
 const logic = 'class Component extends DCLogic {\n  renderVals() {\n    return {};\n  }\n}';
 
-function liveBoard(b, urls) {
+function liveBoard(b, urls, rest = null) {
   const { html, pictures } = b.markup;
   const body = html.replace(/@@asset:([^@]+)@@/g, (_, ref) => urls.asset(ref));
   const rules = pictures.map((style, n) => `[data-ab-picture="${n}"]{${style.replace(/url\((['"]?)([^'")]+)\1\)/g, (_, q, ref) => `url('${urls.asset(ref)}')`)}}`);
@@ -430,11 +441,15 @@ function liveBoard(b, urls) {
   const scrolled = b.scrollY !== undefined
     ? [`:root{--kn-header-scrolled:1!important;--kn-header-past:1!important;--kn-header-beyond:1!important}`, `.kn-page{margin-block-start:-${b.scrollY}px}`]
     : [];
+  // The rest of a page taller than a frame: the page drawn from where the first frame ends, its header in the flow at
+  // the page's top, out of sight, as in a picture of the whole page.
+  if (rest) scrolled.push(`.kn-page{margin-block-start:-${rest.offset}px}`, '.kn-header{position:relative}');
+  const height = rest ? rest.h : b.h;
   return `<!doctype html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<title>${titleOf(b)}</title>
+<title>${titleOf(b)}${rest ? ', continued' : ''}</title>
 <script src="./support.js"></script>
 ${urls.styles.map((href) => `<link rel="stylesheet" href="${href}">`).join('\n')}
 </head>
@@ -450,7 +465,7 @@ ${[...scrolled, ...rules, ...b.markup.css.map((css) => css.trim())].join('\n')}
 </helmet>
 ${body}
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='${escapeJson({ $preview: { width: b.width, height: b.h } })}'>
+<script type="text/x-dc" data-dc-script data-props='${escapeJson({ $preview: { width: b.width, height } })}'>
 ${logic}
 </script>
 </body>
@@ -498,7 +513,7 @@ function designSystems(existing) {
 
 function layout(existing) {
   const index = existing ? structuredClone(existing) : {};
-  const owned = new Set(boards.flatMap((b) => [fileOf(b), fileOf(b, true)]));
+  const owned = new Set(boards.flatMap((b) => [fileOf(b), fileOf(b, true), ...(b.rest ? [restFile(b)] : [])]));
   const ownedNotes = (id) => /^(row-|note-)/.test(id);
   const boardsOut = {};
   const notes = {};
@@ -516,13 +531,17 @@ function layout(existing) {
       boardsOut[fileOf(b, true)] = { ...priorShot, x: xs, y, w: b.sw, h: b.sh, title: shotTitle, page: 'screenshots' };
       x += b.width + GAP;
       xs += b.sw + GAP;
+      if (b.rest) {
+        boardsOut[restFile(b)] = { ...(index.boards?.[restFile(b)] ?? {}), x, y, w: b.width, h: b.rest.h, title: `${titleOf(b)}, continued`, page: 'design' };
+        x += b.width + GAP;
+      }
     }
     for (const page of PAGES) {
       notes[`row-${row.id}-${page.id}`] = { x: 0, y: y - TITLE_ABOVE, text: row.title, kind: 'title1', maxW: (page.id === 'design' ? x : xs) - GAP, page: page.id };
     }
     y += height + ROW_GAP;
   }
-  notes['note-about'] = { x: -720, y: 0, w: 560, text: NOTE, page: 'design' };
+  notes['note-about'] = { x: -720, y: 0, w: 560, text: note(record.approved), page: 'design' };
   const otherBoards = Object.fromEntries(Object.entries(index.boards ?? {}).filter(([file]) => !owned.has(file)));
   const otherNotes = Object.fromEntries(Object.entries(index.notes ?? {}).filter(([id]) => !ownedNotes(id)));
   const allBoards = { ...boardsOut, ...otherBoards };
@@ -657,11 +676,16 @@ async function preview(names) {
   const local = (text) => text.replace(/\/_blob\/[\w-]+/g, (url) => byUrl.get(url) ?? url);
   const dir = join(OUT, withArg === 'ds' ? 'preview-ds' : 'preview');
   await mkdir(dir, { recursive: true });
-  const chosen = names.length ? boards.filter((b) => names.includes(fileOf(b)) || names.includes(shotName(b))) : boards.filter((b) => ['home-1440', 'home-390', 'home-1440-menu', 'home-390-search', 'solutions-rooftop-solar-390', 'contact-1440'].includes(shotName(b)));
+  // Each live frame: a board's, and the rest of a page taller than a frame, compared with the shot from where it begins.
+  const frames = boards.flatMap((b) => [
+    { b, file: fileOf(b), name: shotName(b), h: b.h, top: 0 },
+    ...(b.rest ? [{ b, file: restFile(b), name: `${shotName(b)}-continued`, h: b.rest.h, top: b.rest.offset }] : []),
+  ]);
+  const chosen = names.length ? frames.filter((f) => names.includes(f.file) || names.includes(f.name)) : frames.filter((f) => ['home-1440', 'home-390', 'home-390-continued', 'home-1440-menu', 'home-390-search', 'solutions-rooftop-solar-390', 'contact-1440', 'not-found-1440'].includes(f.name));
   const browser = await chromium.launch({ args: ['--allow-file-access-from-files'] });
   try {
-    for (const b of chosen) {
-      const text = await readFile(join(PROJECT, fileOf(b)), 'utf8');
+    for (const { b, file: boardFile, name, h: frameHeight, top } of chosen) {
+      const text = await readFile(join(PROJECT, boardFile), 'utf8');
       let links = [...text.matchAll(/<link rel="stylesheet" href="([^"]+)">/g)].map((m) => m[1]);
       let helmet = text.match(/<helmet>\n<style>\n([\s\S]*?)\n<\/style>\n<\/helmet>/)[1];
       const content = text.match(/<\/helmet>\n([\s\S]*)\n<\/x-dc>/)[1];
@@ -692,27 +716,27 @@ ${hrefs.map((href) => `<link rel="stylesheet" href="${href}">`).join('\n')}
 <body><div id="dc-root"><div class="sc-host">${local(content)}</div></div></body>
 </html>
 `;
-      const file = join(dir, `${shotName(b)}.html`);
+      const file = join(dir, `${name}.html`);
       await writeFile(file, page);
-      const tab = await browser.newPage({ viewport: { width: b.width, height: b.h }, deviceScaleFactor: 1 });
+      const tab = await browser.newPage({ viewport: { width: b.width, height: frameHeight }, deviceScaleFactor: 1 });
       await tab.goto(pathToFileURL(file).href, { waitUntil: 'load' });
       await tab.evaluate(() => document.fonts.ready);
       await tab.waitForTimeout(400);
-      const png = join(dir, `${shotName(b)}.png`);
+      const png = join(dir, `${name}.png`);
       await tab.screenshot({ path: png });
       const contentHeight = await tab.evaluate(() => document.documentElement.scrollHeight);
       await tab.close();
       // The difference with the shot, as the share of pixels that differ, and a picture of where.
-      const h = Math.min(b.h, b.pageHeight);
-      const [mine, theirs] = await Promise.all([png, b.shot].map((f) => sharp(f).extract({ left: 0, top: 0, width: b.width, height: h }).removeAlpha().raw().toBuffer()));
+      const h = Math.min(frameHeight, b.pageHeight - top);
+      const [mine, theirs] = await Promise.all([[png, 0], [b.shot, top]].map(([f, at]) => sharp(f).extract({ left: 0, top: at, width: b.width, height: h }).removeAlpha().raw().toBuffer()));
       const diff = Buffer.alloc(mine.length);
       let differ = 0;
       for (let p = 0; p < mine.length; p += 3) {
         const d = Math.abs(mine[p] - theirs[p]) + Math.abs(mine[p + 1] - theirs[p + 1]) + Math.abs(mine[p + 2] - theirs[p + 2]);
         if (d > 24) { differ++; diff[p] = 255; diff[p + 1] = 0; diff[p + 2] = 0; } else { diff[p] = diff[p + 1] = diff[p + 2] = Math.round(mine[p] * 0.3 + 178); }
       }
-      await sharp(diff, { raw: { width: b.width, height: h, channels: 3 } }).png().toFile(join(dir, `${shotName(b)}-diff.png`));
-      console.log(`${fileOf(b).padEnd(64)} content ${contentHeight} px, page ${b.pageHeight} px, ${(differ / (mine.length / 3) * 100).toFixed(2)} % of pixels differ`);
+      await sharp(diff, { raw: { width: b.width, height: h, channels: 3 } }).png().toFile(join(dir, `${name}-diff.png`));
+      console.log(`${boardFile.padEnd(64)} content ${contentHeight} px, page ${b.pageHeight - top} px, ${(differ / (mine.length / 3) * 100).toFixed(2)} % of pixels differ`);
     }
   } finally {
     await browser.close();
@@ -866,6 +890,7 @@ async function main() {
   await writeFile(join(PROJECT, 'canvas.json'), `${JSON.stringify(layout(existing), null, 1)}\n`);
   for (const b of boards) {
     await writeFile(join(PROJECT, fileOf(b)), liveBoard(b, urls));
+    if (b.rest) await writeFile(join(PROJECT, restFile(b)), liveBoard(b, urls, b.rest));
     await writeFile(join(PROJECT, fileOf(b, true)), shotBoard(b, shotUrls.get(b)));
   }
   const problems = await check();
