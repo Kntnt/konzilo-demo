@@ -4,7 +4,7 @@ The site's articles, case studies and vacancies, and the terms that sort them: w
 
 | Folder | Holds |
 |---|---|
-| `articles/` | Nine articles, the core's type `article` |
+| `articles/` | Twenty-one articles, the core's type `article` |
 | `case-studies/` | Four case studies, the site's own type `case-study` |
 | `jobs/` | Three vacancies, the site's own type `job` |
 | `authors/`, `categories/`, `topics/` | The terms of the article's three built-in taxonomies |
@@ -72,10 +72,21 @@ Structured data types: none of the core's fits a vacancy (see Wishes). Body elem
 
 | Date | Post | Type | Author | Category | Topics |
 |---|---|---|---|---|---|
+| 2026-01-13 | What a solar roof costs in 2026 | article | Priya Raman | Market and policy | financing, solar |
+| 2026-01-27 | A year of charging at Norrvik's Jönköping depot | article | Elias Forsberg | Company news | charging, reporting |
+| 2026-02-10 | Your electric fleet in your emissions report | article | Lena Bergqvist | Market and policy | charging, reporting |
+| 2026-02-24 | We now ask the grid before we make an offer | article | Priya Raman | Company news | grid, solar |
+| 2026-03-10 | Depot chargers in a leased warehouse | article | Hannah Whitcombe | Guides | charging, financing |
+| 2026-03-24 | What a solar roof needs in thirty years | article | Elias Forsberg | Guides | solar |
+| 2026-04-14 | What a battery earns beyond peak shaving | article | Lena Bergqvist | Guides | grid, storage |
 | 2026-04-21 | Lindhagen Furniture | case study | | | financing, solar |
+| 2026-05-05 | Which meters a site needs | article | Priya Raman | Guides | charging, reporting |
 | 2026-05-19 | Brantevik Foods | case study | | | solar, storage |
+| 2026-05-26 | Kessel Packaging's battery after its first year | article | Lena Bergqvist | Company news | financing, storage |
+| 2026-06-02 | When the power price goes below zero | article | Elias Forsberg | Market and policy | grid, solar |
 | 2026-06-16 | On-site solar in your sustainability report | article | Lena Bergqvist | Market and policy | reporting, solar |
 | 2026-07-14 | Who carries what in a power purchase agreement | article | Elias Forsberg | Guides | financing, solar |
+| 2026-07-28 | Selling a building with solar on the roof | article | Hannah Whitcombe | Guides | financing, solar |
 | 2026-08-18 | What fire safety a battery needs | article | Priya Raman | Guides | storage |
 | 2026-08-25 | Norrvik Logistics | case study | | | charging, reporting, solar |
 | 2026-09-08 | Charging a fleet on a limited grid connection | article | Hannah Whitcombe | Guides | charging, grid |
@@ -87,9 +98,10 @@ Structured data types: none of the core's fits a vacancy (see Wishes). Body elem
 | 2026-11-02 | Electrical Design Engineer, Gothenburg, closes 2026-12-06 | job | | | |
 | 2026-11-04 | Does solar pay in a northern winter? | article | Lena Bergqvist | Market and policy | financing, solar |
 | 2026-11-09 | Project Manager, Rotterdam, closes 2026-12-13 | job | | | |
+| 2026-11-10 | Fast chargers are outgrowing their connections | article | Hannah Whitcombe | Market and policy | charging, storage |
 | 2026-12-01 | Grid capacity is now the scarce resource (scheduled) | article | Lena Bergqvist | Market and policy | grid, storage |
 
-Among the eight articles published by 12 November, every category, topic and author has at least two; the scheduled one adds a third to Lena Bergqvist, Market and policy, Grid and Storage.
+Twenty of the twenty-one articles are published by 12 November, the newest three on 10 November, 4 November and 28 October. Among those twenty, each author has five; Guides has nine, Market and policy six and Company news five; Solar is on ten, Charging on seven, Financing on six, and Grid, Reporting and Storage on five each. Every pair of choices across the filters, an author with a category, an author with a topic, or a category with a topic, finds at least one published article. The scheduled article adds a sixth to Lena Bergqvist and to Grid and Storage, and a seventh to Market and policy.
 
 ## Facts added to `design/README.md`
 
@@ -101,6 +113,15 @@ The texts keep to the README's facts and to what the other pages already say, su
 - **Westerport Retail Parks:** eleven parks from Teesside to South Yorkshire, 168 tenants, 74 roofs, about 15,800 panels; 280 charge points of 22 kW and 60 of up to 150 kW; February 2025 to 18 September 2026, the last park near Doncaster; bought outright, maintained by the Leeds office for ten years; no trading day lost.
 - **Ampfield:** 214 roof surveys in 2025; about a third of 2025's solar systems sold under a power purchase agreement; batteries since 2018, lithium iron phosphate since 2021; Pilot's update of 3 November 2026 adds flexible loads and hourly limits.
 - **Telephone numbers:** Priya Raman +46 31 390 06 12; Hannah Whitcombe +44 113 496 0412, from the same series reserved for drama as the Leeds office's number.
+
+The twelve articles from January to November 2026 add these:
+
+- **Norrvik Logistics, Jönköping:** 52 charge points of 11 kW for vans and 12 chargers of up to 150 kW for trucks; the fleet there grew from 38 vans and 6 trucks in October 2024 to 52 vans and 11 trucks in September 2025; in that year 1.04 GWh charged, 0.41 GWh into vans and 0.63 GWh into trucks, 11% of it from the roof, and 44% of the trucks' noon top-ups from April to September; a van took 0.23 kWh per km in June and 0.28 in January, and preconditions on the charger; the coldest night −19 °C; highest demand 2.09 MW, 95% of the connection; chargers 99.2% available, 37 faults, 21 cleared remotely, cable holders fitted after vans ran over cables; Norrvik's report for 2025 is its first with fleet electricity per vehicle.
+- **Kessel Packaging:** the new line is a printing and die-cutting line; the operator offered a reinforcement of €1.1 million in three years; signed with the Rotterdam office in October 2024, running in March 2025, the line started in June 2025 and now runs two shifts; the battery is 2.5 MW in two containers, cost €1.7 million, and Pilot holds the plant's draw at 2.9 MW; agreed capacity lowered from 3.6 MW to 3.2 MW in May 2025; April 2025 to March 2026 against the year before: 17.6 GWh used (15.1), monthly peak 2.92 MW on average (3.30), highest 3.14 MW (3.52), grid fees €421,000 (€540,000); about 190 full cycles, 99.6% available; none of it offered to the grid.
+- **Westerport Retail Parks:** January to October 2026, 1.55 GWh charged, 0.45 GWh from the 22 kW chargers and 1.10 GWh from the fast chargers; fast chargers in use 15% of opening hours and 42% on Saturday afternoons, over 80% at the three busiest parks, where Pilot then holds them to about 70 kW; at the five parks with fast chargers through both summers, June to August energy rose 64% from 2025 to 2026; the battery study at three parks is to be finished in December 2026.
+- **Ampfield, its work:** 112 solar systems designed in 2025, of which 19 changed after the operator answered (14 export limits, 5 made smaller, seven weeks on average); from 2 March 2026 a capacity enquiry at every site assessment; a fault in the existing metering at about one site in fifteen of 2025's assessments; 23 buildings with Ampfield systems sold since 2019.
+- **Ampfield, its systems:** a 1 MWp roof priced at €670,000 in January 2026, line by line in `what-a-solar-roof-costs-in-2026.md`; panels about 435 W, €120,000 per MWp against €270,000 in 2022; faults and outages cost 1.6% of possible output in 2025, half of it inverters; about one panel in 2,500 replaced; the service agreement includes the washes; gull mesh on coastal roofs; roofs inspected within a week of gusts above 25 m/s; new inverters €50,000 to €60,000 per MWp.
+- **Ampfield Pilot:** has held back export in hours of negative prices since spring 2024, about 2,700 MWh in 2025, 0.8% of output, saving owners about €110,000; offers customers' batteries to the reserve markets together.
 
 ## Assumptions about directive syntax
 

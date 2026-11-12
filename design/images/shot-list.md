@@ -45,6 +45,18 @@ The look: natural light, calm and matter-of-fact, as a company's own photographe
 | `article-battery-fire-safety` | Battery containers with fencing and safety markings, or a fire safety check on site |
 | `article-company-news` | A newly completed solar roof with people on it, a small ceremony or a handover |
 | `article-roof-ballast` | Close view of an east–west solar system on a membrane roof: rails, pads and ballast blocks |
+| `article-solar-costs` | Pallets of packed solar panels and bundles of aluminium mounting rails on a flat roof, before they are fitted |
+| `article-depot-winter` | Charging posts with their cables hanging, in a depot yard or car park with snow on the ground; no vehicle brands or number plates |
+| `article-fleet-report` | A row of delivery vans parked side by side in a yard, seen from behind or from above; no logos or number plates |
+| `article-grid-connection` | A small fenced substation or transformer beside an industrial building |
+| `article-depot-lease` | Chargers mounted on the outside wall of a warehouse or commercial building, with parking bays in front of them |
+| `article-roof-maintenance` | A technician inspecting rows of solar panels on a flat roof, seen from behind or from a distance |
+| `article-battery-containers` | Battery storage containers with cooling units on their sides, on a concrete pad behind a fence |
+| `article-meters` | A row of electricity meters with digital displays in an open meter cabinet; no readable brand |
+| `article-packaging-plant` | Stacks of flattened cardboard boxes on pallets inside a packaging plant; no faces |
+| `article-solar-noon` | Rows of solar panels on a flat roof under a clear sky in bright midday sun, the sun reflected in the glass |
+| `article-building-sale` | A low industrial building with rows of solar panels on its roof, seen from the street |
+| `article-fast-chargers` | Fast chargers in a retail car park, one of them with a car plugged in; no readable brands or number plates |
 
 ## For case studies, landscape
 
