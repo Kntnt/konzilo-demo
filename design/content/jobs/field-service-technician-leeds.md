@@ -6,7 +6,7 @@ excerpt: "Keep solar, battery and charging systems running across the north of E
 location: "Leeds"
 team: "Energy Services"
 employment: "Permanent, full time"
-closingDate: 2026-11-30
+closingDate: 2027-11-30
 ---
 
 Our Leeds team runs the systems we have built across the north of England: rooftop solar, batteries and chargers on factories, depots and retail parks, among them the 6.8 MWp and 340 charge points at Westerport Retail Parks' eleven parks. As more of what we build goes into service, we need another field service technician to keep it running.
@@ -39,7 +39,7 @@ Most of the sites are within two hours of Leeds, and most days start from home. 
 
 ## How to apply
 
-Send your CV and a few lines on why this job to [careers@ampfield.example](mailto:careers@ampfield.example) by 30 November 2026, with Leeds in the subject line. No cover letter is needed. If we go on, the next steps are a thirty-minute call with the UK service lead and then half a day in Leeds, part of it at one of the systems we run, and you get an answer within a week of that meeting.
+Send your CV and a few lines on why this job to [careers@ampfield.example](mailto:careers@ampfield.example) by 30 November 2027, with Leeds in the subject line. We read applications as they come in and may fill the position before then. No cover letter is needed. If we go on, the next steps are a thirty-minute call with the UK service lead and then half a day in Leeds, part of it at one of the systems we run, and you get an answer within a week of that meeting.
 
 Questions about the role: Hannah Whitcombe, Country Manager, United Kingdom, [+44 113 496 0412](tel:+441134960412).
 

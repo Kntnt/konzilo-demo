@@ -6,7 +6,7 @@ excerpt: "Design the electrical side of rooftop solar and battery systems for fa
 location: "Gothenburg"
 team: "Engineering and Delivery"
 employment: "Permanent, full time"
-closingDate: 2026-12-06
+closingDate: 2027-12-06
 ---
 
 Our engineers in Gothenburg and Malmö design every system we build in Sweden and Denmark: about 70 a year, from a 300 kWp roof on a workshop to a 3 MWp roof with a battery on a distribution centre. We are looking for an electrical design engineer to join the twelve engineers in Gothenburg.
@@ -41,7 +41,7 @@ Experience of solar, batteries or charging helps, but we will teach you what you
 
 ## How to apply
 
-Send your CV and a few lines on why this job to [careers@ampfield.example](mailto:careers@ampfield.example) by 6 December 2026. No cover letter is needed. Within a week you hear from us, and if we go on, the next steps are a thirty-minute call with Priya Raman, Head of Engineering and Delivery, and then half a day with the team in Gothenburg. You get an answer, yes or no and why, within a week of that meeting.
+Send your CV and a few lines on why this job to [careers@ampfield.example](mailto:careers@ampfield.example) by 6 December 2027. We read applications as they come in and may fill the position before then. No cover letter is needed. Within a week you hear from us, and if we go on, the next steps are a thirty-minute call with Priya Raman, Head of Engineering and Delivery, and then half a day with the team in Gothenburg. You get an answer, yes or no and why, within a week of that meeting.
 
 Questions about the role: Priya Raman, [+46 31 390 06 12](tel:+46313900612). Questions about how we hire: Daniel Okafor, Head of People and Safety, at the same e-mail address.
 

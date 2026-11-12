@@ -57,7 +57,7 @@ Address `/about/careers/{slug}/`, collection `jobs`. The fields, in this order:
 | `location` | `string` | `select` | Office | `Gothenburg`, `Malmö`, `Rotterdam`, `Leeds` |
 | `team` | `string` | `text` | Team | Such as `Engineering and Delivery` or `Energy Services` |
 | `employment` | `string` | `select` | Employment | `Permanent, full time`, `Permanent, part time`, `Fixed term` |
-| `closingDate` | `date` | `date` | Last day to apply | Every one after 12 November 2026 |
+| `closingDate` | `date` | `date` | Last day to apply | Every one a year on, after 12 November 2027, so that the demo shows open vacancies for a year; each text says that applications are read as they come in |
 | `seo` | core | | | Not set in these files |
 
 Structured data types: none of the core's fits a vacancy (see Wishes). Body elements: `paragraph`, `heading`, `list`, and the design system's `list-directive`, for the actions under "How to apply".
@@ -66,7 +66,7 @@ Structured data types: none of the core's fits a vacancy (see Wishes). Body elem
 
 - **The showpiece** is `articles/can-your-roof-carry-solar-panels.md`, by Priya Raman. Its body holds crossheads at level 2 with four at level 3 under one of them, a bulleted list, a numbered list, a quotation with its source, a simple table, a picture with a caption, three footnotes, a fact box, and an embedded video, so that the core's consent placeholder shows: the Edinburgh Fire Research Centre's presentation "Experimental Study of Flame Spread Underneath Photovoltaic (PV) Modules" (University of Edinburgh, 2021), `https://www.youtube.com/watch?v=PwmzZ26vEYU`, under "Where can panels not go?".
 - **The case study drawn in full** is `case-studies/norrvik-logistics.md`: a gallery of `case-norrvik-roof`, `case-norrvik-charging` and `case-norrvik-inverters`, each with its caption and the gallery's own, a picture of its own, `case-norrvik-team`, with its caption under the works, a structured table with a caption and a footer, a fact box and a quotation. The gallery holds three, since the design sets a gallery's columns by the width and not by the number of pictures: in the reading column it has three, and four would leave one alone on a second row.
-- **The scheduled article** is `articles/grid-capacity-is-now-the-scarce-resource.md`, dated 1 December 2026 at 07:00 UTC. As a content file it cannot exist before that day, since a build writes only a post whose date has come. In the source repository it is a source file with `status: scheduled` and that date, so that the editor shows it as scheduled and it goes live on its own.
+- **The scheduled article** is `articles/grid-capacity-is-now-the-scarce-resource.md`, dated 1 December 2027 at 07:00 UTC, a year on, so that the editor shows a scheduled post for a year. As a content file it cannot exist before that day, since a build writes only a post whose date has come. In the source repository it is a source file with `status: scheduled` and that date, so that the editor shows it as scheduled and it goes live on its own.
 
 ## Every post
 
@@ -93,13 +93,13 @@ Structured data types: none of the core's fits a vacancy (see Wishes). Body elem
 | 2026-09-24 | The last Westerport roof goes live | article | Hannah Whitcombe | Company news | charging, reporting, solar |
 | 2026-10-13 | Can your roof carry solar panels? (showpiece) | article | Priya Raman | Guides | solar |
 | 2026-10-20 | Westerport Retail Parks | case study | | | charging, reporting, solar |
-| 2026-10-21 | Field Service Technician, Leeds, closes 2026-11-30 | job | | | |
+| 2026-10-21 | Field Service Technician, Leeds, closes 2027-11-30 | job | | | |
 | 2026-10-28 | Ampfield Pilot now steers the loads that can wait | article | Elias Forsberg | Company news | grid, storage |
-| 2026-11-02 | Electrical Design Engineer, Gothenburg, closes 2026-12-06 | job | | | |
+| 2026-11-02 | Electrical Design Engineer, Gothenburg, closes 2027-12-06 | job | | | |
 | 2026-11-04 | Does solar pay in a northern winter? | article | Lena Bergqvist | Market and policy | financing, solar |
-| 2026-11-09 | Project Manager, Rotterdam, closes 2026-12-13 | job | | | |
+| 2026-11-09 | Project Manager, Rotterdam, closes 2027-12-13 | job | | | |
 | 2026-11-10 | Fast chargers are outgrowing their connections | article | Hannah Whitcombe | Market and policy | charging, storage |
-| 2026-12-01 | Grid capacity is now the scarce resource (scheduled) | article | Lena Bergqvist | Market and policy | grid, storage |
+| 2027-12-01 | Grid capacity is now the scarce resource (scheduled) | article | Lena Bergqvist | Market and policy | grid, storage |
 
 Twenty of the twenty-one articles are published by 12 November, the newest three on 10 November, 4 November and 28 October. Among those twenty, each author has five; Guides has nine, Market and policy six and Company news five; Solar is on ten, Charging on seven, Financing on six, and Grid, Reporting and Storage on five each. Every pair of choices across the filters, an author with a category, an author with a topic, or a category with a topic, finds at least one published article. The scheduled article adds a sixth to Lena Bergqvist and to Grid and Storage, and a seventh to Market and policy.
 

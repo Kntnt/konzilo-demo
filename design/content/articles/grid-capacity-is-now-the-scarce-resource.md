@@ -1,7 +1,7 @@
 ---
 title: "Grid capacity is now the scarce resource"
-date: 2026-12-01T07:00:00Z
-modified: 2026-12-01T07:00:00Z
+date: 2027-12-01T07:00:00Z
+modified: 2027-12-01T07:00:00Z
 image: {"src":"image:article-grid","alt":"High-voltage pylons and power lines across open fields at dusk"}
 eyebrow: "Before next year's tariffs"
 headline: "Grid capacity is now the scarce resource"
@@ -21,7 +21,7 @@ Industry is moving heat, transport and processes from fuel to electricity, and t
 
 The first is the queue. In congested parts of the Netherlands and England, a request for a new or larger connection can be met with a date years away. In Sweden and Denmark the waits are shorter, but they are growing around the larger cities and ports.
 
-The second is the price. More of a network bill is now set by the highest demand in a month or a year, and less by the energy used. Across the 160 customer sites whose network invoices we follow, the share set by peak demand rose from about a quarter in 2021 to about two-fifths in 2025.[^1]
+The second is the price. More of a network bill is now set by the highest demand in a month or a year, and less by the energy used. Across the 160 customer sites whose network invoices we follow, the share set by peak demand rose from about a quarter in 2021 to about two-fifths in 2026.[^1]
 
 ## What one peak costs
 
@@ -55,4 +55,4 @@ Operators publish next year's tariffs in the last months of the year, and three 
 
 If the answers point at a battery, we can model what it would have saved in each of the last twelve months, from your own meter data, within two weeks.
 
-[^1]: Ampfield's analysis of network invoices from 160 customer sites in Sweden, Denmark, the Netherlands and the United Kingdom, 2021 to 2025, each under its own tariff.
+[^1]: Ampfield's analysis of network invoices from 160 customer sites in Sweden, Denmark, the Netherlands and the United Kingdom, 2021 to 2026, each under its own tariff.

@@ -6,7 +6,7 @@ excerpt: "Lead the building of rooftop solar and battery systems on industrial s
 location: "Rotterdam"
 team: "Engineering and Delivery"
 employment: "Permanent, full time"
-closingDate: 2026-12-13
+closingDate: 2027-12-13
 ---
 
 Our Rotterdam office builds rooftop solar and batteries for manufacturers, logistics companies and property owners across the Netherlands, among them the 5 MWh battery that keeps Kessel Packaging's plant in Dordrecht inside its grid connection. Sites on congested parts of the Dutch grid are asking for batteries faster than one project manager can build them, and we need a second.
@@ -40,7 +40,7 @@ You report to Joost van der Heiden, Country Manager, Netherlands, and work with 
 
 ## How to apply
 
-Send your CV and a few lines on why this job, in Dutch or English, to [careers@ampfield.example](mailto:careers@ampfield.example) by 13 December 2026, with Rotterdam in the subject line. No cover letter is needed. If we go on, the next steps are a thirty-minute call with Joost van der Heiden and then half a day in Rotterdam and on one of our sites, and you get an answer within a week of that meeting.
+Send your CV and a few lines on why this job, in Dutch or English, to [careers@ampfield.example](mailto:careers@ampfield.example) by 13 December 2027, with Rotterdam in the subject line. We read applications as they come in and may fill the position before then. No cover letter is needed. If we go on, the next steps are a thirty-minute call with Joost van der Heiden and then half a day in Rotterdam and on one of our sites, and you get an answer within a week of that meeting.
 
 Questions about the role go to [rotterdam@ampfield.example](mailto:rotterdam@ampfield.example), and Joost van der Heiden answers them himself.
 
