@@ -36,6 +36,18 @@ The work will find problems, shortcomings and bugs in Konzilo and Konzilo Design
 1. **Design.** Plan the phase, create the repository locally and on GitHub, and prepare. Make the design system, and design every page with Claude Design. Present the design to Thomas.
 2. **Build.** When Thomas has approved the design: plan the phase and prepare, build the whole solution, and publish the image as `ghcr.io/kntnt/konzilo-demo`.
 
+## What Thomas settled on 2026-11-12
+
+When the design was presented, he settled these.
+
+- **The name** Ampfield Energy stays, though a company called Ampfield Aktiebolag exists in Stockholm, in another business.
+- **Pictures of people** are made by an image model, through Codex, from the stock photograph that was chosen: much the same picture, with an invented person's face. No real person stands for an invented one.
+- **Signing in to the editor** is exactly as Konzilo has it, second factor and all. The demo has three people, one in each role: Admin, Editor and Reviewer. Buttons on the sign-in pages may fill in a chosen person's details with a script, and do nothing more; the visitor signs in with the form itself.
+- **The command** publishes four fixed ports, one for each of Konzilo's origins: `docker run --rm -p 8080-8083:8080-8083 ghcr.io/kntnt/konzilo-demo`.
+- **Releases** of Konzilo and Konzilo Design may be made when the demo needs them and their own gates pass.
+- **A possibly better solution** gets an issue as its feature request, and a pull request with code only where the change is small.
+- **Statistics and video:** one article embeds a video, so that the consent placeholder shows. The site counts no visits, and its policies say nothing of Matomo.
+
 ## How the work is done
 
 One session plans both phases and orchestrates. It delegates the execution to subagents on Opus or Sonnet, at an effort it chooses, up to and including extra high and never max. It watches the results and raises the model or the effort when a choice proved too weak.
