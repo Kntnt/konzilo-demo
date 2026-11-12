@@ -1,0 +1,26 @@
+---
+// The frame of a canvas: Konzilo's blank page, with neither header nor footer, on the page's own Surface.
+import Page from '@kntnt/konzilo-design/components/Page.astro';
+import { PAGE_PROPS } from '../lib/site.js';
+import 'virtual:mockup-styles';
+import '@kntnt/konzilo-design/components.css';
+import '../mockup.css';
+
+interface Props { title: string; mode?: 'light' | 'dark' }
+const { title, mode } = Astro.props;
+---
+<!doctype html>
+<html lang="en-GB" data-kn-mode={mode}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Ampfield Energy</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <Page {...PAGE_PROPS}>
+      <slot />
+    </Page>
+    <slot name="after" />
+  </body>
+</html>

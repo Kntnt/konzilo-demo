@@ -1,0 +1,26 @@
+---
+// Konzilo Markdown drawn by the design's renderers, for a page file: `source` is the Markdown, or `file` a content
+// file in design/content whose body is drawn. Without `body`, it is a whole body of bands, heroes and sections, as a
+// post's body is; with `body`, the blocks stand as they would inside a section's body, for a band the page writes
+// itself. `title` is the page's title: a hero holds it as its H1, and a body with no hero gets it, with its trail, in
+// a section of its own first; leave it out where the page writes its title itself. `address` and `trail` give the
+// trail (src/lib/site.js, trailFor()). Ids stay unique across the Markdown blocks of one page.
+import { design } from '../lib/design.js';
+import { postByFile } from '../lib/content.js';
+import { readMarkdown } from '../lib/markdown.js';
+import { blocksOf } from '../lib/html.js';
+import { context, renderBlocks, renderBody } from '../lib/render.js';
+import { EMAIL, FORMS, trailFor } from '../lib/site.js';
+
+interface Props { source?: string; file?: string; title?: string; address?: string; trail?: { label: string; href?: string }[]; body?: boolean; ground?: string }
+const { source, file, title, address = '/', trail, body = false, ground } = Astro.props;
+const post = file ? postByFile(file) : undefined;
+if (file && !post) throw new Error(`No content file ${file} in design/content.`);
+const ctx = context({ design, title, address, trail: trail ?? trailFor(address, post?.data.breadcrumb ?? title ?? post?.data.title ?? ''), forms: FORMS, email: EMAIL, post });
+const locals = Astro.locals as { mockupIds?: Record<string, number> };
+ctx.ids = locals.mockupIds ??= {};
+ctx.ground = ground;
+const tree = readMarkdown(source ?? post?.body ?? '');
+const html = body ? renderBlocks(blocksOf(tree.children), ctx) : renderBody(tree, ctx);
+---
+<Fragment set:html={html} />

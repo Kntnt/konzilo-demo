@@ -1,0 +1,8 @@
+---
+// A picture by its id, design/images/<id>.jpg, made at a width fit for its place (src/lib/pictures.js, WIDTHS) or in
+// pixels; a placeholder naming the id stands in until the picture arrives.
+import { picture } from '../lib/pictures.js';
+interface Props { id: string; alt: string; width?: number | 'behind' | 'hero' | 'section' | 'figure' | 'card' | 'tab' | 'portrait'; class?: string; [attribute: string]: unknown }
+const { id, alt, width = 'figure', ...attributes } = Astro.props;
+---
+<img {...attributes} src={picture(id, width)} alt={alt} />

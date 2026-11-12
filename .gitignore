@@ -6,3 +6,6 @@ dist/
 
 # What Konzilo Design exports is made again by one command
 design/export/*.zip
+
+# Screenshots of the mockups are made again by one command
+design/mockups/shots/
