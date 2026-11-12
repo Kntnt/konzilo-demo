@@ -75,14 +75,14 @@ const md = [
     item('Page not found', 'not-found', designed),
     item('Book a site assessment', 'go-site-assessment', 'Designed. A canvas, with no header and footer.'),
   ], 'raised'),
-  band('The header', [
+  band('The header and the footer', [
     `- The menu open\n  - Designed. Screenshots of the window: [at 1440 px](${shot('home-1440-menu.png')}) and [at 390 px](${shot('home-390-menu.png')}).`,
     `- The search box open\n  - Designed. Screenshots of the window: [at 1440 px](${shot('home-1440-search.png')}) and [at 390 px](${shot('home-390-search.png')}).`,
     `- Over a scrolled page\n  - The header slides away as the page scrolls down and comes back, translucent, on the way up. Screenshots of the window: [at 1440 px](${shot('home-1440-scrolled.png')}) and [at 390 px](${shot('home-390-scrolled.png')}).`,
+    `- The footer at the page's end\n  - The footer lies still at the window's bottom edge, and the page, casting its shadow on it, reveals it as it scrolls off. Screenshots of the window scrolled to the end of Home: [at 1440 px](${shot('home-1440-end.png')}) and [at 390 px](${shot('home-390-end.png')}).`,
   ]),
   band('The design system', [
     item('The catalogue', 'catalogue', 'Every renderer once, with the Markdown that gives it.'),
-    item('Five ways to part the tabs from their values', 'options-tabs', "Not a page of the site: the options for Thomas's point 15, the section Two ways to pay of Rooftop solar drawn once for each."),
     item('The header, closed', 'catalogue-header-closed', 'A frame of the catalogue.'),
     item('The header with its menu open', 'catalogue-header-menu', 'A frame of the catalogue.'),
     item('The header with its search box open', 'catalogue-header-search', 'A frame of the catalogue.'),

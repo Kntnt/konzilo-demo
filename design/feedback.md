@@ -1,6 +1,6 @@
 # Thomas's feedback on the design
 
-Given on 2026-11-12, when the design was first presented, in Swedish; this is what it says. Each point names where it is put right: in Konzilo Design, where the fault is the design system's, or here, where it is this site's design, text or pictures. The last column says what was done, with Konzilo Design 0.4.0 in the mockups.
+Given on 2026-11-12, when the design was first presented, in Swedish; this is what it says. Each point names where it is put right: in Konzilo Design, where the fault is the design system's, or here, where it is this site's design, text or pictures. The last column says what was done, with Konzilo Design 0.4.0 in the mockups, and for points 29 to 33 with 0.5.0.
 
 ## In general
 
@@ -25,7 +25,7 @@ Given on 2026-11-12, when the design was first presented, in Swedish; this is wh
 |---|---|---|---|---|
 | 13 | Home | The customers' logos almost twice as large | Konzilo Design | Konzilo Design 0.4.0: 4.5rem high on a wide screen |
 | 14 | Solutions | The arrow on the cards moves when the card is hovered. A word, an icon, or a word with an icon are one idea and should behave alike, and a word should not move. He leaves the choice open. **Settled by the orchestrator:** the mark stays still in all three forms; the card's own behaviour (point 10) answers the pointer | Konzilo Design | Konzilo Design 0.4.0 |
-| 15 | Rooftop solar | Under the tabs of "Two ways to pay", the tab row's rule and the rule of the two topmost value cards stand one above the other. He sees four ways, none good: leave it; drop the cards' rule there; widen the distance; end the tab row's rule where the tabs end. He asks whether there is a fifth, and may accept it as it is | Here: options drawn for him to choose from | Five options drawn on `mockups/dist/options-tabs.html`, each with both tabs open in turn: A as it is, B the values' first rule goes, C the tab row's rule ends with the tabs, D the rule above the tabs (the orchestrator's), E the panel on a plate. Waiting for Thomas's choice; D is recommended. The choice touches every tab panel with values, on four solution pages, and is Konzilo Design's to make |
+| 15 | Rooftop solar | Under the tabs of "Two ways to pay", the tab row's rule and the rule of the two topmost value cards stand one above the other. He sees four ways, none good: leave it; drop the cards' rule there; widen the distance; end the tab row's rule where the tabs end. He asks whether there is a fifth, and may accept it as it is | Here: options drawn for him to choose from | Five options were drawn for him, each with both tabs open in turn: A as it is, B the values' first rule goes, C the tab row's rule ends with the tabs, D the rule above the tabs, E the panel on a plate. He chose D (point 29), and the page of options is gone |
 | 16 | Customers | The filter gets a search box under its row of topics. The choices on one row are joined by OR, the rows by AND | Konzilo Design, then here | `filters="topics search"`: the Topic row and the search row with its button; the deck says that a search looks within what is chosen |
 | 17 | Customers | The distance between the case studies and the logos is far too small. It must equal the distance between the logos and the next section | Konzilo Design | Konzilo Design 0.4.0 |
 | 18 | A case study | The gallery's pictures do not open in a lightbox. He takes it that the built site will have it. It will: the lightbox is the Konzilo core's | Nothing to do in the design | Nothing |
@@ -51,10 +51,10 @@ The texts disagree with each other in five places. Each is settled on one truth,
 
 When he had seen the options and the revised pages. He said that the design is approved when these are done.
 
-| # | What he said | Where |
-|---|---|---|
-| 29 | Of the options for point 15 he takes D, the tab row's rule above the tabs. One should be able to choose in Konzilo Design between the rule above and under | Konzilo Design, then the design file |
-| 30 | Does the header cast a shadow on the page? It does: the shadow's targets include the header | Nothing to do |
-| 31 | The footer is attached to the window's edge, so that the page reveals it, with a shadow | Here: the design file |
-| 32 | The footer's three lines ("Registered office: Gothenburg" and the two after it) stand right-aligned, which should be a setting in Konzilo Design | Konzilo Design, then the design file |
-| 33 | In "This site demonstrates Konzilo.", the word Konzilo is a link to https://www.konzilo.com/ | Here |
+| # | What he said | Where | Done |
+|---|---|---|---|
+| 29 | Of the options for point 15 he takes D, the tab row's rule above the tabs. One should be able to choose in Konzilo Design between the rule above and under | Konzilo Design, then the design file | Konzilo Design 0.5.0, and `tabs.rule-place` above: the rule stands between the label and the tabs, the open tab's bar lies on it, and the panel follows with no rule of its own, so the values beside a tab's text no longer stand under a second rule. On Rooftop solar, Battery storage, Fleet charging and Ampfield Pilot. Ampfield Pilot's tabs are now "Measure only" and "Control too", after the section's question: their longer names wrapped at phone width, where the second tab's mark stood under the first (`gaps.md`). The page of options is gone |
+| 30 | Does the header cast a shadow on the page? It does: the shadow's targets include the header | Nothing to do | Nothing |
+| 31 | The footer is attached to the window's edge, so that the page reveals it, with a shadow | Here: the design file | `footer.attachment` reveal and `page.shadow` on: the footer lies still at the window's bottom edge, the page slides off it casting its shadow on it, and scrolled to the end the footer stands where it stood at the page's end. Konzilo Design 0.5.0 inks the shadow for the footer's dark band, where 0.4.0's hardly showed. It works in Chromium, Firefox and WebKit, opened from the file system and over HTTP |
+| 32 | The footer's three lines ("Registered office: Gothenburg" and the two after it) stand right-aligned, which should be a setting in Konzilo Design | Konzilo Design, then the design file | Konzilo Design 0.5.0, and `footer.b-align` end: on a wide screen the three lines end at the column's end, flush with the consent links under them, and the links there carry their separator after each. On a phone they stand at the start, as every box there does |
+| 33 | In "This site demonstrates Konzilo.", the word Konzilo is a link to https://www.konzilo.com/ | Here | `content/site.json` writes the word as `[Konzilo](https://www.konzilo.com/)`, and the mockups draw a Markdown link in a footer cell's text as a link. The design file's `project.footer` keeps the line as plain words, which is all that field holds (`gaps.md`). Like the footer's other links, it is the text colour, underlined under the pointer, so in a muted line it stands out by colour alone (`gaps.md`) |

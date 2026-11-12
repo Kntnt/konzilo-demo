@@ -51,8 +51,10 @@ export function headerFor(address) {
 
 export const PAGE_PROPS = pageProps(design.resolved.page);
 
-// A cell's text, its lines kept.
-const lines = (text) => `<p class="kn-footer-muted">${String(text).split('\n').map(escapeText).join('<br>')}</p>`;
+// A cell's text, its lines kept, and a link written as Markdown, [Konzilo](https://www.konzilo.com/), drawn as a link:
+// a cell's content is the site's own HTML (Konzilo Design's konzilo.md, The footer).
+const link = (line) => escapeText(line).replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, label, href) => `<a href="${escapeAttribute(href)}">${label}</a>`);
+const lines = (text) => `<p class="kn-footer-muted">${String(text).split('\n').map(link).join('<br>')}</p>`;
 const ICONS = { linkedin: 'linkedin', youtube: 'youtube', facebook: 'facebook', instagram: 'instagram', x: 'brand-x' };
 // The social links as a row of icons, `.kn-footer-social`, as the design's own footer sample draws them.
 function social(links) {

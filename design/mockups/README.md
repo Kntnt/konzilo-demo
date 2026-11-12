@@ -1,13 +1,13 @@
 # The mockups
 
-Every designed page of the Ampfield site as static HTML, made from Konzilo Design's released package (`../../vendor/kntnt-konzilo-design-0.4.0.tgz`), the design file `../site.design.json`, its fonts and logos, and the text in `../content/`. A built page stands alone: plain HTML with its CSS inline and relative addresses, so it opens from the file system and can be screenshotted.
+Every designed page of the Ampfield site as static HTML, made from Konzilo Design's released package (`../../vendor/kntnt-konzilo-design-0.5.0.tgz`), the design file `../site.design.json`, its fonts and logos, and the text in `../content/`. A built page stands alone: plain HTML with its CSS inline and relative addresses, so it opens from the file system and can be screenshotted.
 
 The mockups are a means and will be thrown away. What they must get right is that a page shows only what the design system and Konzilo can render, placed as an editor could place it (`../README.md`, Rules for every page).
 
 ## How it works
 
 - **A page is drawn from Konzilo Markdown.** `src/lib/markdown.js` reads Markdown as the Konzilo core does (Sätteri, GFM, directives), into the core's hast tree, with each directive as the core's plain rendering. `src/lib/render.js` draws each directive with the HTML of Konzilo Design's `docs/spec/directives.md`, using the package's own helpers (`sectionParts`, `markerAttributes`, `surfaceOf` and the rest). The package's CSS does the rest.
-- **The frame** is the package's Page, Header and Footer, wired from `../content/site.json` as Konzilo Design's `docs/spec/konzilo.md` shows a Konzilo site doing it (`src/layouts/Site.astro`, `src/lib/site.js`). A canvas has no header or footer (`src/layouts/Canvas.astro`).
+- **The frame** is the package's Page, Header and Footer, wired from `../content/site.json` as Konzilo Design's `docs/spec/konzilo.md` shows a Konzilo site doing it (`src/layouts/Site.astro`, `src/lib/site.js`). A footer cell's text in `site.json` may write a link as Markdown, `[Konzilo](https://www.konzilo.com/)`, which is drawn as a link, since a cell's content is the site's own HTML. A canvas has no header or footer (`src/layouts/Canvas.astro`).
 - **Every content file is a page already.** A file in `../content/` with frontmatter is built by the name of its address. A page file in `pages/` of the same name takes its place.
 
 ## Commands
@@ -23,10 +23,14 @@ npm run shoot -- home --dark             # also shots/home-1440-dark.png and sho
 npm run shoot -- home --state menu       # the header's menu open, the window only: shots/home-1440-menu.png …
 npm run shoot -- home --state search     # the search box open, likewise
 npm run shoot -- home --state scrolled   # scrolled down and a little back up, the header over the content
+npm run shoot -- home --state end        # scrolled down to the very end, the footer revealed: shots/home-1440-end.png …
+npm run shoot -- home --state ending     # half the footer's height short of the end, the page leaving the footer
 npm run shoot -- home --widths 1024,768  # other widths; --dist and --out read and write elsewhere
 ```
 
 A build of a few pages takes a few seconds. Build before you shoot: the shot is of what is in `dist/`.
+
+The footer lies at the window's edge, and a full-page capture keeps the window's height, so it would paint the footer at the window's bottom, under the page. `shoot` takes a full page's last rows, as tall as the footer, from the window scrolled to the end, where the footer stands as a visitor sees it.
 
 ## Page names
 
@@ -44,7 +48,7 @@ How a content page is drawn, by its type:
 
 Pages that are no content file, each a page file of its own: the term pages `insights-category-guides` and `insights-author-priya-raman` (`src/lib/terms.js`, `termPage(collection, slug)`, which draws any category, topic or author), and the search page `search` (`src/lib/search.js`). See The editorial templates, below.
 
-Pages that are not the site's: `index` (this folder's index, `dist/index.html`), `catalogue` with its three header frames, and `options-tabs`, the five options for Thomas's point 15 (`../feedback.md`), the section "Two ways to pay" of Rooftop solar drawn once for each, with each tab open in turn. `options-tabs` alone carries CSS of its own, since it explores a change to the design system's tabs.
+Pages that are not the site's: `index` (this folder's index, `dist/index.html`) and `catalogue` with its three header frames.
 
 ## Adding a page
 
@@ -159,7 +163,7 @@ dist/_astro/              fonts and the header's polyfills, by content hash
 dist/images/              pictures by id and width, and placeholders
 dist/logo/                logos from ../logo/
 dist/logos/               the design's own logos
-shots/                    screenshots: <name>-<width>[-dark][-menu|-search|-scrolled].png
+shots/                    screenshots: <name>-<width>[-dark][-menu|-search|-scrolled|-end|-ending].png
 ```
 
 ## What a page shows that the site would not
@@ -169,8 +173,9 @@ shots/                    screenshots: <name>-<width>[-dark][-menu|-search|-scro
 - The consent controls' buttons show, as they do once the core's script has run; the consent banner does not.
 - A paragraph of a YouTube address alone is the core's embed as its consent placeholder, the question, the sentence and *Allow and play* in the core's words (`src/lib/embeds.js`); the button loads nothing. Another service's address stays a paragraph.
 - A code block has no Shiki colours.
-- The header's script that chooses how the bar gives way runs, as on the site. Nothing else needs a script, except the two catalogue frames that open the menu and the search box.
+- The header's script that chooses how the bar gives way runs, as on the site, and so does the footer's that says whether it fits in the window. Nothing else needs a script, except the two catalogue frames that open the menu and the search box.
 - The header slides away and comes back in Chromium and, by its polyfill, in Firefox, opened from the file system. WebKit refuses a module's import on a page opened from the file system, so there the header stays; served over HTTP it slides away as elsewhere. The build writes the polyfills' addresses in a script as `./_astro/…`, since a bare `_astro/…` is no module specifier.
+- The footer's reveal works in Chromium, Firefox and WebKit, from the file system and over HTTP: the build writes the footer's script, `footer-fit.js`, which imports nothing, into the page.
 - A search from a filtered list goes to `/search/`, which the mockups do not answer.
 
 ## The design canvas in Claude

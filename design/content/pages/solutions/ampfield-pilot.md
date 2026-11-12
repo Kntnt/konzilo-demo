@@ -78,7 +78,7 @@ You can start with measuring and reporting, and add control when you add a batte
 
 Two levels
 
-### Measure and report
+### Measure only
 
 Pilot reads every meter and system once a minute, shows use and output per building and per hour, warns you of faults and unusual use, and writes the monthly report.
 
@@ -95,7 +95,7 @@ It suits a site that wants to know where its energy goes before it invests, or t
 
 :::
 
-### Measure, report and control
+### Control too
 
 Everything in the first, and Pilot also runs your battery and chargers: against the grid connection's limit, the electricity price hour by hour, and the times your vehicles must be full.
 

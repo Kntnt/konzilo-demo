@@ -64,7 +64,7 @@ Four have a case study: Norrvik Logistics, Brantevik Foods, Lindhagen Furniture 
 
 - **Colours:** a deep green as the primary colour, and a warm amber as the secondary. The design file holds the exact values.
 - **Type:** Konzilo Design's own choice for a new design, Mona Sans with Mona Sans Mono.
-- **Everything else:** Konzilo Design's defaults, unless a default plainly fails this site or Thomas asked otherwise (`feedback.md`): the header without its link menu, at the window's edge, sliding away and translucent; shadows; corners of 3 px; and the first heading and the display style light and a little narrow, as display type.
+- **Everything else:** Konzilo Design's defaults, unless a default plainly fails this site or Thomas asked otherwise (`feedback.md`): the header without its link menu, at the window's edge, sliding away and translucent; the footer at the window's edge, revealed by the page, which casts its shadow on it, and the text of its right column set at the column's end; the rule across the tabs above them; shadows; corners of 3 px; and the first heading and the display style light and a little narrow, as display type.
 - **Voice:** plain and concrete, written by engineers for people who run buildings and budgets. British English. Figures over adjectives. No hype.
 
 ## The site
@@ -103,7 +103,7 @@ One language, British English.
 | any other | Page not found | the 404 page | yes |
 | `/go/site-assessment/` | Book a site assessment, with the form `assessment` | canvas, with no header and footer | yes |
 
-Also designed: the header with its menu open, with its search box open, and come back over a scrolled page, at desktop and phone width.
+Also designed: the header with its menu open, with its search box open, and come back over a scrolled page, and the footer revealed at the end of a page, at desktop and phone width.
 
 Categories: Guides, Market and policy, Company news. Topics: Solar, Storage, Charging, Financing, Grid, Reporting.
 
@@ -120,7 +120,9 @@ Customers is no section of its own (Thomas, 2026-11-12): each industry page list
 
 ### The footer
 
-Konzilo Design's own arrangement and sample content, with Ampfield's words: the brand, the social links, one sentence about the company, the top level of the menu, the address, the legal pages, and the consent links. Beside the address stand three lines: "Registered office: Gothenburg", "Ampfield Energy is a fictional company." and "This site demonstrates Konzilo." The registration and VAT numbers are not shown.
+Konzilo Design's own arrangement and sample content, with Ampfield's words: the brand, the social links, one sentence about the company, the top level of the menu, the address, the legal pages, and the consent links. Beside the address stand three lines: "Registered office: Gothenburg", "Ampfield Energy is a fictional company." and "This site demonstrates Konzilo.", the word Konzilo a link to Konzilo's site, `https://www.konzilo.com/`. On a wide screen they end at the column's end, flush with the consent links under them. The registration and VAT numbers are not shown.
+
+The footer lies still at the window's bottom edge, under the page, which scrolls off it and casts its shadow on it; scrolled to the end, it stands where a footer at the page's end would.
 
 ## Rules for every page
 
