@@ -1,0 +1,261 @@
+{
+  "title": "Ampfield Energy",
+  "slogan": "On-site energy for industry",
+  "description": "Ampfield Energy designs, builds, finances and runs rooftop solar, battery storage and fleet charging on industrial and commercial sites in Sweden, Denmark, the Netherlands and the United Kingdom.",
+  "publisher": {
+    "kind": "Organization",
+    "name": "Ampfield Energy AB",
+    "organisationNumber": "559214-3871",
+    "vatNumber": "SE559214387101",
+    "tradeRegister": "Bolagsverket's trade register",
+    "street": "Fältverksgatan 6",
+    "postalCode": "417 64",
+    "locality": "Gothenburg",
+    "country": "Sweden",
+    "email": "hello@ampfield.example",
+    "telephone": "+46 31 390 06 00",
+    "profiles": "https://www.linkedin.com/\nhttps://www.youtube.com/"
+  },
+  "header": {
+    "cta": {
+      "label": "Book a site assessment",
+      "url": "/go/site-assessment/"
+    },
+    "search": {
+      "label": "Search the site",
+      "word": "Search"
+    },
+    "menuWord": "Menu"
+  },
+  "menu": {
+    "items": [
+      {
+        "title": "Solutions",
+        "url": "/solutions/",
+        "items": [
+          {
+            "title": "Rooftop solar",
+            "url": "/solutions/rooftop-solar/",
+            "description": "Panels on the roof you already have, sized to what the building uses."
+          },
+          {
+            "title": "Battery storage",
+            "url": "/solutions/battery-storage/",
+            "description": "Lower peaks and grid fees, and power that stays on when the grid fails."
+          },
+          {
+            "title": "Fleet charging",
+            "url": "/solutions/fleet-charging/",
+            "description": "Depot charging for vans and trucks, within the grid connection you have."
+          },
+          {
+            "title": "Ampfield Pilot",
+            "url": "/solutions/ampfield-pilot/",
+            "description": "Software that measures, controls and reports every kilowatt-hour on site."
+          }
+        ]
+      },
+      {
+        "title": "Industries",
+        "url": "/industries/",
+        "items": [
+          {
+            "title": "Logistics and warehousing",
+            "url": "/industries/logistics/",
+            "description": "Large roofs, vans that charge overnight, and cold stores that run all day."
+          },
+          {
+            "title": "Manufacturing",
+            "url": "/industries/manufacturing/",
+            "description": "Steady daytime loads, and the peaks that set the grid bill."
+          },
+          {
+            "title": "Retail and commercial property",
+            "url": "/industries/retail/",
+            "description": "Landlord supply, tenants' power and charging for visitors."
+          }
+        ]
+      },
+      {
+        "title": "Customers",
+        "url": "/customers/"
+      },
+      {
+        "title": "Insights",
+        "url": "/insights/",
+        "items": [
+          {
+            "title": "Guides",
+            "url": "/insights/category/guides/",
+            "description": "How to plan, buy and run on-site energy, step by step."
+          },
+          {
+            "title": "Market and policy",
+            "url": "/insights/category/market-and-policy/",
+            "description": "Electricity prices, grid tariffs and the rules that move them."
+          },
+          {
+            "title": "Company news",
+            "url": "/insights/category/company-news/",
+            "description": "New projects, new offices and what changes at Ampfield."
+          }
+        ]
+      },
+      {
+        "title": "About",
+        "url": "/about/",
+        "items": [
+          {
+            "title": "About us",
+            "url": "/about/",
+            "description": "Who we are, what we hold to, and how we got here."
+          },
+          {
+            "title": "Team",
+            "url": "/about/team/",
+            "description": "The nine people who run Ampfield."
+          },
+          {
+            "title": "Careers",
+            "url": "/about/careers/",
+            "description": "Open positions, and how we hire."
+          },
+          {
+            "title": "Contact",
+            "url": "/contact/",
+            "description": "Offices in Gothenburg, Malmö, Rotterdam and Leeds."
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "upper": {
+      "a1": {
+        "brand": "The brand, as the header shows it: Ampfield's logo and name."
+      },
+      "b1": {
+        "links": [
+          { "label": "LinkedIn", "href": "https://www.linkedin.com/" },
+          { "label": "YouTube", "href": "https://www.youtube.com/" },
+          { "label": "E-mail", "href": "mailto:hello@ampfield.example" },
+          { "label": "RSS feed", "href": "/insights/feed/" }
+        ]
+      },
+      "a2": {
+        "text": "Ampfield Energy designs, builds, finances and runs solar, battery storage and charging on industrial and commercial sites in Sweden, Denmark, the Netherlands and the United Kingdom."
+      },
+      "b2": {
+        "links": "The top level of the menu: Solutions, Industries, Customers, Insights, About."
+      }
+    },
+    "lower": {
+      "a1": {
+        "text": "Ampfield Energy AB\nFältverksgatan 6, 417 64 Gothenburg, Sweden\n+46 31 390 06 00 · hello@ampfield.example"
+      },
+      "b1": {
+        "text": "Organisation number 559214-3871 · VAT number SE559214387101 · Registered office: Gothenburg\nAmpfield Energy is a fictional company. This site demonstrates Konzilo."
+      },
+      "a2": {
+        "links": [
+          { "label": "Privacy policy", "href": "/privacy-policy/" },
+          { "label": "Cookie policy", "href": "/cookie-policy/" },
+          { "label": "Accessibility statement", "href": "/accessibility/" }
+        ]
+      },
+      "b2": {
+        "links": "The core's consent controls: Change privacy settings, Withdraw consent."
+      }
+    }
+  },
+  "forms": {
+    "contact": {
+      "label": "Contact us",
+      "fields": [
+        { "name": "name", "label": "Your name", "kind": "text", "required": true },
+        { "name": "company", "label": "Company", "kind": "text", "required": false },
+        { "name": "email", "label": "E-mail", "kind": "email", "required": true },
+        { "name": "telephone", "label": "Telephone", "kind": "tel", "required": false, "help": "If you would rather we call you." },
+        {
+          "name": "subject",
+          "label": "What it concerns",
+          "kind": "select",
+          "required": true,
+          "options": [
+            "A new system for our site",
+            "A system you already run for us",
+            "Ampfield Pilot",
+            "Working at Ampfield",
+            "Press",
+            "Something else"
+          ]
+        },
+        { "name": "message", "label": "Message", "kind": "textarea", "required": true, "maxLength": 3000, "help": "If it is about a site, tell us where it is, what the building is used for and roughly how much electricity it uses a year." },
+        { "name": "privacy", "label": "I have read the privacy policy", "kind": "acceptance", "help": "It says what we keep of this message, and for how long." }
+      ],
+      "confirmation": "Thank you. We have your message and will answer within one working day."
+    },
+    "assessment": {
+      "label": "Book a site assessment",
+      "fields": [
+        { "name": "name", "label": "Your name", "kind": "text", "required": true },
+        { "name": "company", "label": "Company", "kind": "text", "required": true },
+        { "name": "email", "label": "E-mail", "kind": "email", "required": true },
+        { "name": "telephone", "label": "Telephone", "kind": "tel", "required": true, "help": "The engineer calls you to agree a day for the visit." },
+        {
+          "name": "building",
+          "label": "Kind of building",
+          "kind": "select",
+          "required": true,
+          "options": [
+            "Distribution centre or warehouse",
+            "Factory",
+            "Cold store or food production",
+            "Retail park or shopping centre",
+            "Office or other commercial building",
+            "Something else"
+          ]
+        },
+        {
+          "name": "roof",
+          "label": "Roughly how large is the roof?",
+          "kind": "radio",
+          "required": true,
+          "options": [
+            "Under 2,000 m²",
+            "2,000 to 10,000 m²",
+            "10,000 to 30,000 m²",
+            "Over 30,000 m²",
+            "I don't know"
+          ]
+        },
+        { "name": "consumption", "label": "Yearly electricity use", "kind": "text", "required": false, "maxLength": 100, "help": "In MWh, from your bills. A rough figure is enough, and you can leave it empty." },
+        {
+          "name": "interests",
+          "label": "Which solutions interest you?",
+          "kind": "checkboxes",
+          "required": false,
+          "options": [
+            "Rooftop solar",
+            "Battery storage",
+            "Fleet charging",
+            "Ampfield Pilot",
+            "Not sure yet"
+          ],
+          "help": "Tick as many as you like. The engineer looks at all four either way."
+        },
+        { "name": "message", "label": "Anything we should know", "kind": "textarea", "required": false, "maxLength": 3000, "help": "Such as the roof's age, plans to extend the building, or a date you need power by." },
+        { "name": "privacy", "label": "I have read the privacy policy", "kind": "acceptance", "help": "It says what we keep of this booking, and for how long." }
+      ],
+      "confirmation": "Thank you. An engineer will call you within two working days to agree a day for the visit."
+    },
+    "newsletter": {
+      "label": "Newsletter",
+      "fields": [
+        { "name": "email", "label": "E-mail", "kind": "email", "required": true },
+        { "name": "privacy", "label": "Send me Ampfield's newsletter. I have read the privacy policy.", "kind": "acceptance", "help": "One e-mail at the start of each month. Every issue has a link to unsubscribe." }
+      ],
+      "confirmation": "Thank you. Your first newsletter arrives at the start of next month."
+    }
+  }
+}
