@@ -44,6 +44,7 @@ The look: natural light, calm and matter-of-fact, as a company's own photographe
 | `article-reporting` | A desk with a laptop, printed reports or charts, no readable brand |
 | `article-battery-fire-safety` | Battery containers with fencing and safety markings, or a fire safety check on site |
 | `article-company-news` | A newly completed solar roof with people on it, a small ceremony or a handover |
+| `article-roof-ballast` | Close view of an east–west solar system on a membrane roof: rails, pads and ballast blocks |
 
 ## For case studies, landscape
 

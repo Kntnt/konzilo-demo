@@ -17,6 +17,10 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A button text of the form's own | Book a site assessment | Every form gets the core's "Send" |
 | A description under each entry of the menu | The header's menu | Nothing yet: the design system's menu draws one, the core's menu file has no field for it |
 | The header's call to action in the design tool's preview | The design file | The preview and the presentation always say "Contact" |
+| Key figures at the top of a case study | The case studies | Number fields of the type, and a fact box |
+| A vacancy marked up as a job posting for search engines | The vacancies | Nothing: a site's own type may offer only the structured data types the core knows |
+| An author's portrait | The author's page, an article's byline | Nothing from content: an author term holds a name and a biography |
+| A source under a simple table | The articles | A footnote on the paragraph before the table, or a structured table with a caption |
 
 ## Faults and shortcomings in Konzilo Design
 
@@ -27,6 +31,8 @@ What the design phase wanted and could not have, and the faults it found on the 
 | `directives.md` does not say where an editor writes a card's picture and eyebrow, or that a section's badges must be paragraphs of their own | Items begin at their headings, yet the picture and the eyebrow are drawn before the heading; adjacent images become a gallery |
 | `directives.md` writes a card's symbol with an empty alt text | The core's `content-format.md` says an image never goes without one |
 | The menu's descriptions have no source | `Megamenu.astro` draws `child.description`; the core's menu holds `title`, `url` and `items`, and `menuProps` passes no description |
+| `directives.md` does not say whether a fact box's own heading is a stop in the following table of contents | Both are written as `h2`, so the box could be listed |
+| `directives.md` says the meta line is the date and the byline | Its markup and the next rule put the category there too |
 | The hero directive's default Surface is `raised` | The design's own default for a hero without a picture is `none` |
 | A design resolved by an older generator passes `design-check` and `fromDesign` | A file resolved by 0.2.0 passes under 0.3.0, though 0.3.0 changed the dark-mode values |
 | `resolve` keeps role settings that the chosen typeface lacks | The new design's Mona Sans axes stay after a change of typeface; only the tool prunes them |
@@ -52,4 +58,5 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A component that draws its items from its tree loses nested components and the lightbox | Issue #55; tabs, accordions and cards can hold only text, lists and pictures |
 | A form's button text cannot be set | ADR 0045 says an editor may; the site description and `::form` have no field for it |
 | An acceptance test nests fences the wrong way round | `acceptance/preview-components.test.js` puts the longer fence inside the shorter |
+| `content-format.md` does not say whether a site's own type may use the built-in `topics` taxonomy | The case studies and the pages that list them assume it may |
 | Pinning the core by a token is not built | ADR 0011; `new-site` pins by a path on the machine |

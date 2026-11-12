@@ -30,7 +30,7 @@ description: "Case studies of rooftop solar, battery storage, fleet charging and
 
 ## Case studies
 
-Choose solar, storage, charging or financing to see the sites that have it. Choose several to see the sites with any of them.
+Choose solar, storage, charging, financing or reporting to see the sites that have it. Choose several to see the sites with any of them.
 
 ::post-list{type="case-study" presentation="filtered" empty="No case study is published yet. Ask us for a reference instead."}
 
