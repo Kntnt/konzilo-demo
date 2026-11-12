@@ -165,3 +165,19 @@ shots/                    screenshots: <name>-<width>[-dark][-menu|-search].png
 - The consent controls' buttons show, as they do once the core's script has run; the consent banner does not.
 - A code block has no Shiki colours.
 - The header's script that chooses how the bar gives way runs, as on the site. Nothing else needs a script, except the two catalogue frames that open the menu and the search box.
+
+## The design canvas in Claude
+
+`scripts/to-canvas.mjs` carries the designed pages onto the design canvas "Ampfield Energy website" in Claude: a page of live artboards, each a built page's own markup with its stylesheet, and a page of the same pages as screenshots. `scripts/to-canvas.json` records the canvas's address and every upload. Build and shoot the pages first, and work in a folder outside the repository:
+
+```sh
+node scripts/to-canvas.mjs --out <folder>                          # lists the files to upload, or writes <folder>/project/
+node scripts/to-canvas.mjs record --out <folder> <file> <url> …    # records each upload's /_blob/ address
+node scripts/to-canvas.mjs check --out <folder>                    # the artboard format's rules; the conversion runs it too
+node scripts/to-canvas.mjs preview --out <folder> [<board> …]      # each artboard rendered locally, compared with shots/
+```
+
+- Upload the listed files to the canvas with the Artifact tool (`publish` with `asset: true`, up to 25 a call), and record what each upload returns. The record keeps a hash of each file, so a later run asks only for files that changed.
+- When nothing is left to upload, the run writes the canvas's files. Publish them from `<folder>` as the root: `project/canvas.json` with `project/Main.dc.html` first, then the rest. To revise a canvas others have worked on, read its `project/canvas.json` first and pass it with `--index <file>`, so that what they added is kept.
+- `--dry` makes up the addresses, to try a change with `preview` before uploading anything. Never publish a dry run.
+- The boards and rows are `ROWS` in the script. What an artboard needs beyond its page, a frame as tall as the page and a menu or search box open without a modal dialog, is told above `patchCss()`.
