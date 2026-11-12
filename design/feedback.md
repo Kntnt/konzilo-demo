@@ -46,3 +46,15 @@ The texts disagree with each other in five places. Each is settled on one truth,
 | 26 | Roof area for each megawatt: Logistics and warehousing has 30,000 m² for about 4 MWp, 7,500 m² for each; Rooftop solar uses 6,500 m², and its own hero 6,667 m² | About 6,500 to 7,000 m² of roof for each MWp. Logistics and warehousing gives 30,000 m² about 4.5 MWp, in its text and its values |
 | 27 | What Ampfield Pilot steers: its page lists batteries, chargers and heat pumps; the article on Pilot's update of 3 November adds cold stores, compressed air and water heaters | Pilot has steered batteries, chargers and heat pumps, and since 3 November also the cold stores, air compressors and water heaters a customer marks as flexible. Ampfield Pilot's page lists them under Control and in "Equipment it reads" |
 | 28 | How soon a battery pays for itself: the scheduled article says 6 to 9 years for the batteries of 2024 and 2025; the article on Kessel Packaging's battery says about 14 on grid fees alone, and about 5 counted against the connection it replaced | A battery for peak shaving pays back in 6 to 9 years on fees alone; Kessel's, bought to avoid a larger connection, is the exception. The scheduled article says "most of the batteries we built in 2024 and 2025", and that a battery "seldom earns the most from peaks alone", where it said it seldom pays for itself from them |
+
+## Given later the same day
+
+When he had seen the options and the revised pages. He said that the design is approved when these are done.
+
+| # | What he said | Where |
+|---|---|---|
+| 29 | Of the options for point 15 he takes D, the tab row's rule above the tabs. One should be able to choose in Konzilo Design between the rule above and under | Konzilo Design, then the design file |
+| 30 | Does the header cast a shadow on the page? It does: the shadow's targets include the header | Nothing to do |
+| 31 | The footer is attached to the window's edge, so that the page reveals it, with a shadow | Here: the design file |
+| 32 | The footer's three lines ("Registered office: Gothenburg" and the two after it) stand right-aligned, which should be a setting in Konzilo Design | Konzilo Design, then the design file |
+| 33 | In "This site demonstrates Konzilo.", the word Konzilo is a link to https://www.konzilo.com/ | Here |
