@@ -22,7 +22,7 @@ Brantevik Foods prepares ready meals and frozen vegetables for Nordic retailers 
 
 ## The problem
 
-Two figures on Brantevik's network bills worried its operations director, Anders Thulin. The first was the peak. Tomelilla's highest demand came on summer afternoons and winter mornings, when compressors, ovens and the blast freezers all ran at once, and the peak set a growing share of the network charge. The second was growth: new lines had raised the company's electricity use by a fifth in five years. A larger connection at Tomelilla was possible, but it would have cost more every month, for capacity used a few hours a week.
+Two figures on Brantevik's network bills worried its operations director, Nils Thulin. The first was the peak. Tomelilla's highest demand came on summer afternoons and winter mornings, when compressors, ovens and the blast freezers all ran at once, and the peak set a growing share of the network charge. The second was growth: new lines had raised the company's electricity use by a fifth in five years. A larger connection at Tomelilla was possible, but it would have cost more every month, for capacity used a few hours a week.
 
 ## What we built
 
@@ -63,4 +63,4 @@ Almost every kilowatt-hour from the roofs is used on site, because the compresso
 
 > We used to plan production around the compressors. Now the compressors plan around the sun, and nobody on the floor has noticed anything except the bill.
 >
-> <cite>Anders Thulin, Operations Director, Brantevik Foods</cite>
+> <cite>Nils Thulin, Operations Director, Brantevik Foods</cite>

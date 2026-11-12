@@ -58,7 +58,7 @@ E-mail [hello@ampfield.example](mailto:hello@ampfield.example)
 Kranbalksvägen 4\
 211 19 Malmö, Sweden
 
-[+46 31 390 06 40](tel:+46313900640)
+[+46 40 628 04 00](tel:+46406280400)
 
 E-mail [malmo@ampfield.example](mailto:malmo@ampfield.example)
 
@@ -69,7 +69,7 @@ E-mail [malmo@ampfield.example](mailto:malmo@ampfield.example)
 Werfkade 31\
 3089 JK Rotterdam, the Netherlands
 
-[+46 31 390 06 60](tel:+46313900660)
+Calls go through our switchboard in Gothenburg, [+46 31 390 06 00](tel:+46313900600)
 
 E-mail [rotterdam@ampfield.example](mailto:rotterdam@ampfield.example)
 
@@ -77,7 +77,7 @@ E-mail [rotterdam@ampfield.example](mailto:rotterdam@ampfield.example)
 
 ::eyebrow[United Kingdom]
 
-14 Wharf Approach\
+14 Weighbridge Approach\
 Leeds LS1 4BR, United Kingdom
 
 [+44 113 496 0420](tel:+441134960420)

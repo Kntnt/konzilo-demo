@@ -47,7 +47,7 @@ Every page that names a customer keeps to these facts.
 | Name | Business | What Ampfield built | Result | Speaks for it |
 |---|---|---|---|---|
 | Norrvik Logistics | Third-party logistics; six distribution centres in Sweden, the largest in Jönköping | 9.4 MWp of rooftop solar and 212 depot charge points for vans and trucks | Solar covers 38 % of its yearly electricity | Karin Öberg, Head of Property |
-| Brantevik Foods | Food producer with cold stores; two sites in Skåne | 3.1 MWp of rooftop solar and a 4 MWh battery | Peak demand cut by 27 %; the cold stores pre-cool on solar power | Anders Thulin, Operations Director |
+| Brantevik Foods | Food producer with cold stores; two sites in Skåne | 3.1 MWp of rooftop solar and a 4 MWh battery | Peak demand cut by 27 %; the cold stores pre-cool on solar power | Nils Thulin, Operations Director |
 | Lindhagen Furniture | Furniture factory in Värnamo | 2.2 MWp of rooftop solar under a 15-year power purchase agreement | 31 % of its electricity, with nothing paid up front | Maria Lindhagen, Chief Executive |
 | Westerport Retail Parks | Eleven retail parks in the north of England | 6.8 MWp of rooftop solar and 340 charge points for visitors | Solar covers the parks' landlord supply in daytime | James Holroyd, Head of Sustainability |
 | Kessel Packaging | Packaging plant in Dordrecht | A 5 MWh battery for peak shaving | Grid fees cut by 22 %, and a larger grid connection avoided | Marieke de Wit, Plant Manager |
@@ -107,7 +107,7 @@ Categories: Guides, Market and policy, Company news. Topics: Solar, Storage, Cha
 |---|---|
 | Solutions | Rooftop solar, Battery storage, Fleet charging, Ampfield Pilot |
 | Industries | Logistics and warehousing, Manufacturing, Retail and commercial property |
-| Customers | |
+| Customers | The four case studies |
 | Insights | Guides, Market and policy, Company news |
 | About | About us, Team, Careers, Contact |
 
