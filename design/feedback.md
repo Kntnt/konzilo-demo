@@ -34,3 +34,15 @@ Given on 2026-11-12, when the design was first presented, in Swedish; this is wh
 | 21 | A category's page, an author's page | The same filter as Insights, without the row that the page itself settles: a category's page has no Category row; an author's page keeps all three | Here |
 | 22 | An article | The meta line reads "By Priya Raman • Published 13 October 2026 in Guides • SOLAR", the author and the category as links, the topic as a pill | Konzilo Design, then here |
 | 23 | Contact, Book a site assessment | In "I have read the privacy policy (required)", the words "privacy policy" are a link | Here in the mockups; in the Konzilo core when the site is built |
+
+## Found while the twelve articles were written
+
+The texts disagree with each other in five places. They are put right here, with the rest.
+
+| # | What disagrees |
+|---|---|
+| 24 | How soon a bought system pays for itself: the tabs of Rooftop solar say 6 to 8 years, its accordion and Home say 6 to 9, and the article on winter says 7 to 10 for Sweden and Denmark and 6 to 9 for the Netherlands and the United Kingdom |
+| 25 | Yield: Rooftop solar's hero gives 1.5 MWp about 1,400 MWh a year, which is about 933 kWh for each kilowatt, above the 850 to 910 that the article on winter models for the four cities |
+| 26 | Roof area for each megawatt: Logistics and warehousing has 30,000 m² for about 4 MWp, 7,500 m² for each; Rooftop solar uses 6,500 m², and its own hero 6,667 m² |
+| 27 | What Ampfield Pilot steers: its page lists batteries, chargers and heat pumps; the article on Pilot's update of 3 November adds cold stores, compressed air and water heaters |
+| 28 | How soon a battery pays for itself: the scheduled article says 6 to 9 years for the batteries of 2024 and 2025; the article on Kessel Packaging's battery says about 14 on grid fees alone, and about 5 counted against the connection it replaced |
