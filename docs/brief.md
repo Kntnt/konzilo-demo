@@ -42,12 +42,14 @@ When the design was presented, and in the hours after, he settled these.
 
 - **The name** Ampfield Energy stays, though a company called Ampfield Aktiebolag exists in Stockholm, in another business.
 - **Pictures of people** are made by an image model, through Codex, from the stock photograph that was chosen: much the same picture, with an invented person's face. No real person stands for an invented one.
+- **Other pictures** are searched for anew with his keys to the picture services. Where no free photograph shows what a page wants, the picture is generated in the same way, and its credit says so. He is shown the changes afterwards, on a contact sheet.
 - **Signing in to the editor** is exactly as Konzilo has it, second factor and all. The demo has three people, one in each role: Admin, Editor and Reviewer. Buttons on the sign-in pages may fill in a chosen person's details with a script, and do nothing more; the visitor signs in with the form itself.
-- **The command** publishes four fixed ports, one for each of Konzilo's origins: `docker run --rm -p 8080-8083:8080-8083 ghcr.io/kntnt/konzilo-demo`.
+- **The command** publishes four fixed ports, one for each of Konzilo's origins, to the user's own computer alone: `docker run --rm -p 127.0.0.1:8080-8083:8080-8083 ghcr.io/kntnt/konzilo-demo`. Every copy of the image holds the same passwords, and the sign-in pages show them, so the demo is not opened to the network the computer is on.
 - **Releases** of Konzilo and Konzilo Design may be made when the demo needs them and their own gates pass.
 - **A possibly better solution** gets an issue as its feature request, and a pull request with code only where the change is small.
 - **Statistics and video:** one article embeds a video, so that the consent placeholder shows. The site counts no visits, and its policies say nothing of Matomo.
 - **The repository** is public, under the AGPL as Konzilo is. Its history was made anew without the stock photographs of real people before it was published.
+- **The Malmö office's telephone number**, +46 40 628 04 00, stays, though only a secondary source says that its series is set aside for fiction.
 - **The page's shadow on the footer** comes and goes at once, as the header's does, so that the footer needs no script.
 - **The design** is approved. `design/feedback.md` holds what he asked for on the way, point by point.
 

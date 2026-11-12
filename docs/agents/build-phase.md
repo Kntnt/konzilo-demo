@@ -4,7 +4,7 @@ What the design phase learned that the build phase stands on. It is the knowledg
 
 ## The end result, as settled
 
-`docs/brief.md` holds it. In short: a public image `ghcr.io/kntnt/konzilo-demo`, started by `docker run --rm -p 8080-8083:8080-8083 ghcr.io/kntnt/konzilo-demo`, the same in every shell and with `podman` or `nerdctl`, on amd64 and arm64, which prints the site's address when it is ready. Signing in is exactly as Konzilo has it; three people exist, one in each role; buttons on the sign-in pages only fill in a chosen person's details.
+`docs/brief.md` holds it. In short: a public image `ghcr.io/kntnt/konzilo-demo`, started by `docker run --rm -p 127.0.0.1:8080-8083:8080-8083 ghcr.io/kntnt/konzilo-demo`, the same in every shell and with `podman` or `nerdctl` (not yet tried with those two), on amd64 and arm64, which prints the site's address when it is ready. Signing in is exactly as Konzilo has it; three people exist, one in each role; buttons on the sign-in pages only fill in a chosen person's details.
 
 ## What stands between Konzilo and one container
 
@@ -20,7 +20,7 @@ Konzilo runs as a Docker Compose project (`compose/` in Konzilo): Forgejo with i
 
 The approach the research recommended, which nothing since has contradicted: one image on the pinned Node image (`versions.env` in Konzilo pins Node, Forgejo, Caddy and Typesense by digests that cover both architectures), with the Forgejo, Caddy and Typesense programs added, a small supervisor that starts them in order, and everything that a first start does (Forgejo's setup, the seed, the first build, the search index) done when the image is built, so that a start takes seconds. The core gains what that needs as settings with today's values as defaults: its peers' addresses and its folders from the environment, a start that installs nothing when nothing is missing, several seeded people. These serve any way of hosting Konzilo, not only the demo.
 
-Known risks: whether the Forgejo and Typesense programs run outside their own images; the time an arm64 build takes under emulation; the image's size, perhaps one to two gigabytes; that every copy of the image holds the same passwords and keys, which is acceptable only for a demo on one's own machine, and argues for publishing the ports on `127.0.0.1` alone; that Konzilo's own decisions say there is one way to run it (ADR 0002) and set its services apart from each other (ADR 0005), which a single image departs from and should record; that Konzilo's status file says a released image needs notices of what the editor's application holds.
+Known risks: whether the Forgejo and Typesense programs run outside their own images; the time an arm64 build takes under emulation; the image's size, perhaps one to two gigabytes; that every copy of the image holds the same passwords and keys, which is acceptable only for a demo on one's own machine, and is why the command publishes the ports on `127.0.0.1` alone; that Konzilo's own decisions say there is one way to run it (ADR 0002) and set its services apart from each other (ADR 0005), which a single image departs from and should record; that Konzilo's status file says a released image needs notices of what the editor's application holds.
 
 ## What Konzilo Design lacks
 
@@ -43,4 +43,4 @@ Known risks: whether the Forgejo and Typesense programs run outside their own im
 
 ## What Thomas has not yet settled
 
-`docs/agents/status.md` lists what is open with him.
+`docs/agents/status.md` says what is open with him; on 2026-11-12 nothing was.

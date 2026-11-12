@@ -99,7 +99,7 @@ What the design phase wanted and could not have, and the faults it found on the 
 
 ## Pictures that are compromises
 
-The picture agents' own judgement, from their reports on 2026-11-12, of the pictures that do not show what their page wanted. No free photograph that fits was found on Unsplash, Pexels, Pixabay or Wikimedia Commons, so a key to a service's interface does not by itself find a better one. Check each against the picture as it is now before replacing it; `images/shot-list.md` says what each was meant to show, and `images/credits.json` what it shows.
+The picture agents' own judgement, from their reports on 2026-11-12, of the pictures that do not show what their page wanted. No free photograph that fits was found on Unsplash, Pexels, Pixabay or Wikimedia Commons, so a key to a service's interface does not by itself find a better one. Thomas settled the same day that each is searched for anew and, where no free photograph fits, generated (`docs/brief.md`). Check each against the picture as it is now before replacing it; `images/shot-list.md` says what each was meant to show, and `images/credits.json` what it shows.
 
 | Picture | What is wrong with it |
 |---|---|
