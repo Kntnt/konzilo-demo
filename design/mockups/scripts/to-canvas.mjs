@@ -13,6 +13,13 @@
 //                                                                compared with shots/ (default: four boards)
 //   --index <file>   the canvas's project/canvas.json as read from the canvas: entries and keys the script does not
 //                    own are kept (a revision of a canvas others have worked on)
+//   --ds <folder>    preview: where the design system's files were read to (the folder holding its project/)
+//   --with ds        preview: draw the artboards with the design system's stylesheet and fonts in place of kn.css
+//                    and the helmet's fonts, to see whether they render the same
+//
+// The design system (designSystem in the record) is installed on the canvas by the publish call: its files copied
+// from the system to project/ds/<namespace>/, and its record in the index. With `use` true, the artboards load its
+// stylesheet, and its fonts through it, in place of kn.css and the helmet's @font-face rules.
 //
 // Build and shoot the pages first (README.md, Commands): an artboard is made from dist/, a frame's height and the
 // second page from shots/. The record of uploads and the canvas's address is to-canvas.json beside this script.
@@ -93,6 +100,8 @@ const args = process.argv.slice(2);
 const option = (name) => { const at = args.indexOf(name); if (at < 0) return undefined; const [value] = args.splice(at, 2).slice(1); return value; };
 const outArg = option('--out');
 const indexArg = option('--index');
+const dsArg = option('--ds');
+const withArg = option('--with');
 const dry = args.includes('--dry') && args.splice(args.indexOf('--dry'), 1);
 const command = ['record', 'check', 'preview'].includes(args[0]) ? args.shift() : 'convert';
 if (!outArg) { console.error('Name the folder to work in, outside the repository: --out <folder>'); process.exit(2); }
@@ -414,8 +423,7 @@ ${urls.styles.map((href) => `<link rel="stylesheet" href="${href}">`).join('\n')
 <x-dc>
 <helmet>
 <style>
-${urls.fontFaces.join('\n')}
-:root{--ab-vh:${vh}px;${panelTop}}
+${urls.fontFaces.map((rule) => `${rule}\n`).join('')}:root{--ab-vh:${vh}px;${panelTop}}
 html{scrollbar-width:none}
 body{margin:0}
 ${rules.join('\n')}
@@ -459,6 +467,16 @@ ${logic}
 `;
 }
 
+// The index's record of the design system: in place of the entry of its namespace, else last; others kept as they are.
+function designSystems(existing) {
+  const ds = record.designSystem;
+  if (!ds) return existing;
+  const entry = { title: ds.title, namespace: ds.namespace, artifact: ds.artifact, version: ds.version, copiedAt: ds.copiedAt };
+  const at = existing.findIndex((e) => e.namespace === ds.namespace);
+  if (at < 0) return [...existing, entry];
+  return existing.map((e, i) => (i === at ? entry : e)).filter((e, i) => i === at || e.namespace !== ds.namespace);
+}
+
 function layout(existing) {
   const index = existing ? structuredClone(existing) : {};
   const owned = new Set(boards.flatMap((b) => [fileOf(b), fileOf(b, true)]));
@@ -500,7 +518,7 @@ function layout(existing) {
     boards: allBoards,
     order,
     notes: { ...otherNotes, ...notes },
-    designSystems: index.designSystems ?? record.designSystems ?? [],
+    designSystems: designSystems(index.designSystems ?? []),
   };
 }
 
@@ -618,27 +636,37 @@ async function preview(names) {
     for (const key of await walkUploads(join(UPLOAD, sub))) { byUrl.set(dryUrl(key), pathToFileURL(join(UPLOAD, key)).href); keyOf.set(dryUrl(key), key); }
   }
   const local = (text) => text.replace(/\/_blob\/[\w-]+/g, (url) => byUrl.get(url) ?? url);
-  const dir = join(OUT, 'preview');
+  const dir = join(OUT, withArg === 'ds' ? 'preview-ds' : 'preview');
   await mkdir(dir, { recursive: true });
   const chosen = names.length ? boards.filter((b) => names.includes(fileOf(b)) || names.includes(shotName(b))) : boards.filter((b) => ['home-1440', 'home-390', 'home-1440-menu', 'home-390-search', 'solutions-rooftop-solar-390', 'contact-1440'].includes(shotName(b)));
   const browser = await chromium.launch({ args: ['--allow-file-access-from-files'] });
   try {
     for (const b of chosen) {
       const text = await readFile(join(PROJECT, fileOf(b)), 'utf8');
-      const links = [...text.matchAll(/<link rel="stylesheet" href="([^"]+)">/g)].map((m) => m[1]);
-      const helmet = text.match(/<helmet>\n<style>\n([\s\S]*?)\n<\/style>\n<\/helmet>/)[1];
+      let links = [...text.matchAll(/<link rel="stylesheet" href="([^"]+)">/g)].map((m) => m[1]);
+      let helmet = text.match(/<helmet>\n<style>\n([\s\S]*?)\n<\/style>\n<\/helmet>/)[1];
       const content = text.match(/<\/helmet>\n([\s\S]*)\n<\/x-dc>/)[1];
-      // The stylesheet as uploaded names its fonts by upload; on disk it names the font files.
-      const css = [];
-      for (const href of links) {
-        const key = keyOf.get(href);
-        css.push(local(await readFile(join(UPLOAD, key), 'utf8')));
+      const ds = record.designSystem;
+      if (withArg === 'ds') {
+        // The design system's stylesheet in place of kn.css, and its fonts, through it, in place of the helmet's.
+        links = links.map((href) => (keyOf.get(href) === 'styles/kn.css' ? `ds/${ds.namespace}/${ds.stylesheet}` : href));
+        helmet = helmet.split('\n').filter((line) => !line.startsWith('@font-face')).join('\n');
       }
+      // Each stylesheet from disk, by a link, so that an address in it resolves against its own folder.
+      const hrefs = links.map((href) => {
+        if (href.startsWith('/_blob/')) return byUrl.get(href);
+        const inDs = href.match(/^(?:\.\.\/)*ds\/([^/]+)\/(.+)$/);
+        if (inDs) {
+          if (!dsArg) throw new Error(`${fileOf(b)} loads the design system: name the folder its files were read to, --ds <folder>`);
+          return pathToFileURL(join(resolve(dsArg), 'project', inDs[2])).href;
+        }
+        throw new Error(`${fileOf(b)}: a stylesheet the preview cannot find: ${href}`);
+      });
       const page = `<!doctype html>
 <html lang="en-GB" data-dc-canvas="">
 <head>
 <meta charset="utf-8">
-${css.map((c) => `<style>${c}</style>`).join('\n')}
+${hrefs.map((href) => `<link rel="stylesheet" href="${href}">`).join('\n')}
 <style>${local(helmet)}</style>
 <style>html,body{background:#ededeb}#dc-root>.sc-host{position:relative}</style>
 </head>
@@ -772,9 +800,10 @@ async function main() {
   }
 
   // The canvas.
+  const ds = record.designSystem;
   const urls = {
-    styles: [cssUrl, patchUrl],
-    fontFaces: fontFaces.map((rule) => rule.replace(/url\((['"]?)(_astro\/[^'")]+)\1\)/g, (_, q, source) => `url('${fontUrls.get(source)}')`)),
+    styles: [ds?.use ? `ds/${ds.namespace}/${ds.stylesheet}` : cssUrl, patchUrl],
+    fontFaces: ds?.use ? [] : fontFaces.map((rule) => rule.replace(/url\((['"]?)(_astro\/[^'")]+)\1\)/g, (_, q, source) => `url('${fontUrls.get(source)}')`)),
     asset: (ref) => assetUrls.get(pictureRef(ref).key),
   };
   if (!record.createdOnFiles) { record.createdOnFiles = { v: 1, at: new Date().toISOString().replace(/\.\d+Z$/, 'Z') }; if (!dry) await saveRecord(); }
@@ -792,6 +821,10 @@ async function main() {
   if (dry) console.log('A dry run: the addresses are made up, for preview only. Do not publish it.');
   console.log(`Written: ${OUT} (the root to publish from), project/canvas.json and ${boards.length * 2} artboards. Publish project/canvas.json and project/Main.dc.html first, then the rest.`);
   for (const b of boards.filter((x) => x.cut)) console.log(`cut by the frame's height: ${titleOf(b)} is ${b.pageHeight} px tall`);
+  if (ds) {
+    const files = Object.fromEntries(ds.files.map((path) => [`project/ds/${ds.namespace}/${path}`, { artifact: ds.artifact, path: `project/${path}` }]));
+    console.log(`The design system's files, as entries of the publish call's files (the server copies them):\n${JSON.stringify(files)}`);
+  }
 }
 
 await main();

@@ -30,6 +30,29 @@ export function nextId(ctx, prefix) {
   return `${prefix}-${ctx.ids[prefix]}`;
 }
 
+// Every id on a page is unique. A directive's `anchor` is its element's id; a heading whose id is already taken on the
+// page, by an anchor anywhere in the body (a section's own heading, a fact box beside a heading of that name) or by an
+// earlier heading, is drawn without one, and a link to it goes to the id it would have had, which the anchor holds.
+// The ids taken are kept with the page's ids, and each block is looked at once, before the first of it is drawn.
+const TAKEN = Symbol('ids taken on the page');
+const seen = new WeakSet();
+function takeIds(blocks, ctx) {
+  const fresh = blocks.filter((node) => !seen.has(node));
+  if (!fresh.length) return;
+  const taken = (ctx.ids[TAKEN] ??= new Set());
+  const nodes = [];
+  const collect = (node) => { if (node?.type === 'element' && !seen.has(node)) { seen.add(node); nodes.push(node); (node.children ?? []).forEach(collect); } };
+  fresh.forEach(collect);
+  for (const node of nodes) { const { anchor } = directiveOf(node) ? attributesOf(node) : {}; if (anchor) taken.add(anchor); }
+  for (const node of nodes) {
+    if (!isHeading(node) || node.properties.id === undefined) continue;
+    const id = String(node.properties.id);
+    if (taken.has(id)) { delete node.properties.id; node.data = { ...node.data, target: id }; }
+    else taken.add(id);
+  }
+}
+const targetOf = (heading) => heading.properties.id ?? heading.data?.target;
+
 // ---------- Reading blocks ----------
 
 // The <img> a block shows alone: a figure of one image, with or without its caption, or a bare image.
@@ -124,6 +147,7 @@ export function plain(node, ctx) {
 // page template writes them.
 export function renderBody(root, ctx) {
   const blocks = blocksOf(root.children);
+  takeIds(blocks, ctx);
   const out = [];
   let run = [];
   const flush = () => { if (run.length) out.push(section({}, run, ctx)); run = []; };
@@ -151,6 +175,7 @@ function titleBand(ctx) {
 // Blocks inside a part, in order: an eyebrow before a heading stands with it in a heading group, and one with no heading
 // after it is a plain label (directives.md, ::eyebrow).
 export function renderBlocks(blocks, ctx) {
+  takeIds(blocks, ctx);
   const out = [];
   for (let at = 0; at < blocks.length; at++) {
     const node = blocks[at];
@@ -458,7 +483,7 @@ function toc(attrs, children, ctx) {
     tag('div', { class: 'kn-reading-area-aside' }, tag('aside', { class: 'kn-aside-block', 'data-kn-sticky': 'true' },
       tag('nav', { class: 'kn-toc', 'aria-labelledby': label ? id : undefined, 'aria-label': label ? undefined : 'Contents', 'data-kn-type': 'small', 'data-kn-follow': '' },
         label ? tag('p', { class: 'kn-toc-label', id, 'data-kn-type': 'heading-6' }, label) : '',
-        tag('ol', { role: 'list' }, items.map((item) => tag('li', {}, tag('a', { href: `#${item.heading.properties.id}` }, escapeText(textOf(item.heading))))))))),
+        tag('ol', { role: 'list' }, items.map((item) => tag('li', {}, tag('a', { href: `#${targetOf(item.heading)}` }, escapeText(textOf(item.heading))))))))),
     tag('div', { class: 'kn-reading-area-flow' }, items.map((item) => outer(item.heading) + renderBlocks([...item.before, ...item.blocks], ctx))));
 }
 

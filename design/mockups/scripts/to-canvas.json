@@ -1,5 +1,27 @@
 {
   "canvas": "https://claude.ai/artifact/Ck26tvWMmWM5c3j8fu1Acq",
+  "designSystem": {
+    "title": "Ampfield Energy",
+    "namespace": "ampfield",
+    "artifact": "https://claude.ai/artifact/1Wi9WBtK6o9KX2gk7Jp8TQ",
+    "version": "1794483663-a36d",
+    "copiedAt": "2026-11-12T12:09:23Z",
+    "stylesheet": "components/bundle.css",
+    "files": [
+      "components/bundle.css",
+      "fonts/MonaSans-VF.woff2",
+      "fonts/MonaSans-Italic-VF.woff2",
+      "fonts/MonaSansMono-VF.woff2",
+      "licenses/LICENSE-mona-sans.txt",
+      "licenses/LICENSE-mona-sans-mono.txt",
+      "tokens.json"
+    ],
+    "use": true
+  },
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-12T10:12:23Z"
+  },
   "uploads": {
     "fonts/MonaSans-Italic-VF.woff2": {
       "sha256": "ec496d04d5eb562acae2a5d60c3168719bb08d7d42b8228d56a28c2f486e3ee8",
@@ -18,8 +40,8 @@
       "url": "/_blob/c2f5bf8cf93851ca454c7b15639b982d"
     },
     "images/about-office.jpg": {
-      "sha256": "8770b07632c0f50de27a2838126c83ddffa338ced33a5c54cbc4968f4fc51381",
-      "url": "/_blob/b2ec425f56bafefe9f2d6248009ef45b"
+      "sha256": "ac9a4b58b7a6ffd70b021b71c2f4828cc1e96515e25fe3c1df34eeac89b98d86",
+      "url": "/_blob/6e95181560d9f45bba378b95043000e0"
     },
     "images/about-site-team.jpg": {
       "sha256": "a9d1568951aac83861f04c436fa18ed75299e7acf299aea9ff9e3ae18375e789",
@@ -30,8 +52,8 @@
       "url": "/_blob/c162f77d58784116c2ab37758061f333"
     },
     "images/article-company-news.jpg": {
-      "sha256": "4190c8a52e574a0b8e2dabd06b954772a38252666e0ed4b511087fe3cc277b4f",
-      "url": "/_blob/280ff5629e857b8b2d91d781d65ffc27"
+      "sha256": "949f06567657603c7322b8251bbcb1b1e9fa8ff3ba99a7fa1fc60bc333c4c222",
+      "url": "/_blob/5a500583bba655b4e1f88f90d75c4fe3"
     },
     "images/article-electric-truck.jpg": {
       "sha256": "656e9b769c9b0658adb13e252d8a0ffd8fde76e5524500daeffa8944752c2ecd",
@@ -74,8 +96,8 @@
       "url": "/_blob/18c4061232a4735af913364aeebf8ab8"
     },
     "images/careers.jpg": {
-      "sha256": "126b3718e689bb5e2527ecb91f3593ff348aa25140c10d89b2f827c2af711bc4",
-      "url": "/_blob/f2332f66a8c886545ca27a9ec2ec64fd"
+      "sha256": "1d8d0e3a56ed2e3247a714a79704bb92b892c090b4164b830ba7e67a03693987",
+      "url": "/_blob/a896afb882f60939218cf7c0b0630a32"
     },
     "images/case-brantevik.jpg": {
       "sha256": "889c4201a747502735e19518f5025717c76b6cdfa9ee99b9dd05bac199558f26",
@@ -98,8 +120,8 @@
       "url": "/_blob/a0b14fd62d9fda0a9c281be2972324a2"
     },
     "images/case-norrvik-team.jpg": {
-      "sha256": "28903473e04dd98407732223aca422891e4fa88c202f2dc140d5492b84e3046c",
-      "url": "/_blob/850a4c8e4c9a28001188c3c6335e8bef"
+      "sha256": "f099e7a5b6e8f004f7c632ab14fe11912e8d9268fb51860a5918d41a6a82aeb9",
+      "url": "/_blob/c783114d8b207261807e9fd2f243a326"
     },
     "images/case-norrvik.jpg": {
       "sha256": "92a4241c488f4c14a7c71f601c910fd04e089225e8c2652e1103c4d4724cac45",
@@ -158,48 +180,48 @@
       "url": "/_blob/0fb5ec5304b67e885bdd975646caeda9"
     },
     "images/site-assessment.jpg": {
-      "sha256": "973177accf78ac234914526a2b11f8fb60be36a33adbd5ac23e64e2e3857494c",
-      "url": "/_blob/80c2f92a472c3479a3d57f88f3b9c474"
+      "sha256": "58010a2cc58a263587e76f9309e43c8a36d1548e491ea0800d4f6b848828d972",
+      "url": "/_blob/01c55482842865b9c73451cb58426602"
     },
     "images/solutions-overview.jpg": {
       "sha256": "271c7962df4c6df44ded23cba3a7e13b12550b16d4864cc09320f2f24d73a420",
       "url": "/_blob/8a00e74898556f5fcd60a26658dae980"
     },
     "images/team-daniel-okafor.jpg": {
-      "sha256": "719c3dd9481fab12b68e4eeaceeceee14c2f86a24eb63b7f5fc3f2d4cb70888f",
-      "url": "/_blob/93b52defa22eee878075743b7d58ca70"
+      "sha256": "fcd05cb5b883c9b4fb45114164c2a2477be6bf7def907fb1551cd8edd0242a48",
+      "url": "/_blob/f8bc4558f06391c2930e7ccb6890a691"
     },
     "images/team-elias-forsberg.jpg": {
-      "sha256": "94d6d4ce2ab510b769c01a572a55d6086ceb917ccde69362df1fd57652b9c680",
-      "url": "/_blob/29023e444884623d6a0d76addf72f8dd"
+      "sha256": "1a8f2f04e4945945cac34702aee88287935717dd335b14f3981d2cd1faf135e6",
+      "url": "/_blob/e5214d21794b8fcf540956df7d931be1"
     },
     "images/team-hannah-whitcombe.jpg": {
-      "sha256": "0d2111e7fbee7beeb24842971ae2fd773b214448c00bffd34c0f434d6f22fbe6",
-      "url": "/_blob/95af4412bff1f5fff5d6398061555409"
+      "sha256": "72876d9f358c259f64563f4252e5744903a17739741bd62bdfb1585c867499f2",
+      "url": "/_blob/8d08b4047402541369aeb1ce12eb3bcc"
     },
     "images/team-ingrid-sandell.jpg": {
-      "sha256": "bfa7961712dfd73d8c1c5b164f67beb7e04e34c0665a4869f9a8f168d3ba8e0e",
-      "url": "/_blob/bc81083b8734e99e23fbf491b8899b7c"
+      "sha256": "fea69227d508e5156abab8ce4141ac8a8fb7f9a66d23559a7e4c85b23fad36a2",
+      "url": "/_blob/d883b7a2339a8b5c1e90ce2ca30cb4b3"
     },
     "images/team-joost-van-der-heiden.jpg": {
-      "sha256": "ff256e2cc8dc4dae5aa071e8c21bedc01aa611d2015689f91c6cb5a86bdbb662",
-      "url": "/_blob/8bbf38aec84af820c0baedc4ea82e097"
+      "sha256": "ca290186275e5e082227beb23954c5593903904511342889e2a795594a8a546d",
+      "url": "/_blob/bb54217b5d92f2d99126c5599d1fce2c"
     },
     "images/team-lena-bergqvist.jpg": {
-      "sha256": "a0f53fd373e494ffcaf2487ce588b32c2ecee64feb60d07709c3f7ccf282fcbe",
-      "url": "/_blob/7389aac8a3445a668ebd6a88ca0ff0d6"
+      "sha256": "5980c09b9e74b83b988e6c475822606e9a942dd6bc7d0cdc13f925d8af16da2e",
+      "url": "/_blob/1aa01d64fc082de6d7e8a5ed53221c5a"
     },
     "images/team-mattias-lonn.jpg": {
-      "sha256": "94a5da65b5d43b0a6dc74c9780ee26d27bca627122f10d27755141bd1f6af347",
-      "url": "/_blob/0ba0df787b290c1625fe9d86e2f8d489"
+      "sha256": "36275cfab5e83fb392101e1561efc6692631d35b312825d7d0bc0593b791fd05",
+      "url": "/_blob/fa44344bb8c798fd3eb2d3984c218743"
     },
     "images/team-priya-raman.jpg": {
-      "sha256": "6d5d20d7fd0b0a9b8c17da7c6841e95bda4043925331edd7614a2d3fa1bae755",
-      "url": "/_blob/02db6d4ecde1c352b74d2200c0e0e101"
+      "sha256": "6dc17ccff9d3425ddfb26fce0d6721d875018f11cf187b531bb7e313de4f2437",
+      "url": "/_blob/270e5c12492ed3180c7f3994ce9bd37b"
     },
     "images/team-sofia-marklund.jpg": {
-      "sha256": "2ed2e9c91a6d1da239f628556393319e59deb7d2e7c5e9ef9eff26737881a02d",
-      "url": "/_blob/c6025d0419d448bca9000479e7a79406"
+      "sha256": "76b4fd6826968d573dee8bc35263a3ffaa1e5e865cf68b1a2ef23af66b99f3ad",
+      "url": "/_blob/69e6b105abe1c6c2c97cee5f4aaa26e7"
     },
     "logo/ampfield-logo-dark.svg": {
       "sha256": "c686a2613e36d3a81bdf321417206a26f3903d8ad71ef80d8ec3d399ad5da8af",
@@ -234,20 +256,20 @@
       "url": "/_blob/f3f6f4d9a0eb051bde35067c1a97930b"
     },
     "shots/about-1440.webp": {
-      "sha256": "e9e6d0d66997f22147be77fe105b91771e71743bec466b70f5643fcdb2fd725e",
-      "url": "/_blob/a3744f4dcc263a2d10cfc2382ebc6686"
+      "sha256": "eb0520c0cd12de4f8d081ad1aa0d8a67005b7a5e836fae3f6f48252f2708c10c",
+      "url": "/_blob/eafac9e163e73603df1e9cdc1212e05e"
     },
     "shots/about-careers-1440.webp": {
-      "sha256": "3336b1d3c128105d317003c78c4ff0d50664eee88353cad76db3944d446c784b",
-      "url": "/_blob/6b6c97cec662fc878f907b238d334b69"
+      "sha256": "d88f83590181a5e00da5728df1995f044bd1934b34d0d0930713cca3426ffd98",
+      "url": "/_blob/b383747994f0c50f642c8460eb657de4"
     },
     "shots/about-careers-electrical-design-engineer-gothenburg-1440.webp": {
       "sha256": "d5bf7a61000a2627ff7b90d4802d31b6566c96b242e6b8d14351a94489c3431c",
       "url": "/_blob/29819156a94e19e03911f0886967b674"
     },
     "shots/about-team-1440.webp": {
-      "sha256": "43592f9d180065e2707b16b0e39ecb258e1dc84f1becd76c8a3482807b7225cb",
-      "url": "/_blob/fe91d3be9d7394e6085d4ed78440fd6e"
+      "sha256": "933f736751e4b76e248539d69f8223fbf4946f0c4f1758fe0baffdfa6e8f8261",
+      "url": "/_blob/6baa84969579dc52574f1454b89aeda3"
     },
     "shots/contact-1440.webp": {
       "sha256": "4d977f8cbbe11f96be0c4d80f40f1c11dbdc12d11f6e00325dd660411730ea2d",
@@ -262,16 +284,16 @@
       "url": "/_blob/e4800a6daacb5e31f1d76cd132cbfb65"
     },
     "shots/customers-norrvik-logistics-1440.webp": {
-      "sha256": "fc3e6f0ba414874ed6ce5a71baf3aa0530235cf39e4698f4c4666a2e66892951",
-      "url": "/_blob/c772552843defc7bea3a10a94ad0264e"
+      "sha256": "53919beb17ba319047fe4246221b68e5b759222a51b50aba63e4072609be06d7",
+      "url": "/_blob/447991e183768e0b8c13a72ff082ef7d"
     },
     "shots/faq-1440.webp": {
       "sha256": "84446de7394b7a2dcd3f3a2d8f06f78e442f812534b1e6576b16af1a812494f9",
       "url": "/_blob/e26c704cc572eb25d76edd5b4d4b04aa"
     },
     "shots/go-site-assessment-1440.webp": {
-      "sha256": "5bd48ea5c298b96262f7930cb444525d6b22475ea16654a68d618555331d45f6",
-      "url": "/_blob/5d0e62424c08f31621b0486f431e7476"
+      "sha256": "f86a2b98f65608e3086f50581f0d6ad6592b57a0f0506965fc3bb82e23f6d520",
+      "url": "/_blob/fff9552fe4fc82e5a5796c3a4e654f41"
     },
     "shots/home-1440-menu.webp": {
       "sha256": "6d82a79921854b339195da73b6dfe3954b0f657718200717aafc025e12a82682",
@@ -302,20 +324,20 @@
       "url": "/_blob/3064d0bb5f5fd8b54bacfff4e82547b8"
     },
     "shots/insights-1440.webp": {
-      "sha256": "e7a39edef03b4044ac025f45df6a9f0626832383e10da5e9611b9a4ac4afc413",
-      "url": "/_blob/7a8227f532c6b18c885083bb6547e68f"
+      "sha256": "f5f55b2f35886cda59f3845b2aaa78cff861ec23b268a62296cd0d1010211078",
+      "url": "/_blob/5d018f6d08f4ede4c219a361cc5c1c55"
     },
     "shots/insights-author-priya-raman-1440.webp": {
       "sha256": "29e196dc675b2024472f3b95573d7b336f21977b6c7828953a5a8d2fcbda8ea4",
       "url": "/_blob/abef8d92af1b673abe79a383ee446776"
     },
     "shots/insights-can-your-roof-carry-solar-panels-1440.webp": {
-      "sha256": "d426388227a0d3977c407bd520077033e8f6f8e185379b4a7ac088b6a3c470e8",
-      "url": "/_blob/02f576251294afcffb502ffec9edd9a4"
+      "sha256": "2ffb1d47486e6467a31f67961a87214b12eb24dac4c999575475b0b15e51da7b",
+      "url": "/_blob/034a2643ccdb368fecdc32113e793817"
     },
     "shots/insights-can-your-roof-carry-solar-panels-390.webp": {
-      "sha256": "734e43400ffd74cb4c0dcc45eb807f9057b49c34ca362e98daf8b2c61e194af1",
-      "url": "/_blob/3e54088887354a96df1c4bfa30e57207"
+      "sha256": "94cacfe296f4a353e93ea8223dcaa211368a6e8278c81538f4d4914fb0dba407",
+      "url": "/_blob/043db8c58383fc9f5f0b56a5164f666f"
     },
     "shots/insights-category-guides-1440.webp": {
       "sha256": "4e99879da7fb516be4e625d8f4f2e8d0cb24c6c506d05ca44cdeafdda5a63383",
@@ -326,16 +348,16 @@
       "url": "/_blob/3f4090b6c15fbb6c446bdc06ce3c8152"
     },
     "shots/privacy-policy-1440.webp": {
-      "sha256": "e53af4d267b3d4b179a7c1097e1cbb93d5cba68515dbb2ad12623d8193004b5e",
-      "url": "/_blob/42a2fd25e6047bf6677ba5c33ffb1124"
+      "sha256": "3eff3731b13cd66087b50c81e2bf73ea37b9ddc373f682f5bd528e2d83b274dc",
+      "url": "/_blob/b6ea12af0d52c738ab72c55823e0d9b6"
     },
     "shots/search-1440.webp": {
       "sha256": "3e92fa6af897715a21aefda091fc11b4262535f2d8e371b31deb01f9762c486f",
       "url": "/_blob/1657ee972547e397c4be1fbb43bbf4db"
     },
     "shots/solutions-1440.webp": {
-      "sha256": "44a44ed8cfbb8a3cf4987c924528a658e92967864c760245cc6b146f337744f9",
-      "url": "/_blob/2cd9d9ba423e5eb3f1be21f8215b8b2a"
+      "sha256": "a0f57a57637bdf7f1e461f68488476819eae0e43a16b87a5775ce29e4d885a9a",
+      "url": "/_blob/5f4b7f568eac64806745c479105ba297"
     },
     "shots/solutions-rooftop-solar-1440.webp": {
       "sha256": "250d660693835629c23a88882119ec3ee51ba5e451a4e1c184328a0cd17e375a",
@@ -353,9 +375,5 @@
       "sha256": "f80bb3d46227e320be8edbd05b43d5a2476a85acea90721d7dfd7d6223509ad8",
       "url": "/_blob/6a640edc51c0b134fc03bd46110067aa"
     }
-  },
-  "createdOnFiles": {
-    "v": 1,
-    "at": "2026-11-12T10:12:23Z"
   }
 }
