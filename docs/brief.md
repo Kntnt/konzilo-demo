@@ -53,6 +53,19 @@ When the design was presented, and in the hours after, he settled these.
 - **The page's shadow on the footer** comes and goes at once, as the header's does, so that the footer needs no script.
 - **The design** is approved. `design/feedback.md` holds what he asked for on the way, point by point.
 
+## What Thomas settled on 2026-11-13
+
+When the build phase's plan was put to him.
+
+- **The pictures** that were compromises, all generated anew, are approved as the contact sheet showed them.
+- **The start page** is a page an Admin chooses, as the page for addresses not found is chosen, so that an editor can open Home. Konzilo gains this (`Kntnt/konzilo#67`); it is the page composition that his decision of 2026-10-27 waited for.
+- **The dates:** the scheduled article and the vacancies' last days move a year on, so that the demo shows a scheduled post and open vacancies for a year, and starts without building.
+- **Picture credits** stay in the repository. The site gets no page of them.
+- **The source of the image's GPL and LGPL parts** is pointed to where their makers publish it. No copy is kept beside a release.
+- **Konzilo's site template** stays plain. Konzilo Design may later gain its own way to turn a new site into a designed one.
+- **Consent records and reports of breaches of the security policy** (Konzilo's ADR 0044) are built after the demo, as a spec of their own.
+- **A section's head** always stands at the start edge, never centred. **An opening without a picture** keeps its height, two thirds of the window's.
+
 ## How the work is done
 
 One session plans both phases and orchestrates. It delegates the execution to subagents on Opus or Sonnet, at an effort it chooses, up to and including extra high and never max. It watches the results and raises the model or the effort when a choice proved too weak.

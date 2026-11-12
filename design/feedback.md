@@ -66,3 +66,12 @@ The same day, when he had seen the page reveal the footer (point 31).
 | # | What he said | Where | Done |
 |---|---|---|---|
 | 34 | While the footer is being revealed, the page lies above it and casts its shadow on it. When the whole footer shows, the page and the footer lie in the same plane and the shadow is gone. Scrolling back up brings the shadow back, as the header has no shadow at a page's top and gets one once the page slides in under it | Konzilo Design | Konzilo Design 0.6.0: the page casts its shadow on the footer only while it covers part of it; scrolled to the very end there is none, and scrolling back up brings it back, over the feedback duration, or at once for reduced motion. On Home and Page not found, at 1440 and 390 px, in Chromium, Firefox and WebKit, opened from the file system and over HTTP. Firefox, which lacks scroll timelines, gets the header's polyfill for it, which the package's `Footer` loads and the build writes as `./_astro/…`, as it does the header's. He then saw the shadow stay at the page's end in his own Firefox 160, which has scroll timelines of its own, where the Firefox the tests ran in has none: a style query in Firefox keeps its first answer when an animation changes what it reads, so the shadow never went, and the header never slid away or took its shadow back. Konzilo Design 0.6.1 puts both right, and the shadow now comes and goes at once in every browser, as the header's does, which he accepted the same day, so that the footer needs no script. Measured in the installed Firefox 160 on Home, Page not found and an article, at 2576, 1440 and 390 px: no shadow at the end, a shadow 60 px short of it; the header without a shadow at the top, gone on the way down, back with its shadow on the way up |
+
+On 2026-11-13, when the build phase's plan was put to him, with the two things in the look that the design phase had noted as odd.
+
+| # | What he said | Where | Done |
+|---|---|---|---|
+| 35 | The pictures that were compromises are fine as generated anew | Here | Nothing to do: all twenty-one stand as the contact sheet showed them |
+| 36 | Headings always stand at the edge | Konzilo Design | To come with its next release: a section's head keeps the start edge over every row of cards, and the rule that centred it over two cards, cards without pictures and reasons goes |
+| 37 | A page's opening without a picture keeps two thirds of the window's height for a heading and a sentence | Nothing | Stays as approved |
+

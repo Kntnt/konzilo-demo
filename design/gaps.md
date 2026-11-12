@@ -43,7 +43,6 @@ What the design phase wanted and could not have, and the faults it found on the 
 | Neither `directives.md` nor `konzilo.md` says where a page without a hero puts its title and breadcrumbs | The mockups put them in a section's head before the body |
 | `konzilo.css` does not style the core's button that opens the lightbox | `button.konzilo-lightbox-open` is styled only by the core's `modal.css` |
 | Layout rule 6 centres a section's head for a reason no visitor can see | A head over two cards, two featured posts, cards without pictures or reasons is centred, on a page whose other heads start at the edge |
-| A hero without a picture keeps its height | A title and one sentence stand at the bottom of an empty band two thirds of the window high; seen on term pages, the 404 page and the legal pages |
 | A gallery's columns follow its width, not the number of its pictures | Four pictures stand three and one; `.konzilo-gallery` uses `auto-fill` |
 | A choice's answers do not fill their rows | Four answers fall three and one |
 | A table at phone width squeezes its columns word by word | It needs a least column width and a box that scrolls |
