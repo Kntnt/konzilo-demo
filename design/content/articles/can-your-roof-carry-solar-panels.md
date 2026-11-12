@@ -54,6 +54,10 @@ Panels stay on a roof for 30 years. A membrane that must be replaced in ten mean
 
 Insurers and fire services want an array divided into blocks with walkways between them, kept clear of fire walls, smoke vents and roof lights, and a way to cut the DC circuits that the fire service can reach from the ground. On most roofs this takes 10 to 20% off the area that looked usable from the air.
 
+Why a fire under panels worries them shows in research at the University of Edinburgh. Its fire researchers set light to a strip of plastic, standing in for the roof's surface, under a horizontal panel, and measured how fast the flame spread as they changed the gap between the two. Narrowing the gap by a few centimetres made the flame spread several times faster, as the panel threw the fire's heat back down. The university's Edinburgh Fire Research Centre published this 15-minute presentation of the study. The gaps it reports hold for those tests, not for every roof.
+
+https://www.youtube.com/watch?v=PwmzZ26vEYU
+
 ### Can the switchboard take it?
 
 An electrical engineer checks where the inverters will connect to the main switchboard, whether the board has room, and how much power the site could send to the grid on a sunny Sunday, when the roof gives most and the building uses least.

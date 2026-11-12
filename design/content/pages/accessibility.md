@@ -45,7 +45,7 @@ No independent party has audited the site, so we make no claim that it conforms 
 - **Tabs.** A screen reader announces each tab as a button that expands and collapses, not as a tab in a row of tabs, and the arrow keys do not move between tabs. Tab and Enter work.
 - **The list of case studies.** When you choose topics above the list, the number of case studies shown is not announced again. The list itself shows only the matching case studies, and a screen reader finds them by reading on.
 - **The menu beside the questions and answers** does not mark which part you are reading.
-- **Content from other services,** such as a video, is shown in that service's own player, whose accessibility is the service's.
+- **The video from YouTube** in one article plays in YouTube's own player, whose accessibility is YouTube's. Before it loads, the question and the button in its place work with the keyboard.
 
 We are working on the first three, and this page will say when they are fixed.
 

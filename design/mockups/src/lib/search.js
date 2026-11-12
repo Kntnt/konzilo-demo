@@ -22,11 +22,13 @@ export const TEXTS = {
 };
 const PAGE_SIZE = 10;
 
-// A body as plain text, a block's words apart from the next block's, as the core's plainText() reads a body's HTML.
+// A body as plain text, a block's words apart from the next block's, as the core's plainText() reads a body's HTML,
+// which leaves out an embed's panel.
 const BLOCKS = /^(p|li|ul|ol|dl|dt|dd|h\d|div|section|blockquote|figure|figcaption|table|tr|td|th|caption|hr|br)$/;
 const plain = (markdown) => {
   const text = (node) => {
     if (node.type === 'text') return node.value;
+    if (node.type === 'element' && (node.tagName === 'template' || [].concat(node.properties?.className ?? []).includes('konzilo-embed'))) return ' ';
     const inner = (node.children ?? []).map(text).join('');
     return node.type === 'element' && BLOCKS.test(node.tagName) ? ` ${inner} ` : inner;
   };

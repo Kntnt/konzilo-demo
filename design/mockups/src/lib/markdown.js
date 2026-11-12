@@ -7,6 +7,7 @@
 // Unlike the core it registers no list of directives: every name is read, so a misspelt one reaches render.js, which
 // warns. A text directive (`:name`) reads as its text, as in the core, where none is registered.
 import { htmlToHast, markdownToHtml } from 'satteri';
+import { embedPanels } from './embeds.js';
 
 const FEATURES = Object.freeze({ gfm: true, rawHtml: true, smartPunctuation: false, directive: true });
 
@@ -112,8 +113,9 @@ function headingIds(root) {
   return root;
 }
 
-// A body's Markdown as the core's hast tree: a root of its blocks, whitespace between them removed.
+// A body's Markdown as the core's hast tree: a root of its blocks, whitespace between them removed. A paragraph of a
+// video's address alone is the core's embed panel, as its consent placeholder (embeds.js).
 export function readMarkdown(markdown) {
   const { html } = markdownToHtml(String(markdown).trim(), { features: FEATURES, mdastPlugins: [directives], hastPlugins: [headingAnchors, figures] });
-  return headingIds(htmlToHast(html, { fragment: true }));
+  return embedPanels(headingIds(htmlToHast(html, { fragment: true })));
 }

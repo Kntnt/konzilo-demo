@@ -163,6 +163,7 @@ shots/                    screenshots: <name>-<width>[-dark][-menu|-search].png
 - Every picture is a JPEG at one width, with no `srcset`; the core makes WebP masters and several widths.
 - A figure keeps the core's button that opens the lightbox, but not the lightbox's dialog.
 - The consent controls' buttons show, as they do once the core's script has run; the consent banner does not.
+- A paragraph of a YouTube address alone is the core's embed as its consent placeholder, the question, the sentence and *Allow and play* in the core's words (`src/lib/embeds.js`); the button loads nothing. Another service's address stays a paragraph.
 - A code block has no Shiki colours.
 - The header's script that chooses how the bar gives way runs, as on the site. Nothing else needs a script, except the two catalogue frames that open the menu and the search box.
 

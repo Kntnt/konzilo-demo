@@ -87,11 +87,13 @@ Neither Konzilo nor Konzilo Design records the Markdown attributes of the design
 
 The privacy policy, the cookie policy and the forms' fine print state facts the build must make true:
 
-- **Statistics:** Matomo, run by Ampfield itself (no `provider`), with the departure `statisticsWithoutStorageBeforeConsent` and `privacySignals: "stop"`, IP addresses shortened by two bytes, and raw data deleted after 25 months.
+- **No statistics:** no tag manager (`tagManager.manager` is `None`) and no departure in the site description's `consent.departures`. The site counts no visits, so the policies name no statistics service, no right to object to counting and nothing stored for measuring.
+- **One embed:** the video in `articles/can-your-roof-carry-solar-panels.md`, on YouTube, the one embed service the posts use. The core puts YouTube under Marketing, since its provider advertises, so the registry holds two services, the consent's own storage and YouTube, and the categories Necessary and Marketing. `../mockups/pages/cookie-policy.astro` holds the declaration the core makes of it.
 - **Forms:** a retention of 90 days for `contact` and `assessment`, and 30 days for `newsletter`.
-- **Hosting:** a server in Sweden, backups in the EU; no web server log of visitors beyond the core's log of addresses not found.
-- **The consent texts** are the core's defaults; the privacy policy points to *Change privacy settings* at the bottom of every page for the objection.
-- **The text after the cookie declaration**, which the template places below it: "Your browser may also keep things the site does not ask it to, such as its cache. You can remove what a site has stored in your browser's settings; that also removes your choice and any objection, and the site will ask again. Questions about this policy: privacy@ampfield.example."
+- **Hosting:** a server in Sweden, backups in the EU. The web server keeps no log of visits, as the core's Caddyfile writes none; the log of addresses not found that Konzilo's ADR 0040 decides is not built, and the privacy policy says there is none.
+- **No copy of a choice, and no reports kept:** the public site's pages send the record of each choice to `/_konzilo/consent` and each violation of the security policy to `/_konzilo/violations`, but the core's service takes neither yet (Konzilo's ADR 0044 keeps records for 13 months and reports for 30 days), so the privacy policy says Ampfield keeps no copy of a visitor's choice. When the core keeps them, the privacy policy must say so.
+- **The consent texts** are the core's defaults.
+- **The text after the cookie declaration**, which the template places below it: "Your browser may also keep things the site does not ask it to, such as its cache. You can remove what a site has stored in your browser's settings; that also removes your choice, and the site will ask again. Questions about this policy: privacy@ampfield.example."
 
 ## Telephone numbers and addresses
 

@@ -22,21 +22,19 @@ On this page
 
 ## In short
 
-This site stores in your browser only what it needs to work and to remember your choice, unless you allow more. Before you make a choice, its statistics count your visit without storing anything in your browser; our [privacy policy](/privacy-policy/#visitor-statistics) says what is counted, and how you object to it. Your choice holds for 12 months on this site, and you can change it or withdraw it at the bottom of every page.
+This site stores one thing in your browser: your choice about content from other services, so that it does not ask you on every page. It sets no cookie and counts no visits. One article shows a video from YouTube, which loads only once you allow it. Your choice holds for 12 months, and you can change it or withdraw it at the bottom of every page.
 
 ## What the site stores
 
-**Your choice.** The site keeps the categories you allowed, when you allowed them, and any objection to the counting, in your browser's local storage. Without it, the site would ask you again on every page.
+**Your choice.** The site keeps the categories and services you allowed, when you chose, and a random consent ID in your browser's local storage, for 12 months. It keeps a refusal too. Without it, the site would ask you again on every page.
 
-**Statistics, if you allow them.** Matomo, which we run ourselves, stores a cookie that tells a returning visitor from a new one, for up to 13 months, and one that ties together the pages of a single visit, for 30 minutes.
-
-**Content from other services, if you allow it.** A video or another embed from an outside service loads only once you allow that service. The service may then store cookies of its own, under its own rules.
-
-The site sets no cookie for advertising, and none that follows you to other sites.
+**Nothing else.** The site stores nothing for measuring visits, for advertising, or to follow you to other sites.
 
 ## What we load from other services
 
-Nothing, until you allow it. The site's pages, pictures, fonts and scripts all come from our own server. The services that may load with your consent, and who provides them, are listed below, by category.
+Nothing, until you allow it. The site's pages, pictures, fonts and scripts all come from our own server.
+
+One service may load with your consent: YouTube, for the video in the article [Can your roof carry solar panels?](/insights/can-your-roof-carry-solar-panels/). Until you allow it, a question and a button stand in the video's place. Once you allow it, YouTube's player loads in the page, YouTube may store data in your browser, and Google Ireland Limited, which provides YouTube, receives data about your visit. Google may use what it learns for its own advertising, so the site lists YouTube under Marketing. Our [privacy policy](/privacy-policy/#video) says more.
 
 ## Below: your choice, and every service
 

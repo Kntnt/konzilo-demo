@@ -54,6 +54,7 @@ What the design phase wanted and could not have, and the faults it found on the 
 | The megamenu draws an entry without children as an empty column | Customers, before it was given the case studies |
 | The design reads a table's column alignment from `data-kn-align`, which nothing writes | Konzilo writes `style="text-align: …"`, which its own policy on inline styles blocks (ADR 0051) |
 | The core's default meta line and the design's do not match | The core writes one sentence, "Published on {date} in {category} by {authors}"; the design draws three spans with dots between |
+| A test fixture writes the embed placeholder's policy link without the attribute the core adds | `test/fixtures/konzilo-page.html` lacks `data-konzilo-consent-policy` |
 | The hero directive's default Surface is `raised` | The design's own default for a hero without a picture is `none` |
 | A design resolved by an older generator passes `design-check` and `fromDesign` | A file resolved by 0.2.0 passes under 0.3.0, though 0.3.0 changed the dark-mode values |
 | `resolve` keeps role settings that the chosen typeface lacks | The new design's Mona Sans axes stay after a change of typeface; only the tool prunes them |
@@ -81,4 +82,8 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A form's button text cannot be set | ADR 0045 says an editor may; the site description and `::form` have no field for it |
 | An acceptance test nests fences the wrong way round | `acceptance/preview-components.test.js` puts the longer fence inside the shorter |
 | `content-format.md` does not say whether a site's own type may use the built-in `topics` taxonomy | The case studies and the pages that list them assume it may |
+| A visitor's choice about consent is not kept on the server | The public pages send a record of each choice to `/_konzilo/consent`; the service handles only forms and answers 404. ADR 0044 says such records are kept for 13 months, and the cookie declaration shows a consent ID that nobody can look up |
+| Reports of breaches of the security policy are not kept | Pages report to `/_konzilo/violations`; no handler exists. ADR 0044 says 30 days |
+| The log of addresses that were not found is not built | ADR 0040; the web server writes no log at all |
+| The core's two texts on YouTube disagree | Its facts say the provider lists nothing that it stores; the placeholder says it "may store data in your browser" |
 | Pinning the core by a token is not built | ADR 0011; `new-site` pins by a path on the machine |
