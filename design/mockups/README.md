@@ -1,6 +1,6 @@
 # The mockups
 
-Every designed page of the Ampfield site as static HTML, made from Konzilo Design's released package (`../../vendor/kntnt-konzilo-design-0.5.0.tgz`), the design file `../site.design.json`, its fonts and logos, and the text in `../content/`. A built page stands alone: plain HTML with its CSS inline and relative addresses, so it opens from the file system and can be screenshotted.
+Every designed page of the Ampfield site as static HTML, made from Konzilo Design's released package (`../../vendor/kntnt-konzilo-design-0.6.0.tgz`), the design file `../site.design.json`, its fonts and logos, and the text in `../content/`. A built page stands alone: plain HTML with its CSS inline and relative addresses, so it opens from the file system and can be screenshotted.
 
 The mockups are a means and will be thrown away. What they must get right is that a page shows only what the design system and Konzilo can render, placed as an editor could place it (`../README.md`, Rules for every page).
 
@@ -159,7 +159,7 @@ src/routes/content.astro  the one route every content page is built by
 scripts/                  build.mjs and shoot.mjs
 public/logos/             the design's logos, written by konzilo-design logos (not committed)
 dist/<name>.html          a built page
-dist/_astro/              fonts and the header's polyfills, by content hash
+dist/_astro/              fonts and the polyfills the header and footer load, by content hash
 dist/images/              pictures by id and width, and placeholders
 dist/logo/                logos from ../logo/
 dist/logos/               the design's own logos
