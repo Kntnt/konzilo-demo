@@ -1,6 +1,6 @@
 read when planning the build phase, or deciding where a piece of it belongs
 
-What the design phase learned that the build phase stands on. It is the knowledge of 2026-11-12: Konzilo at 0.4.0 and one fix, Konzilo Design at 0.6.0. Check a fact here against the code before a plan depends on it.
+What the design phase learned that the build phase stands on. It is the knowledge of 2026-11-12: Konzilo at 0.4.0 and one fix, Konzilo Design at 0.6.1. Check a fact here against the code before a plan depends on it.
 
 ## The end result, as settled
 

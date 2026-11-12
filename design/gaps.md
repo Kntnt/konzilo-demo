@@ -33,7 +33,7 @@ What the design phase wanted and could not have, and the faults it found on the 
 
 | What | How it shows |
 |---|---|
-| The components that render Konzilo's directives are not shipped | Konzilo 0.4.0 expects a package's component declarations (`componentsFrom`), its checks (`componentChecks`) and an Astro component per directive. Konzilo Design 0.6.0, like 0.3.0 to 0.5.0, has the HTML contract, the CSS and helpers, and renderers in its gallery only. No file in either repository records the directives' attributes in Markdown |
+| The components that render Konzilo's directives are not shipped | Konzilo 0.4.0 expects a package's component declarations (`componentsFrom`), its checks (`componentChecks`) and an Astro component per directive. Konzilo Design 0.6.1, like every release since 0.3.0, has the HTML contract, the CSS and helpers, and renderers in its gallery only. No file in either repository records the directives' attributes in Markdown |
 | ADR 0068 of the core and `directives.md` disagree on what cards, accordion, tabs, toc and choice are | The ADR calls them the list's five forms; `directives.md` and the gallery treat them as directives of their own |
 | `directives.md` does not say where an editor writes a card's picture and eyebrow, or that a section's badges must be paragraphs of their own | Items begin at their headings, yet the picture and the eyebrow are drawn before the heading; adjacent images become a gallery |
 | `directives.md` writes a card's symbol with an empty alt text | The core's `content-format.md` says an image never goes without one |

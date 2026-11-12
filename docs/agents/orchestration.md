@@ -18,7 +18,8 @@ How the design phase was run, and what it taught. The brief (`docs/brief.md`) se
 ## What to know
 
 - **Konzilo's gate** (`npm run gate`) takes half an hour on a quiet machine and over an hour on a busy one, and uses Docker and three browser engines. One at a time.
-- **Konzilo Design's tests** (`npm test`) take about two minutes and need Playwright's browsers, which are installed.
+- **Konzilo Design's tests** (`npm test`) take some ten minutes, of which the frame's tests in four browser variants are seven and a half, and need Playwright's browsers, which are installed.
+- **A released browser is not Playwright's build of it.** Thomas looks at pages in the installed Firefox, which had scroll timelines of its own when Playwright's Firefox had none, so a fault he saw at once passed every test. What he will look at is checked in the browser he uses; Konzilo Design's `docs/spec/header.md` says how a released Firefox, a Chromium-based browser and Safari are driven.
 - **A canvas or a design system in Claude cannot be opened from a session,** and their types' instructions say not to try. What is published there is checked by drawing the same content locally and comparing it with a screenshot. Only Thomas sees the real thing.
 - **Pictures** are fetched through the official interfaces of Unsplash and Pexels, with keys that Thomas provides. In the design phase they were fetched by getting past the services' checks for automated clients; that is not done again. `docs/agents/status.md` says whether the keys exist.
 - **Pictures of people** are generated through Codex (the `agents:codex` skill), from the photograph chosen for composition and light. Each generated picture says so in `design/images/credits.json`.
