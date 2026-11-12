@@ -48,6 +48,7 @@ When the design was presented, and in the hours after, he settled these.
 - **A possibly better solution** gets an issue as its feature request, and a pull request with code only where the change is small.
 - **Statistics and video:** one article embeds a video, so that the consent placeholder shows. The site counts no visits, and its policies say nothing of Matomo.
 - **The repository** is public, under the AGPL as Konzilo is. Its history was made anew without the stock photographs of real people before it was published.
+- **The page's shadow on the footer** comes and goes at once, as the header's does, so that the footer needs no script.
 - **The design** is approved. `design/feedback.md` holds what he asked for on the way, point by point.
 
 ## How the work is done
