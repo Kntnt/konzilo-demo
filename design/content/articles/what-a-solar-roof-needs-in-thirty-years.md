@@ -2,7 +2,7 @@
 title: "What a solar roof needs in thirty years"
 date: 2026-03-24T07:00:00Z
 modified: 2026-03-24T07:00:00Z
-image: {"src":"image:article-roof-maintenance","alt":"A technician inspecting rows of solar panels on a flat roof"}
+image: {"src":"image:article-roof-maintenance","alt":"A technician in a hard hat walking between rows of solar panels on a flat roof, seen from above"}
 eyebrow: "After the handover"
 headline: "What a solar roof needs over thirty years, and what it costs"
 subheadline: "An inspection a year, new inverters once, and most of the rest found in the data"

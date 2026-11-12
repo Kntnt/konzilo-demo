@@ -12,7 +12,8 @@
 import { posts, termName } from './content.js';
 import { attributes, escapeText, tag } from './html.js';
 import { pictureSrc, WIDTHS } from './pictures.js';
-import { surfaceOf } from '@kntnt/konzilo-design/directives';
+import { iconHtml, surfaceOf } from '@kntnt/konzilo-design/directives';
+import { filterKeys, itemMatches } from '@kntnt/konzilo-design/components/visitor-filters.js';
 
 const FIELDS = { category: 'category', categories: 'category', topic: 'topics', topics: 'topics', author: 'authors', authors: 'authors' };
 const COLLECTIONS = { category: 'categories', topics: 'topics', authors: 'authors' };
@@ -210,31 +211,60 @@ function shownFor(ctx) {
   return shownOn.get(key);
 }
 
+// ---------- filtered ----------
+
+// The rows a filtered list can have, in the fixed order a site writes them whatever order they are given in
+// (directives.md, `filtered`): each taxonomy a row of pills, by its query key, its legend and the teaser's field, and
+// search last. A list placed with no rows chosen has one row of topics.
+const ROWS = [
+  { name: 'category', key: 'category', legend: 'Category', field: 'category' },
+  { name: 'topics', key: 'topic', legend: 'Topic', field: 'topics' },
+];
+const SEARCH = { label: 'Search', button: 'Search', show: 'Show', action: '/search/' };
+
+// The attribute that chooses the rows, `filters="category topics search"`, is the design's proposal; the core has none
+// yet (directives.md, Open questions). `settled` is what the page itself settles, { key, value } by the query key, such as the category
+// on a category's page: its row is left out and a search sends it as a hidden field.
+function filtered(teasers, ctx, { type, pagerHtml, filters, settled, total, all }) {
+  const asked = new Set(String(filters ?? 'topics').split(/\s+/).filter(Boolean));
+  const id = `posts-${(ctx.ids.posts = (ctx.ids.posts ?? 0) + 1)}`;
+  // Each row's terms are those of the posts the list holds, on every page, the terms with the most posts first, at most 24.
+  const rows = ROWS.filter((row) => asked.has(row.name) && row.key !== settled?.key).map((row) => {
+    const counts = new Map();
+    for (const teaser of all) for (const slug of valuesOf(teaser.post, row.field)) counts.set(slug, (counts.get(slug) ?? 0) + 1);
+    const slugs = [...counts.keys()].sort((a, b) => counts.get(b) - counts.get(a) || a.localeCompare(b)).slice(0, 24);
+    return { ...row, options: slugs.map((slug) => ({ value: slug, label: termName(COLLECTIONS[row.field] ?? row.field, slug) })) };
+  }).filter((row) => row.options.length);
+  const search = asked.has('search');
+  const keys = filterKeys(rows.map((row) => ({ name: row.key, options: row.options })));
+  const hidden = search ? Object.fromEntries(Object.entries({ type, ...(settled ? { [settled.key]: settled.value } : {}) }).filter(([, value]) => value)) : {};
+  const noun = PLURAL[type] ?? 'posts';
+  const count = total > teasers.length ? `Showing ${teasers.length} of ${total} ${noun}` : `Showing ${teasers.length} ${noun}`;
+  return tag('div', { class: 'kn-post-list', 'data-kn-presentation': 'filtered' },
+    tag('form', { class: 'kn-visitor-filters', role: 'search', method: 'get', action: search ? SEARCH.action : '' },
+      Object.entries(hidden).map(([key, value]) => `<input${attributes({ type: 'hidden', name: key, value })}>`),
+      tag('div', { class: 'kn-visitor-filter-panel' },
+        rows.map((row) => tag('fieldset', { class: 'kn-visitor-filter-group' }, `<legend>${escapeText(row.legend)}</legend>`,
+          tag('div', { class: 'kn-visitor-filter-toggles' }, row.options.map((option) => tag('label', { class: 'kn-pill' },
+            `<input${attributes({ type: 'checkbox', name: row.key, value: option.value, 'aria-controls': id, 'data-kn-match': keys.get(row.key).get(option.value) })}>`, escapeText(option.label)))))),
+        search ? tag('div', { class: 'kn-field kn-visitor-filter-search' },
+          tag('label', { class: 'kn-field-label', for: `${id}-search` }, SEARCH.label),
+          tag('div', { class: 'kn-visitor-filter-input' }, iconHtml('search'), `<input${attributes({ class: 'kn-field-control', id: `${id}-search`, name: 'q', type: 'search' })}>`)) : '',
+        tag('button', { class: 'kn-button kn-visitor-filter-submit', type: 'submit', 'data-kn-variant': 'outline' }, search ? SEARCH.button : SEARCH.show)),
+      tag('p', { class: 'kn-visitor-filter-count', 'data-kn-type': 'small' }, count)),
+    tag('div', { class: 'kn-card-grid kn-cards', id }, teasers.map((teaser) => teaserCard(teaser, ctx, {
+      extra: { 'data-kn-item': '', 'data-kn-matches': itemMatches(keys, Object.fromEntries(rows.map((row) => [row.key, valuesOf(teaser.post, row.field)]))) || undefined },
+    }))), pagerHtml);
+}
+
 // Teasers as a presentation draws them, with the pager, where there is one, after them, as the core's presentations
 // place it.
-export function presentation(name, teasers, ctx, { type, pagerHtml = '' } = {}) {
+export function presentation(name, teasers, ctx, { type, pagerHtml = '', filters, settled, total = teasers.length, all = teasers } = {}) {
   if (name === 'featured') {
     return tag('div', { class: 'kn-post-list', 'data-kn-presentation': 'featured' }, tag('div', { class: 'kn-featured' },
       teasers.map((teaser, index) => teaserCard(teaser, ctx, index === 0 ? { type: 'heading-3', width: WIDTHS.section } : {}))), pagerHtml);
   }
-  if (name === 'filtered') {
-    // The topics with the most posts first, at most 24; a pill's key is 1- and its place (directives.md, `filtered`).
-    const counts = new Map();
-    for (const teaser of teasers) for (const topic of teaser.topics) counts.set(topic, (counts.get(topic) ?? 0) + 1);
-    const topics = [...counts.keys()].sort((a, b) => counts.get(b) - counts.get(a) || a.localeCompare(b)).slice(0, 24);
-    const id = `posts-${(ctx.ids.posts = (ctx.ids.posts ?? 0) + 1)}`;
-    return tag('div', { class: 'kn-post-list', 'data-kn-presentation': 'filtered' },
-      tag('form', { class: 'kn-visitor-filters', role: 'search', method: 'get', action: '' },
-        tag('div', { class: 'kn-visitor-filter-panel' },
-          tag('fieldset', { class: 'kn-visitor-filter-group' }, '<legend>Topic</legend>',
-            tag('div', { class: 'kn-visitor-filter-toggles' }, topics.map((topic, index) => tag('label', { class: 'kn-pill' },
-              `<input${attributes({ type: 'checkbox', name: 'topic', value: topic, 'aria-controls': id, 'data-kn-match': `1-${index + 1}` })}>`, escapeText(termName('topics', topic)))))),
-          tag('button', { class: 'kn-button kn-visitor-filter-submit', type: 'submit', 'data-kn-variant': 'outline' }, 'Show')),
-        tag('p', { class: 'kn-visitor-filter-count', 'data-kn-type': 'small' }, `Showing ${teasers.length} ${PLURAL[type] ?? 'posts'}`)),
-      tag('div', { class: 'kn-card-grid kn-cards', id }, teasers.map((teaser) => teaserCard(teaser, ctx, {
-        extra: { 'data-kn-item': '', 'data-kn-matches': topics.flatMap((topic, index) => (teaser.topics.includes(topic) ? [`1-${index + 1}`] : [])).join(' ') },
-      }))), pagerHtml);
-  }
+  if (name === 'filtered') return filtered(teasers, ctx, { type, pagerHtml, filters, settled, total, all });
   if (name === 'rows') {
     return tag('div', { class: 'kn-post-list', 'data-kn-presentation': 'rows' },
       tag('div', { class: 'kn-content-loop', 'data-kn-presentation': 'rows' },
@@ -248,9 +278,12 @@ export function presentation(name, teasers, ctx, { type, pagerHtml = '' } = {}) 
 
 export function postList(attrs, ctx) {
   const shown = shownFor(ctx);
+  const every = attrs.pages === 'true' ? chosenPosts({ ...attrs, number: 100 }, ctx.post, { shown }) : null;
   const chosen = chosenPosts(attrs, ctx.post, { shown });
   for (const post of chosen) shown.add(post.file);
   if (chosen.length === 0) return attrs.empty ? tag('p', {}, escapeText(attrs.empty)) : '';
   const pagerHtml = attrs.pages === 'true' ? pager(ctx.address ?? '/', 1, chosen.pages) : '';
-  return presentation(attrs.presentation ?? 'cards', chosen.map(teaserOf), ctx, { type: attrs.type, pagerHtml });
+  return presentation(attrs.presentation ?? 'cards', chosen.map(teaserOf), ctx, {
+    type: attrs.type, pagerHtml, filters: attrs.filters, total: every?.length ?? chosen.length, all: (every ?? chosen).map(teaserOf),
+  });
 }

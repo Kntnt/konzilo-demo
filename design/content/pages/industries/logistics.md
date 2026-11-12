@@ -18,7 +18,7 @@ A distribution centre has the largest flat roof in its area, a yard full of vehi
 :::list{type="actions"}
 
 - **[Book a site assessment](/go/site-assessment/)**
-- [A customer's story](#case-studies)
+- [Case studies](#case-studies)
 
 :::
 
@@ -30,7 +30,7 @@ A distribution centre has the largest flat roof in its area, a yard full of vehi
 
 ## What matters in a distribution centre
 
-A warehouse of 30,000 m² has room on its roof for about 4 MWp of panels. Lighting, conveyors, sorting and, above all, cooling run through the day, so most of what the roof produces is used where it is made.
+A warehouse of 30,000 m² has room on its roof for about 4.5 MWp of panels. Lighting, conveyors, sorting and, above all, cooling run through the day, so most of what the roof produces is used where it is made.
 
 The harder question is the yard. When the vans and trucks go electric, the depot needs as much power each night as the whole building uses by day. Most connections can carry that if the charging is spread over the night, and the few that cannot can with a battery beside them.
 
@@ -81,7 +81,7 @@ What we usually find at a warehouse of 30,000 m² in Sweden, Denmark, the Nether
 :::list{type="values"}
 
 - Room on the roof
-  - About 4 MWp
+  - About 4.5 MWp
 - Share of yearly electricity from the roof
   - 30% to 45%
 - Share of the roof's output used on site
@@ -95,24 +95,27 @@ What we usually find at a warehouse of 30,000 m² in Sweden, Denmark, the Nether
 
 ::::section{anchor="case-studies"}
 
-![A long distribution centre seen from above, its roof covered with solar panels and lorries at its loading docks](image:case-norrvik)
+::eyebrow[Case studies]
 
-::eyebrow[Case study]
+## What we built for logistics companies
 
-## Six roofs that give a logistics company 38% of its electricity
+:::list{type="actions"}
+
+- [All case studies](/customers/)
+
+:::
+
+::post-list{type="case-study" where="industry=Logistics and warehousing" presentation="cards"}
+
+::::
+
+:::section{surface="raised"}
 
 > We had six roofs, about 60,000 m² in all, that did nothing for us. Now they give us 38% of the electricity we use in a year, and our vans charge in the same yards they load in. One company answers for all of it, which is what I wanted.
 >
 > <cite>Karin Öberg, Head of Property, Norrvik Logistics</cite>
 
-:::list{type="actions"}
-
-- [Read the case study](/customers/norrvik-logistics/)
-- [All case studies](/customers/)
-
 :::
-
-::::
 
 ::::section{surface="accent"}
 

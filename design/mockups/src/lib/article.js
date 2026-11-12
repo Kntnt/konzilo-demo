@@ -21,26 +21,42 @@ import { actions, breadcrumbs, renderBlocks } from './render.js';
 const list = (names) => (names.length < 2 ? names.join('') : `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`);
 const link = (href, text) => tag('a', { href }, escapeText(text));
 
-// The meta line (ADR 0062): the published date, the byline, and the category where the eyebrow takes its place over the
-// headline, each a span that the design separates; an author and the category linked to their pages, as the core's
-// metaLine() links them where the taxonomy has an address (/insights/author/{slug}/, /insights/category/{slug}/).
-export function metaLine(post) {
+// The meta line (ADR 0062; directives.md, An article): the core's sentence, written by the format the article type has in
+// the site's settings, each variable's value an element of its own, the authors and the category linked to their pages
+// as the core's metaLine() links them where the taxonomy has an address (/insights/author/{slug}/,
+// /insights/category/{slug}/); then the article's topics as pills, each a link to its topic's page, which the design
+// parts from the sentence by a bullet of its own.
+export const META_LINE_FORMAT = 'By {authors} • Published {date} in {category}';
+
+export function metaLine(post, format = META_LINE_FORMAT) {
   const { data } = post;
   if (post.type !== 'article') return '';
   const category = [].concat(data.category ?? [])[0];
   const authors = [].concat(data.authors ?? []).map((slug) => link(`/insights/author/${slug}/`, termName('authors', slug)));
+  const values = {
+    authors: authors.length ? tag('span', { class: 'kn-article-byline' }, list(authors)) : '',
+    date: data.date ? tag('time', { class: 'kn-article-date', datetime: isoDay(data.date) }, longDate(data.date)) : '',
+    category: category ? tag('a', { class: 'kn-article-category', href: `/insights/category/${category}/` }, escapeText(termName('categories', category))) : '',
+  };
+  const topics = [].concat(data.topics ?? []);
   return tag('p', { class: 'kn-article-meta', 'data-kn-type': 'small' },
-    data.date ? tag('span', { class: 'kn-article-date' }, 'Published ', tag('time', { datetime: isoDay(data.date) }, longDate(data.date))) : '',
-    authors.length ? tag('span', { class: 'kn-article-byline' }, 'By ', list(authors)) : '',
-    data.eyebrow && category ? tag('span', { class: 'kn-article-category' }, link(`/insights/category/${category}/`, termName('categories', category))) : '',
-    topicPills(post));
+    tag('span', { class: 'kn-article-line' }, writeLine(format, values)),
+    topics.length ? tag('span', { class: 'kn-article-topics' }, topics.map((slug) => tag('a', { class: 'kn-pill', href: `/insights/topic/${slug}/` }, escapeText(termName('topics', slug))))) : '');
 }
 
-// The article's topics, which the core's template shows after the meta line as a list of its terms. directives.md gives
-// the opening no part for them, so each is a pill of Content Metadata (.kn-pill), linked to its topic's page, ending the
-// meta line: as a line of their own they would stand a column gap under it, which the hero puts after every part.
-function topicPills(post) {
-  return [].concat(post.data.topics ?? []).map((slug) => tag('span', { class: 'kn-content-meta-item kn-pill', 'data-kn-pill': 'true' }, link(`/insights/topic/${slug}/`, termName('topics', slug))));
+// The format's words as text and each variable's value in its place; a variable without a value drops out with the
+// words before it, back to the last punctuation mark, as the core's writeMetaLine() drops it.
+function writeLine(format, values) {
+  const parts = format.split(/\{(\w+)\}/);
+  let out = '';
+  for (let at = 0; at < parts.length; at += 2) {
+    const words = parts[at];
+    const name = parts[at + 1];
+    if (name === undefined) { out += escapeText(words); break; }
+    if (values[name]) out += escapeText(words) + values[name];
+    else out += escapeText(words.replace(/[^\p{P}|]*$/u, ''));
+  }
+  return out.replace(/^[\s\p{P}]+/u, '').replace(/[\s•·,;:|-]+$/u, '').replace(/\s{2,}/g, ' ');
 }
 
 // `label` is the eyebrow where the post has none of its own (the category, for an article); `after` is HTML that follows

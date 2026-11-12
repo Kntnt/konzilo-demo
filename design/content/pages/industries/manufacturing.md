@@ -18,7 +18,7 @@ A factory's load is steady through the working day, which suits a solar roof. It
 :::list{type="actions"}
 
 - **[Book a site assessment](/go/site-assessment/)**
-- [A customer's story](#case-studies)
+- [Case studies](#case-studies)
 
 :::
 
@@ -89,24 +89,27 @@ What we usually find at a factory with 20,000 m² of roof.
 
 ::::section{anchor="case-studies"}
 
-![Stacks of planed timber and wooden workpieces on trestles in a large wood workshop](image:case-lindhagen)
+::eyebrow[Case studies]
 
-::eyebrow[Case study]
+## What we built for manufacturers
 
-## Almost a third of a factory's power, with nothing paid up front
+:::list{type="actions"}
+
+- [All case studies](/customers/)
+
+:::
+
+::post-list{type="case-study" where="industry=Manufacturing" presentation="cards"}
+
+::::
+
+:::section{surface="raised"}
 
 > We make furniture, not power. Fifteen years at a price we know was worth more to us than owning the panels, and the roof has worked for us since the day it was finished.
 >
 > <cite>Maria Lindhagen, Chief Executive, Lindhagen Furniture</cite>
 
-:::list{type="actions"}
-
-- [Read the case study](/customers/lindhagen-furniture/)
-- [All case studies](/customers/)
-
 :::
-
-::::
 
 ::::section{surface="accent"}
 

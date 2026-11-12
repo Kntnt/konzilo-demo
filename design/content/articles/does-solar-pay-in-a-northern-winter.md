@@ -47,7 +47,7 @@ In 2025, the hours when solar produced were on average 15 to 30% cheaper than th
 3. **How long you will stay.** Panels last 30 years, and the inverters are replaced once, around year 12 to 15.
 4. **The roof.** A membrane that has to be replaced under the array adds a cost that few forecasts include.
 
-At the prices of the last three years, systems that use 80% or more of their output on site have paid back in 7 to 10 years in our Swedish and Danish projects, and in 6 to 9 years in the Netherlands and the United Kingdom, where bought power has cost more.
+At the prices of the last three years, systems that use 80% or more of their output on site have paid back in 7 to 9 years in our Swedish and Danish projects, and in 6 to 8 years in the Netherlands and the United Kingdom, where bought power has cost more.
 
 ## And the winter?
 

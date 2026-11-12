@@ -5,6 +5,8 @@
 //   npm run shoot -- <page> --dark              also in dark mode, shots/<page>-1440-dark.png …
 //   npm run shoot -- <page> --state menu        the header's menu open, the window alone: shots/<page>-1440-menu.png
 //   npm run shoot -- <page> --state search      the header's search box open, likewise
+//   npm run shoot -- <page> --state scrolled    the window scrolled down and a little back up, so that the header has
+//                                               come back over the content: shots/<page>-1440-scrolled.png
 //   npm run shoot -- <page> --widths 1024,768   other widths
 //   npm run shoot -- --all                      every page built in dist/
 //   --dist <folder> and --out <folder> read and write elsewhere.
@@ -27,7 +29,7 @@ const modes = args.includes('--dark') ? ['light', 'dark'] : ['light'];
 let pages = args.filter((arg) => !arg.startsWith('--'));
 if (args.includes('--all')) pages = (await readdir(dist)).filter((file) => file.endsWith('.html')).map((file) => file.slice(0, -5));
 if (!pages.length) { console.error('Name the pages to shoot, such as: npm run shoot -- catalogue'); process.exit(2); }
-if (!['closed', 'menu', 'search'].includes(state)) { console.error('--state is closed, menu or search'); process.exit(2); }
+if (!['closed', 'menu', 'search', 'scrolled'].includes(state)) { console.error('--state is closed, menu, search or scrolled'); process.exit(2); }
 
 const HEIGHTS = { 390: 844, 768: 1024, 1024: 768, 1440: 900 };
 await mkdir(out, { recursive: true });
@@ -43,7 +45,18 @@ try {
         await tab.goto(pathToFileURL(file).href, { waitUntil: 'load' });
         if (mode === 'dark') await tab.evaluate(() => document.documentElement.setAttribute('data-kn-mode', 'dark'));
         await tab.evaluate(() => document.fonts.ready);
-        if (state !== 'closed') {
+        // A header that slides away comes back on the first scroll up: scroll down by the wheel, as a visitor does, and
+        // a little back up, so that the bar stands over the content.
+        if (state === 'scrolled') {
+          await tab.mouse.move(width / 2, 400);
+          for (let step = 0; step < 6; step++) { await tab.mouse.wheel(0, 250); await tab.waitForTimeout(80); }
+          await tab.waitForTimeout(200);
+          await tab.mouse.wheel(0, -120);
+          // The pointer goes to the side margin, so that no card shows its hover.
+          await tab.mouse.move(1, 600);
+          await tab.waitForTimeout(300);
+        }
+        if (state === 'menu' || state === 'search') {
           const opened = await tab.evaluate((which) => {
             const dialog = document.querySelector(which === 'menu' ? '.kn-header .kn-megamenu' : '.kn-header .kn-header-search-overlay');
             dialog?.showModal();

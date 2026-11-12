@@ -2,7 +2,7 @@
 title: "We now ask the grid before we make an offer"
 date: 2026-02-24T07:00:00Z
 modified: 2026-02-24T07:00:00Z
-image: {"src":"image:article-grid-connection","alt":"A small fenced substation with a transformer beside an industrial building"}
+image: {"src":"image:article-grid-connection","alt":"Two transformers on gravel beside an industrial building"}
 eyebrow: "How we work"
 headline: "From March, we ask the network operator before we make an offer"
 subheadline: "A capacity enquiry at every site assessment, and what a grid application involves after it"

@@ -37,7 +37,7 @@ Written by the people who design, build and run our systems, and by our energy m
 
 ## Earlier articles
 
-::post-list{type="article" number="3" pages="true" presentation="cards" empty="No earlier articles yet. The newsletter tells you when the next one is out."}
+::post-list{type="article" number="9" pages="true" presentation="filtered" filters="category topics search" empty="No earlier articles yet. The newsletter tells you when the next one is out."}
 
 :::
 

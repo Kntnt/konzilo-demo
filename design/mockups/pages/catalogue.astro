@@ -835,12 +835,12 @@ Send us the report's number, and we will send a fixed price for each system in i
 ::post-list{type="article" number="3" presentation="featured"}
 
 ::::`} />
-  <Note what="Filtered" markdown="<code>presentation=&quot;filtered&quot;</code>: the posts' topics as pills over the cards, the topics with the most posts first; a checked pill shows the cards with that topic, by CSS alone." />
+  <Note what="Filtered" markdown="<code>presentation=&quot;filtered&quot;</code> with <code>filters=&quot;category topics search&quot;</code>: a row of pills for each taxonomy, the terms with the most posts first, and a search row, always in that order; without <code>filters</code>, one row of topics. Pills on one row show the cards with any of them, and each further row narrows them, by CSS alone; a search goes to the search page with the pills checked. <code>filters</code> is the attribute directives.md proposes; the core has none yet." />
   <Markdown source={md`::::section
 
 ## All articles
 
-::post-list{type="article" number="12" presentation="filtered"}
+::post-list{type="article" number="12" presentation="filtered" filters="category topics search"}
 
 ::::`} />
 

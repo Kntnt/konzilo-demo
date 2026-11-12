@@ -1,7 +1,11 @@
 // A form as the Konzilo core writes it (its FormView.astro, as Konzilo Design's test/fixtures/konzilo-page.html holds
 // it), from the site description's `forms`, which design/content/site.json gives. konzilo.css draws it in Form's look.
 // The outcomes stand hidden, as the core sends them; the button says Send, the core's word.
-import { attributes, escapeText, tag } from './html.js';
+import { attributes, escapeAttribute, escapeText, tag } from './html.js';
+
+// A label's words, with a link written as Markdown, [privacy policy](/privacy-policy/), drawn as a link. The core's
+// labels are plain text (design/gaps.md); the mockups show what an acceptance line should become.
+const words = (text) => escapeText(text).replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, label, href) => `<a href="${escapeAttribute(href)}">${label}</a>`);
 
 const required = ' <span class="konzilo-form-required">(required)</span>';
 const MAX = { text: 200, email: 254, tel: 50, textarea: 5000, url: 2000, number: undefined };
@@ -27,7 +31,7 @@ function field(form, spec) {
   }
   if (kind === 'checkbox' || kind === 'acceptance') {
     const must = kind === 'acceptance' || !!spec.required;
-    return tag('div', { class: `konzilo-form-field konzilo-form-${kind}` }, `<input${attributes({ type: 'checkbox', id, name: spec.name, required: must, 'aria-describedby': describedBy })}>`, `<label for="${id}">${escapeText(spec.label)}${must ? required : ''}</label>`, help, problem);
+    return tag('div', { class: `konzilo-form-field konzilo-form-${kind}` }, `<input${attributes({ type: 'checkbox', id, name: spec.name, required: must, 'aria-describedby': describedBy })}>`, `<label for="${id}">${words(spec.label)}${must ? required : ''}</label>`, help, problem);
   }
   if (kind === 'textarea') {
     return tag('div', { class: 'konzilo-form-field konzilo-form-textarea' }, label, `<textarea${attributes({ id, name: spec.name, required: !!spec.required, maxlength: spec.maxLength ?? MAX.textarea, 'aria-describedby': describedBy })}></textarea>`, help, problem);

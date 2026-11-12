@@ -6,7 +6,7 @@ The text of every page of the demo site, in Konzilo's Markdown with Konzilo Desi
 
 | Path | Holds | Written by |
 |---|---|---|
-| `site.json` | The site's title, slogan and description, the publisher, the header's call to action and search box, the menu with a line per second-level entry (under Customers, the four case studies), the footer cell by cell, and the forms `contact`, `assessment` and `newsletter` with their confirmations | the pages' agent |
+| `site.json` | The site's title, slogan and description, the publisher, the header's call to action and search box, the menu with a line per second-level entry (Customers is not in it), the footer cell by cell, and the forms `contact`, `assessment` and `newsletter` with their confirmations; an acceptance field's label writes its link to the privacy policy as Markdown, `[privacy policy](/privacy-policy/)`, which the mockups draw as a link and the core cannot yet | the pages' agent |
 | `pages/` | Every page but the term pages, at the path of its address: `pages/index.md` is `/`, `pages/solutions/index.md` is `/solutions/`, `pages/solutions/rooftop-solar.md` is `/solutions/rooftop-solar/` | the pages' agent |
 | `canvases/site-assessment.md` | The landing page at `/go/site-assessment/`, with no header and footer | the pages' agent |
 | `system/not-found.md` | The 404 page, as the post an Admin chooses for it | the pages' agent |
@@ -36,7 +36,7 @@ Front matter, then the body.
 | `icon-solar`, `icon-battery`, `icon-charging`, `icon-pilot` | One-colour line symbols, SVG on a square `viewBox`: a solar panel, a battery, a charging plug, a line chart | Solutions, Logistics, Manufacturing and Retail, each as the cards' symbols, `symbol="item"` |
 | `badge-iso-9001`, `badge-iso-14001`, `badge-iso-45001` | Plain round badges of Ampfield's own making that read "ISO 9001 certified" and so on; no certification body's mark | About us, the badges of "What we hold to" |
 
-**Links** are the addresses in `../README.md`. Anchors are a section's `anchor` or a heading's `<a id>`. Links into the other agent's posts: the author pages `/insights/author/priya-raman/`, `/insights/author/elias-forsberg/`, `/insights/author/hannah-whitcombe/` and `/insights/author/lena-bergqvist/` (Team), the category pages `/insights/category/guides/`, `/insights/category/market-and-policy/` and `/insights/category/company-news/` (menu, Insights), the case studies `/customers/norrvik-logistics/`, `/customers/brantevik-foods/`, `/customers/lindhagen-furniture/` and `/customers/westerport-retail-parks/` (menu, Customers; and each from the solution and the industry page it belongs to), and the feed `/insights/feed/` (footer).
+**Links** are the addresses in `../README.md`. Anchors are a section's `anchor` or a heading's `<a id>`. Links into the other agent's posts: the author pages `/insights/author/priya-raman/`, `/insights/author/elias-forsberg/`, `/insights/author/hannah-whitcombe/` and `/insights/author/lena-bergqvist/` (Team), the category pages `/insights/category/guides/`, `/insights/category/market-and-policy/` and `/insights/category/company-news/` (menu, Insights), the case studies `/customers/norrvik-logistics/`, `/customers/brantevik-foods/`, `/customers/lindhagen-furniture/` and `/customers/westerport-retail-parks/` (the Customers page, the list on the industry page it belongs to, and the solution it belongs to), and the feed `/insights/feed/` (footer).
 
 **Writing:** British English. Percentages as `38%`, thousands with a comma, prices in euros, `MWp`, `kWh` and `m²` after a space.
 
@@ -74,12 +74,12 @@ Neither Konzilo nor Konzilo Design records the Markdown attributes of the design
 
 - **Elements.** `page`: paragraph, heading, list, quote, table, image, gallery, post-list, form and every directive above. `canvas`: paragraph, heading, list, image, form and the directives. The core's template leaves `quote` out of a page; the industry pages and Careers need it.
 - **Addresses.** `page` at `/{path}/`, `canvas` at `/go/{slug}/`, `article` at `/insights/{slug}/`, `case-study` at `/customers/{slug}/`, `job` at `/about/careers/{slug}/`; categories at `/insights/category/{slug}/` and authors at `/insights/author/{slug}/`; the article feed at `/insights/feed/`; search at `/search/`.
-- **Presentations** `cards`, `featured` and `filtered`, without options.
+- **Presentations** `cards`, `featured` and `filtered`; `filtered` with its rows, `filters="category topics search"` and the like, the attribute `directives.md` proposes and the core does not have yet.
 - **Forms** as `site.json` declares them; the confirmations go to `settings.json` under `forms`.
 
 **Assumed of the other agent's types,** for the post lists here to find anything:
 
-- `case-study` takes the taxonomy `topics` (`solar`, `storage`, `charging`, `financing`, `grid`, `reporting`); a taxonomy of its own, `industries`, without an address, with the terms `logistics`, `manufacturing` and `retail`; and a boolean field `featured`, `true` for Norrvik Logistics alone, which Home shows.
+- `case-study` takes the taxonomy `topics` (`solar`, `storage`, `charging`, `financing`, `grid`, `reporting`); a field `industry`, a select of the three industry pages' names, which each industry page lists by `where="industry=Logistics and warehousing"` and so on; and a boolean field `featured`, `true` for Norrvik Logistics alone, which Home shows.
 - Brantevik Foods' case study carries `reporting`, so that the Ampfield Pilot page lists it; otherwise that list shows its `empty` text.
 - `job` posts exist at `/about/careers/{slug}/`.
 

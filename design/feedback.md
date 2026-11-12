@@ -1,48 +1,48 @@
 # Thomas's feedback on the design
 
-Given on 2026-11-12, when the design was first presented, in Swedish; this is what it says. Each point names where it is put right: in Konzilo Design, where the fault is the design system's, or here, where it is this site's design, text or pictures.
+Given on 2026-11-12, when the design was first presented, in Swedish; this is what it says. Each point names where it is put right: in Konzilo Design, where the fault is the design system's, or here, where it is this site's design, text or pictures. The last column says what was done, with Konzilo Design 0.4.0 in the mockups.
 
 ## In general
 
-| # | What he said | Where |
-|---|---|---|
-| 1 | Customers is not a section of its own. Take it out of the menu. Put teasers on each industry's page that lead to the case studies of that industry. The case studies keep their addresses and their breadcrumbs, with Customers as their top level, though the menu does not show it | Here |
-| 2 | Remove the whole link menu from the header | Here: the design file |
-| 3 | Attach the header to the window's edge, so that it goes away when the page is scrolled down and comes back when it is scrolled up | Here: the design file |
-| 4 | Give the header and the megamenu a hint of transparency, so that one only senses what is under them, without it disturbing legibility | Konzilo Design, then the design file |
-| 5 | Use shadows. Use corners of 3 px | Here: the design file |
-| 6 | The gaps are right everywhere, but the padding round the text in a card is too large | Konzilo Design |
-| 7 | Eyebrows a step larger, and closer to the heading after them: the gap above a heading smaller than the gap under it | Konzilo Design |
-| 8 | The social media icons a little larger if that comes naturally, and with more room between them | Konzilo Design |
-| 9 | The footer's line reads, on three lines: "Registered office: Gothenburg", "Ampfield Energy is a fictional company.", "This site demonstrates Konzilo." The organisation number and the VAT number go | Here |
-| 10 | Cards behave alike under the pointer: the heading underlined, and the card very subtly raised, with its shadow following | Konzilo Design |
-| 11 | The first heading and the display style look more like display type | Here: the design file |
-| 12 | No horizontal rule above a table of contents | Konzilo Design |
+| # | What he said | Where | Done |
+|---|---|---|---|
+| 1 | Customers is not a section of its own. Take it out of the menu. Put teasers on each industry's page that lead to the case studies of that industry. The case studies keep their addresses and their breadcrumbs, with Customers as their top level, though the menu does not show it | Here | Customers left the menu, in `content/site.json` and in the design file's `project.menu`. Each industry page lists the case studies of its industry with `::post-list{type="case-study" where="industry=…"}` under "Case studies", "All case studies" in its head, and the customer's quotation in a band of its own after the list. Customers stays at `/customers/` as the list of all of them, and the case studies' trails still begin with it |
+| 2 | Remove the whole link menu from the header | Here: the design file | `header.link-menu` off: the bar holds the logo and slogan, the magnifier, Menu and "Book a site assessment" |
+| 3 | Attach the header to the window's edge, so that it goes away when the page is scrolled down and comes back when it is scrolled up | Here: the design file | `header.attachment` sticky and `autohide` on: the bar slides away on the way down and comes back on the first scroll up. The mockups' build now writes the polyfill loaders' addresses as `./_astro/`, so it does so in Firefox too, and in WebKit over HTTP |
+| 4 | Give the header and the megamenu a hint of transparency, so that one only senses what is under them, without it disturbing legibility | Konzilo Design, then the design file | Konzilo Design 0.4.0, and `header.translucent` on: the bar, where it is not clear, and the megamenu are 88% opaque with the page blurred under them |
+| 5 | Use shadows. Use corners of 3 px | Here: the design file | Shadows at strength 50 and hardness 20, and corner profile 25, which gives 3 px on cards, buttons, fields and panels |
+| 6 | The gaps are right everywhere, but the padding round the text in a card is too large | Konzilo Design | Konzilo Design 0.4.0: a card's padding is step 4 of the space scale, 25–30 px |
+| 7 | Eyebrows a step larger, and closer to the heading after them: the gap above a heading smaller than the gap under it | Konzilo Design | Konzilo Design 0.4.0, and the design file's label step set to its new default, three below body text: eyebrows 14 px on a phone and 13 px on a wide screen, closer to their heading |
+| 8 | The social media icons a little larger if that comes naturally, and with more room between them | Konzilo Design | Konzilo Design 0.4.0: icons 1.75rem, 1rem apart |
+| 9 | The footer's line reads, on three lines: "Registered office: Gothenburg", "Ampfield Energy is a fictional company.", "This site demonstrates Konzilo." The organisation number and the VAT number go | Here | The footer's lower B1 is the three lines, in `content/site.json` and the design file's `project.footer`; the numbers stay in the publisher's structured data only |
+| 10 | Cards behave alike under the pointer: the heading underlined, and the card very subtly raised, with its shadow following | Konzilo Design | Konzilo Design 0.4.0: a linked card's heading is underlined and the card rises 0.125rem as its shadow lifts |
+| 11 | The first heading and the display style look more like display type | Here: the design file | Mona Sans, `heading-1` at weight 300 and `display` at 250, both at width 90, letter-spacing −0.01em. 250 on both, the starting point, left the first heading on a phone, 27 px, thinner than the lead under it; 300 holds there and is still light at 43 px. Display, set larger, keeps 250 |
+| 12 | No horizontal rule above a table of contents | Konzilo Design | Konzilo Design 0.4.0 |
 
 ## Page by page
 
-| # | Page | What he said | Where |
-|---|---|---|---|
-| 13 | Home | The customers' logos almost twice as large | Konzilo Design |
-| 14 | Solutions | The arrow on the cards moves when the card is hovered. A word, an icon, or a word with an icon are one idea and should behave alike, and a word should not move. He leaves the choice open. **Settled by the orchestrator:** the mark stays still in all three forms; the card's own behaviour (point 10) answers the pointer | Konzilo Design |
-| 15 | Rooftop solar | Under the tabs of "Two ways to pay", the tab row's rule and the rule of the two topmost value cards stand one above the other. He sees four ways, none good: leave it; drop the cards' rule there; widen the distance; end the tab row's rule where the tabs end. He asks whether there is a fifth, and may accept it as it is | Here: options drawn for him to choose from |
-| 16 | Customers | The filter gets a search box under its row of topics. The choices on one row are joined by OR, the rows by AND | Konzilo Design, then here |
-| 17 | Customers | The distance between the case studies and the logos is far too small. It must equal the distance between the logos and the next section | Konzilo Design |
-| 18 | A case study | The gallery's pictures do not open in a lightbox. He takes it that the built site will have it. It will: the lightbox is the Konzilo core's | Nothing to do in the design |
-| 19 | A case study | A quotation in the text looks too much like body text. Make quotations clearer | Konzilo Design |
-| 20 | Insights | He likes "Latest". "Earlier articles" gets a filter of three rows, Category, Topics and Search, and shows three rows of three articles. The site needs considerably more articles for the filter to show what it does | Konzilo Design for the filter; here for the page and twelve more articles |
-| 21 | A category's page, an author's page | The same filter as Insights, without the row that the page itself settles: a category's page has no Category row; an author's page keeps all three | Here |
-| 22 | An article | The meta line reads "By Priya Raman • Published 13 October 2026 in Guides • SOLAR", the author and the category as links, the topic as a pill | Konzilo Design, then here |
-| 23 | Contact, Book a site assessment | In "I have read the privacy policy (required)", the words "privacy policy" are a link | Here in the mockups; in the Konzilo core when the site is built |
+| # | Page | What he said | Where | Done |
+|---|---|---|---|---|
+| 13 | Home | The customers' logos almost twice as large | Konzilo Design | Konzilo Design 0.4.0: 4.5rem high on a wide screen |
+| 14 | Solutions | The arrow on the cards moves when the card is hovered. A word, an icon, or a word with an icon are one idea and should behave alike, and a word should not move. He leaves the choice open. **Settled by the orchestrator:** the mark stays still in all three forms; the card's own behaviour (point 10) answers the pointer | Konzilo Design | Konzilo Design 0.4.0 |
+| 15 | Rooftop solar | Under the tabs of "Two ways to pay", the tab row's rule and the rule of the two topmost value cards stand one above the other. He sees four ways, none good: leave it; drop the cards' rule there; widen the distance; end the tab row's rule where the tabs end. He asks whether there is a fifth, and may accept it as it is | Here: options drawn for him to choose from | Five options drawn on `mockups/dist/options-tabs.html`, each with both tabs open in turn: A as it is, B the values' first rule goes, C the tab row's rule ends with the tabs, D the rule above the tabs (the orchestrator's), E the panel on a plate. Waiting for Thomas's choice; D is recommended. The choice touches every tab panel with values, on four solution pages, and is Konzilo Design's to make |
+| 16 | Customers | The filter gets a search box under its row of topics. The choices on one row are joined by OR, the rows by AND | Konzilo Design, then here | `filters="topics search"`: the Topic row and the search row with its button; the deck says that a search looks within what is chosen |
+| 17 | Customers | The distance between the case studies and the logos is far too small. It must equal the distance between the logos and the next section | Konzilo Design | Konzilo Design 0.4.0 |
+| 18 | A case study | The gallery's pictures do not open in a lightbox. He takes it that the built site will have it. It will: the lightbox is the Konzilo core's | Nothing to do in the design | Nothing |
+| 19 | A case study | A quotation in the text looks too much like body text. Make quotations clearer | Konzilo Design | Konzilo Design 0.4.0: a quotation in body text has Quotation's look |
+| 20 | Insights | He likes "Latest". "Earlier articles" gets a filter of three rows, Category, Topics and Search, and shows three rows of three articles. The site needs considerably more articles for the filter to show what it does | Konzilo Design for the filter; here for the page and twelve more articles | Latest is unchanged. Earlier articles is `filtered` with the rows Category, Topic and Search, nine a page, three rows of three, with the pager: 17 articles on two pages. Twenty-one articles, twenty of them published |
+| 21 | A category's page, an author's page | The same filter as Insights, without the row that the page itself settles: a category's page has no Category row; an author's page keeps all three | Here | The term pages draw `filtered` with the rows less the one the page settles: Guides has Topic and Search, Priya Raman all three; nine a page, as Insights; a search sends the page's own term with it |
+| 22 | An article | The meta line reads "By Priya Raman • Published 13 October 2026 in Guides • SOLAR", the author and the category as links, the topic as a pill | Konzilo Design, then here | "By Priya Raman • Published 13 October 2026 in Guides • SOLAR", the author and the category linked and the topic a pill linked to its page, as 0.4.0's contract writes it, by the format `By {authors} • Published {date} in {category}` |
+| 23 | Contact, Book a site assessment | In "I have read the privacy policy (required)", the words "privacy policy" are a link | Here in the mockups; in the Konzilo core when the site is built | The acceptance labels in `content/site.json` write `[privacy policy](/privacy-policy/)`, which the mockups draw as a link; what the core must gain is in `gaps.md` |
 
 ## Found while the twelve articles were written
 
-The texts disagree with each other in five places. They are put right here, with the rest.
+The texts disagree with each other in five places. Each is settled on one truth, which `README.md` keeps among the company's rules of thumb.
 
-| # | What disagrees |
-|---|---|
-| 24 | How soon a bought system pays for itself: the tabs of Rooftop solar say 6 to 8 years, its accordion and Home say 6 to 9, and the article on winter says 7 to 10 for Sweden and Denmark and 6 to 9 for the Netherlands and the United Kingdom |
-| 25 | Yield: Rooftop solar's hero gives 1.5 MWp about 1,400 MWh a year, which is about 933 kWh for each kilowatt, above the 850 to 910 that the article on winter models for the four cities |
-| 26 | Roof area for each megawatt: Logistics and warehousing has 30,000 m² for about 4 MWp, 7,500 m² for each; Rooftop solar uses 6,500 m², and its own hero 6,667 m² |
-| 27 | What Ampfield Pilot steers: its page lists batteries, chargers and heat pumps; the article on Pilot's update of 3 November adds cold stores, compressed air and water heaters |
-| 28 | How soon a battery pays for itself: the scheduled article says 6 to 9 years for the batteries of 2024 and 2025; the article on Kessel Packaging's battery says about 14 on grid fees alone, and about 5 counted against the connection it replaced |
+| # | What disagrees | Done |
+|---|---|---|
+| 24 | How soon a bought system pays for itself: the tabs of Rooftop solar say 6 to 8 years, its accordion and Home say 6 to 9, and the article on winter says 7 to 10 for Sweden and Denmark and 6 to 9 for the Netherlands and the United Kingdom | 6 to 9 years where 80% is used on site. The article on winter now says 7 to 9 in Sweden and Denmark and 6 to 8 in the Netherlands and the United Kingdom; the tab of Rooftop solar says "Payback, 1 MWp", 6 to 8 years, as its table does |
+| 25 | Yield: Rooftop solar's hero gives 1.5 MWp about 1,400 MWh a year, which is about 933 kWh for each kilowatt, above the 850 to 910 that the article on winter models for the four cities | An east–west roof gives 850 to 910 kWh a year for each kWp in the four countries; 850 to 1,000 for rooftop solar of every kind. Rooftop solar's hero gives 1.5 MWp "some 1,300 MWh a year", and its table, which is of east–west systems, 425–455, 850–910 and 2,550–2,730 MWh |
+| 26 | Roof area for each megawatt: Logistics and warehousing has 30,000 m² for about 4 MWp, 7,500 m² for each; Rooftop solar uses 6,500 m², and its own hero 6,667 m² | About 6,500 to 7,000 m² of roof for each MWp. Logistics and warehousing gives 30,000 m² about 4.5 MWp, in its text and its values |
+| 27 | What Ampfield Pilot steers: its page lists batteries, chargers and heat pumps; the article on Pilot's update of 3 November adds cold stores, compressed air and water heaters | Pilot has steered batteries, chargers and heat pumps, and since 3 November also the cold stores, air compressors and water heaters a customer marks as flexible. Ampfield Pilot's page lists them under Control and in "Equipment it reads" |
+| 28 | How soon a battery pays for itself: the scheduled article says 6 to 9 years for the batteries of 2024 and 2025; the article on Kessel Packaging's battery says about 14 on grid fees alone, and about 5 counted against the connection it replaced | A battery for peak shaving pays back in 6 to 9 years on fees alone; Kessel's, bought to avoid a larger connection, is the exception. The scheduled article says "most of the batteries we built in 2024 and 2025", and that a battery "seldom earns the most from peaks alone", where it said it seldom pays for itself from them |

@@ -13,7 +13,7 @@ description: "Rooftop solar for warehouses, factories and retail parks: what a s
 
 ::eyebrow[Rooftop solar]
 
-A flat roof of 10,000 m² holds about 1.5 MWp of panels, which produce some 1,400 MWh a year in southern Sweden, the Netherlands or the north of England. In a building that is busy in daylight, nine kilowatt-hours in ten are used where they are made.
+A flat roof of 10,000 m² holds about 1.5 MWp of panels, which produce some 1,300 MWh a year in southern Sweden, the Netherlands or the north of England. In a building that is busy in daylight, nine kilowatt-hours in ten are used where they are made.
 
 :::list{type="actions"}
 
@@ -90,7 +90,7 @@ We can run and service the system for you under a separate agreement, priced per
 
 - Price, 1 MWp installed
   - €620,000 to €720,000
-- Payback
+- Payback, 1 MWp
   - 6 to 8 years
 - Service agreement
   - €8 to €12 per kWp a year
@@ -137,7 +137,7 @@ Three sizes of system, as we build them most often.
 </thead>
 <tbody>
 <tr><td>Roof area needed</td><td style="text-align: right">3,500 m²</td><td style="text-align: right">6,500 m²</td><td style="text-align: right">19,500 m²</td></tr>
-<tr><td>Yearly output</td><td style="text-align: right">430–500 MWh</td><td style="text-align: right">850–1,000 MWh</td><td style="text-align: right">2,550–3,000 MWh</td></tr>
+<tr><td>Yearly output</td><td style="text-align: right">425–455 MWh</td><td style="text-align: right">850–910 MWh</td><td style="text-align: right">2,550–2,730 MWh</td></tr>
 <tr><td>Price, installed</td><td style="text-align: right">€350,000–400,000</td><td style="text-align: right">€620,000–720,000</td><td style="text-align: right">€1.65–1.95 million</td></tr>
 <tr><td>Payback when bought</td><td style="text-align: right">7–9 years</td><td style="text-align: right">6–8 years</td><td style="text-align: right">6–7 years</td></tr>
 <tr><td>Weeks on the roof</td><td style="text-align: right">4–6</td><td style="text-align: right">6–10</td><td style="text-align: right">12–16</td></tr>

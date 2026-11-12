@@ -1,6 +1,6 @@
 # The mockups
 
-Every designed page of the Ampfield site as static HTML, made from Konzilo Design's released package (`../../vendor/kntnt-konzilo-design-0.3.0.tgz`), the design file `../site.design.json`, its fonts and logos, and the text in `../content/`. A built page stands alone: plain HTML with its CSS inline and relative addresses, so it opens from the file system and can be screenshotted.
+Every designed page of the Ampfield site as static HTML, made from Konzilo Design's released package (`../../vendor/kntnt-konzilo-design-0.4.0.tgz`), the design file `../site.design.json`, its fonts and logos, and the text in `../content/`. A built page stands alone: plain HTML with its CSS inline and relative addresses, so it opens from the file system and can be screenshotted.
 
 The mockups are a means and will be thrown away. What they must get right is that a page shows only what the design system and Konzilo can render, placed as an editor could place it (`../README.md`, Rules for every page).
 
@@ -22,6 +22,7 @@ npm run shoot -- home                    # shots/home-1440.png and shots/home-39
 npm run shoot -- home --dark             # also shots/home-1440-dark.png and shots/home-390-dark.png
 npm run shoot -- home --state menu       # the header's menu open, the window only: shots/home-1440-menu.png …
 npm run shoot -- home --state search     # the search box open, likewise
+npm run shoot -- home --state scrolled   # scrolled down and a little back up, the header over the content
 npm run shoot -- home --widths 1024,768  # other widths; --dist and --out read and write elsewhere
 ```
 
@@ -42,6 +43,8 @@ How a content page is drawn, by its type:
 | `job` | By its fields (`src/lib/types.js`): an opening on tint with the title, the excerpt, the fields as a value list and "How to apply", the body with its following menu "On this page", and the other vacancies as rows. |
 
 Pages that are no content file, each a page file of its own: the term pages `insights-category-guides` and `insights-author-priya-raman` (`src/lib/terms.js`, `termPage(collection, slug)`, which draws any category, topic or author), and the search page `search` (`src/lib/search.js`). See The editorial templates, below.
+
+Pages that are not the site's: `index` (this folder's index, `dist/index.html`), `catalogue` with its three header frames, and `options-tabs`, the five options for Thomas's point 15 (`../feedback.md`), the section "Two ways to pay" of Rooftop solar drawn once for each, with each tab open in turn. `options-tabs` alone carries CSS of its own, since it explores a change to the design system's tabs.
 
 ## Adding a page
 
@@ -94,13 +97,14 @@ const ctx = context({ design, title: post.data.title, address: post.address, tra
 The article, the case study, the vacancy, the term page and the search page, as `src/lib/article.js`, `types.js`, `terms.js` and `search.js` draw them, and the post lists of `posts.js`. Each is made of the design's parts only; where a page wanted more, the nearest part stands in, as said below.
 
 - **One composition for every text page.** The opening is a Hero, its picture the main image (behind the text, as the design has it); a post without one, the vacancy, has its Hero on `tint`. The body is a band holding a Reading Area, the Aside at the start before the flow (`data-kn-side="start"`, `data-kn-stack="before"`), so on a phone the Aside comes first: an article's following menu "In this article", a vacancy's "On this page", a case study's facts. What follows the body stands on `raised`, so it does not join the body's band; a band that leads on to an action stands last on `tint`, never on `brand`, since the footer's first band is `brand`.
-- **The article** (directives.md, An article). The meta line holds the date, the byline and, where the eyebrow takes the category's place, the category, the authors and the category linked to their pages as the core's `metaLine()` links them. The topics, which the core's template lists after the meta line and directives.md gives no part, end the meta line as Content Metadata's pills (`.kn-pill`), each linked to its topic's page: as a part of their own they would stand a column gap below it. Read more is up to three related articles, ranked as the core ranks them (ADR 0070), on `raised`.
+- **The article** (directives.md, An article). The meta line is the core's sentence by the article type's format, `By {authors} • Published {date} in {category}` (`META_LINE_FORMAT` in `src/lib/article.js`, Thomas's words), the authors and the category linked to their pages, then the topics as pills, each linked to its topic's page: "By Priya Raman • Published 13 October 2026 in Guides • SOLAR". Read more is up to three related articles, ranked as the core ranks them (ADR 0070), on `raised`.
 - **The case study.** The customer is the eyebrow; there is no meta line, since the core gives a type of the site's own none unless an Admin sets a format. The type's fields stand in the Aside as an Aside Block on `raised` holding a Value List: customer, industry (linked to its industry page), location, what was built, the capacities it has, how it was paid for and the day in service. Then More case studies, the related ones filled up to three, and the band "Find out what your site can do", the template's own words.
 - **The vacancy.** The opening holds the title, the excerpt as the deck, the four fields as a Value List (two by two beside the reading measure) and one main action, "How to apply", to the body's crosshead of that name. Then the body, and Other vacancies on `raised`, as rows.
-- **Term pages** (`termPage('categories', 'guides')`, `'authors'`, `'topics'`). No Hero: at the design's two-thirds of the window a name and a sentence would stand at the bottom of an empty band. The opening is a section's head on `tint`: the trail, the eyebrow (Category, Topic or Author), the term's name as the H1 and its description as the deck. Then its posts of every type that takes the taxonomy (a topic's case studies too), newest first, ten a page, as teaser cards with the core's pager where they fill more than a page, and the newsletter band Insights ends with. An author's portrait cannot be shown: a term holds a name and a description.
+- **Term pages** (`termPage('categories', 'guides')`, `'authors'`, `'topics'`). No Hero: at the design's two-thirds of the window a name and a sentence would stand at the bottom of an empty band. The opening is a section's head on `tint`: the trail, the eyebrow (Category, Topic or Author), the term's name as the H1 and its description as the deck. Then its posts of every type that takes the taxonomy (a topic's case studies too), newest first, nine a page, three rows of three as on Insights (the core's `termPages()` takes the number; its default is ten), as the `filtered` presentation with the rows Category, Topics and Search less the row the page settles (a category's page has no Category row, a topic's page no Topic row, an author's page all three), the core's pager where they fill more than a page, and the newsletter band Insights ends with. An author's portrait cannot be shown: a term holds a name and a description.
 - **The search page.** The title band (trail and H1), then the core's `.konzilo-search` as its script leaves it, in the reading column: the form with the query, the status, ten results a page and the link to the next. Each result is what the core's search shows, a post's title (an article's headline), its type, its date and eight words on each side of the first match, marked; the order is system/search.md's for its example query, then the core's weights.
-- **Post lists** follow the core's evaluator: no post dated after today (the scheduled article), and a post shown by a list above is left out of the lists below it (`leaveOutShown`), so Insights' Earlier articles leave out the three Latest. `pages="true"` shows the first `number` posts and the core's pager (`.konzilo-pager`). A teaser's text is the core's `ownSummary()`: the excerpt, else the teaser's text, else the standfirst; a case study's label is its customer.
-- **`rows`** is a presentation of the site's own, Konzilo Design's Content Loop as rows without pictures, for vacancies: office and team above the title, employment and last day to apply below, the excerpt under them. Inside a section's body its title takes Body Text's link look, a fault of the package's (`.kn-body-text a` outweighs `.kn-content-link`).
+- **Post lists** follow the core's evaluator: no post dated after today (the scheduled article), and a post shown by a list above is left out of the lists below it (`leaveOutShown`), so Insights' Earlier articles leave out the three Latest. `pages="true"` shows the first `number` posts and the core's pager (`.konzilo-pager`). A teaser's text is the core's `ownSummary()`: the excerpt, else the teaser's text, else the standfirst; a case study's label is its customer. `where` takes a field's value with spaces, `where="industry=Logistics and warehousing"`, as the core's does.
+- **`filtered`** (directives.md, `presentation="filtered"`) has the rows `filters` names, `category`, `topics` and `search`, in that fixed order, and one row of topics where it names none: each a row of pills of the terms of the list's posts on every page, the most posts first, then the search row, whose form goes to `/search/` with the list's type, and on a term's page its term, as hidden fields. The count says "Showing 9 of 17 articles" where the list has pages. `filters` is the attribute directives.md proposes; the core has none yet.
+- **`rows`** is a presentation of the site's own, Konzilo Design's Content Loop as rows without pictures, for vacancies: office and team above the title, employment and last day to apply below, the excerpt under them.
 
 ## Placing each renderer
 
@@ -118,7 +122,7 @@ The article, the case study, the vacancy, the term page and the search page, as 
 | `:::tabs`, `:::choice`, `:::toc` | Items at headings; the intro is the label, the question, the menu's label. Headings under a tab or an answer are written a level lower and raised. |
 | `::eyebrow[…]`, `::small[…]`, `::breadcrumbs` | The text roles, wherever they stand. |
 | `::post-list{type presentation number include exclude where order direction offset pages empty}` | The published posts of `../content/` (none dated after today), as the core evaluates a list: a post shown by a list above on the page is left out of the lists below it. `cards`, `featured` and `filtered` are the design's teaser cards. `rows` is the site's own presentation, Konzilo Design's Content Loop as rows without pictures, for vacancies above all: each vacancy's office and team, its title as the link, its employment and last day to apply, and its excerpt. `pages="true"` shows the first `number` posts and the core's pager. |
-| `::form{name}` | The core's form, from `site.json`'s `forms`. |
+| `::form{name}` | The core's form, from `site.json`'s `forms`. A checkbox's label may write a link as Markdown, `[privacy policy](/privacy-policy/)`, which is drawn as a link; the core cannot yet. |
 
 A container's fence is one colon longer than the longest inside it: `::::section` around `:::cards`, `:::::section` around `::::cards` that holds a `:::list`. A fence too short ends the outer container early and leaves `:::` standing as text on the page.
 
@@ -155,7 +159,7 @@ dist/_astro/              fonts and the header's polyfills, by content hash
 dist/images/              pictures by id and width, and placeholders
 dist/logo/                logos from ../logo/
 dist/logos/               the design's own logos
-shots/                    screenshots: <name>-<width>[-dark][-menu|-search].png
+shots/                    screenshots: <name>-<width>[-dark][-menu|-search|-scrolled].png
 ```
 
 ## What a page shows that the site would not
@@ -166,6 +170,8 @@ shots/                    screenshots: <name>-<width>[-dark][-menu|-search].png
 - A paragraph of a YouTube address alone is the core's embed as its consent placeholder, the question, the sentence and *Allow and play* in the core's words (`src/lib/embeds.js`); the button loads nothing. Another service's address stays a paragraph.
 - A code block has no Shiki colours.
 - The header's script that chooses how the bar gives way runs, as on the site. Nothing else needs a script, except the two catalogue frames that open the menu and the search box.
+- The header slides away and comes back in Chromium and, by its polyfill, in Firefox, opened from the file system. WebKit refuses a module's import on a page opened from the file system, so there the header stays; served over HTTP it slides away as elsewhere. The build writes the polyfills' addresses in a script as `./_astro/…`, since a bare `_astro/…` is no module specifier.
+- A search from a filtered list goes to `/search/`, which the mockups do not answer.
 
 ## The design canvas in Claude
 

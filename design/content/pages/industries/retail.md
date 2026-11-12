@@ -18,7 +18,7 @@ A retail park's roofs are wide and flat, and its car park is where visitors stan
 :::list{type="actions"}
 
 - **[Book a site assessment](/go/site-assessment/)**
-- [A customer's story](#case-studies)
+- [Case studies](#case-studies)
 
 :::
 
@@ -89,24 +89,27 @@ What we usually find at a park of ten to fifteen stores.
 
 ::::section{anchor="case-studies"}
 
-![Parking bays marked for electric vehicles in front of a charging post](image:case-westerport)
+::eyebrow[Case studies]
 
-::eyebrow[Case study]
+## What we built for retail property
 
-## Eleven retail parks that run on their own roofs by day
+:::list{type="actions"}
+
+- [All case studies](/customers/)
+
+:::
+
+::post-list{type="case-study" where="industry=Retail and commercial property" presentation="cards"}
+
+::::
+
+:::section{surface="raised"}
 
 > In daylight the roofs now cover the landlord supply on all eleven of our parks. Our tenants ask what their units' emissions are, and we can tell them, park by park. The chargers bring drivers who stay for an hour.
 >
 > <cite>James Holroyd, Head of Sustainability, Westerport Retail Parks</cite>
 
-:::list{type="actions"}
-
-- [Read the case study](/customers/westerport-retail-parks/)
-- [All case studies](/customers/)
-
 :::
-
-::::
 
 ::::section{surface="accent"}
 

@@ -2,7 +2,7 @@
 title: "When the power price goes below zero"
 date: 2026-06-02T07:00:00Z
 modified: 2026-06-02T07:00:00Z
-image: {"src":"image:article-solar-noon","alt":"Rows of solar panels on a flat roof under a clear sky, with the midday sun reflected in the glass"}
+image: {"src":"image:article-solar-noon","alt":"Rows of solar panels on a roof under a bright, nearly clear sky"}
 eyebrow: "Negative prices"
 headline: "When the price goes below zero, your roof should stop exporting"
 subheadline: "Why sunny Sundays can now cost a solar roof money, and what Pilot does in those hours"

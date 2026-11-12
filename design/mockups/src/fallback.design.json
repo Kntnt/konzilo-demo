@@ -137,7 +137,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.88
         },
         "dark": {
           "polarity": "dark",
@@ -188,7 +189,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.85
         }
       },
       "raised": {
@@ -241,7 +243,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.93
         },
         "dark": {
           "polarity": "dark",
@@ -292,7 +295,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.9
         }
       },
       "tint": {
@@ -345,7 +349,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.93
         },
         "dark": {
           "polarity": "dark",
@@ -396,7 +401,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.89
         }
       },
       "brand": {
@@ -449,7 +455,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.96
         },
         "dark": {
           "polarity": "dark",
@@ -500,7 +507,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.96
         }
       },
       "inverse": {
@@ -553,7 +561,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.85
         },
         "dark": {
           "polarity": "dark",
@@ -604,7 +613,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.97
         }
       },
       "accent": {
@@ -686,7 +696,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.91
         },
         "dark": {
           "polarity": "dark",
@@ -766,7 +777,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.91
         }
       },
       "picture-light": {
@@ -1191,7 +1203,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.93
         },
         "dark": {
           "polarity": "dark",
@@ -1242,7 +1255,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.9
         }
       },
       "status-success": {
@@ -1295,7 +1309,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.93
         },
         "dark": {
           "polarity": "dark",
@@ -1346,7 +1361,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.89
         }
       },
       "status-warning": {
@@ -1399,7 +1415,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.93
         },
         "dark": {
           "polarity": "dark",
@@ -1450,7 +1467,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.94
         }
       },
       "status-error": {
@@ -1503,7 +1521,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.92
         },
         "dark": {
           "polarity": "dark",
@@ -1554,7 +1573,8 @@
             "box": "none",
             "box-lifted": "none"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.9
         }
       }
     },
@@ -1671,11 +1691,11 @@
       },
       "label": {
         "size": {
-          "min": 12,
-          "max": 12,
-          "css": "clamp(0.75rem, 0.75rem + 0vw, 0.75rem)"
+          "min": 14,
+          "max": 13,
+          "css": "clamp(0.8125rem, 0.8982rem - 0.0952vw, 0.875rem)"
         },
-        "step": -5,
+        "step": -3,
         "line-height": 1.4,
         "weight": 600,
         "letter-spacing": 0.06
@@ -1778,9 +1798,9 @@
           "css": "clamp(2.1875rem, 2.0982rem + 0.4464vw, 2.5rem)"
         },
         "plate": {
-          "min": 40,
-          "max": 50,
-          "css": "clamp(2.5rem, 2.3214rem + 0.8929vw, 3.125rem)"
+          "min": 25,
+          "max": 30,
+          "css": "clamp(1.5625rem, 1.4732rem + 0.4464vw, 1.875rem)"
         }
       }
     },
@@ -1810,6 +1830,7 @@
       "start": "below",
       "autohide": false,
       "surface": "page",
+      "translucent": false,
       "identity": "logo",
       "brand-axis": "row",
       "slogan-place": "beside",
@@ -1892,7 +1913,7 @@
     "easing": {
       "standard": "cubic-bezier(0.2, 0, 0, 1)"
     },
-    "generator-version": "0.3.0",
+    "generator-version": "0.4.0",
     "contrast-check": {
       "status": "passed",
       "matrix": {

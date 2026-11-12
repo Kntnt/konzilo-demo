@@ -37,9 +37,9 @@ Such a peak often comes from timing alone, since nobody chose to start everythin
 
 ## What a battery earns
 
-A battery seldom pays for itself from peaks alone. It is worth most when it does several jobs: lowering the peak, moving power from cheap hours to dear ones, keeping midday solar for the evening, and, where the market allows, being paid to hold power ready for the grid. Ampfield Pilot plans these jobs a day ahead and gives your own peak first call, so that the battery is full when the morning comes.
+A battery seldom earns the most from peaks alone. It is worth most when it does several jobs: lowering the peak, moving power from cheap hours to dear ones, keeping midday solar for the evening, and, where the market allows, being paid to hold power ready for the grid. Ampfield Pilot plans these jobs a day ahead and gives your own peak first call, so that the battery is full when the morning comes.
 
-For peak shaving alone, the batteries we built in 2024 and 2025 are paying back in six to nine years. With income from the grid, in five to seven. For Kessel, the battery's largest value shows on no invoice. It let a new line run years before a larger connection could have come.
+For peak shaving alone, most of the batteries we built in 2024 and 2025 are paying back in six to nine years. With income from the grid, in five to seven. For Kessel, the battery's largest value shows on no invoice. It let a new line run years before a larger connection could have come.
 
 ## A connection that is not always firm
 

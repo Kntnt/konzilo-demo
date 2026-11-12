@@ -2,7 +2,7 @@
 title: "Selling a building with solar on the roof"
 date: 2026-07-28T07:00:00Z
 modified: 2026-07-28T07:00:00Z
-image: {"src":"image:article-building-sale","alt":"A low industrial building with rows of solar panels on its roof, seen from the street"}
+image: {"src":"image:article-building-sale","alt":"A low industrial building with rows of solar panels on its roof, seen across a line of trees"}
 eyebrow: "When the building changes hands"
 headline: "What happens to a solar roof when the building is sold"
 subheadline: "What goes with the building, what must be signed again, and the papers a buyer will ask for"

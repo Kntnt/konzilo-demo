@@ -33,16 +33,14 @@
         "display": 3,
         "lead": 1,
         "small": 2,
-        "label": 5
+        "label": 3
       },
       "label": "main",
       "roles": {
         "display": {
-          "weight": 260,
-          "letter-spacing": -0.03,
+          "weight": 250,
           "axes": {
-            "wdth": 112,
-            "opsz": 100
+            "wdth": 90
           }
         },
         "label": {
@@ -56,12 +54,18 @@
             "ss02",
             "ss07"
           ]
+        },
+        "heading-1": {
+          "weight": 300,
+          "axes": {
+            "wdth": 90
+          }
         }
       }
     },
     "shadow": {
-      "strength": 0,
-      "hardness": 30,
+      "strength": 50,
+      "hardness": 20,
       "angle": 0,
       "elevation": 50,
       "color": "default",
@@ -84,12 +88,12 @@
       "arrangement": "A",
       "attachment": "sticky",
       "start": "below",
-      "autohide": false,
+      "autohide": true,
       "surface": "page",
       "identity": "logo",
       "brand-axis": "row",
       "slogan-place": "beside",
-      "link-menu": true,
+      "link-menu": false,
       "menu-button": "word",
       "language": false,
       "search": true,
@@ -102,7 +106,8 @@
       "search-heading": true,
       "search-links": true,
       "search-close": true,
-      "search-placeholder": "word"
+      "search-placeholder": "word",
+      "translucent": true
     },
     "footer": {
       "attachment": "flow",
@@ -150,7 +155,7 @@
       "type": "heading-1",
       "h1": "hero"
     },
-    "corner-profile": 0,
+    "corner-profile": 25,
     "density-profile": 75
   },
   "project": {
@@ -198,9 +203,6 @@
             "description": "Daytime demand and visitor charging"
           }
         ]
-      },
-      {
-        "label": "Customers"
       },
       {
         "label": "Insights",
@@ -252,7 +254,7 @@
       },
       "lower": {
         "a1": "Ampfield Energy AB\nFältverksgatan 6, 417 64 Gothenburg, Sweden",
-        "b1": "Registration no. 559214-3871. Registered office: Gothenburg.\nAmpfield Energy is a fictional company. This site demonstrates Konzilo.",
+        "b1": "Registered office: Gothenburg\nAmpfield Energy is a fictional company.\nThis site demonstrates Konzilo.",
         "a2": [
           "Privacy policy",
           "Cookie policy",
@@ -354,14 +356,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(34 34 34 / 0.06), 0 4px 12px -2px rgb(34 34 34 / 0.1)",
+            "header-panel": "0 1px 2px rgb(34 34 34 / 0.03), 0 4px 12px -2px rgb(34 34 34 / 0.05)",
+            "panel": "0 2px 6px rgb(34 34 34 / 0.025), 0 16px 40px -8px rgb(34 34 34 / 0.09)",
+            "page": "0 4px 10px rgb(34 34 34 / 0.03), 0 24px 48px -12px rgb(34 34 34 / 0.11)",
+            "box": "0 1px 2px rgb(34 34 34 / 0.018), 0 6px 16px -4px rgb(34 34 34 / 0.048)",
+            "box-lifted": "0 2px 4px rgb(34 34 34 / 0.018), 0 12px 32px -8px rgb(34 34 34 / 0.048)"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.88
         },
         "dark": {
           "polarity": "dark",
@@ -405,14 +408,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.85
         }
       },
       "raised": {
@@ -458,14 +462,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(34 34 34 / 0.06), 0 4px 12px -2px rgb(34 34 34 / 0.1)",
+            "header-panel": "0 1px 2px rgb(34 34 34 / 0.03), 0 4px 12px -2px rgb(34 34 34 / 0.05)",
+            "panel": "0 2px 6px rgb(34 34 34 / 0.025), 0 16px 40px -8px rgb(34 34 34 / 0.09)",
+            "page": "0 4px 10px rgb(34 34 34 / 0.03), 0 24px 48px -12px rgb(34 34 34 / 0.11)",
+            "box": "0 1px 2px rgb(34 34 34 / 0.018), 0 6px 16px -4px rgb(34 34 34 / 0.048)",
+            "box-lifted": "0 2px 4px rgb(34 34 34 / 0.018), 0 12px 32px -8px rgb(34 34 34 / 0.048)"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.93
         },
         "dark": {
           "polarity": "dark",
@@ -509,14 +514,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.9
         }
       },
       "tint": {
@@ -562,14 +568,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(34 34 34 / 0.06), 0 4px 12px -2px rgb(34 34 34 / 0.1)",
+            "header-panel": "0 1px 2px rgb(34 34 34 / 0.03), 0 4px 12px -2px rgb(34 34 34 / 0.05)",
+            "panel": "0 2px 6px rgb(34 34 34 / 0.025), 0 16px 40px -8px rgb(34 34 34 / 0.09)",
+            "page": "0 4px 10px rgb(34 34 34 / 0.03), 0 24px 48px -12px rgb(34 34 34 / 0.11)",
+            "box": "0 1px 2px rgb(34 34 34 / 0.018), 0 6px 16px -4px rgb(34 34 34 / 0.048)",
+            "box-lifted": "0 2px 4px rgb(34 34 34 / 0.018), 0 12px 32px -8px rgb(34 34 34 / 0.048)"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.93
         },
         "dark": {
           "polarity": "dark",
@@ -613,14 +620,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.89
         }
       },
       "brand": {
@@ -666,14 +674,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.95
         },
         "dark": {
           "polarity": "dark",
@@ -717,14 +726,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.95
         }
       },
       "inverse": {
@@ -770,14 +780,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.85
         },
         "dark": {
           "polarity": "dark",
@@ -821,14 +832,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.97
         }
       },
       "accent": {
@@ -903,14 +915,15 @@
             }
           },
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.92
         },
         "dark": {
           "polarity": "dark",
@@ -983,14 +996,15 @@
             }
           },
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.92
         }
       },
       "picture-light": {
@@ -1077,12 +1091,12 @@
             "opacity": 0.63
           },
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(34 34 34 / 0.06), 0 4px 12px -2px rgb(34 34 34 / 0.1)",
+            "header-panel": "0 1px 2px rgb(34 34 34 / 0.03), 0 4px 12px -2px rgb(34 34 34 / 0.05)",
+            "panel": "0 2px 6px rgb(34 34 34 / 0.025), 0 16px 40px -8px rgb(34 34 34 / 0.09)",
+            "page": "0 4px 10px rgb(34 34 34 / 0.03), 0 24px 48px -12px rgb(34 34 34 / 0.11)",
+            "box": "0 1px 2px rgb(34 34 34 / 0.018), 0 6px 16px -4px rgb(34 34 34 / 0.048)",
+            "box-lifted": "0 2px 4px rgb(34 34 34 / 0.018), 0 12px 32px -8px rgb(34 34 34 / 0.048)"
           },
           "frame-color": "#222222"
         },
@@ -1169,12 +1183,12 @@
             "opacity": 0.63
           },
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(34 34 34 / 0.06), 0 4px 12px -2px rgb(34 34 34 / 0.1)",
+            "header-panel": "0 1px 2px rgb(34 34 34 / 0.03), 0 4px 12px -2px rgb(34 34 34 / 0.05)",
+            "panel": "0 2px 6px rgb(34 34 34 / 0.025), 0 16px 40px -8px rgb(34 34 34 / 0.09)",
+            "page": "0 4px 10px rgb(34 34 34 / 0.03), 0 24px 48px -12px rgb(34 34 34 / 0.11)",
+            "box": "0 1px 2px rgb(34 34 34 / 0.018), 0 6px 16px -4px rgb(34 34 34 / 0.048)",
+            "box-lifted": "0 2px 4px rgb(34 34 34 / 0.018), 0 12px 32px -8px rgb(34 34 34 / 0.048)"
           },
           "frame-color": "#222222"
         }
@@ -1263,12 +1277,12 @@
             "opacity": 0.57
           },
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
           "frame-color": "#ffffff"
         },
@@ -1355,12 +1369,12 @@
             "opacity": 0.57
           },
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
           "frame-color": "#ffffff"
         }
@@ -1408,14 +1422,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(34 34 34 / 0.06), 0 4px 12px -2px rgb(34 34 34 / 0.1)",
+            "header-panel": "0 1px 2px rgb(34 34 34 / 0.03), 0 4px 12px -2px rgb(34 34 34 / 0.05)",
+            "panel": "0 2px 6px rgb(34 34 34 / 0.025), 0 16px 40px -8px rgb(34 34 34 / 0.09)",
+            "page": "0 4px 10px rgb(34 34 34 / 0.03), 0 24px 48px -12px rgb(34 34 34 / 0.11)",
+            "box": "0 1px 2px rgb(34 34 34 / 0.018), 0 6px 16px -4px rgb(34 34 34 / 0.048)",
+            "box-lifted": "0 2px 4px rgb(34 34 34 / 0.018), 0 12px 32px -8px rgb(34 34 34 / 0.048)"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.93
         },
         "dark": {
           "polarity": "dark",
@@ -1459,14 +1474,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.9
         }
       },
       "status-success": {
@@ -1512,14 +1528,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(34 34 34 / 0.06), 0 4px 12px -2px rgb(34 34 34 / 0.1)",
+            "header-panel": "0 1px 2px rgb(34 34 34 / 0.03), 0 4px 12px -2px rgb(34 34 34 / 0.05)",
+            "panel": "0 2px 6px rgb(34 34 34 / 0.025), 0 16px 40px -8px rgb(34 34 34 / 0.09)",
+            "page": "0 4px 10px rgb(34 34 34 / 0.03), 0 24px 48px -12px rgb(34 34 34 / 0.11)",
+            "box": "0 1px 2px rgb(34 34 34 / 0.018), 0 6px 16px -4px rgb(34 34 34 / 0.048)",
+            "box-lifted": "0 2px 4px rgb(34 34 34 / 0.018), 0 12px 32px -8px rgb(34 34 34 / 0.048)"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.93
         },
         "dark": {
           "polarity": "dark",
@@ -1563,14 +1580,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.89
         }
       },
       "status-warning": {
@@ -1616,14 +1634,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(34 34 34 / 0.06), 0 4px 12px -2px rgb(34 34 34 / 0.1)",
+            "header-panel": "0 1px 2px rgb(34 34 34 / 0.03), 0 4px 12px -2px rgb(34 34 34 / 0.05)",
+            "panel": "0 2px 6px rgb(34 34 34 / 0.025), 0 16px 40px -8px rgb(34 34 34 / 0.09)",
+            "page": "0 4px 10px rgb(34 34 34 / 0.03), 0 24px 48px -12px rgb(34 34 34 / 0.11)",
+            "box": "0 1px 2px rgb(34 34 34 / 0.018), 0 6px 16px -4px rgb(34 34 34 / 0.048)",
+            "box-lifted": "0 2px 4px rgb(34 34 34 / 0.018), 0 12px 32px -8px rgb(34 34 34 / 0.048)"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.93
         },
         "dark": {
           "polarity": "dark",
@@ -1667,14 +1686,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.94
         }
       },
       "status-error": {
@@ -1720,14 +1740,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(34 34 34 / 0.06), 0 4px 12px -2px rgb(34 34 34 / 0.1)",
+            "header-panel": "0 1px 2px rgb(34 34 34 / 0.03), 0 4px 12px -2px rgb(34 34 34 / 0.05)",
+            "panel": "0 2px 6px rgb(34 34 34 / 0.025), 0 16px 40px -8px rgb(34 34 34 / 0.09)",
+            "page": "0 4px 10px rgb(34 34 34 / 0.03), 0 24px 48px -12px rgb(34 34 34 / 0.11)",
+            "box": "0 1px 2px rgb(34 34 34 / 0.018), 0 6px 16px -4px rgb(34 34 34 / 0.048)",
+            "box-lifted": "0 2px 4px rgb(34 34 34 / 0.018), 0 12px 32px -8px rgb(34 34 34 / 0.048)"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.92
         },
         "dark": {
           "polarity": "dark",
@@ -1771,14 +1792,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.9
         }
       },
       "tint-secondary": {
@@ -1824,14 +1846,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(34 34 34 / 0.06), 0 4px 12px -2px rgb(34 34 34 / 0.1)",
+            "header-panel": "0 1px 2px rgb(34 34 34 / 0.03), 0 4px 12px -2px rgb(34 34 34 / 0.05)",
+            "panel": "0 2px 6px rgb(34 34 34 / 0.025), 0 16px 40px -8px rgb(34 34 34 / 0.09)",
+            "page": "0 4px 10px rgb(34 34 34 / 0.03), 0 24px 48px -12px rgb(34 34 34 / 0.11)",
+            "box": "0 1px 2px rgb(34 34 34 / 0.018), 0 6px 16px -4px rgb(34 34 34 / 0.048)",
+            "box-lifted": "0 2px 4px rgb(34 34 34 / 0.018), 0 12px 32px -8px rgb(34 34 34 / 0.048)"
           },
-          "frame-color": "#222222"
+          "frame-color": "#222222",
+          "translucent": 0.93
         },
         "dark": {
           "polarity": "dark",
@@ -1875,14 +1898,15 @@
           },
           "adjustments": {},
           "shadow": {
-            "header": "none",
-            "header-panel": "none",
-            "panel": "none",
-            "page": "none",
-            "box": "none",
-            "box-lifted": "none"
+            "header": "0 1px 2px rgb(0 0 0 / 0.18), 0 4px 12px -2px rgb(0 0 0 / 0.3)",
+            "header-panel": "0 1px 2px rgb(0 0 0 / 0.09), 0 4px 12px -2px rgb(0 0 0 / 0.15)",
+            "panel": "0 2px 6px rgb(0 0 0 / 0.075), 0 16px 40px -8px rgb(0 0 0 / 0.27)",
+            "page": "0 4px 10px rgb(0 0 0 / 0.09), 0 24px 48px -12px rgb(0 0 0 / 0.33)",
+            "box": "0 1px 2px rgb(0 0 0 / 0.054), 0 6px 16px -4px rgb(0 0 0 / 0.144)",
+            "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
-          "frame-color": "#ffffff"
+          "frame-color": "#ffffff",
+          "translucent": 0.89
         }
       }
     },
@@ -2003,8 +2027,9 @@
         },
         "step": 7,
         "line-height": 1.3,
-        "weight": 600,
+        "weight": 300,
         "letter-spacing": -0.01,
+        "stretch": 90,
         "features": {
           "value": "\"ss05\", \"ss07\"",
           "from-window": 0
@@ -2018,12 +2043,9 @@
         },
         "step": 10,
         "line-height": 1.1,
-        "weight": 260,
-        "letter-spacing": -0.03,
-        "stretch": 112,
-        "variation": {
-          "opsz": 100
-        },
+        "weight": 250,
+        "letter-spacing": -0.01,
+        "stretch": 90,
         "features": {
           "value": "\"ss05\", \"ss07\"",
           "from-window": 0
@@ -2031,11 +2053,11 @@
       },
       "label": {
         "size": {
-          "min": 12,
-          "max": 12,
-          "css": "clamp(0.75rem, 0.75rem + 0vw, 0.75rem)"
+          "min": 14,
+          "max": 13,
+          "css": "clamp(0.8125rem, 0.8982rem - 0.0952vw, 0.875rem)"
         },
-        "step": -5,
+        "step": -3,
         "line-height": 1.4,
         "weight": 800,
         "letter-spacing": 0.06,
@@ -2146,23 +2168,23 @@
           "css": "clamp(2.1875rem, 2.0982rem + 0.4464vw, 2.5rem)"
         },
         "plate": {
-          "min": 40,
-          "max": 50,
-          "css": "clamp(2.5rem, 2.3214rem + 0.8929vw, 3.125rem)"
+          "min": 25,
+          "max": 30,
+          "css": "clamp(1.5625rem, 1.4732rem + 0.4464vw, 1.875rem)"
         }
       }
     },
     "radius": {
-      "control": 0,
-      "card": 0
+      "control": 3,
+      "card": 3
     },
     "shadow": {
-      "header": "none",
-      "header-panel": "none",
-      "panel": "none",
-      "page": "none",
-      "box": "none",
-      "box-lifted": "none"
+      "header": "0 1px 2px rgb(34 34 34 / 0.06), 0 4px 12px -2px rgb(34 34 34 / 0.1)",
+      "header-panel": "0 1px 2px rgb(34 34 34 / 0.03), 0 4px 12px -2px rgb(34 34 34 / 0.05)",
+      "panel": "0 2px 6px rgb(34 34 34 / 0.025), 0 16px 40px -8px rgb(34 34 34 / 0.09)",
+      "page": "0 4px 10px rgb(34 34 34 / 0.03), 0 24px 48px -12px rgb(34 34 34 / 0.11)",
+      "box": "0 1px 2px rgb(34 34 34 / 0.018), 0 6px 16px -4px rgb(34 34 34 / 0.048)",
+      "box-lifted": "0 2px 4px rgb(34 34 34 / 0.018), 0 12px 32px -8px rgb(34 34 34 / 0.048)"
     },
     "frame": {
       "width": 0,
@@ -2176,12 +2198,13 @@
       "arrangement": "A",
       "attachment": "sticky",
       "start": "below",
-      "autohide": false,
+      "autohide": true,
       "surface": "page",
+      "translucent": true,
       "identity": "logo",
       "brand-axis": "row",
       "slogan-place": "beside",
-      "link-menu": true,
+      "link-menu": false,
       "menu-button": "word",
       "language": false,
       "search": true,
@@ -2260,7 +2283,7 @@
     "easing": {
       "standard": "cubic-bezier(0.2, 0, 0, 1)"
     },
-    "generator-version": "0.3.0",
+    "generator-version": "0.4.0",
     "contrast-check": {
       "status": "passed",
       "matrix": {
@@ -6884,6 +6907,6 @@
         }
       }
     },
-    "inputs-fingerprint": "7f60c2fc8c3526d0319f3fb462e8473be15beb74f5c97a4a6ed267f9771cca71"
+    "inputs-fingerprint": "4a163323fc146435e661371d0536330c5bba710846b372b27ee495779e48200d"
   }
 }

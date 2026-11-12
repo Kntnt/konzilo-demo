@@ -77,32 +77,6 @@
         ]
       },
       {
-        "title": "Customers",
-        "url": "/customers/",
-        "items": [
-          {
-            "title": "Norrvik Logistics",
-            "url": "/customers/norrvik-logistics/",
-            "description": "Six distribution centres: 9.4 MWp of solar and 212 charge points."
-          },
-          {
-            "title": "Brantevik Foods",
-            "url": "/customers/brantevik-foods/",
-            "description": "Cold stores in Skåne: 3.1 MWp of solar and a 4 MWh battery."
-          },
-          {
-            "title": "Lindhagen Furniture",
-            "url": "/customers/lindhagen-furniture/",
-            "description": "A factory in Värnamo: 2.2 MWp under a power purchase agreement."
-          },
-          {
-            "title": "Westerport Retail Parks",
-            "url": "/customers/westerport-retail-parks/",
-            "description": "Eleven retail parks: 6.8 MWp of solar and 340 charge points."
-          }
-        ]
-      },
-      {
         "title": "Insights",
         "url": "/insights/",
         "items": [
@@ -168,7 +142,7 @@
         "text": "Ampfield Energy designs, builds, finances and runs solar, battery storage and charging on industrial and commercial sites in Sweden, Denmark, the Netherlands and the United Kingdom."
       },
       "b2": {
-        "links": "The top level of the menu: Solutions, Industries, Customers, Insights, About."
+        "links": "The top level of the menu: Solutions, Industries, Insights, About."
       }
     },
     "lower": {
@@ -176,7 +150,7 @@
         "text": "Ampfield Energy AB\nFältverksgatan 6, 417 64 Gothenburg, Sweden\n+46 31 390 06 00 · hello@ampfield.example"
       },
       "b1": {
-        "text": "Organisation number 559214-3871 · VAT number SE559214387101 · Registered office: Gothenburg\nAmpfield Energy is a fictional company. This site demonstrates Konzilo."
+        "text": "Registered office: Gothenburg\nAmpfield Energy is a fictional company.\nThis site demonstrates Konzilo."
       },
       "a2": {
         "links": [
@@ -213,7 +187,7 @@
           ]
         },
         { "name": "message", "label": "Message", "kind": "textarea", "required": true, "maxLength": 3000, "help": "If it is about a site, tell us where it is, what the building is used for and roughly how much electricity it uses a year." },
-        { "name": "privacy", "label": "I have read the privacy policy", "kind": "acceptance", "help": "It says what we keep of this message, and for how long." }
+        { "name": "privacy", "label": "I have read the [privacy policy](/privacy-policy/)", "kind": "acceptance", "help": "It says what we keep of this message, and for how long." }
       ],
       "confirmation": "Thank you. We have your message and will answer within one working day."
     },
@@ -267,7 +241,7 @@
           "help": "Tick as many as you like. The engineer looks at all four either way."
         },
         { "name": "message", "label": "Anything we should know", "kind": "textarea", "required": false, "maxLength": 3000, "help": "Such as the roof's age, plans to extend the building, or a date you need power by." },
-        { "name": "privacy", "label": "I have read the privacy policy", "kind": "acceptance", "help": "It says what we keep of this booking, and for how long." }
+        { "name": "privacy", "label": "I have read the [privacy policy](/privacy-policy/)", "kind": "acceptance", "help": "It says what we keep of this booking, and for how long." }
       ],
       "confirmation": "Thank you. An engineer will call you within two working days to agree a day for the visit."
     },
@@ -275,7 +249,7 @@
       "label": "Newsletter",
       "fields": [
         { "name": "email", "label": "E-mail", "kind": "email", "required": true },
-        { "name": "privacy", "label": "Send me Ampfield's newsletter. I have read the privacy policy.", "kind": "acceptance", "help": "One e-mail at the start of each month. Every issue has a link to unsubscribe." }
+        { "name": "privacy", "label": "Send me Ampfield's newsletter. I have read the [privacy policy](/privacy-policy/).", "kind": "acceptance", "help": "One e-mail at the start of each month. Every issue has a link to unsubscribe." }
       ],
       "confirmation": "Thank you. Your first newsletter arrives at the start of next month."
     }

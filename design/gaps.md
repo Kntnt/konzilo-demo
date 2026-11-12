@@ -11,7 +11,7 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A customer's words set large, with name and role | The industries, Careers | A quotation with `<cite>`; the Quotation component has no directive |
 | A call-to-action band | Every marketing page | A section on the brand Surface with a heading and actions; the CTA Band component has no directive |
 | The control for objecting to the counting of visits, placed in a page | Privacy policy | A pointer to the privacy settings |
-| Case studies filtered by solution | Customers | The `filtered` presentation, which filters by topics only |
+| Case studies filtered by solution | Customers | The `filtered` presentation's rows of topics and search; the solutions are no taxonomy, and the topics Solar, Storage and Charging stand in for three of them |
 | Related case studies on a page | The solutions, the industries | `include="topics:…"`; a page carries no terms, so `order="related"` has nothing to go by |
 | A featured post on the first page of a paged list only | Insights | The featured list repeats on every page |
 | A button text of the form's own | Book a site assessment | Every form gets the core's "Send" |
@@ -21,29 +21,29 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A vacancy marked up as a job posting for search engines | The vacancies | Nothing: a site's own type may offer only the structured data types the core knows |
 | An author's portrait | The author's page, an article's byline | Nothing from content: an author term holds a name and a biography |
 | A source under a simple table | The articles | A footnote on the paragraph before the table, or a structured table with a caption |
-| Topics in an article's opening | The articles | Pills at the end of the meta line; `directives.md` has no part for them |
 | A list of vacancies | Careers, a vacancy | A presentation `rows` of the mockups' own, made from the Content Loop; `directives.md` has only `cards`, `featured` and `filtered` |
 | A person's card with a portrait | Team | Ordinary cards with pictures cut to their wide format; the Card's `person` variant has no directive |
 | Two options compared side by side under a head that is not centred | Home | A table |
 | Words of a template that an editor can change | The case study's closing band, the term pages' newsletter band | Fixed words in the templates |
+| A list of one teaser that fills its row, such as a wide card with its picture beside the text | Logistics and warehousing, Retail and commercial property: each lists the one case study of its industry | The ordinary card, a third of the row, since a series of one card stands in three columns |
+| A customer's words beside the teasers of that customer's case study | The industry pages | The quotation in a band of its own on `raised` after the list, since in the list's section a head centred over two cards (rule 6) would stand over a quotation that keeps the start edge |
+| A link in a form's label, "I have read the privacy policy (required)" with "privacy policy" a link | Contact, Book a site assessment, the newsletter | The mockups draw `[privacy policy](/privacy-policy/)` in a label as a link; the core writes a label as plain text |
 
 ## Faults and shortcomings in Konzilo Design
 
 | What | How it shows |
 |---|---|
-| The components that render Konzilo's directives are not shipped | Konzilo 0.4.0 expects a package's component declarations (`componentsFrom`), its checks (`componentChecks`) and an Astro component per directive. Konzilo Design 0.3.0 has the HTML contract, the CSS and helpers, and renderers in its gallery only. No file in either repository records the directives' attributes in Markdown |
+| The components that render Konzilo's directives are not shipped | Konzilo 0.4.0 expects a package's component declarations (`componentsFrom`), its checks (`componentChecks`) and an Astro component per directive. Konzilo Design 0.4.0, like 0.3.0, has the HTML contract, the CSS and helpers, and renderers in its gallery only. No file in either repository records the directives' attributes in Markdown |
 | ADR 0068 of the core and `directives.md` disagree on what cards, accordion, tabs, toc and choice are | The ADR calls them the list's five forms; `directives.md` and the gallery treat them as directives of their own |
 | `directives.md` does not say where an editor writes a card's picture and eyebrow, or that a section's badges must be paragraphs of their own | Items begin at their headings, yet the picture and the eyebrow are drawn before the heading; adjacent images become a gallery |
 | `directives.md` writes a card's symbol with an empty alt text | The core's `content-format.md` says an image never goes without one |
 | The menu's descriptions have no source | `Megamenu.astro` draws `child.description`; the core's menu holds `title`, `url` and `items`, and `menuProps` passes no description |
 | `directives.md` does not say whether a fact box's own heading is a stop in the following table of contents | Both are written as `h2`, so the box could be listed |
-| `directives.md` says the meta line is the date and the byline | Its markup and the next rule put the category there too |
 | A hero's logo cannot follow the Surface it stands on | `.kn-hero-logo` is one picture that the editor chooses, while the header's logo changes with the mode; the light logo on a dark picture is hard to read |
 | Neither `directives.md` nor `konzilo.md` says where a page without a hero puts its title and breadcrumbs | The mockups put them in a section's head before the body |
 | `konzilo.css` does not style the core's button that opens the lightbox | `button.konzilo-lightbox-open` is styled only by the core's `modal.css` |
 | Layout rule 6 centres a section's head for a reason no visitor can see | A head over two cards, two featured posts, cards without pictures or reasons is centred, on a page whose other heads start at the edge |
 | A hero without a picture keeps its height | A title and one sentence stand at the bottom of an empty band two thirds of the window high; seen on term pages, the 404 page and the legal pages |
-| A link in a Content Loop inside body text looks like a body link | `.kn-body-text a` outweighs `.kn-content-link`; the Card avoids it with `.kn-card .kn-card-link` |
 | A gallery's columns follow its width, not the number of its pictures | Four pictures stand three and one; `.konzilo-gallery` uses `auto-fill` |
 | A choice's answers do not fill their rows | Four answers fall three and one |
 | A table at phone width squeezes its columns word by word | It needs a least column width and a box that scrolls |
@@ -51,9 +51,8 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A fact box in a section's body spans the whole content width | The text beside it keeps the narrow measure |
 | A long value in a value list breaks in the middle of a word | An e-mail address in a quarter column; `a[data-kn-contact]` in a half-width card too |
 | A symbol cannot take the accent colour or follow the mode | Konzilo writes it as an `<img>` |
-| The megamenu draws an entry without children as an empty column | Customers, before it was given the case studies |
+| The megamenu draws an entry without children as an empty column | Customers, before it was given the case studies; Customers has since left the menu |
 | The design reads a table's column alignment from `data-kn-align`, which nothing writes | Konzilo writes `style="text-align: …"`, which its own policy on inline styles blocks (ADR 0051) |
-| The core's default meta line and the design's do not match | The core writes one sentence, "Published on {date} in {category} by {authors}"; the design draws three spans with dots between |
 | A test fixture writes the embed placeholder's policy link without the attribute the core adds | `test/fixtures/konzilo-page.html` lacks `data-konzilo-consent-policy` |
 | The export for agents carries no stylesheet | `DESIGN.md` describes the look; no export bundles the real CSS of a site (the design's core, `konzilo.css`, the components, the font faces) as one file, so an agent can only rebuild it by hand |
 | `directives.md` says "No inline style", and the components write one | `Band.astro` writes the hero's picture as `style="--kn-picture-image:url(…)"`, and a relative address there resolves against the stylesheet's folder; `--kn-hero-screen` is not in `DESIGN.md` |
@@ -67,6 +66,9 @@ What the design phase wanted and could not have, and the faults it found on the 
 | The Logos list shows each logo as it is, in both modes | A one-colour logo must be a grey that holds on every ground, and is weak on `brand`, `accent` and `inverse` |
 | The warning status looks like the secondary tint when the secondary colour is amber | `status-warning` and `tint-secondary` resolve to almost the same values in both modes |
 | `design-presentation` writes inside Konzilo Design's own folder | It rewrites ignored files under `presentation/.astro/` and uses `node_modules/.cache/` |
+| The tab row's rule and the rules of a value list beside a tab's text stand about 20 px apart, one above the other | The tabs of Rooftop solar ("Two ways to pay"), Battery storage, Fleet charging and Ampfield Pilot; Thomas's point 15, with five options drawn in `mockups/pages/options-tabs.astro` for him to choose from |
+| The pager stands closer to the cards above it than the cards stand to each other | `.konzilo-pager` has the component gap above it, 18–20 px, under cards a column gap apart, 40–50 px; the lone action that shows more of a series has the column gap |
+| A type role cannot set its line height | A light first heading over two lines keeps `heading-1`'s 1.3, set for a heavy heading, and looks loose; `display` has 1.1 |
 | No output shows every component in the design's own colours and type | The presentation leaves out the directive components; the gallery shows them in the example design |
 | Documents out of step with the code | `generator.md` and `konzilo.md` say a new design file is written at the first save, the tool writes it at launch; `generator.md` leaves out `project` keys; `names.md` leaves out `accent` for `hero.surface`; `konzilo.md` gives the package's size as 0.14 MB, it is 0.23 MB; `konzilo.md` and `directives.md` say the core refuses `data:` images, which it has allowed since ADR 0068 |
 
@@ -90,3 +92,7 @@ What the design phase wanted and could not have, and the faults it found on the 
 | The log of addresses that were not found is not built | ADR 0040; the web server writes no log at all |
 | The core's two texts on YouTube disagree | Its facts say the provider lists nothing that it stores; the placeholder says it "may store data in your browser" |
 | Pinning the core by a token is not built | ADR 0011; `new-site` pins by a path on the machine |
+| A post list cannot choose the rows of a filtered list | `directives.md` proposes `filters="category topics search"`; `src/format/post-list.js` reads no such attribute, and the core writes no rows, hidden fields or search row |
+| A term page does not tell its list what the page settles | A category's page must leave its Category row out and send `category=<slug>` with a search, a topic's page its topic, an author's page `author=<slug>`; `termPages()` passes nothing of it |
+| The search page takes no taxonomy | `search-client.js` reads `q`, `page` and `type` only, and filters Typesense by type alone; a search from a filtered list sends `category`, `topic`, `author` and a site's own taxonomies, which the search page and the index must take, joined as the rows are, OR within a row and AND between rows, and show as chosen |
+| A form field's label cannot hold a link | The site description's `label` is plain text; an acceptance field needs a link to the policy it accepts, as Markdown in the label or a field of its own |

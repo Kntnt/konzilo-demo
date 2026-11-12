@@ -15,7 +15,7 @@ export const EMAIL = site.publisher?.email ?? 'hello@ampfield.example';
 
 // PROVISIONAL: used only where site.json has no menu.
 const fallbackMenu = [
-  { title: 'Solutions', url: '/solutions/' }, { title: 'Industries', url: '/industries/' }, { title: 'Customers', url: '/customers/' },
+  { title: 'Solutions', url: '/solutions/' }, { title: 'Industries', url: '/industries/' },
   { title: 'Insights', url: '/insights/' }, { title: 'About', url: '/about/' },
 ];
 const coreMenu = site.menu?.items ?? fallbackMenu;

@@ -2,7 +2,7 @@
 title: "What a solar roof costs in 2026"
 date: 2026-01-13T07:00:00Z
 modified: 2026-01-13T07:00:00Z
-image: {"src":"image:article-solar-costs","alt":"Pallets of packed solar panels and bundles of aluminium mounting rails on a flat roof, waiting to be fitted"}
+image: {"src":"image:article-solar-costs","alt":"Solar panels clamped to their mounting rails on a gravel-covered flat roof"}
 eyebrow: "Where the money goes"
 headline: "What a solar roof costs in 2026, line by line"
 subheadline: "Panels are now less than a fifth of the price, and the rest decides what you pay"

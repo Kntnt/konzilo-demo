@@ -57,6 +57,9 @@ try {
   const names = (await readdir(built)).filter((file) => file.endsWith('.html'));
   for (const file of names) {
     let html = await readFile(join(built, file), 'utf8');
+    // In a script an address is a module specifier, which must start with ./ to be relative: the header's polyfill
+    // loaders import(src), and a bare _astro/… fails there, so Firefox and WebKit never slid the header away.
+    html = html.replace(/(<script\b[^>]*>)([\s\S]*?)(<\/script>)/g, (whole, open, code, close) => open + code.replace(/(["'`])\/_astro\//g, '$1./_astro/') + close);
     html = html.replace(/(["'(=\s])\/_astro\//g, '$1_astro/');
     html = await inlineModules(html);
     html = await pictures(html);

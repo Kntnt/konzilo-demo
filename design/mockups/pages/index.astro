@@ -50,7 +50,7 @@ const md = [
     item('Manufacturing', 'industries-manufacturing', follows('Logistics and warehousing')),
     item('Retail and commercial property', 'industries-retail', follows('Logistics and warehousing')),
   ]),
-  band('Customers', [item('Customers', 'customers', designed), ...cases], 'raised'),
+  band('Customers', [item('Customers', 'customers', `${designed} Not in the menu: the industry pages and the case studies' trails lead here.`), ...cases], 'raised'),
   band('Insights', [
     item('Insights', 'insights', designed),
     ...articles,
@@ -78,9 +78,11 @@ const md = [
   band('The header', [
     `- The menu open\n  - Designed. Screenshots of the window: [at 1440 px](${shot('home-1440-menu.png')}) and [at 390 px](${shot('home-390-menu.png')}).`,
     `- The search box open\n  - Designed. Screenshots of the window: [at 1440 px](${shot('home-1440-search.png')}) and [at 390 px](${shot('home-390-search.png')}).`,
+    `- Over a scrolled page\n  - The header slides away as the page scrolls down and comes back, translucent, on the way up. Screenshots of the window: [at 1440 px](${shot('home-1440-scrolled.png')}) and [at 390 px](${shot('home-390-scrolled.png')}).`,
   ]),
   band('The design system', [
     item('The catalogue', 'catalogue', 'Every renderer once, with the Markdown that gives it.'),
+    item('Five ways to part the tabs from their values', 'options-tabs', "Not a page of the site: the options for Thomas's point 15, the section Two ways to pay of Rooftop solar drawn once for each."),
     item('The header, closed', 'catalogue-header-closed', 'A frame of the catalogue.'),
     item('The header with its menu open', 'catalogue-header-menu', 'A frame of the catalogue.'),
     item('The header with its search box open', 'catalogue-header-search', 'A frame of the catalogue.'),

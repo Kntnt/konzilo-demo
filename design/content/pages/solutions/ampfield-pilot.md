@@ -104,7 +104,7 @@ It suits every site with a battery or more than a few chargers, and it is how we
 :::list{type="values"}
 
 - Control
-  - Batteries, chargers and heat pumps
+  - Batteries, chargers, heat pumps, cold stores, air compressors and water heaters
 - Response
   - Within one second, at the site
 - Price
@@ -124,7 +124,7 @@ It suits every site with a battery or more than a few chargers, and it is how we
 | --- | --- |
 | Readings from each meter and system | Once a minute |
 | History kept | 10 years, all of it downloadable |
-| Equipment it reads | Meters, solar inverters, batteries, chargers and heat pumps, through Modbus, SunSpec and OCPP |
+| Equipment it reads | Meters, solar inverters, batteries, chargers, heat pumps and the controls of cold stores, air compressors and water heaters, through Modbus, SunSpec and OCPP |
 | Control when the connection to Pilot is lost | The controller on site keeps the limits on its own |
 | Time to install | One day per site |
 | Users | As many as you like, each seeing their own sites |

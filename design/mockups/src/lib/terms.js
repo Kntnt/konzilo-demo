@@ -1,7 +1,11 @@
 // A term's page, as the site's term page (Konzilo's TermPage.astro, ADR 0039) would draw it with the design: an opening
-// of the trail, the term's name as the page's H1 and its description as the deck, then the term's posts of every type that takes
-// the taxonomy, newest first, ten a page, as teaser cards with the core's pager where they fill more than a page, then
-// the newsletter band that Insights ends with. A term page has no picture: the term holds a name and a description.
+// of the trail, the term's name as the page's H1 and its description as the deck, then the term's posts of every type that
+// takes the taxonomy, newest first, nine a page (the core's termPages() takes the number; nine gives three rows of three,
+// as Insights has), as the `filtered` presentation with the core's pager where they fill more than a page, then the
+// newsletter band that Insights ends with. The filter has the rows of Insights' Earlier articles, Category, Topics and
+// Search, without the row the page itself settles: a category's page has no Category row, a topic's page no Topic row,
+// and an author's page keeps all three, since authors are no row. A term page has no picture: the term holds a name and
+// a description.
 //
 //   termPage('categories', 'guides')   the page at /insights/category/guides/
 //   termPage('authors', 'priya-raman', { page: 2 })
@@ -16,9 +20,9 @@ const md = String.raw;
 
 // Each taxonomy with an address: its field on a post, the types that take it, its address and its eyebrow.
 export const TAXONOMIES = {
-  categories: { field: 'category', types: ['article'], address: '/insights/category/{slug}/', eyebrow: 'Category' },
-  topics: { field: 'topics', types: ['article', 'case-study'], address: '/insights/topic/{slug}/', eyebrow: 'Topic' },
-  authors: { field: 'authors', types: ['article'], address: '/insights/author/{slug}/', eyebrow: 'Author' },
+  categories: { field: 'category', key: 'category', types: ['article'], address: '/insights/category/{slug}/', eyebrow: 'Category' },
+  topics: { field: 'topics', key: 'topic', types: ['article', 'case-study'], address: '/insights/topic/{slug}/', eyebrow: 'Topic' },
+  authors: { field: 'authors', key: 'author', types: ['article'], address: '/insights/author/{slug}/', eyebrow: 'Author' },
 };
 
 // The band that ends a page of Insights: the newsletter, in the words the Insights page uses.
@@ -34,7 +38,7 @@ The month's articles, one chart from our analyst on prices and grid fees, and no
 
 :::`;
 
-export function termPage(collection, slug, { page = 1, number = 10 } = {}) {
+export function termPage(collection, slug, { page = 1, number = 9 } = {}) {
   const taxonomy = TAXONOMIES[collection];
   const term = termsOf(collection)[slug];
   if (!taxonomy || !term) throw new Error(`No term ${collection}/${slug} in design/content.`);
@@ -55,7 +59,10 @@ export function termPage(collection, slug, { page = 1, number = 10 } = {}) {
         tag('h1', { class: 'kn-heading-group-heading', 'data-kn-type': 'heading-1' }, escapeText(term.name)),
         term.description ? tag('p', { class: 'kn-heading-group-deck', 'data-kn-type': 'lead', 'data-kn-deck': 'long' }, escapeText(term.description)) : ''))));
   const list = shown.length
-    ? presentation('cards', shown.map(teaserOf), { ...ctx, ground: undefined }, { pagerHtml: pager(address, page, pages) })
+    ? presentation('filtered', shown.map(teaserOf), { ...ctx, ground: undefined }, {
+      type: taxonomy.types.length === 1 ? taxonomy.types[0] : undefined, pagerHtml: pager(address, page, pages),
+      filters: 'category topics search', settled: { key: taxonomy.key, value: slug }, total: all.length, all: all.map(teaserOf),
+    })
     : tag('p', {}, 'Nothing to show yet.');
   const posts = tag('section', { class: 'kn-band kn-section' }, tag('div', { class: 'kn-band-content' }, tag('div', { class: 'kn-section-body kn-body-text' }, list)));
   return { title: term.name, address, html: [opening, posts, renderMarkdown(newsletter, { ...ctx, title: undefined })].join('\n') };
