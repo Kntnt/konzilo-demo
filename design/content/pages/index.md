@@ -60,7 +60,7 @@ Produces 850 to 1,000 kWh a year for every kilowatt installed, most of it used i
 
 ### [Battery storage](/solutions/battery-storage/)
 
-![A crane lifting a dark green battery container into place](image:battery-storage)
+![Rows of grey steel equipment cabinets with warning labels among ground-mounted solar panels in a dry meadow](image:battery-storage)
 
 Takes the top off your peaks, which lowers the grid fee you pay each month.
 

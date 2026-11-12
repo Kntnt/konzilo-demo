@@ -2,7 +2,7 @@
 title: "What fire safety a battery needs"
 date: 2026-08-18T07:00:00Z
 modified: 2026-10-02T13:10:00Z
-image: {"src":"image:article-battery-fire-safety","alt":"A high-voltage warning sign and a hard-hat sign on the green steel fence of an electrical installation"}
+image: {"src":"image:article-battery-fire-safety","alt":"A row of grey steel equipment cabinets with high-voltage danger labels beside ground-mounted solar panels"}
 eyebrow: "Battery storage"
 headline: "What fire safety a battery on site needs"
 subheadline: "Cells, distance, detection, and a plan the fire service has seen"

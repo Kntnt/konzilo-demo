@@ -32,7 +32,7 @@ description: "Meet the people who lead Ampfield Energy: its founders, its heads 
 
 ### Ingrid Sandell
 
-![Portrait of Ingrid Sandell](image:portrait-ingrid-sandell)
+![Portrait of Ingrid Sandell](image:team-ingrid-sandell)
 
 ::eyebrow[Chief Executive Officer]
 
@@ -40,7 +40,7 @@ Co-founded Ampfield in 2014 after twelve years building wind farms across the No
 
 ### Mattias Lönn
 
-![Portrait of Mattias Lönn](image:portrait-mattias-lonn)
+![Portrait of Mattias Lönn](image:team-mattias-lonn)
 
 ::eyebrow[Chief Technology Officer]
 
@@ -48,7 +48,7 @@ Co-founder. Wrote the first version of Pilot, and still reviews every change to 
 
 ### Priya Raman
 
-![Portrait of Priya Raman](image:portrait-priya-raman)
+![Portrait of Priya Raman](image:team-priya-raman)
 
 ::eyebrow[Head of Engineering and Delivery]
 
@@ -56,7 +56,7 @@ Leads the engineers and installers who design and build every system, from the s
 
 ### Elias Forsberg
 
-![Portrait of Elias Forsberg](image:portrait-elias-forsberg)
+![Portrait of Elias Forsberg](image:team-elias-forsberg)
 
 ::eyebrow[Head of Energy Services]
 
@@ -64,7 +64,7 @@ Runs the operations centre and the technicians who keep 610 sites producing, aro
 
 ### Sofia Marklund
 
-![Portrait of Sofia Marklund](image:portrait-sofia-marklund)
+![Portrait of Sofia Marklund](image:team-sofia-marklund)
 
 ::eyebrow[Chief Financial Officer]
 
@@ -72,7 +72,7 @@ Structures our power purchase agreements and the financing behind them.
 
 ### Daniel Okafor
 
-![Portrait of Daniel Okafor](image:portrait-daniel-okafor)
+![Portrait of Daniel Okafor](image:team-daniel-okafor)
 
 ::eyebrow[Head of People and Safety]
 
@@ -80,7 +80,7 @@ Responsible for hiring and training, and for the safety of everyone who works at
 
 ### Joost van der Heiden
 
-![Portrait of Joost van der Heiden](image:portrait-joost-van-der-heiden)
+![Portrait of Joost van der Heiden](image:team-joost-van-der-heiden)
 
 ::eyebrow[Country Manager, Netherlands]
 
@@ -88,7 +88,7 @@ Opened the Rotterdam office in 2021, after twenty years in Dutch industrial prop
 
 ### Hannah Whitcombe
 
-![Portrait of Hannah Whitcombe](image:portrait-hannah-whitcombe)
+![Portrait of Hannah Whitcombe](image:team-hannah-whitcombe)
 
 ::eyebrow[Country Manager, United Kingdom]
 
@@ -96,7 +96,7 @@ Opened the Leeds office in 2022, and leads our work for retail parks and distrib
 
 ### Lena Bergqvist
 
-![Portrait of Lena Bergqvist](image:portrait-lena-bergqvist)
+![Portrait of Lena Bergqvist](image:team-lena-bergqvist)
 
 ::eyebrow[Energy Market Analyst]
 

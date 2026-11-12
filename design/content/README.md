@@ -6,7 +6,7 @@ The text of every page of the demo site, in Konzilo's Markdown with Konzilo Desi
 
 | Path | Holds | Written by |
 |---|---|---|
-| `site.json` | The site's title, slogan and description, the publisher, the header's call to action and search box, the menu with a line per second-level entry, the footer cell by cell, and the forms `contact`, `assessment` and `newsletter` with their confirmations | the pages' agent |
+| `site.json` | The site's title, slogan and description, the publisher, the header's call to action and search box, the menu with a line per second-level entry (under Customers, the four case studies), the footer cell by cell, and the forms `contact`, `assessment` and `newsletter` with their confirmations | the pages' agent |
 | `pages/` | Every page but the term pages, at the path of its address: `pages/index.md` is `/`, `pages/solutions/index.md` is `/solutions/`, `pages/solutions/rooftop-solar.md` is `/solutions/rooftop-solar/` | the pages' agent |
 | `canvases/site-assessment.md` | The landing page at `/go/site-assessment/`, with no header and footer | the pages' agent |
 | `system/not-found.md` | The 404 page, as the post an Admin chooses for it | the pages' agent |
@@ -33,10 +33,10 @@ Front matter, then the body.
 | Id | Shows | Used on |
 |---|---|---|
 | `pilot-controller` | An open electrical cabinet with energy meters, a small industrial computer and network cabling on DIN rails; no readable brand | Ampfield Pilot, the section beside "What you get" |
-| `icon-solar`, `icon-battery`, `icon-charging`, `icon-pilot` | One-colour line symbols, SVG on a square `viewBox`: a solar panel, a battery, a charging plug, a line chart | Logistics (`symbol="heading"`) and Manufacturing (`symbol="item"`) |
+| `icon-solar`, `icon-battery`, `icon-charging`, `icon-pilot` | One-colour line symbols, SVG on a square `viewBox`: a solar panel, a battery, a charging plug, a line chart | Solutions, Logistics, Manufacturing and Retail, each as the cards' symbols, `symbol="item"` |
 | `badge-iso-9001`, `badge-iso-14001`, `badge-iso-45001` | Plain round badges of Ampfield's own making that read "ISO 9001 certified" and so on; no certification body's mark | About us, the badges of "What we hold to" |
 
-**Links** are the addresses in `../README.md`. Anchors are a section's `anchor` or a heading's `<a id>`. Links into the other agent's posts: the author pages `/insights/author/priya-raman/`, `/insights/author/elias-forsberg/`, `/insights/author/hannah-whitcombe/` and `/insights/author/lena-bergqvist/` (Team), the category pages `/insights/category/guides/`, `/insights/category/market-and-policy/` and `/insights/category/company-news/` (menu, Insights), and the feed `/insights/feed/` (footer).
+**Links** are the addresses in `../README.md`. Anchors are a section's `anchor` or a heading's `<a id>`. Links into the other agent's posts: the author pages `/insights/author/priya-raman/`, `/insights/author/elias-forsberg/`, `/insights/author/hannah-whitcombe/` and `/insights/author/lena-bergqvist/` (Team), the category pages `/insights/category/guides/`, `/insights/category/market-and-policy/` and `/insights/category/company-news/` (menu, Insights), the case studies `/customers/norrvik-logistics/`, `/customers/brantevik-foods/`, `/customers/lindhagen-furniture/` and `/customers/westerport-retail-parks/` (menu, Customers; and each from the solution and the industry page it belongs to), and the feed `/insights/feed/` (footer).
 
 **Writing:** British English. Percentages as `38%`, thousands with a comma, prices in euros, `MWp`, `kWh` and `m²` after a space.
 

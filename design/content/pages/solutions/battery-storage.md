@@ -24,7 +24,7 @@ Much of your grid fee is set by the highest peak of the month, often a quarter o
 
 ::small[From 500 kWh to 10 MWh on one site. We run 95 MWh of storage today.]
 
-![A crane lifting a dark green battery container into place](image:battery-storage)
+![Rows of grey steel equipment cabinets with warning labels among ground-mounted solar panels in a dry meadow](image:battery-storage)
 
 ::::
 

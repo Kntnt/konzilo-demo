@@ -57,7 +57,8 @@
     "licence": "Unsplash License",
     "licenceUrl": "https://unsplash.com/license",
     "fetched": "2026-11-12",
-    "shows": "A black electric van stands charging on a yard beside a commercial building, its cable running to a wall-mounted charger next to the loading doors."
+    "shows": "A black electric van stands charging on a yard beside a commercial building, its cable running to a wall-mounted charger next to the loading doors.",
+    "changes": "The charger's logo and the van's model badge blurred."
   },
   {
     "id": "charger-detail",
@@ -93,7 +94,8 @@
     "licence": "Unsplash License",
     "licenceUrl": "https://unsplash.com/license",
     "fetched": "2026-11-12",
-    "shows": "An open grey electrical cabinet holding power supplies, a programmable controller with small displays, network switches with blue cables and rows of labelled terminals."
+    "shows": "An open grey electrical cabinet holding power supplies, a programmable controller with small displays, network switches with blue cables and rows of labelled terminals.",
+    "changes": "The maker's markings on the controller blurred."
   },
   {
     "id": "solutions-overview",
@@ -182,14 +184,15 @@
   {
     "id": "careers-field",
     "file": "careers-field.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/a-lineman-works-on-power-lines-mRVsNxlhtwA",
-    "author": "Ed Wingate",
-    "authorPage": "https://unsplash.com/@ed_wingate",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/a-man-maintaining-an-inverter-17842843/",
+    "author": "Fatih Yurtman",
+    "authorPage": "https://www.pexels.com/@fatihyurtman",
+    "licence": "Pexels License",
+    "licenceUrl": "https://www.pexels.com/license/",
     "fetched": "2026-11-12",
-    "shows": "A technician in orange workwear and a helmet climbs a utility pole among overhead lines above a row of brick houses, seen from below."
+    "shows": "A technician in an orange high-visibility jacket and a blue hard hat, seen from behind, works on the breakers of an open electrical cabinet.",
+    "changes": "The maker's and owner's names on the equipment and the glove blurred."
   },
   {
     "id": "contact-office",
@@ -207,13 +210,13 @@
     "id": "article-winter-solar",
     "file": "article-winter-solar.jpg",
     "source": "Unsplash",
-    "page": "https://unsplash.com/photos/a-row-of-solar-panels-sitting-on-top-of-snow-covered-ground-6Vd8Pt9zk4M",
-    "author": "Dad hotel",
-    "authorPage": "https://unsplash.com/@dadhotel",
+    "page": "https://unsplash.com/photos/rooftop-solar-panels-on-a-modern-building-in-winter-d04Ck_itOMs",
+    "author": "LEDC",
+    "authorPage": "https://unsplash.com/@ledc",
     "licence": "Unsplash License",
     "licenceUrl": "https://unsplash.com/license",
     "fetched": "2026-11-12",
-    "shows": "A long row of solar panels on a snow-covered flat roof under a clear blue winter sky."
+    "shows": "An aerial view of snow-covered flat roofs of new buildings with rows of solar panels, under low winter light."
   },
   {
     "id": "article-grid",
@@ -266,26 +269,26 @@
   {
     "id": "article-reporting",
     "file": "article-reporting.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/bar-and-pie-charts-on-a-document-q21XvpB7uQU",
-    "author": "Cht Gsml",
-    "authorPage": "https://unsplash.com/@karepesinde",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/charts-on-a-desk-6285258/",
+    "author": "Gustavo Fring",
+    "authorPage": "https://www.pexels.com/@gustavo-fring",
+    "licence": "Pexels License",
+    "licenceUrl": "https://www.pexels.com/license/",
     "fetched": "2026-11-12",
-    "shows": "Printed bar and pie charts lie on a desk beside a red ring binder and a pot of pens."
+    "shows": "Printed charts and graphs lie on a white desk beside a laptop, an open book and a mug, while a person's hands hold another page."
   },
   {
     "id": "article-battery-fire-safety",
     "file": "article-battery-fire-safety.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/a-green-fence-with-a-sign-on-it-IAbE7pqlv4E",
-    "author": "Waldemar Brandt",
-    "authorPage": "https://unsplash.com/@waldemarbrandt67w",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/solar-energy-panels-and-electrical-boxes-outdoors-35425767/",
+    "author": "Giant Asparagus",
+    "authorPage": "https://www.pexels.com/@GiantAsparagus",
+    "licence": "Pexels License",
+    "licenceUrl": "https://www.pexels.com/license/",
     "fetched": "2026-11-12",
-    "shows": "A high-voltage warning sign and a hard-hat sign hang on the green steel fence of an electrical installation."
+    "shows": "A row of grey steel equipment cabinets with high-voltage danger labels and metering boxes stands beside ground-mounted solar panels."
   },
   {
     "id": "case-norrvik",
@@ -360,6 +363,19 @@
     "shows": "A woman in her fifties with short blonde hair and a white shirt, photographed head and shoulders in a bright, softly blurred office."
   },
   {
+    "id": "team-ingrid-sandell",
+    "file": "team-ingrid-sandell.jpg",
+    "source": "Unsplash",
+    "page": "https://unsplash.com/photos/a-woman-in-a-white-shirt-standing-in-a-room-P3uik17Dx-0",
+    "author": "Vitaly Gariev",
+    "authorPage": "https://unsplash.com/@silverkblack",
+    "licence": "Unsplash License",
+    "licenceUrl": "https://unsplash.com/license",
+    "fetched": "2026-11-12",
+    "shows": "The face of a woman in her fifties with shoulder-length blonde hair, in a bright, softly blurred office.",
+    "changes": "Cut from portrait-ingrid-sandell.jpg to the cards' wide format, 16:9 at 1600 × 900 pixels, the full width of the portrait placed so that the whole face is in the frame."
+  },
+  {
     "id": "portrait-mattias-lonn",
     "file": "portrait-mattias-lonn.jpg",
     "source": "Unsplash",
@@ -370,6 +386,19 @@
     "licenceUrl": "https://unsplash.com/license",
     "fetched": "2026-11-12",
     "shows": "A bearded man in his forties in a dark suit and tie, photographed head and shoulders in a softly blurred office."
+  },
+  {
+    "id": "team-mattias-lonn",
+    "file": "team-mattias-lonn.jpg",
+    "source": "Unsplash",
+    "page": "https://unsplash.com/photos/a-man-in-a-suit-and-tie-standing-in-an-office-uWR0rK3PdRk",
+    "author": "Vitaly Gariev",
+    "authorPage": "https://unsplash.com/@silverkblack",
+    "licence": "Unsplash License",
+    "licenceUrl": "https://unsplash.com/license",
+    "fetched": "2026-11-12",
+    "shows": "The face of a bearded man in his forties with greying hair, a dark suit and a white shirt, in a softly blurred office.",
+    "changes": "Cut from portrait-mattias-lonn.jpg to the cards' wide format, 16:9 at 1600 × 900 pixels, the full width of the portrait placed so that the whole face is in the frame."
   },
   {
     "id": "portrait-priya-raman",
@@ -384,6 +413,19 @@
     "shows": "A woman with long dark hair in a dark jacket, photographed head and shoulders against a softly blurred indoor background."
   },
   {
+    "id": "team-priya-raman",
+    "file": "team-priya-raman.jpg",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/professional-woman-smiling-in-business-attire-29811345/",
+    "author": "Kevin Shervin Mascarenhas",
+    "authorPage": "https://www.pexels.com/@Kevinshrmasc",
+    "licence": "Pexels License",
+    "licenceUrl": "https://www.pexels.com/license/",
+    "fetched": "2026-11-12",
+    "shows": "The face of a woman with long dark hair, her head slightly tilted, against a softly blurred indoor background.",
+    "changes": "Cut from portrait-priya-raman.jpg to the cards' wide format, 16:9 at 1600 × 900 pixels, the full width of the portrait placed so that the whole face is in the frame."
+  },
+  {
     "id": "portrait-elias-forsberg",
     "file": "portrait-elias-forsberg.jpg",
     "source": "Unsplash",
@@ -394,6 +436,19 @@
     "licenceUrl": "https://unsplash.com/license",
     "fetched": "2026-11-12",
     "shows": "A man in his thirties with a short beard, a light suit and a dark tie, photographed head and shoulders in a softly blurred office."
+  },
+  {
+    "id": "team-elias-forsberg",
+    "file": "team-elias-forsberg.jpg",
+    "source": "Unsplash",
+    "page": "https://unsplash.com/photos/young-businessman-in-a-suit-smiling-confidently-OvXZDyt7rXE",
+    "author": "Vitaly Gariev",
+    "authorPage": "https://unsplash.com/@silverkblack",
+    "licence": "Unsplash License",
+    "licenceUrl": "https://unsplash.com/license",
+    "fetched": "2026-11-12",
+    "shows": "The face of a man in his thirties with a short beard, against a softly blurred office; the top of his forehead is outside the frame.",
+    "changes": "Cut from portrait-elias-forsberg.jpg to the cards' wide format, 16:9 at 1600 × 900 pixels, the full width of the portrait placed so that the whole face is in the frame as far as it goes: the face is taller than the band, so the top of the forehead is cut."
   },
   {
     "id": "portrait-sofia-marklund",
@@ -408,6 +463,19 @@
     "shows": "A smiling woman in her forties with glasses, dark hair and a blue jacket, photographed head and shoulders in a softly blurred office."
   },
   {
+    "id": "team-sofia-marklund",
+    "file": "team-sofia-marklund.jpg",
+    "source": "Unsplash",
+    "page": "https://unsplash.com/photos/a-smiling-woman-wearing-glasses-and-a-blue-suit-jI4HREHtae4",
+    "author": "Vitaly Gariev",
+    "authorPage": "https://unsplash.com/@silverkblack",
+    "licence": "Unsplash License",
+    "licenceUrl": "https://unsplash.com/license",
+    "fetched": "2026-11-12",
+    "shows": "The smiling face of a woman in her forties with glasses and dark hair, against a softly blurred background.",
+    "changes": "Cut from portrait-sofia-marklund.jpg to the cards' wide format, 16:9 at 1600 × 900 pixels, the full width of the portrait placed so that the whole face is in the frame."
+  },
+  {
     "id": "portrait-daniel-okafor",
     "file": "portrait-daniel-okafor.jpg",
     "source": "Unsplash",
@@ -418,6 +486,19 @@
     "licenceUrl": "https://unsplash.com/license",
     "fetched": "2026-11-12",
     "shows": "A bearded man in a dark suit and tie with his arms crossed, photographed against light curtains."
+  },
+  {
+    "id": "team-daniel-okafor",
+    "file": "team-daniel-okafor.jpg",
+    "source": "Unsplash",
+    "page": "https://unsplash.com/photos/a-man-in-a-suit-and-tie-posing-for-a-picture-x0A7wgQmmdk",
+    "author": "Adetola Afolabi",
+    "authorPage": "https://unsplash.com/@murphyleezle",
+    "licence": "Unsplash License",
+    "licenceUrl": "https://unsplash.com/license",
+    "fetched": "2026-11-12",
+    "shows": "The head and shoulders of a bearded man in a dark suit and tie, against light curtains.",
+    "changes": "Cut from portrait-daniel-okafor.jpg to the cards' wide format, 16:9 at 1600 × 900 pixels, the full width of the portrait placed so that the whole face is in the frame."
   },
   {
     "id": "portrait-joost-van-der-heiden",
@@ -432,6 +513,19 @@
     "shows": "A smiling man in his fifties in a light blue jacket and open-necked shirt, photographed head and shoulders against a softly blurred wall."
   },
   {
+    "id": "team-joost-van-der-heiden",
+    "file": "team-joost-van-der-heiden.jpg",
+    "source": "Unsplash",
+    "page": "https://unsplash.com/photos/happy-man-in-blue-jacket-smiling-outdoors-PIMt1Qn_km8",
+    "author": "Md Ishak Rahman",
+    "authorPage": "https://unsplash.com/@mdishakrahman",
+    "licence": "Unsplash License",
+    "licenceUrl": "https://unsplash.com/license",
+    "fetched": "2026-11-12",
+    "shows": "The smiling face of a man in his fifties, against a softly blurred wall.",
+    "changes": "Cut from portrait-joost-van-der-heiden.jpg to the cards' wide format, 16:9 at 1600 × 900 pixels, the full width of the portrait placed so that the whole face is in the frame."
+  },
+  {
     "id": "portrait-hannah-whitcombe",
     "file": "portrait-hannah-whitcombe.jpg",
     "source": "Unsplash",
@@ -444,6 +538,19 @@
     "shows": "A smiling woman in her thirties with long dark brown hair and a black top, photographed head and shoulders against a pale grey background."
   },
   {
+    "id": "team-hannah-whitcombe",
+    "file": "team-hannah-whitcombe.jpg",
+    "source": "Unsplash",
+    "page": "https://unsplash.com/photos/a-woman-with-long-brown-hair-and-blue-eyes-DAVi-fYTsXM",
+    "author": "Margaret Young",
+    "authorPage": "https://unsplash.com/@wildsoulmagsyogi",
+    "licence": "Unsplash License",
+    "licenceUrl": "https://unsplash.com/license",
+    "fetched": "2026-11-12",
+    "shows": "The smiling face of a woman in her thirties with long dark brown hair, against a pale grey background.",
+    "changes": "Cut from portrait-hannah-whitcombe.jpg to the cards' wide format, 16:9 at 1600 × 900 pixels, the full width of the portrait placed so that the whole face is in the frame."
+  },
+  {
     "id": "portrait-lena-bergqvist",
     "file": "portrait-lena-bergqvist.jpg",
     "source": "Unsplash",
@@ -454,6 +561,19 @@
     "licenceUrl": "https://unsplash.com/license",
     "fetched": "2026-11-12",
     "shows": "A young woman with long dark hair and a light cardigan, seated in front of a glass office wall."
+  },
+  {
+    "id": "team-lena-bergqvist",
+    "file": "team-lena-bergqvist.jpg",
+    "source": "Unsplash",
+    "page": "https://unsplash.com/photos/woman-smiling-and-sitting-PlikkWB79qs",
+    "author": "Christina @ wocintechchat.com M",
+    "authorPage": "https://unsplash.com/@wocintechchat",
+    "licence": "Unsplash License",
+    "licenceUrl": "https://unsplash.com/license",
+    "fetched": "2026-11-12",
+    "shows": "The face of a young woman with long dark hair, in front of a glass office wall.",
+    "changes": "Cut from portrait-lena-bergqvist.jpg to the cards' wide format, 16:9 at 1600 × 900 pixels, the full width of the portrait placed so that the whole face is in the frame."
   },
   {
     "id": "industry-logistics",
@@ -494,14 +614,14 @@
   {
     "id": "battery-storage",
     "file": "battery-storage.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/crane-lifting-a-large-shipping-container-against-the-sky-wCSCTTZqHbI",
-    "author": "Rook of Arts",
-    "authorPage": "https://unsplash.com/@rookofartsphotography",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/vast-solar-farm-under-blue-sky-in-rural-landscape-35425766/",
+    "author": "Giant Asparagus",
+    "authorPage": "https://www.pexels.com/@GiantAsparagus",
+    "licence": "Pexels License",
+    "licenceUrl": "https://www.pexels.com/license/",
     "fetched": "2026-11-12",
-    "shows": "A crane lifts a dark green containerised power unit with ventilation grilles and warning signs against a blue sky with clouds."
+    "shows": "Rows of grey steel equipment cabinets with warning labels stand among ground-mounted solar panels in a dry meadow, in hazy daylight."
   },
   {
     "id": "article-roof-ballast",
@@ -525,7 +645,8 @@
     "licence": "Unsplash License",
     "licenceUrl": "https://unsplash.com/license",
     "fetched": "2026-11-12",
-    "shows": "Three white electric lorries with canvas bodies stand side by side at the loading bays of a distribution centre in low evening sun."
+    "shows": "Three white electric lorries with canvas bodies stand side by side at the loading bays of a distribution centre in low evening sun.",
+    "changes": "The maker's logos and the number plates on the trucks, and signs on the building, blurred."
   },
   {
     "id": "article-company-news",
@@ -549,19 +670,21 @@
     "licence": "Unsplash License",
     "licenceUrl": "https://unsplash.com/license",
     "fetched": "2026-11-12",
-    "shows": "An electric lorry, its battery pack visible under the chassis, stands beside a fast charger with two cables in a depot yard."
+    "shows": "An electric lorry, its battery pack visible under the chassis, stands beside a fast charger with two cables in a depot yard.",
+    "changes": "Cropped to remove the truck maker's lettering; the operator's name on the charger blurred."
   },
   {
     "id": "case-norrvik-inverters",
     "file": "case-norrvik-inverters.jpg",
-    "source": "Unsplash",
-    "page": "https://unsplash.com/photos/a-solar-panel-attached-to-a-pole-in-the-snow-5ckHScrqmXc",
-    "author": "Virtue Solar",
-    "authorPage": "https://unsplash.com/@virtuesolar",
-    "licence": "Unsplash License",
-    "licenceUrl": "https://unsplash.com/license",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/outdoor-electrical-installation-with-utility-boxes-37685875/",
+    "author": "panumas nikhomkhai",
+    "authorPage": "https://www.pexels.com/@cookiecutter",
+    "licence": "Pexels License",
+    "licenceUrl": "https://www.pexels.com/license/",
     "fetched": "2026-11-12",
-    "shows": "Two grey solar inverters and a switch box mounted on a steel frame beneath a row of solar panels, on snowy ground."
+    "shows": "A wall-mounted inverter and three grey electrical cabinets with cable conduits on the outside wall of a building.",
+    "changes": "Cropped to remove a sign at the left edge; the maker's logo on a cabinet blurred."
   },
   {
     "id": "case-norrvik-team",
@@ -573,7 +696,7 @@
     "licence": "Pexels License",
     "licenceUrl": "https://www.pexels.com/license/",
     "fetched": "2026-11-12",
-    "shows": "Four installers in orange and yellow workwear and hard hats carry and fit solar panels on a large industrial roof."
+    "shows": "Four installers in orange and yellow workwear, two of them in hard hats, carry and fit solar panels on a corrugated industrial roof."
   },
   {
     "id": "case-westerport",
@@ -585,7 +708,8 @@
     "licence": "Pexels License",
     "licenceUrl": "https://www.pexels.com/license/",
     "fetched": "2026-11-12",
-    "shows": "Green parking bays marked 'Electric vehicle only' in front of a charging post, with trees and a building behind."
+    "shows": "Green parking bays marked 'Electric vehicle only' in front of a charging post, with trees and a building behind.",
+    "changes": "The maker's name on the charging post blurred."
   },
   {
     "id": "icon-solar",
@@ -634,5 +758,32 @@
     "licenceUrl": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
     "fetched": "2026-11-12",
     "shows": "A one-colour line symbol of a line chart, drawn in the design's accent. From lucide-static 1.70.0, with its stroke coloured and thinned to 1.75."
+  },
+  {
+    "id": "badge-iso-9001",
+    "file": "badge-iso-9001.svg",
+    "source": "Own drawing",
+    "author": "An AI agent in the design phase, for this demo",
+    "licence": "Made for this project; no rights of others",
+    "made": "2026-11-12",
+    "shows": "A plain round badge in the brand's green, light green in dark mode, that reads \"ISO 9001\" inside a double ring; no certification body's mark. Drawn by hand as SVG text and circles, from no other picture."
+  },
+  {
+    "id": "badge-iso-14001",
+    "file": "badge-iso-14001.svg",
+    "source": "Own drawing",
+    "author": "An AI agent in the design phase, for this demo",
+    "licence": "Made for this project; no rights of others",
+    "made": "2026-11-12",
+    "shows": "A plain round badge in the brand's green, light green in dark mode, that reads \"ISO 14001\" inside a double ring; no certification body's mark. Drawn by hand as SVG text and circles, from no other picture."
+  },
+  {
+    "id": "badge-iso-45001",
+    "file": "badge-iso-45001.svg",
+    "source": "Own drawing",
+    "author": "An AI agent in the design phase, for this demo",
+    "licence": "Made for this project; no rights of others",
+    "made": "2026-11-12",
+    "shows": "A plain round badge in the brand's green, light green in dark mode, that reads \"ISO 45001\" inside a double ring; no certification body's mark. Drawn by hand as SVG text and circles, from no other picture."
   }
 ]

@@ -2,7 +2,7 @@
 title: "Does solar pay in a northern winter?"
 date: 2026-11-04T07:00:00Z
 modified: 2026-11-04T07:00:00Z
-image: {"src":"image:article-winter-solar","alt":"A long row of solar panels on a snow-covered flat roof under a clear winter sky"}
+image: {"src":"image:article-winter-solar","alt":"An aerial view of snow-covered new buildings whose flat roofs carry rows of solar panels, in low winter light"}
 eyebrow: "The dark months"
 headline: "Does solar pay in a northern winter?"
 subheadline: "Why December hardly counts, and what does"

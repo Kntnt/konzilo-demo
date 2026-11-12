@@ -57,8 +57,8 @@ Norrvik bought the systems outright. We run them under a service agreement from 
 Jönköping's roof carries 3.2 MWp, the largest of the six systems.
 ![An electric lorry beside a fast charger with two cables in a depot yard](image:case-norrvik-charging)\
 Trucks charge at up to 150 kW, vans overnight at 11 kW.
-![Two grey solar inverters and a switch box on a steel frame under a row of solar panels](image:case-norrvik-inverters)\
-String inverters turn the panels' direct current into the alternating current the centres use.
+![An inverter and three grey electrical cabinets with cable conduits on the outside wall of a building](image:case-norrvik-inverters)\
+An inverter on a wall beside three cabinets. The string inverters turn the panels' direct current into the alternating current the centres use.
 Norrvik Logistics, six centres in fifteen months
 
 ## Building around centres that never close
@@ -70,8 +70,8 @@ A distribution centre has no quiet season, and Norrvik's six never close. We pla
 - Cable trenches for the chargers were dug in sections, each closed for at most three nights and covered with steel plates by day.
 - Each centre was connected to its new supply in one planned stop of under four hours, early on a Sunday morning.
 
-![Four installers in hard hats carry and fit solar panels on a large industrial roof](image:case-norrvik-team)\
-Material went up by crane on Sunday mornings, when the yards are quietest.
+![Four installers in orange and yellow workwear on a corrugated industrial roof, two of them carrying a solar panel to a row of panels](image:case-norrvik-team)\
+Installers carry a panel to its place in the row.
 
 The survey found one surprise. At Borås, the older half of the roof had been re-roofed in 2012 with thicker insulation, and the extra weight had used up most of its margin. We moved those panels to the extension built in 2016. It cost a week of design and nothing on site.
 

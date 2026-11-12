@@ -28,7 +28,7 @@ We hire engineers, installers, technicians and analysts in Gothenburg, Malmö, R
 
 ::::section
 
-![A technician in orange workwear and a helmet working at the top of a pole among overhead lines](image:careers-field)
+![A technician in an orange high-visibility jacket working in an open electrical cabinet](image:careers-field)
 
 ## Why people stay
 

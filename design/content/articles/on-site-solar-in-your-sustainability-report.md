@@ -2,7 +2,7 @@
 title: "On-site solar in your sustainability report"
 date: 2026-06-16T07:00:00Z
 modified: 2026-06-16T07:00:00Z
-image: {"src":"image:article-reporting","alt":"Printed bar and pie charts on a desk beside a red ring binder"}
+image: {"src":"image:article-reporting","alt":"Printed charts and graphs on a white desk beside a laptop, an open book and a mug"}
 eyebrow: "Scope 2 in practice"
 headline: "How on-site solar enters your sustainability report"
 subheadline: "Two ways of counting, two meters, and the claims that will not survive an audit"
