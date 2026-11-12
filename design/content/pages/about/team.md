@@ -104,6 +104,8 @@ Follows electricity prices, grid tariffs and balancing markets, and turns them i
 
 :::
 
+::small[Ampfield Energy is a fictional company. The people on this page are invented, and their portraits are made by an image model.]
+
 ::::
 
 ::::section{surface="tint"}

@@ -2,7 +2,7 @@
 
 The pictures the pages need. A picture's file is `<id>.jpg` in this folder, and `credits.json` records where it came from. The text refers to a picture by its id.
 
-The look: natural light, calm and matter-of-fact, as a company's own photographer would take them on a working day. Cool and neutral tones that sit well beside deep green and amber. No heavy filters, no staged stock scenes, no visible brands, logos or number plates of others, and no recognisable faces outside the portraits.
+The look: natural light, calm and matter-of-fact, as a company's own photographer would take them on a working day. Cool and neutral tones that sit well beside deep green and amber. No heavy filters, no staged stock scenes, no visible brands, logos or number plates of others, and no real person's recognisable face: where a face can be recognised, the picture is made by an image model from the chosen photograph, with an invented person's face, and `credits.json` says so.
 
 ## Places and work, landscape
 
@@ -61,7 +61,7 @@ The look: natural light, calm and matter-of-fact, as a company's own photographe
 
 ## Portraits
 
-Nine people, head and shoulders, plain or softly blurred background, similar framing and light, professional but natural. Each can be cropped to a square. They stand for invented people, so nothing in a picture may tie it to a real employer.
+Nine people, head and shoulders, plain or softly blurred background, similar framing and light, professional but natural. Each can be cropped to a square. They stand for invented people, so each is generated with an invented face, and nothing in a picture may tie it to a real employer. Each has a wide picture for the team page's cards, `team-<slug>`, 16:9 at 1600 × 900, showing the same person with the whole head in the frame.
 
 | Id | Stands for |
 |---|---|

@@ -22,7 +22,7 @@ We hire engineers, installers, technicians and analysts in Gothenburg, Malmö, R
 
 :::
 
-![Two colleagues leaning over a table, pointing at printed drawings](image:careers)
+![Two colleagues leaning over a table, going through a printed site drawing](image:careers)
 
 ::::
 
