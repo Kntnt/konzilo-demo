@@ -175,17 +175,20 @@ shots/                    screenshots: <name>-<width>[-dark][-menu|-search|-scro
 
 ## The design canvas in Claude
 
-`scripts/to-canvas.mjs` carries the designed pages onto the design canvas "Ampfield Energy website" in Claude: a page of live artboards, each a built page's own markup with its stylesheet, and a page of the same pages as screenshots. `scripts/to-canvas.json` records the canvas's address and every upload. Build and shoot the pages first, and work in a folder outside the repository:
+`scripts/to-canvas.mjs` carries the designed pages onto the design canvas "Ampfield Energy website" in Claude: a page of live artboards, each a built page's own markup with its stylesheet, and a page of the same pages as screenshots. `scripts/to-canvas.json` records the canvas's address, the design system it holds and every upload. Build every page and shoot the shots the boards name (`ROWS` in the script, the header's three states included: `--state menu`, `search` and `scrolled`), and work in a folder outside the repository:
 
 ```sh
 node scripts/to-canvas.mjs --out <folder>                          # lists the files to upload, or writes <folder>/project/
 node scripts/to-canvas.mjs record --out <folder> <file> <url> …    # records each upload's /_blob/ address
 node scripts/to-canvas.mjs check --out <folder>                    # the artboard format's rules; the conversion runs it too
-node scripts/to-canvas.mjs preview --out <folder> [<board> …]      # each artboard rendered locally, compared with shots/
+node scripts/to-canvas.mjs preview --out <folder> --ds <ds> [<board> …]  # each artboard drawn locally, compared with shots/
+node scripts/to-canvas.mjs unused --out <folder> <url> …           # of the canvas's uploads, those no artboard names
+node scripts/to-canvas.mjs forget --out <folder> <url> …           # takes removed uploads out of the record
 ```
 
 - Upload the listed files to the canvas with the Artifact tool (`publish` with `asset: true`, up to 25 a call), and record what each upload returns. The record keeps a hash of each file, so a later run asks only for files that changed.
-- When nothing is left to upload, the run writes the canvas's files. Publish them from `<folder>` as the root: `project/canvas.json` with `project/Main.dc.html` first, then the rest. To revise a canvas others have worked on, read its `project/canvas.json` first and pass it with `--index <file>`, so that what they added is kept.
+- When nothing is left to upload, the run writes the canvas's files. Before publishing, read the canvas's `project/canvas.json` and run again with `--index <file>`, so that what others added is kept. Publish from `<folder>` as the root, in one call: `project/canvas.json`, the artboards that changed, and the design system's `files` entries the run prints. The canvas refuses to replace the system's copied files until this session has seen them: list the canvas's files (`scope: "files"`) first.
+- The design system "Ampfield Energy" is `designSystem` in the record: its address, the version copied, and the files the canvas holds under `project/ds/ampfield/`. With `use` true, as now, the artboards load its `components/bundle.css`, which brings the fonts, and `canvas-patch.css`; `styles/kn.css` and the font files are then neither uploaded nor linked. For a new version of the system, set `version` and `copiedAt` and publish its files again. `preview` needs the system's files read into a folder with the Artifact tool, named by `--ds`; `--with ds` draws artboards that load `kn.css` with the system's stylesheet instead, to compare the two.
+- To take away uploads nothing uses any more, list the canvas's assets (`scope: "assets"`), give their addresses to `unused`, delete those it names, and `forget` them.
 - `--dry` makes up the addresses, to try a change with `preview` before uploading anything. Never publish a dry run.
-- The design system "Ampfield Energy" is `designSystem` in the record. The conversion writes its record into the index and prints the `files` entries that copy its files to `project/ds/ampfield/`; send them in the same publish call as the index. With `use` true the artboards load its `components/bundle.css`, and its fonts through it, in place of `styles/kn.css` and the fonts in each artboard's helmet; `canvas-patch.css` stays. To preview such artboards, read the system's files into a folder with the Artifact tool and name it with `--ds <folder>`; `--with ds` draws artboards that load `kn.css` with the system's stylesheet instead, to see whether the two render alike.
-- The boards and rows are `ROWS` in the script. What an artboard needs beyond its page, a frame as tall as the page and a menu or search box open without a modal dialog, is told above `patchCss()`.
+- What an artboard needs beyond its page is told above `patchCss()` and in `liveBoard()`: a frame as tall as the page, the menu or search box shown open without a modal dialog, and the header over the content as a scroll leaves it, the page drawn as far up as the shot scrolled it.

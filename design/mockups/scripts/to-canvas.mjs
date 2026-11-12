@@ -9,8 +9,11 @@
 //                                                                records uploads: a file as the list named it, and
 //                                                                the /_blob/ address its upload returned
 //   node scripts/to-canvas.mjs check --out <folder>              checks the canvas files against the artboard format
+//   node scripts/to-canvas.mjs unused --out <folder> <url> …     of the canvas's uploads (its asset listing), those that
+//                                                                no artboard in <folder>/project/ names, to remove
+//   node scripts/to-canvas.mjs forget --out <folder> <url> …     takes removed uploads out of the record
 //   node scripts/to-canvas.mjs preview --out <folder> [<board> …] local check pages of artboards, screenshotted and
-//                                                                compared with shots/ (default: four boards)
+//                                                                compared with shots/ (default: six boards)
 //   --index <file>   the canvas's project/canvas.json as read from the canvas: entries and keys the script does not
 //                    own are kept (a revision of a canvas others have worked on)
 //   --ds <folder>    preview: where the design system's files were read to (the folder holding its project/)
@@ -49,7 +52,8 @@ const NOTE = 'The design of the Ampfield Energy demo site, drawn with the compon
   + 'Comments left on an artboard reach the people working on it.';
 
 // The rows, as a person reads the site. A board is a built page at a width, with the header's menu or search box
-// open where `state` says so; `name` is the page's name.
+// open, or the page scrolled down and a little back up so that the header stands over the content, where `state`
+// says so; `name` is the page's name.
 const ROWS = [
   { id: 'home', title: 'Home and the header', boards: [
     { page: 'home', width: 1440, name: 'Home' },
@@ -58,6 +62,8 @@ const ROWS = [
     { page: 'home', width: 390, state: 'menu', name: 'Header, menu open' },
     { page: 'home', width: 1440, state: 'search', name: 'Header, search open' },
     { page: 'home', width: 390, state: 'search', name: 'Header, search open' },
+    { page: 'home', width: 1440, state: 'scrolled', name: 'Header over content' },
+    { page: 'home', width: 390, state: 'scrolled', name: 'Header over content' },
   ] },
   { id: 'solutions', title: 'Solutions and industries', boards: [
     { page: 'solutions', width: 1440, name: 'Solutions' },
@@ -103,7 +109,7 @@ const indexArg = option('--index');
 const dsArg = option('--ds');
 const withArg = option('--with');
 const dry = args.includes('--dry') && args.splice(args.indexOf('--dry'), 1);
-const command = ['record', 'check', 'preview'].includes(args[0]) ? args.shift() : 'convert';
+const command = ['record', 'check', 'preview', 'unused', 'forget'].includes(args[0]) ? args.shift() : 'convert';
 if (!outArg) { console.error('Name the folder to work in, outside the repository: --out <folder>'); process.exit(2); }
 const OUT = resolve(outArg);
 const UPLOAD = join(OUT, 'upload');
@@ -179,7 +185,10 @@ function serialize({ state }) {
     modal = document.querySelector('.kn-header .kn-header-search-overlay');
     focus = modal?.querySelector('input[type=search]');
   }
-  if (state && !modal) problems.push(`the header has no ${state} panel`);
+  if ((state === 'menu' || state === 'search') && !modal) problems.push(`the header has no ${state} panel`);
+  let moving = false;
+  // What a page's head adds to the design's stylesheet, as a page file may (none of the boards' pages does now).
+  const css = [...document.head.querySelectorAll('style')].map((style) => style.textContent).filter((text) => !text.includes('@layer kn-core'));
 
   const out = [];
   const walk = (node, raw, parent) => {
@@ -196,6 +205,7 @@ function serialize({ state }) {
       return;
     }
     if (node.nodeType !== Node.ELEMENT_NODE) return;
+    if (node === modal && !moving) return;
     const tag = node.localName;
     if (DROP.has(tag.toLowerCase())) return;
     const attrs = [];
@@ -225,9 +235,12 @@ function serialize({ state }) {
     if (RAW.has(tag) && node.firstChild?.nodeType === Node.TEXT_NODE && node.firstChild.nodeValue.startsWith('\n')) out.push('\n');
     for (const child of node.childNodes) walk(child, inRaw, tag);
     out.push(`</${tag}>`);
+    // The open dialog stands after the header bar, in the header: in the bar, whose backdrop filter holds what is
+    // fixed in it, its veil and blur would cover the bar alone; the top layer frees a modal dialog of that.
+    if (modal && node === modal.closest('.kn-header-bar')) { moving = true; walk(modal, raw, 'header'); moving = false; }
   };
   for (const child of document.body.childNodes) walk(child, false, 'body');
-  return { html: out.join('').trim(), refs: [...refs], pictures, problems, step: header?.dataset.knStep ?? null };
+  return { html: out.join('').trim(), refs: [...refs], pictures, problems, css, step: header?.dataset.knStep ?? null };
 }
 
 async function convertPages(browser) {
@@ -302,6 +315,7 @@ function cleanSvg(source, name) {
 //   cannot open one or focus the other, so each rule for :modal and :focus-visible is repeated for the attributes
 //   an artboard of an open menu or search box carries (data-ab-modal, data-ab-focus), and the last rules
 //   give such a dialog what the top layer gives it: its place below the header bar, above the page, and a backdrop.
+//   serialize() writes the open dialog after the header bar, out of the bar's backdrop filter.
 
 function parseCss(css) {
   let i = 0;
@@ -410,7 +424,12 @@ function liveBoard(b, urls) {
   const body = html.replace(/@@asset:([^@]+)@@/g, (_, ref) => urls.asset(ref));
   const rules = pictures.map((style, n) => `[data-ab-picture="${n}"]{${style.replace(/url\((['"]?)([^'")]+)\1\)/g, (_, q, ref) => `url('${urls.asset(ref)}')`)}}`);
   const vh = WINDOW[b.width] / 100;
-  const panelTop = b.state ? `--ab-panel-top:${b.panelTop}px;` : '';
+  const panelTop = b.panelTop !== undefined ? `--ab-panel-top:${b.panelTop}px;` : '';
+  // The page scrolled as the shot scrolled it, still: the page drawn that far up, so that the sticky header stands
+  // over what was under it, and the header in the state a scroll gives it (scrolled, past and beyond its height).
+  const scrolled = b.scrollY !== undefined
+    ? [`:root{--kn-header-scrolled:1!important;--kn-header-past:1!important;--kn-header-beyond:1!important}`, `.kn-page{margin-block-start:-${b.scrollY}px}`]
+    : [];
   return `<!doctype html>
 <html lang="en-GB">
 <head>
@@ -426,7 +445,7 @@ ${urls.styles.map((href) => `<link rel="stylesheet" href="${href}">`).join('\n')
 ${urls.fontFaces.map((rule) => `${rule}\n`).join('')}:root{--ab-vh:${vh}px;${panelTop}}
 html{scrollbar-width:none}
 body{margin:0}
-${rules.join('\n')}
+${[...scrolled, ...rules, ...b.markup.css.map((css) => css.trim())].join('\n')}
 </style>
 </helmet>
 ${body}
@@ -717,6 +736,25 @@ async function main() {
     await saveRecord();
     return;
   }
+  if (command === 'unused' || command === 'forget') {
+    const urls = args.map((arg) => (arg.startsWith('/_blob/') ? arg : `/_blob/${arg}`));
+    if (command === 'forget') {
+      for (const [key, { url }] of Object.entries(record.uploads)) if (urls.includes(url)) { delete record.uploads[key]; console.log(`forgot ${key} = ${url}`); }
+      await saveRecord();
+      return;
+    }
+    // What the canvas's files name: every artboard, and each uploaded stylesheet an artboard loads.
+    const named = new Set();
+    for (const file of (await readdir(PROJECT)).filter((f) => f.endsWith('.dc.html'))) {
+      for (const m of (await readFile(join(PROJECT, file), 'utf8')).matchAll(/\/_blob\/[\w-]+/g)) named.add(m[0]);
+    }
+    for (const [key, { url }] of Object.entries(record.uploads)) {
+      if (named.has(url) && key.endsWith('.css')) for (const m of (await readFile(join(UPLOAD, key), 'utf8')).matchAll(/\/_blob\/[\w-]+/g)) named.add(m[0]);
+    }
+    const keyOf = Object.fromEntries(Object.entries(record.uploads).map(([key, { url }]) => [url, key]));
+    for (const url of urls) if (!named.has(url)) console.log(`${url}${keyOf[url] ? `  ${keyOf[url]}` : ''}`);
+    return;
+  }
   await measure();
   if (command === 'check') {
     const problems = await check();
@@ -731,7 +769,7 @@ async function main() {
   try {
     await convertPages(browser);
     // Where an open panel sits: below the header bar, as the top layer places it.
-    for (const b of boards.filter((x) => x.state)) {
+    for (const b of boards.filter((x) => x.state === 'menu' || x.state === 'search')) {
       const tab = await browser.newPage({ viewport: { width: b.width, height: WINDOW[b.width] }, deviceScaleFactor: 1, reducedMotion: 'reduce' });
       await tab.goto(pathToFileURL(join(DIST, `${b.page}.html`)).href, { waitUntil: 'load' });
       b.panelTop = await tab.evaluate((which) => {
@@ -739,6 +777,19 @@ async function main() {
         dialog.showModal();
         return Math.round(dialog.getBoundingClientRect().top * 100) / 100;
       }, b.state);
+      await tab.close();
+    }
+    // How far the page is scrolled where the header stands over the content, scrolled as shoot.mjs scrolls it.
+    for (const b of boards.filter((x) => x.state === 'scrolled')) {
+      const tab = await browser.newPage({ viewport: { width: b.width, height: WINDOW[b.width] }, deviceScaleFactor: 1, reducedMotion: 'reduce' });
+      await tab.goto(pathToFileURL(join(DIST, `${b.page}.html`)).href, { waitUntil: 'load' });
+      await tab.evaluate(() => document.fonts.ready);
+      await tab.mouse.move(b.width / 2, 400);
+      for (let step = 0; step < 6; step++) { await tab.mouse.wheel(0, 250); await tab.waitForTimeout(80); }
+      await tab.waitForTimeout(200);
+      await tab.mouse.wheel(0, -120);
+      await tab.waitForTimeout(300);
+      b.scrollY = await tab.evaluate(() => Math.round(scrollY));
       await tab.close();
     }
   } finally {
@@ -784,14 +835,16 @@ async function main() {
 
   const pending = [];
   const urlOf = async (key) => { const url = await uploaded(key); if (!url) pending.push(key); return url; };
+  // With the design system in use, its stylesheet brings the fonts: kn.css and the font files are not uploaded.
+  const ownStyles = !record.designSystem?.use;
   const fontUrls = new Map();
-  for (const [source, key] of fonts) fontUrls.set(source, await urlOf(key));
+  if (ownStyles) for (const [source, key] of fonts) fontUrls.set(source, await urlOf(key));
   const assetUrls = new Map();
   for (const p of pictures.values()) assetUrls.set(p.key, await urlOf(p.key));
   const shotUrls = new Map();
   for (const b of boards) shotUrls.set(b, await urlOf(`shots/${shotName(b)}.webp`));
   const patchUrl = await urlOf('styles/canvas-patch.css');
-  const cssUrl = await urlOf('styles/kn.css');
+  const cssUrl = ownStyles ? await urlOf('styles/kn.css') : null;
 
   if (pending.length) {
     console.log(`Upload these to ${record.canvas ?? 'the canvas'} (publish with asset: true, up to 25 a call), then record each: node scripts/to-canvas.mjs record --out ${outArg} <file> <url> …`);
