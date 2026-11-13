@@ -1,6 +1,6 @@
-read when planning the build phase, or deciding where a piece of it belongs
+read when asking why the build was made as it was
 
-What the design phase learned that the build phase stands on. It is the knowledge of 2026-11-12: Konzilo at 0.4.0 and one fix, Konzilo Design at 0.6.1. Check a fact here against the code before a plan depends on it.
+What the design phase learned that the build phase stood on. It is the knowledge of 2026-11-12: Konzilo at 0.4.0 and one fix, Konzilo Design at 0.6.1. The build phase ended on 2026-11-13, with Konzilo 0.5.0, Konzilo Design 0.11.0 and the image 1.0.0, and put right most of what is listed here; this file is the record of where it began and is not kept up to date. `docs/agents/status.md` and `design/gaps.md` say what holds now.
 
 ## The end result, as settled
 

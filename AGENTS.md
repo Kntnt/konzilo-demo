@@ -21,7 +21,8 @@ Precedence over any conflicting skill, README, or other doc unless the user over
 
 - `docs/agents/status.md` — read first when starting or resuming work
 - `docs/agents/orchestration.md` — read when planning work, briefing a subagent, or judging what one delivered
-- `docs/agents/build-phase.md` — read when planning the build phase, or deciding where a piece of it belongs
+- `docs/agents/releasing.md` — read when taking up a release of Konzilo or Konzilo Design, or building and publishing the image
+- `docs/agents/build-phase.md` — read when asking why the build was made as it was
 - `design/README.md` — read when a page, a text, a picture or the design file is touched
 - `design/feedback.md` — read before changing anything Thomas has given feedback on
 - `design/gaps.md` — read when a page wants what the design system or the core cannot give, or when choosing what to put right in them
