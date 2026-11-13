@@ -65,7 +65,7 @@ When the build phase's plan was put to him.
 - **Konzilo's site template** stays plain. Konzilo Design may later gain its own way to turn a new site into a designed one.
 - **Consent records and reports of breaches of the security policy** (Konzilo's ADR 0044) are built after the demo, as a spec of their own.
 - **A section's head** always stands at the start edge, never centred. **An opening without a picture** keeps its height, two thirds of the window's.
-- **The demo shows Konzilo and Konzilo Design where they are.** When a release gives what a page wanted, the page takes it up, also where the approved design drew something else. So a table fills its column, as Konzilo Design means it to, and Home's comparison, the industries' customer quotation and the case studies' filter by solution take up what the two now offer, in a version after 1.0.0.
+- **The demo shows Konzilo and Konzilo Design where they are.** When a release gives what a page wanted, the page takes it up, also where the approved design drew something else. So a table fills its column, as Konzilo Design means it to, and the case studies are filtered by solution, in a version after 1.0.0. Home's comparison stays a table, which he preferred when he saw it beside two cards, and the industries' customer quotation keeps its own band until it can stand beside the teaser.
 - **The mockups** (`design/mockups/`) are removed from the repository. The built site is the reference for the design, and Git's history keeps what he approved.
 - **The canvas and the design system in Claude** are left as they are. They are no part of the project.
 - **Zlib and WTFPL** are allowed among Konzilo's licenses: `pako` and `truncate-utf8-bytes`, within the editor's own bundle.

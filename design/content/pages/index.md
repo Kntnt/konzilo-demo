@@ -147,53 +147,20 @@ Twelve years of work by 140 people in four countries. Figures as of November 202
 
 ::::
 
-:::::section
+::::section
 
 ## Two ways to pay
 
 The system is the same either way. What differs is who owns it, and who carries the cost and the risk.
 
-::::cards
-
-### Buy the system
-
-:::list{type="description"}
-
-- Paid up front
-  - The system's price, when it is built
-- Who owns it
-  - You, from the first day
-- What its power costs
-  - Nothing: every kilowatt-hour is yours
-- Pays for itself
-  - In six to nine years, where most of the power is used on site
-- Service and repairs
-  - From us under a separate agreement, if you want it
-- In the long run
-  - Panels that keep 87% of their output after 30 years
-
-:::
-
-### Buy the power
-
-:::list{type="description"}
-
-- Paid up front
-  - Nothing
-- Who owns it
-  - We do: we build, own, insure and run it
-- What its power costs
-  - A price per kilowatt-hour fixed for 10 to 20 years, below what the grid charges today
-- Pays for itself
-  - From the first month
-- Service and repairs
-  - Included, with insurance
-- In the long run
-  - When the term ends: extend it, buy the system, or have it removed
-
-:::
-
-::::
+|  | Buy the system | Buy the power |
+| --- | --- | --- |
+| **Paid up front** | The system's price, when it is built | Nothing |
+| **Who owns it** | You, from the first day | We do: we build, own, insure and run it |
+| **What its power costs** | Nothing: every kilowatt-hour is yours | A price per kilowatt-hour fixed for 10 to 20 years, below what the grid charges today |
+| **Pays for itself** | In six to nine years, where most of the power is used on site | From the first month |
+| **Service and repairs** | From us under a separate agreement, if you want it | Included, with insurance |
+| **In the long run** | Panels that keep 87% of their output after 30 years | When the term ends: extend it, buy the system, or have it removed |
 
 :::list{type="actions"}
 
@@ -201,7 +168,7 @@ The system is the same either way. What differs is who owns it, and who carries 
 
 :::
 
-:::::
+::::
 
 ::::section{surface="raised"}
 
