@@ -57,7 +57,7 @@ colors:
   page-button-background-hover: "#004538"
   page-info: "#0761c2"
   page-success: "#007432"
-  page-warning: "#895a00"
+  page-warning: "#776100"
   page-error: "#c53030"
   raised-background: "#f1f1f1"
   raised-background-alt: "#ffffff"
@@ -74,7 +74,7 @@ colors:
   raised-button-background-hover: "#004538"
   raised-info: "#0761c2"
   raised-success: "#007432"
-  raised-warning: "#895a00"
+  raised-warning: "#776100"
   raised-error: "#c53030"
   tint-background: "#dcf6ee"
   tint-background-alt: "#ffffff"
@@ -91,7 +91,7 @@ colors:
   tint-button-background-hover: "#004538"
   tint-info: "#0761c2"
   tint-success: "#007432"
-  tint-warning: "#895a00"
+  tint-warning: "#776100"
   tint-error: "#c53030"
   brand-background: "#004538"
   brand-background-alt: "#002720"
@@ -108,7 +108,7 @@ colors:
   brand-button-background-hover: "#dcf6ee"
   brand-info: "#88baff"
   brand-success: "#6ccb82"
-  brand-warning: "#ecab4d"
+  brand-warning: "#d3b64c"
   brand-error: "#ff9d93"
   inverse-background: "#131313"
   inverse-background-alt: "#222222"
@@ -125,7 +125,7 @@ colors:
   inverse-button-background-hover: "#dcf6ee"
   inverse-info: "#88baff"
   inverse-success: "#6ccb82"
-  inverse-warning: "#ecab4d"
+  inverse-warning: "#d3b64c"
   inverse-error: "#ff9d93"
   accent-background: "#0f5c4d"
   accent-background-alt: "#004538"
@@ -142,7 +142,7 @@ colors:
   accent-button-background-hover: "#dcf6ee"
   accent-info: "#c3dcff"
   accent-success: "#b0e4b9"
-  accent-warning: "#fcd4a0"
+  accent-warning: "#ecda9d"
   accent-error: "#ffcec9"
   picture-light-background: "#ffffff"
   picture-light-background-alt: "#ffffff"
@@ -159,7 +159,7 @@ colors:
   picture-light-button-background-hover: "#004538"
   picture-light-info: "#0d223e"
   picture-light-success: "#05280f"
-  picture-light-warning: "#311e00"
+  picture-light-warning: "#2a2100"
   picture-light-error: "#3d1715"
   picture-light-scrim: "rgb(255 255 255 / 0.63)"
   picture-dark-background: "#000000"
@@ -177,7 +177,7 @@ colors:
   picture-dark-button-background-hover: "#dcf6ee"
   picture-dark-info: "#eaf3ff"
   picture-dark-success: "#d8f9de"
-  picture-dark-warning: "#fff0dc"
+  picture-dark-warning: "#fdf2cc"
   picture-dark-error: "#ffefec"
   picture-dark-scrim: "rgb(0 0 0 / 0.57)"
   status-info-background: "#eaf3ff"
@@ -195,7 +195,7 @@ colors:
   status-info-button-background-hover: "#004538"
   status-info-info: "#0761c2"
   status-info-success: "#007432"
-  status-info-warning: "#895a00"
+  status-info-warning: "#776100"
   status-info-error: "#c53030"
   status-success-background: "#d8f9de"
   status-success-background-alt: "#ffffff"
@@ -212,24 +212,24 @@ colors:
   status-success-button-background-hover: "#004538"
   status-success-info: "#0761c2"
   status-success-success: "#007432"
-  status-success-warning: "#895a00"
+  status-success-warning: "#776100"
   status-success-error: "#c53030"
-  status-warning-background: "#fff0dc"
+  status-warning-background: "#fdf2cc"
   status-warning-background-alt: "#ffffff"
-  status-warning-background-hover: "#fcd4a0"
+  status-warning-background-hover: "#ecda9d"
   status-warning-text: "#222222"
   status-warning-text-muted: "#636363"
-  status-warning-border: "#fcd4a0"
-  status-warning-border-strong: "#9d6800"
+  status-warning-border: "#ecda9d"
+  status-warning-border-strong: "#887000"
   status-warning-link: "#004538"
-  status-warning-accent: "#895a00"
+  status-warning-accent: "#776100"
   status-warning-focus: "#895900"
   status-warning-button-background: "#0f5c4d"
   status-warning-button-text: "#ffffff"
   status-warning-button-background-hover: "#004538"
   status-warning-info: "#0761c2"
   status-warning-success: "#007432"
-  status-warning-warning: "#895a00"
+  status-warning-warning: "#776100"
   status-warning-error: "#c53030"
   status-error-background: "#ffefec"
   status-error-background-alt: "#ffffff"
@@ -246,7 +246,7 @@ colors:
   status-error-button-background-hover: "#004538"
   status-error-info: "#0761c2"
   status-error-success: "#007432"
-  status-error-warning: "#895a00"
+  status-error-warning: "#776100"
   status-error-error: "#c53030"
   tint-secondary-background: "#fff0dd"
   tint-secondary-background-alt: "#ffffff"
@@ -263,7 +263,7 @@ colors:
   tint-secondary-button-background-hover: "#004538"
   tint-secondary-info: "#0761c2"
   tint-secondary-success: "#007432"
-  tint-secondary-warning: "#895a00"
+  tint-secondary-warning: "#776100"
   tint-secondary-error: "#c53030"
   dark-page-background: "#0d0d0d"
   dark-page-background-alt: "#2e2e2e"
@@ -280,7 +280,7 @@ colors:
   dark-page-button-background-hover: "#dcf6ee"
   dark-page-info: "#88baff"
   dark-page-success: "#6ccb82"
-  dark-page-warning: "#ecab4d"
+  dark-page-warning: "#d3b64c"
   dark-page-error: "#ff9d93"
   dark-raised-background: "#2e2e2e"
   dark-raised-background-alt: "#0d0d0d"
@@ -297,7 +297,7 @@ colors:
   dark-raised-button-background-hover: "#dcf6ee"
   dark-raised-info: "#88baff"
   dark-raised-success: "#6ccb82"
-  dark-raised-warning: "#ecab4d"
+  dark-raised-warning: "#d3b64c"
   dark-raised-error: "#ff9d93"
   dark-tint-background: "#00362b"
   dark-tint-background-alt: "#000f0b"
@@ -314,7 +314,7 @@ colors:
   dark-tint-button-background-hover: "#dcf6ee"
   dark-tint-info: "#88baff"
   dark-tint-success: "#6ccb82"
-  dark-tint-warning: "#ecab4d"
+  dark-tint-warning: "#d3b64c"
   dark-tint-error: "#ff9d93"
   dark-brand-background: "#004538"
   dark-brand-background-alt: "#00362b"
@@ -331,7 +331,7 @@ colors:
   dark-brand-button-background-hover: "#dcf6ee"
   dark-brand-info: "#88baff"
   dark-brand-success: "#6ccb82"
-  dark-brand-warning: "#ecab4d"
+  dark-brand-warning: "#d3b64c"
   dark-brand-error: "#ff9d93"
   dark-inverse-background: "#3d3d3d"
   dark-inverse-background-alt: "#2e2e2e"
@@ -348,7 +348,7 @@ colors:
   dark-inverse-button-background-hover: "#dcf6ee"
   dark-inverse-info: "#88baff"
   dark-inverse-success: "#6ccb82"
-  dark-inverse-warning: "#ecab4d"
+  dark-inverse-warning: "#d3b64c"
   dark-inverse-error: "#ff9d93"
   dark-accent-background: "#0f5c4d"
   dark-accent-background-alt: "#004538"
@@ -365,7 +365,7 @@ colors:
   dark-accent-button-background-hover: "#dcf6ee"
   dark-accent-info: "#c3dcff"
   dark-accent-success: "#b0e4b9"
-  dark-accent-warning: "#fcd4a0"
+  dark-accent-warning: "#ecda9d"
   dark-accent-error: "#ffcec9"
   dark-picture-light-background: "#ffffff"
   dark-picture-light-background-alt: "#ffffff"
@@ -382,7 +382,7 @@ colors:
   dark-picture-light-button-background-hover: "#004538"
   dark-picture-light-info: "#0d223e"
   dark-picture-light-success: "#05280f"
-  dark-picture-light-warning: "#311e00"
+  dark-picture-light-warning: "#2a2100"
   dark-picture-light-error: "#3d1715"
   dark-picture-dark-background: "#000000"
   dark-picture-dark-background-alt: "#000000"
@@ -399,7 +399,7 @@ colors:
   dark-picture-dark-button-background-hover: "#dcf6ee"
   dark-picture-dark-info: "#eaf3ff"
   dark-picture-dark-success: "#d8f9de"
-  dark-picture-dark-warning: "#fff0dc"
+  dark-picture-dark-warning: "#fdf2cc"
   dark-picture-dark-error: "#ffefec"
   dark-status-info-background: "#1a304d"
   dark-status-info-background-alt: "#000c24"
@@ -416,7 +416,7 @@ colors:
   dark-status-info-button-background-hover: "#dcf6ee"
   dark-status-info-info: "#88baff"
   dark-status-info-success: "#6ccb82"
-  dark-status-info-warning: "#ecab4d"
+  dark-status-info-warning: "#d3b64c"
   dark-status-info-error: "#ff9d93"
   dark-status-success-background: "#12341b"
   dark-status-success-background-alt: "#001103"
@@ -433,24 +433,24 @@ colors:
   dark-status-success-button-background-hover: "#dcf6ee"
   dark-status-success-info: "#88baff"
   dark-status-success-success: "#6ccb82"
-  dark-status-success-warning: "#ecab4d"
+  dark-status-success-warning: "#d3b64c"
   dark-status-success-error: "#ff9d93"
-  dark-status-warning-background: "#412a05"
-  dark-status-warning-background-alt: "#160a00"
-  dark-status-warning-background-hover: "#553500"
+  dark-status-warning-background: "#392e02"
+  dark-status-warning-background-alt: "#110c00"
+  dark-status-warning-background-hover: "#4a3b00"
   dark-status-warning-text: "#ffffff"
   dark-status-warning-text-muted: "#b8b8b8"
-  dark-status-warning-border: "#553500"
-  dark-status-warning-border-strong: "#b77900"
+  dark-status-warning-border: "#4a3b00"
+  dark-status-warning-border-strong: "#a28500"
   dark-status-warning-link: "#80c4b2"
-  dark-status-warning-accent: "#ecab4d"
+  dark-status-warning-accent: "#d3b64c"
   dark-status-warning-focus: "#f2a93b"
   dark-status-warning-button-background: "#ffffff"
   dark-status-warning-button-text: "#0f5c4d"
   dark-status-warning-button-background-hover: "#dcf6ee"
   dark-status-warning-info: "#88baff"
   dark-status-warning-success: "#6ccb82"
-  dark-status-warning-warning: "#ecab4d"
+  dark-status-warning-warning: "#d3b64c"
   dark-status-warning-error: "#ff9d93"
   dark-status-error-background: "#4d2522"
   dark-status-error-background-alt: "#240001"
@@ -467,7 +467,7 @@ colors:
   dark-status-error-button-background-hover: "#dcf6ee"
   dark-status-error-info: "#88baff"
   dark-status-error-success: "#6ccb82"
-  dark-status-error-warning: "#ecab4d"
+  dark-status-error-warning: "#d3b64c"
   dark-status-error-error: "#ff9d93"
   dark-tint-secondary-background: "#412a05"
   dark-tint-secondary-background-alt: "#150a00"
@@ -484,14 +484,14 @@ colors:
   dark-tint-secondary-button-background-hover: "#dcf6ee"
   dark-tint-secondary-info: "#88baff"
   dark-tint-secondary-success: "#6ccb82"
-  dark-tint-secondary-warning: "#ecab4d"
+  dark-tint-secondary-warning: "#d3b64c"
   dark-tint-secondary-error: "#ff9d93"
   info: "#0761c2"
   dark-info: "#88baff"
   success: "#007432"
   dark-success: "#6ccb82"
-  warning: "#895a00"
-  dark-warning: "#ecab4d"
+  warning: "#776100"
+  dark-warning: "#d3b64c"
   error: "#c53030"
   dark-error: "#ff9d93"
 typography:
@@ -901,7 +901,7 @@ How it is measured: write the bar once, with the steps it can take in order, and
 
 **Shadow and line.** A sticky header casts the `header` shadow only once page content has scrolled under it, never at the top of the page, and the `header-panel` shadow while a panel is open. Where it casts none and the first band has the header's colour, at the top of the page too, a 1 px hairline in `border` parts them. In dark mode, where a shadow does not show on the dark page, the hairline stands beside the shadow too, wherever the header casts one. While a sticky header shows, the page's scroll padding at the top equals its height, so no anchor or focused element hides under it.
 
-**Scrolling, without a script.** `position: sticky` holds the header. Its look follows three flags on the root element, each a discrete scroll-driven animation (`animation-timeline: scroll(root)`) of a custom property from 0 to 1 over a range twice as long as where it turns: content under the header (from 1 px), past T (1.5rem) and past the header's own height. Container style queries read them: the header is transparent with the first band's Surface roles while it is under the page's start and short of T, unless its megamenu is open (`:has()` of the megamenu's `:modal`), when it takes its own Surface as past T, and casts its shadow once content is under it. Sliding away reads the root scroller's last scroll direction with a scroll-state container query (`scroll-state(scrolled: block-end)`), together with the third flag, and keeps the header while a panel is open or the keyboard is in it (`:has(:modal, :popover-open, :focus-visible)`). Where a browser lacks scroll-driven animations (Firefox as of 2026-11), a small polyfill sets the same three flags on the root as the page scrolls; where it lacks scroll-state queries (Firefox and WebKit), another writes the last relative scroll direction on the root as an attribute that parallel selectors read. Each loads only where `CSS.supports` says the feature is missing, the second only for a header that slides away, and both set only what the CSS reads. Without them the header is opaque with its shadow from the start, and does not slide away.
+**Scrolling, without a script.** `position: sticky` holds the header. Its look follows three flags on the root element, each a discrete scroll-driven animation (`animation-timeline: scroll(root)`) of a custom property from 0 to 1 over a range twice as long as where it turns: content under the header (from 1 px), past T (1.5rem) and past the header's own height. Container style queries read them: the header is transparent with the first band's Surface roles while it is under the page's start and short of T, unless its megamenu is open (`:has()` of the megamenu's `:modal`), when it takes its own Surface as past T, and casts its shadow once content is under it. Sliding away reads the root scroller's last scroll direction with a scroll-state container query (`scroll-state(scrolled: block-end)`), together with the third flag, and keeps the header while a panel is open or the keyboard is in it (`:has(:modal, :popover-open, :focus-visible)`). The header moves up by its own height (`translate: 0 -100%`), and its shadow, which reaches below it, fades over the slide and is gone while it is away, so nothing of it shows; it comes back with its shadow. Where a browser lacks scroll-driven animations, or runs them while its style queries miss what they set (Firefox as of 2026-11: a container style query there keeps what it found when its element was last matched, so a flag an animation turns later goes unseen), a small polyfill sets the same three flags on the root as the page scrolls, with priority over the animations; where it lacks scroll-state queries (Firefox and WebKit), another writes the last relative scroll direction on the root as an attribute that parallel selectors read. Each loads only where `CSS.supports` says the feature is missing, the second only for a header that slides away, and the first also where a short test finds that a style query misses a custom property an animation sets on its container: an element of its own whose animation sets one, and its child's style query, in a shadow tree with a constructed stylesheet, removed at once. Both set only what the CSS reads. Without them the header is opaque with its shadow from the start, and does not slide away.
 
 **Megamenu.** The menu button opens a panel under the bar, a modal `<dialog>` the button opens with no script (`commandfor` and `command="show-modal"`, `closedby="any"`), placed absolutely in the top layer by the bar as its anchor (`anchor()`), its background edge to edge on the header's Surface and its content in the content area, with a 1 px hairline in `border` at its top and the `panel` shadow, and in dark mode a hairline at its bottom as well, since the shadow does not show there. Its rows stand 2rem apart, with 2rem above and 2.5rem below. Each level-1 item is a column, 2rem 1.5rem apart, headed by a link to its hub page in the h6 style, optionally numbered "01 /" in the label typeface in `link`, with 0.875rem below it. Its level-2 links stand under it, 0.875rem apart, in the body style in `text`, with no underline until hovered; each may have a description under it at 0.75 times the body size, in `text-muted`. In a window of 60rem or less the columns are two, and at 37.5rem or less one. An optional row above holds three columns of content, and an optional row below holds small links in `text-muted` under a hairline, 1.25rem above them; both go once the columns fall to two. The panel comes in with a fade and a 0.625rem slide down. It locks the page's scroll (`overflow: hidden` on the root while it is open) and scrolls inside when taller than the window; Esc or a click outside, the bar included, closes it, focus stays inside it while it is open and returns to the button. Only one panel is open at a time.
 
@@ -921,7 +921,7 @@ How it is measured: write the bar once, with the steps it can take in order, and
 
 **Cells.** Each band is a grid of two columns and two rows, cells A1, B1, A2 and B2. Column A takes a third of the content area less the column gap, `(content area − column gap) / 3`, and column B the rest, after the column gap. A row is as tall as it needs, and an empty row or column takes no room. One filled cell spans all four; two in one column each span their row; two in one row keep their columns; for the rest, the design's fill rule says which neighbour an empty cell gives way to. A cell's content box is as small as its content allows, at the top of the cell, against its start edge in column A and its end edge in column B, whatever the cell has come to cover; its parts stand in a column the component gap apart. Text in column A is start-aligned, and in column B, as this design has it, end-aligned: a box's parts and every line in it end at its end edge (`text-align: end`, its parts placed at the end), and a row of links or icons there wraps from the end.
 
-**Content.** What stands in the cells is the site's own: typically the brand, social icons, a short text and links in the upper band, and address, registration and legal links in the lower. Links stand inline, parted by a • in `text-muted` with 0.7em on either side, and no line starts with a •. In column B, where the text is end-aligned, the • follows each link instead, and no line ends with one. A link is `text`, underlined 0.22em below the baseline only on hover and on the current page. Icon links stand in a wrapping row 1rem apart, each icon 1.75rem. The brand is the header's (logo, name, as the header shows them, without the slogan), its logo at most 14rem wide; on a Surface dark in both modes use the dark logo, elsewhere the one for the mode.
+**Content.** What stands in the cells is the site's own: typically the brand, social icons, a short text and links in the upper band, and address, registration and legal links in the lower. Links stand inline, parted by a • in `text-muted` with 0.7em on either side, and no line starts with a •. In column B, where the text is end-aligned, the • follows each link instead, and no line ends with one. A link is `text`, underlined 0.22em below the baseline only on hover and on the current page, where it stands in a row of links; a link in a line of text, a paragraph's or an address's, is underlined at rest too, 0.06em thick and 0.12em on hover, so it is told from the words round it without the pointer. Icon links stand in a wrapping row 1rem apart, each icon 1.75rem. The brand is the header's (logo, name, as the header shows them, without the slogan), its logo at most 14rem wide; on a Surface dark in both modes use the dark logo, elsewhere the one for the mode.
 
 **Lines.** Hairlines in `border`, only where the design asks for them: one between the rows, one between the columns. A line never parts two colours or crosses a merged cell, and stops at the content unless the design says otherwise.
 
@@ -929,7 +929,7 @@ How it is measured: write the bar once, with the steps it can take in order, and
 
 **Attachment.** At the end of the page, it scrolls in after the last Band. At the edge of the screen, it lies still at the window's bottom under the page, which slides off it as the reader reaches the end. This holds only while the whole footer fits in the window, a footer exactly as tall included; a footer taller than the window is at the end of the page, in the flow. A small script, loaded only by a footer at the edge of the screen, compares the footer's height with the window's, with a ResizeObserver on the footer and the window's resize event, which a change of text size also fires, and sets one state on the footer saying whether it fits. While it fits, the footer is `position: sticky` at the window's bottom edge (`inset-block-end: 0`), under the page's main, which is opaque, `position: relative` and above it. Without the script the footer simply stands at the end of the page. While keyboard focus is in the footer (`:has(:focus-visible)`) it is `position: relative`, where the browser shows what has focus.
 
-**Where page and footer meet.** The page lies over the footer, so any shadow falls from the page's bottom edge onto the footer, under either attachment. Where the design gives the page its shadow, the `page` shadow always shows there. Where it does not, and the footer is at the edge of the screen, the page casts the `page` shadow anyway when its last colour (its last Band's Surface, or the page Surface where the last child has none) is the same as the footer's first band, since its edge must show; one rule per Surface kind compares the two in CSS. Wherever the two colours are the same and no shadow results (the design has no shadows, or the page's shadow is off and the footer is at the end of the page), a 1 px hairline in `border` parts them; a design may also ask for that line always. In dark mode the hairline also stands wherever the page casts its shadow on the footer, since a shadow does not show on dark colours. Different colours need nothing more.
+**Where page and footer meet.** The page lies over the footer, so any shadow falls from the page's bottom edge onto the footer, under either attachment. Where the design gives the page its shadow, the `page` shadow always shows there. Where it does not, and the footer is at the edge of the screen, the page casts the `page` shadow anyway when its last colour (its last Band's Surface, or the page Surface where the last child has none) is the same as the footer's first band, since its edge must show; one rule per Surface kind compares the two in CSS. Wherever the two colours are the same and no shadow results (the design has no shadows, or the page's shadow is off and the footer is at the end of the page), a 1 px hairline in `border` parts them; a design may also ask for that line always. In dark mode the hairline also stands wherever the page casts its shadow on the footer, since a shadow does not show on dark colours. Different colours need nothing more. At the edge of the screen all of this shows only while the page covers part of the footer, as the header casts its shadow only once the page lies under it: scrolled to the very end, where the whole footer shows, page and footer lie in one plane, with no shadow and no line, but the hairline where their colours are the same. Draw it with a discrete scroll-driven animation of the page's own edge on the root scroller, its shadows while it covers the footer and the plane after it, turning 0.0625rem short of the end, with the plane as the edge's own style, so that a page with no room to scroll is at its end. Read no flag through a style query for it: Firefox's style queries miss what an animation sets. Where a browser lacks scroll timelines, the header's polyfill sets a flag on the page that a style query reads. The change is at once, as the header's shadow comes and goes.
 
 ### Hero
 
@@ -955,9 +955,9 @@ How it is measured: write the bar once, with the steps it can take in order, and
 
 - **Body Text:** Headings, paragraphs, lists and links, wherever they stand. The body style in `text`, wrapping anywhere a long word needs. Paragraphs, lists and rules have 1em below them, and the first and last child no outer margin. Lists are indented 1.5em, their items 0.35em apart; bullets are in `accent` and numbers in `text-muted` with tabular digits (List markers has the rest). Headings take their level's style, with 1.6em above and 0.6em below, their lines balanced; h2 to h6 in the heading typeface, h1 in the first heading's. Links are `link`, underlined 0.06em thick and 0.18em below the baseline, 0.12em thick on hover. Strong text takes the emphasis weight, emphasis the typeface's own italic. A quotation looks as Quotation does, so it cannot be taken for the text round it: its words in the h4 style at the body weight, in `text`, after a 0.125rem rule in `accent` with the body size between, and 1.5 times the body size above and below it. Its source, a `cite` alone in its last paragraph, stands 0.75 times the body size under the words, in small type, upright, in `text-muted`. In a card, a fact box, a sidenote or an Aside Block a quotation keeps their size. A rule is a 1 px `border` line with 2em above and below. Inline code is the code typeface at 0.9em; superscripts and subscripts are 0.75em and leave the line height alone.
 - **Heading Group:** An eyebrow, a heading and a deck, at any heading level. Eyebrow in the label style, heading in the chosen style (h2 by default, its level free), deck in the lead style; eyebrow and deck in `text-muted`, the heading in `text` with balanced lines. They stand half the component gap apart, but an eyebrow a quarter of it from the heading it labels, closer than the heading stands to its deck. Standing directly in a Band with more after it, the group has the column gap below it. **Subheadline:** an article's headline may have a third part under the main headline, in the h4 style, balanced. A deck may hold a link, in `link`, underlined 0.06em thick (0.12em on hover), and words in bold, in the emphasis weight and `text`.
-- **Button and Link Group:** A filled button, an unfilled button and an arrow link, alone or several in a row. **Filled:** `button-background` with `button-text`, `button-background-hover` on hover; the main typeface at the small size and letter spacing, in the emphasis weight, line height 1.2; padding 0.8em 1.3em, no border, the control radius; an icon goes 0.5em from the words, and words too long for the line wrap, centred, rather than widen what holds the button, a word longer than the line breaking too. Where the design has a frame, it is an inset ring, in the colour Shapes gives for a filled button. **Unfilled:** transparent, `text`, with a 1 px inset ring in `border-strong` (the frame's width if wider), which turns `text` on hover. **Arrow link:** no box and no padding, `link`, the words followed by an arrow that moves 0.2em forward on hover; at least 1.5rem square as a target. Colours change over the feedback duration. **Link Group:** buttons and links in a row that wraps, the component gap apart, or stacked from the start edge.
+- **Button and Link Group:** A filled button, an unfilled button and an arrow link, alone or several in a row. **Filled:** `button-background` with `button-text`, `button-background-hover` on hover; the main typeface at the small size and letter spacing, in the emphasis weight, line height 1.2; padding 0.8em 1.3em, no border, the control radius; an icon goes 0.5em from the words, and words too long for the line wrap, centred, rather than widen what holds the button, a word longer than the line breaking too. Where the design has a frame, it is an inset ring, in the colour Shapes gives for a filled button. **Unfilled:** transparent, `text`, with a 1 px inset ring in `border-strong` (the frame's width if wider), which turns `text` on hover. **Arrow link:** no box and no padding, `link`, the words followed by an arrow that stands still, the words underlined on hover and on a press; at least 1.5rem square as a target. Colours change over the feedback duration. **Link Group:** buttons and links in a row that wraps, the component gap apart, or stacked from the start edge.
 - **Icon:** A one-colour icon that follows the text colour. A line icon 1em square, stroked in the current text colour at width 2 on a 24-unit grid with round caps and joins and no fill, set 0.125em below the baseline. Which icon goes where, and where to get it, is under Icons above.
-- **Actions:** What the reader can do next, each a link: a main action and others, or links to social media. A row that wraps, the component gap apart. The main action, the one the editor set in bold (at most one), is a filled button and the others unfilled buttons (Button and Link Group), each at least 2.75rem tall. A link to a known service, LinkedIn, Facebook, Instagram, YouTube or X, is drawn as its icon (Icons) at 1.2em in a box at least 2.75rem square, its words kept for a screen reader only. Where every action is such a link they stand as a row of bare icons 0.25rem apart, each 1.5em with 0.5rem around it, in `text`, `link` on hover, with no box; a main one among them stays filled. A lone main action right after a series shows more of it: centred under the series, the column gap above, drawn as a link in the body size and `link`, with no box, underlined on hover, followed by a chevron-shaped arrow that moves 0.2em forward on hover. In a hero, a section's head and a card the actions take the place the part gives them; in a card at its foot, so cards in a row end alike.
+- **Actions:** What the reader can do next, each a link: a main action and others, or links to social media. A row that wraps, the component gap apart. The main action, the one the editor set in bold (at most one), is a filled button and the others unfilled buttons (Button and Link Group), each at least 2.75rem tall. A link to a known service, LinkedIn, Facebook, Instagram, YouTube or X, is drawn as its icon (Icons) at 1.2em in a box at least 2.75rem square, its words kept for a screen reader only. Where every action is such a link they stand as a row of bare icons 0.25rem apart, each 1.5em with 0.5rem around it, in `text`, `link` on hover, with no box; a main one among them stays filled. A lone main action right after a series shows more of it: centred under the series, the column gap above, drawn as a link in the body size and `link`, with no box, underlined on hover, followed by a chevron-shaped arrow that stands still. In a hero, a section's head and a card the actions take the place the part gives them; in a card at its foot, so cards in a row end alike.
 
 ### Bands
 
@@ -971,7 +971,7 @@ How it is measured: write the bar once, with the steps it can take in order, and
   3. **Another form, or a choice:** the whole section centred, at most Narrow wide, its text centred, while a form and a choice's panels keep their text start-aligned; it reads as a page's end.
   4. **A head and an accordion alone:** from 60rem, the head beside the accordion at 2:3, and the head stays in view under the header as the page scrolls (sticky, the component gap below the header), at most as tall as the window below the header less the component gap, scrolling inside itself where it is taller, so its end is never out of reach; no script.
   5. **A head and paragraphs only:** from 60rem, the paragraphs beside the head at 2:3.
-  6. **A head and a series** (cards, steps, reasons, cards that lead on or posts; the first in the body decides): the head is centred over reasons, over cards with neither picture nor symbol, and over exactly two cards; where the deck is long and the series has pictures and five cards or more, from 60rem the heading and the deck stand side by side in two equal columns, the deck level with the heading's last line; otherwise the head stands above, at the start.
+  6. **A head and a series** (cards, steps, reasons, cards that lead on or posts; the first in the body decides): the head keeps the start edge, as every head does; where the deck is long and the series has pictures and five cards or more, from 60rem the heading and the deck stand side by side in two equal columns, the deck level with the heading's last line; otherwise the head stands above, at the start.
 - **Logos:** A band of logos under their label. The label in the label style and `text-muted`, centred, the component gap above the logos. The logos stand in rows from the middle, the component gap between rows and the column gap between logos, each as tall as `clamp(2.5rem, 1.9286rem + 2.8571vw, 4.5rem)`, 2.5rem in the narrowest window and 4.5rem from 90rem, at its own proportions, at most four times as wide as tall, shown whole. A logo that is a link keeps its picture and takes the focus ring with the control radius. Alone at the top of a page it stands in a section of its own, and such a band of logos alone stands as far from the band before it as from the band after it: where the band beside it has its colour, the band space parts them, not the smaller space of a run, and a Hero before it keeps its own end space in place of the logos' start.
 - **Article:** An article's page: an opening, the body with its following menu, and Read more. **The opening** is a Hero whose headline has up to three parts: an eyebrow (or, without one, the category) above the main headline, and a subheadline under it (Heading Group); the standfirst follows as the deck, then a meta line in small type and `text-muted`: the site's sentence of the byline, the published date and the category, such as "By A. Writer • Published 10 October 2026 in Guides", each author and the category a link to its page, underlined in the line's colour and `text` on hover; then a • and the article's topics as pills, each a link to its topic's page, 0.4em apart, underlined on hover. The • stays with the sentence, so the line never starts with one. **The body** is a Band holding a Reading Area with the following menu "In this article" in the Aside, before the text (Table of Contents), and the text as Body Text: a lede, then crossheads, h2, in the h3 style, and the headings under them a step lower each (h3 in the h4 style, h4 in the h5, h5 and h6 in the h6). A paragraph wholly in bold is an interview's question, with 1.6em above it and 0.5em below, so it stays with its answer. Fact boxes stand in the text, and the menu's stops are every crosshead and every fact box with an anchor. **Read more** is a Section of up to three teaser cards under a heading, with a lone main action to the rest (Actions).
 
@@ -1002,7 +1002,7 @@ How it is measured: write the bar once, with the steps it can take in order, and
 - **List markers:** A list's signs and numberings, as the editor writes them. **Signs:** a check or a cross before each item in place of a bullet, drawn as strokes, no image or character: 0.8em, centred on the first line, hanging 1.4em before the text, the list indented 1.6em; the check two strokes 0.13em thick in `accent`, the cross two crossed strokes in `text-muted`. **Numberings:** decimal, lower or upper latin, lower or upper roman, lower greek and double latin (aa, bb, …, zz, aaa), each with a full stop after it, a closing parenthesis after it, brackets around it, or nothing. Latin and greek letters double after their last (y, z, aa, bb). Keep the list a real numbered list (with `@counter-style`), its markers in `text-muted` with tabular digits, and give it room for its widest marker: about 1.5em for a digit or a letter, 2em from ten items and 2.5em from a hundred, 2.25em for lower roman and 2.75em for upper, more with brackets. **Dotted**, below the first level (1.1, A.1): the number of the item above, a full stop and the item's own, drawn before the item where a marker would hang. A level without a marker of its own takes the nearest level above of its kind. **The design's own**, where no marker is set, in body text, cards and fact boxes alike: bullets in `accent`, numbers in `text-muted` with tabular digits. **A task list:** a checkbox, 0.9167rem, in place of each bullet, hanging 0.55em before the text and centred on the first line, with `accent-color` set to `accent`, drawn light.
 - **Description List:** Terms beside their descriptions. Each term beside its descriptions, a third of the width for the term and two thirds for them, the column gap between, aligned on their first baselines; a 1 px `border` hairline above each pair, the component gap above and below its content (none below the last), the descriptions 0.5em apart. Where the list is narrower than 32rem the term stands above them. The term is in the h6 style and `text` but is no heading. A label in the label style may introduce the list.
 - **Value List:** Values that stand out under their labels, such as opening hours and telephone numbers. Pairs side by side, as many as fit, each at least 14rem, the component gap between rows and the column gap between columns. Each pair stands under a 1 px `border` hairline, the component gap below it: its label in small type and `text-muted`, then, 0.25em below, the value in the h4 style in `text` with lining digits; a value that is a link, such as a telephone number, in `link`. Key Figures stays for a few large numbers.
-- **Tabs:** Content in tabs, each tab's heading its button. An exclusive group of native disclosures (`<details name>`), the first open, drawn as tabs, with no script. An optional label in the label style and `text-muted`, 0.5em above, names the group. A 1 px `border` hairline runs across the whole width between the label and the tabs, and the tabs, each a disclosure's summary, stand in a row under it that wraps, 0.25em apart, each at least 2.75rem tall, with 0.55em 0.85em padding, in the h6 style and `text-muted`, with a transparent 0.1875rem bar at its head whose middle lies on the hairline's, and the control radius at its foot corners, so it hangs from the line; where the row wraps, the line stands over its first line. On hover a tab takes `text` on `background-alt`, the fill starting at the hairline's foot and leaving the line whole; the open tab is `text` with its bar in `accent`, lying on the line, so its state is a shape as well as a colour. A tab is then drawn as a value under it is: a line, a label, the content. The open panel follows the tabs half the component gap below, with no line of its own. A panel of text followed by other components stands in two columns where both fit, each at least 18rem, the component gap between rows and the column gap between columns; any other panel keeps its order in one column. Headings inside a panel are promoted a level, an h4 becoming an h3, never above h2. **Behaviour:** the browser's own. One tab is open and only its panel shows; a click, Enter or Space opens a tab and closes the others, and a click on the open tab keeps it open. Tab moves through the tabs, each followed by what its open panel holds; there are no arrow keys between tabs. A screen reader hears each tab as a disclosure that is expanded or collapsed. A link to something in a closed panel opens it. Where a browser cannot lay the disclosures out as tabs, they read as an accordion, each open panel under its line; in print every panel shows under its tab's name.
+- **Tabs:** Content in tabs, each tab's heading its button. An exclusive group of native disclosures (`<details name>`), the first open, drawn as tabs, with no script. An optional label in the label style and `text-muted`, 0.5em above, names the group. A 1 px `border` hairline runs across the whole width between the label and the tabs, and the tabs, each a disclosure's summary, stand in a row under it that wraps, 0.25em apart, each at least 2.75rem tall, with 0.55em 0.85em padding, in the h6 style and `text-muted`, with a transparent 0.1875rem bar at its head whose middle lies on the hairline's, and the control radius at its foot corners, so it hangs from the line. Where the row wraps, each of its lines hangs from a hairline of its own across the whole width, the lines 0.5em apart, so an open tab on a later line has its bar on its own line, not at the foot of the tab above it. On hover a tab takes `text` on `background-alt`, the fill starting at the hairline's foot and leaving the line whole; the open tab is `text` with its bar in `accent`, lying on the line, so its state is a shape as well as a colour. A tab is then drawn as a value under it is: a line, a label, the content. The open panel follows the tabs half the component gap below, with no line of its own. A panel of text followed by other components stands in two columns where both fit, each at least 18rem, the component gap between rows and the column gap between columns; any other panel keeps its order in one column. Headings inside a panel are promoted a level, an h4 becoming an h3, never above h2. **Behaviour:** the browser's own. One tab is open and only its panel shows; a click, Enter or Space opens a tab and closes the others, and a click on the open tab keeps it open. Tab moves through the tabs, each followed by what its open panel holds; there are no arrow keys between tabs. A screen reader hears each tab as a disclosure that is expanded or collapsed. A link to something in a closed panel opens it. Where a browser cannot lay the disclosures out as tabs, they read as an accordion, each open panel under its line; in print every panel shows under its tab's name.
 - **Choice:** A question whose answers are big buttons, each showing what follows from it. An optional label names the answers, the component gap above them. An exclusive group of native disclosures (`<details name>`), none open, with no script. The answers, each a disclosure's summary, stand in a row that wraps, each at least 14rem, the component gap apart. Each is drawn as a big button on `raised` (`page` where the band is `raised`), at least 4rem tall, with 1em 1.25em padding, the card radius, in the h5 style, start-aligned, with a 1 px inset ring in `border-strong` (the frame's width if wider) and the `box` shadow, and at its end a round mark 1.125em across with a 2 px `border-strong` ring, as a radio button draws it. On hover the ring and the mark turn `text` and the shadow lifts to `box-lifted`; chosen, the ring is 2 px in `accent` and the mark is ringed and filled with `accent`. The chosen answer's panel stands the component gap below the answers: where it holds more than a form, on a plate (`raised`, or `page` where the band is `raised`) with plate padding, the frame, the card radius and the `box` shadow; a panel of only a form stands on the band. Headings inside a panel are promoted a level, as in Tabs. **Behaviour:** the browser's own, in a group named by the label. None is chosen beforehand, and no panel shows until one is. A click, Enter or Space chooses an answer and shows its panel alone, under the answers; a click on the chosen one keeps it chosen; a link to something in a panel chooses its answer. Where a browser cannot lay the disclosures out side by side, each panel stands under its own answer; in print every panel shows under its answer. A section holding a choice is centred (Section, rule 3).
 
 ### Finding content

@@ -333,7 +333,7 @@
             "focus": "#895900",
             "info": "#0761c2",
             "success": "#007432",
-            "warning": "#895a00",
+            "warning": "#776100",
             "error": "#c53030",
             "button-background": "#0f5c4d",
             "button-text": "#ffffff",
@@ -385,7 +385,7 @@
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -439,7 +439,7 @@
             "focus": "#895900",
             "info": "#0761c2",
             "success": "#007432",
-            "warning": "#895a00",
+            "warning": "#776100",
             "error": "#c53030",
             "button-background": "#0f5c4d",
             "button-text": "#ffffff",
@@ -491,7 +491,7 @@
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -545,7 +545,7 @@
             "focus": "#895900",
             "info": "#0761c2",
             "success": "#007432",
-            "warning": "#895a00",
+            "warning": "#776100",
             "error": "#c53030",
             "button-background": "#0f5c4d",
             "button-text": "#ffffff",
@@ -597,7 +597,7 @@
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -651,7 +651,7 @@
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -703,7 +703,7 @@
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -757,7 +757,7 @@
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -809,7 +809,7 @@
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -863,7 +863,7 @@
             "focus": "#f2a93b",
             "info": "#c3dcff",
             "success": "#b0e4b9",
-            "warning": "#fcd4a0",
+            "warning": "#ecda9d",
             "error": "#ffcec9",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -944,7 +944,7 @@
             "focus": "#f2a93b",
             "info": "#c3dcff",
             "success": "#b0e4b9",
-            "warning": "#fcd4a0",
+            "warning": "#ecda9d",
             "error": "#ffcec9",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -1027,7 +1027,7 @@
             "focus": "#704800",
             "info": "#0d223e",
             "success": "#05280f",
-            "warning": "#311e00",
+            "warning": "#2a2100",
             "error": "#3d1715",
             "button-background": "#0f5c4d",
             "button-text": "#ffffff",
@@ -1119,7 +1119,7 @@
             "focus": "#704800",
             "info": "#0d223e",
             "success": "#05280f",
-            "warning": "#311e00",
+            "warning": "#2a2100",
             "error": "#3d1715",
             "button-background": "#0f5c4d",
             "button-text": "#ffffff",
@@ -1213,7 +1213,7 @@
             "focus": "#f4d6b0",
             "info": "#eaf3ff",
             "success": "#d8f9de",
-            "warning": "#fff0dc",
+            "warning": "#fdf2cc",
             "error": "#ffefec",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -1305,7 +1305,7 @@
             "focus": "#f4d6b0",
             "info": "#eaf3ff",
             "success": "#d8f9de",
-            "warning": "#fff0dc",
+            "warning": "#fdf2cc",
             "error": "#ffefec",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -1399,7 +1399,7 @@
             "focus": "#895900",
             "info": "#0761c2",
             "success": "#007432",
-            "warning": "#895a00",
+            "warning": "#776100",
             "error": "#c53030",
             "button-background": "#0f5c4d",
             "button-text": "#ffffff",
@@ -1451,7 +1451,7 @@
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -1505,7 +1505,7 @@
             "focus": "#895900",
             "info": "#0761c2",
             "success": "#007432",
-            "warning": "#895a00",
+            "warning": "#776100",
             "error": "#c53030",
             "button-background": "#0f5c4d",
             "button-text": "#ffffff",
@@ -1557,7 +1557,7 @@
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -1599,19 +1599,19 @@
         "light": {
           "polarity": "light",
           "roles": {
-            "background": "#fff0dc",
+            "background": "#fdf2cc",
             "background-alt": "#ffffff",
-            "background-hover": "#fcd4a0",
+            "background-hover": "#ecda9d",
             "text": "#222222",
             "text-muted": "#636363",
-            "border": "#fcd4a0",
-            "border-strong": "#9d6800",
+            "border": "#ecda9d",
+            "border-strong": "#887000",
             "link": "#004538",
-            "accent": "#895a00",
+            "accent": "#776100",
             "focus": "#895900",
             "info": "#0761c2",
             "success": "#007432",
-            "warning": "#895a00",
+            "warning": "#776100",
             "error": "#c53030",
             "button-background": "#0f5c4d",
             "button-text": "#ffffff",
@@ -1651,19 +1651,19 @@
         "dark": {
           "polarity": "dark",
           "roles": {
-            "background": "#412a05",
-            "background-alt": "#160a00",
-            "background-hover": "#553500",
+            "background": "#392e02",
+            "background-alt": "#110c00",
+            "background-hover": "#4a3b00",
             "text": "#ffffff",
             "text-muted": "#b8b8b8",
-            "border": "#553500",
-            "border-strong": "#b77900",
+            "border": "#4a3b00",
+            "border-strong": "#a28500",
             "link": "#80c4b2",
-            "accent": "#ecab4d",
+            "accent": "#d3b64c",
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -1698,7 +1698,7 @@
             "box-lifted": "0 2px 4px rgb(0 0 0 / 0.054), 0 12px 32px -8px rgb(0 0 0 / 0.144)"
           },
           "frame-color": "#ffffff",
-          "translucent": 0.94
+          "translucent": 0.93
         }
       },
       "status-error": {
@@ -1717,7 +1717,7 @@
             "focus": "#895900",
             "info": "#0761c2",
             "success": "#007432",
-            "warning": "#895a00",
+            "warning": "#776100",
             "error": "#c53030",
             "button-background": "#0f5c4d",
             "button-text": "#ffffff",
@@ -1769,7 +1769,7 @@
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -1823,7 +1823,7 @@
             "focus": "#895900",
             "info": "#0761c2",
             "success": "#007432",
-            "warning": "#895a00",
+            "warning": "#776100",
             "error": "#c53030",
             "button-background": "#0f5c4d",
             "button-text": "#ffffff",
@@ -1875,7 +1875,7 @@
             "focus": "#f2a93b",
             "info": "#88baff",
             "success": "#6ccb82",
-            "warning": "#ecab4d",
+            "warning": "#d3b64c",
             "error": "#ff9d93",
             "button-background": "#ffffff",
             "button-text": "#0f5c4d",
@@ -2291,7 +2291,7 @@
     "easing": {
       "standard": "cubic-bezier(0.2, 0, 0, 1)"
     },
-    "generator-version": "0.5.0",
+    "generator-version": "0.11.0",
     "contrast-check": {
       "status": "passed",
       "matrix": {
@@ -2371,9 +2371,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#895a00",
+                "foreground": "#776100",
                 "background": "#ffffff",
-                "ratio": 5.955522833753099,
+                "ratio": 6.0098469615730385,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -2528,9 +2528,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
+                "foreground": "#d3b64c",
                 "background": "#0d0d0d",
-                "ratio": 9.71675777414116,
+                "ratio": 9.778224973085429,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -2687,9 +2687,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#895a00",
+                "foreground": "#776100",
                 "background": "#f1f1f1",
-                "ratio": 5.2727499156512065,
+                "ratio": 5.320846035568172,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -2852,9 +2852,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
+                "foreground": "#d3b64c",
                 "background": "#2e2e2e",
-                "ratio": 6.78917531804514,
+                "ratio": 6.832122934898612,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -3019,9 +3019,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#895a00",
+                "foreground": "#776100",
                 "background": "#dcf6ee",
-                "ratio": 5.235200918387187,
+                "ratio": 5.2829545299159175,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -3184,9 +3184,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
+                "foreground": "#d3b64c",
                 "background": "#00362b",
-                "ratio": 6.719080754529567,
+                "ratio": 6.76158496046546,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -3351,9 +3351,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
+                "foreground": "#d3b64c",
                 "background": "#004538",
-                "ratio": 5.501549740316342,
+                "ratio": 5.536351971703623,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -3516,9 +3516,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
+                "foreground": "#d3b64c",
                 "background": "#004538",
-                "ratio": 5.501549740316342,
+                "ratio": 5.536351971703623,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -3683,9 +3683,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
+                "foreground": "#d3b64c",
                 "background": "#131313",
-                "ratio": 9.289075695533116,
+                "ratio": 9.347837422135505,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -3848,9 +3848,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
+                "foreground": "#d3b64c",
                 "background": "#3d3d3d",
-                "ratio": 5.430555218828484,
+                "ratio": 5.464908346257667,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -4015,9 +4015,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#fcd4a0",
+                "foreground": "#ecda9d",
                 "background": "#0f5c4d",
-                "ratio": 5.666742104558092,
+                "ratio": 5.673476879916719,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -4209,9 +4209,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#fcd4a0",
+                "foreground": "#ecda9d",
                 "background": "#0f5c4d",
-                "ratio": 5.666742104558092,
+                "ratio": 5.673476879916719,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -4432,14 +4432,14 @@
                 }
               },
               "warning": {
-                "foreground": "#311e00",
+                "foreground": "#2a2100",
                 "background": "#ffffff",
-                "ratio": 6.148920200645172,
+                "ratio": 6.150378729589386,
                 "target": 4.5,
                 "passed": true,
                 "samples": {
-                  "#000000": 6.148920200645172,
-                  "#ffffff": 15.953775289887739
+                  "#000000": 6.150378729589386,
+                  "#ffffff": 15.957559538547747
                 }
               },
               "error": {
@@ -4662,14 +4662,14 @@
                 }
               },
               "warning": {
-                "foreground": "#311e00",
+                "foreground": "#2a2100",
                 "background": "#ffffff",
-                "ratio": 6.148920200645172,
+                "ratio": 6.150378729589386,
                 "target": 4.5,
                 "passed": true,
                 "samples": {
-                  "#000000": 6.148920200645172,
-                  "#ffffff": 15.953775289887739
+                  "#000000": 6.150378729589386,
+                  "#ffffff": 15.957559538547747
                 }
               },
               "error": {
@@ -4894,14 +4894,14 @@
                 }
               },
               "warning": {
-                "foreground": "#fff0dc",
+                "foreground": "#fdf2cc",
                 "background": "#000000",
-                "ratio": 4.575894269264649,
+                "ratio": 4.575848291337718,
                 "target": 4.5,
                 "passed": true,
                 "samples": {
-                  "#000000": 18.749496687750952,
-                  "#ffffff": 4.575894269264649
+                  "#000000": 18.74930829550717,
+                  "#ffffff": 4.575848291337718
                 }
               },
               "error": {
@@ -5124,14 +5124,14 @@
                 }
               },
               "warning": {
-                "foreground": "#fff0dc",
+                "foreground": "#fdf2cc",
                 "background": "#000000",
-                "ratio": 4.575894269264649,
+                "ratio": 4.575848291337718,
                 "target": 4.5,
                 "passed": true,
                 "samples": {
-                  "#000000": 18.749496687750952,
-                  "#ffffff": 4.575894269264649
+                  "#000000": 18.74930829550717,
+                  "#ffffff": 4.575848291337718
                 }
               },
               "error": {
@@ -5329,9 +5329,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#895a00",
+                "foreground": "#776100",
                 "background": "#eaf3ff",
-                "ratio": 5.321038973848212,
+                "ratio": 5.369575569109328,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -5494,9 +5494,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
+                "foreground": "#d3b64c",
                 "background": "#1a304d",
-                "ratio": 6.670764881349311,
+                "ratio": 6.712963446097272,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -5661,9 +5661,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#895a00",
+                "foreground": "#776100",
                 "background": "#d8f9de",
-                "ratio": 5.253577675578012,
+                "ratio": 5.30149891324712,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -5826,9 +5826,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
+                "foreground": "#d3b64c",
                 "background": "#12341b",
-                "ratio": 6.849748751558459,
+                "ratio": 6.893079549651502,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -5922,96 +5922,96 @@
             "pairs": {
               "text": {
                 "foreground": "#222222",
-                "background": "#fff0dc",
-                "ratio": 14.204961924081058,
+                "background": "#fdf2cc",
+                "ratio": 14.204819194668406,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "text-muted": {
                 "foreground": "#636363",
-                "background": "#fff0dc",
-                "ratio": 5.363993162459443,
+                "background": "#fdf2cc",
+                "ratio": 5.363939265828278,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "border": {
-                "foreground": "#fcd4a0",
-                "background": "#fff0dc",
-                "ratio": 1.2446479956941658,
+                "foreground": "#ecda9d",
+                "background": "#fdf2cc",
+                "ratio": 1.243158028720474,
                 "target": 0,
                 "passed": true,
                 "samples": {}
               },
               "border-strong": {
-                "foreground": "#9d6800",
-                "background": "#fff0dc",
-                "ratio": 4.247978646296043,
+                "foreground": "#887000",
+                "background": "#fdf2cc",
+                "ratio": 4.295850285840985,
                 "target": 3,
                 "passed": true,
                 "samples": {}
               },
               "link": {
                 "foreground": "#004538",
-                "background": "#fff0dc",
-                "ratio": 9.824959865164752,
+                "background": "#fdf2cc",
+                "ratio": 9.824861145382302,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "accent": {
-                "foreground": "#895a00",
-                "background": "#fff0dc",
-                "ratio": 5.317288364060899,
+                "foreground": "#776100",
+                "background": "#fdf2cc",
+                "ratio": 5.365736832921425,
                 "target": 3,
                 "passed": true,
                 "samples": {}
               },
               "focus": {
                 "foreground": "#895900",
-                "background": "#fff0dc",
-                "ratio": 5.368311719140681,
+                "background": "#fdf2cc",
+                "ratio": 5.368257779117279,
                 "target": 3,
                 "passed": true,
                 "samples": {}
               },
               "info": {
                 "foreground": "#0761c2",
-                "background": "#fff0dc",
-                "ratio": 5.360184177358031,
+                "background": "#fdf2cc",
+                "ratio": 5.3601303189989995,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "success": {
                 "foreground": "#007432",
-                "background": "#fff0dc",
-                "ratio": 5.290170097714757,
+                "background": "#fdf2cc",
+                "ratio": 5.29011694284712,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "warning": {
-                "foreground": "#895a00",
-                "background": "#fff0dc",
-                "ratio": 5.317288364060899,
+                "foreground": "#776100",
+                "background": "#fdf2cc",
+                "ratio": 5.365736832921425,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "error": {
                 "foreground": "#c53030",
-                "background": "#fff0dc",
-                "ratio": 4.883286288390581,
+                "background": "#fdf2cc",
+                "ratio": 4.88323722183289,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "button-background": {
                 "foreground": "#0f5c4d",
-                "background": "#fff0dc",
-                "ratio": 7.053099202553969,
+                "background": "#fdf2cc",
+                "ratio": 7.053028334028455,
                 "target": 3,
                 "passed": true,
                 "samples": {}
@@ -6058,24 +6058,24 @@
               },
               "text-hover": {
                 "foreground": "#222222",
-                "background": "#fcd4a0",
-                "ratio": 11.412834771937794,
+                "background": "#ecda9d",
+                "ratio": 11.426398628731683,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "link-hover": {
                 "foreground": "#004538",
-                "background": "#fcd4a0",
-                "ratio": 7.893765867260462,
+                "background": "#ecda9d",
+                "ratio": 7.903147402341586,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "background-page": {
-                "foreground": "#fff0dc",
+                "foreground": "#fdf2cc",
                 "background": "#ffffff",
-                "ratio": 1.1200300653253963,
+                "ratio": 1.1200413193393464,
                 "target": 1.1,
                 "passed": true,
                 "samples": {}
@@ -6087,96 +6087,96 @@
             "pairs": {
               "text": {
                 "foreground": "#ffffff",
-                "background": "#412a05",
-                "ratio": 13.477601985310098,
+                "background": "#392e02",
+                "ratio": 13.41299342334177,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "text-muted": {
                 "foreground": "#b8b8b8",
-                "background": "#412a05",
-                "ratio": 6.7942540482137215,
+                "background": "#392e02",
+                "ratio": 6.761683937879476,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "border": {
-                "foreground": "#553500",
-                "background": "#412a05",
-                "ratio": 1.2165141320218862,
+                "foreground": "#4a3b00",
+                "background": "#392e02",
+                "ratio": 1.2242582238577988,
                 "target": 0,
                 "passed": true,
                 "samples": {}
               },
               "border-strong": {
-                "foreground": "#b77900",
-                "background": "#412a05",
-                "ratio": 3.6892719919476797,
+                "foreground": "#a28500",
+                "background": "#392e02",
+                "ratio": 3.7628479330328863,
                 "target": 3,
                 "passed": true,
                 "samples": {}
               },
               "link": {
                 "foreground": "#80c4b2",
-                "background": "#412a05",
-                "ratio": 6.710998919451975,
+                "background": "#392e02",
+                "ratio": 6.678827915290449,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "accent": {
-                "foreground": "#ecab4d",
-                "background": "#412a05",
-                "ratio": 6.7380961665087185,
+                "foreground": "#d3b64c",
+                "background": "#392e02",
+                "ratio": 6.748215427607632,
                 "target": 3,
                 "passed": true,
                 "samples": {}
               },
               "focus": {
                 "foreground": "#f2a93b",
-                "background": "#412a05",
-                "ratio": 6.747650835231168,
+                "background": "#392e02",
+                "ratio": 6.715304130112271,
                 "target": 3,
                 "passed": true,
                 "samples": {}
               },
               "info": {
                 "foreground": "#88baff",
-                "background": "#412a05",
-                "ratio": 6.748049372802433,
+                "background": "#392e02",
+                "ratio": 6.715700757184964,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "success": {
                 "foreground": "#6ccb82",
-                "background": "#412a05",
-                "ratio": 6.740305720319793,
+                "background": "#392e02",
+                "ratio": 6.70799422601306,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
-                "background": "#412a05",
-                "ratio": 6.7380961665087185,
+                "foreground": "#d3b64c",
+                "background": "#392e02",
+                "ratio": 6.748215427607632,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "error": {
                 "foreground": "#ff9d93",
-                "background": "#412a05",
-                "ratio": 6.736301326195071,
+                "background": "#392e02",
+                "ratio": 6.704009028044021,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "button-background": {
                 "foreground": "#ffffff",
-                "background": "#412a05",
-                "ratio": 13.477601985310098,
+                "background": "#392e02",
+                "ratio": 13.41299342334177,
                 "target": 3,
                 "passed": true,
                 "samples": {}
@@ -6199,48 +6199,48 @@
               },
               "text-alt": {
                 "foreground": "#ffffff",
-                "background": "#160a00",
-                "ratio": 19.48899635687179,
+                "background": "#110c00",
+                "ratio": 19.509061238028536,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "text-muted-alt": {
                 "foreground": "#b8b8b8",
-                "background": "#160a00",
-                "ratio": 9.82468487625783,
+                "background": "#110c00",
+                "ratio": 9.834799872989054,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "link-alt": {
                 "foreground": "#80c4b2",
-                "background": "#160a00",
-                "ratio": 9.704295588690423,
+                "background": "#110c00",
+                "ratio": 9.714286638723552,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "text-hover": {
                 "foreground": "#ffffff",
-                "background": "#553500",
-                "ratio": 11.07887005217924,
+                "background": "#4a3b00",
+                "ratio": 10.956016600056532,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "link-hover": {
                 "foreground": "#80c4b2",
-                "background": "#553500",
-                "ratio": 5.516581141805624,
+                "background": "#4a3b00",
+                "ratio": 5.455407842182659,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
               },
               "background-page": {
-                "foreground": "#412a05",
+                "foreground": "#392e02",
                 "background": "#0d0d0d",
-                "ratio": 1.4420627925195977,
+                "ratio": 1.4490090125282191,
                 "target": 1.1,
                 "passed": true,
                 "samples": {}
@@ -6325,9 +6325,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#895a00",
+                "foreground": "#776100",
                 "background": "#ffefec",
-                "ratio": 5.33439769249905,
+                "ratio": 5.38305614116578,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -6490,9 +6490,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
+                "foreground": "#d3b64c",
                 "background": "#4d2522",
-                "ratio": 6.548381699536082,
+                "ratio": 6.589806081006164,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -6657,9 +6657,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#895a00",
+                "foreground": "#776100",
                 "background": "#fff0dd",
-                "ratio": 5.320303047289483,
+                "ratio": 5.368832929694388,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
@@ -6822,9 +6822,9 @@
                 "samples": {}
               },
               "warning": {
-                "foreground": "#ecab4d",
+                "foreground": "#d3b64c",
                 "background": "#412a05",
-                "ratio": 6.7380961665087185,
+                "ratio": 6.780720661962813,
                 "target": 4.5,
                 "passed": true,
                 "samples": {}
