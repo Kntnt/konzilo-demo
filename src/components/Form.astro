@@ -1,9 +1,10 @@
 ---
 // A form the site description declares, wherever a body places it, `::form{name="contact"}`: the core's own
-// form, a plain HTML form that also sends without JavaScript, which konzilo.css gives the design's look.
-// Without a component of the site's, the core writes a form as an empty element.
+// form, a plain HTML form that also sends without JavaScript, which konzilo.css gives the design's look. Its button
+// says the text an editor gives where the form allows it, `button`, else the form's own, else the site's word for
+// sending. Without a component of the site's, the core writes a form as an empty element.
 import KonziloForm from '@kntnt/konzilo/astro/Form.astro';
 
-const { name } = Astro.props;
+const { name, button } = Astro.props;
 ---
-<KonziloForm name={name} />
+<KonziloForm name={name} button={button} />

@@ -3,25 +3,8 @@
 // the menus (`main`, `social`, `search`), the site's settings, the core's search texts, or the design file.
 import { footerBrand, footerFromDesign, headerProps, logoAddresses, menuProps, pageProps } from '@kntnt/konzilo-design/design-props';
 import { iconHtml, serviceOf } from '@kntnt/konzilo-design/directives';
-import site from '../../design/content/site.json';
 
 const escape = (text) => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const bare = (address) => String(address ?? '').replace(/\/+$/, '');
-
-// STAND-IN, until the core's menu entries carry a description and Konzilo Design's menuProps passes it on
-// (LEFT_OUT.menuDescriptions in scripts/demo-content.mjs): the line under each second-level entry of the megamenu,
-// from design/content/site.json by the entry's address. To drop it, delete this function and its one use below.
-function withDescriptionsStandIn(menu) {
-  const descriptions = new Map();
-  (function collect(entries = []) {
-    for (const entry of entries) {
-      if (entry.url && entry.description) descriptions.set(bare(entry.url), entry.description);
-      collect(entry.items);
-    }
-  })(site.menu?.items);
-  const described = (link) => (descriptions.has(bare(link.href)) ? { ...link, description: descriptions.get(bare(link.href)) } : link);
-  return menu.map((entry) => (entry.children ? { ...entry, children: entry.children.map(described) } : entry));
-}
 
 // A cell's text as the footer shows it: its lines kept, and a link written in it as Markdown, such as
 // "[Konzilo](https://www.konzilo.com/)", drawn as a link. A cell's content is the site's own HTML (konzilo.md, The footer).
@@ -47,7 +30,8 @@ export function frameProps({ design, settings, menus, legal, current, base, home
   const based = (url) => (url.startsWith('/') && !url.startsWith('//') ? `${base.replace(/\/$/, '')}${url}` : url);
   const links = (entries = []) => entries.filter((entry) => entry.url).map(({ title, url }) => ({ label: title, href: based(url) }));
   const logos = logoAddresses(design.project, { base });
-  const menu = withDescriptionsStandIn(menuProps(menus.main ?? [], { current, base }));
+  // Each entry with the line of description an Admin writes under it, which the large menu shows.
+  const menu = menuProps(menus.main ?? [], { current, base });
   const action = settings.headerActionPage && settings.headerActionLabel ? { label: settings.headerActionLabel, href: based(settings.headerActionPage.url) } : undefined;
   const headerFor = headerProps(header, design.project, {
     menu,

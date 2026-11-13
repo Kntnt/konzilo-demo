@@ -34,7 +34,7 @@ This site stores one thing in your browser: your choice about content from other
 
 Nothing, until you allow it. The site's pages, pictures, fonts and scripts all come from our own server.
 
-One service may load with your consent: YouTube, for the video in the article [Can your roof carry solar panels?](/insights/can-your-roof-carry-solar-panels/). Until you allow it, a question and a button stand in the video's place. Once you allow it, YouTube's player loads in the page, YouTube may store data in your browser, and Google Ireland Limited, which provides YouTube, receives data about your visit. Google may use what it learns for its own advertising, so the site lists YouTube under Marketing. Our [privacy policy](/privacy-policy/#video) says more.
+One service may load with your consent: YouTube, for the video in the article [Can your roof carry solar panels?](/insights/can-your-roof-carry-solar-panels/). Until you allow it, a question and a button stand in the video's place. Once you allow it, YouTube's player loads in the page, and Google Ireland Limited, which provides YouTube, receives data about your visit. Google lists nothing that its player stores in your browser, so the list below shows nothing for it; what the player does once it runs is Google's to answer for. Google may use what it learns for its own advertising, so the site lists YouTube under Marketing. Our [privacy policy](/privacy-policy/#video) says more.
 
 ## Below: your choice, and every service
 

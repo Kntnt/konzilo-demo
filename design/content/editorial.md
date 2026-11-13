@@ -125,7 +125,7 @@ The twelve articles from January to November 2026 add these:
 
 ## Assumptions about directive syntax
 
-Konzilo Design's `docs/spec/directives.md` records what each directive renders, not how it is written. These are the readings used here, together with `content-format.md`'s syntax for directives, and the same as the other copy agent's pages where both use a directive.
+When the texts were written, Konzilo Design's `docs/spec/directives.md` recorded what each directive renders, not how it is written. These are the readings used here, together with `content-format.md`'s syntax for directives, and the same as the other copy agent's pages where both use a directive. Since 0.7.0 Konzilo Design records each directive's attributes in `src/directives/components.json`, the core's intake checks every body against them, and the texts pass it.
 
 1. **A fact box** is the container `:::aside{anchor="…"}`, with a blank line after its opening fence and before its closing `:::`. Its `anchor` becomes the box's `id`, which makes it a stop in an article's following menu ("with its `anchor` as `id`"; `section` takes `anchor` the same way). It takes no `surface`, since `surfaceOf('fact-box')` gives its Surface. Three colons are enough because it holds only a leaf directive.
 2. **Inside a fact box** come `::eyebrow[…]`, the leaf with a text body, as the label; then the heading at level 2, `## …`, since the markup shows `h2.kn-fact-box-heading` and headings keep the level they are written at; then paragraphs and a list. The heading is assumed not to count as a crosshead of the article, so the menu shows the box once, by its heading.

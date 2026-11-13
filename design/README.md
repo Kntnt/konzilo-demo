@@ -86,7 +86,7 @@ One language, British English.
 | `/customers/` | Customers, the list of all case studies, reached from the industry pages and the case studies' trails; not in the menu | page with a post list | yes |
 | `/customers/{slug}/` | A case study, four of them | the site's own type `case-study` | yes, Norrvik Logistics |
 | `/insights/` | Insights | page with a post list | yes |
-| `/insights/{slug}/` | An article, twenty-one of them | article | yes, one, and at phone width |
+| `/insights/{slug}/` | An article, twenty-one of them, one dated 1 December 2027 and so scheduled, which the site leaves out until then | article | yes, one, and at phone width |
 | `/insights/category/{slug}/` | A category | term page | yes, one |
 | `/insights/topic/{slug}/` | A topic | term page | as a category |
 | `/insights/author/{slug}/` | An author | term page | yes, one |

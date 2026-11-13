@@ -23,13 +23,6 @@ export function digestOf(folder) {
   return hash.digest('hex');
 }
 
-// Whether two folders hold the same files with the same bytes.
-export function sameFiles(a, b) {
-  const [inA, inB] = [filesIn(a), filesIn(b)];
-  if (inA.length !== inB.length || inA.some((path, i) => path !== inB[i])) return false;
-  return inA.every((path) => readFileSync(join(a, path)).equals(readFileSync(join(b, path))));
-}
-
 // Puts a copy of `from` in the place of `to`, leaving out the paths `leaveOut` names: the copy is made beside
 // `to` and renamed into place, so that a copy that fails leaves `to` as it was.
 export function replaceWithCopy(from, to, { leaveOut = () => false } = {}) {

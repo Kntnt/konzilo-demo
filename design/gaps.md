@@ -14,7 +14,6 @@ What the design phase wanted and could not have, and the faults it found on the 
 | Case studies filtered by solution | Customers | The `filtered` presentation's rows of topics and search; the solutions are no taxonomy, and the topics Solar, Storage and Charging stand in for three of them |
 | Related case studies on a page | The solutions, the industries | One case study picked by hand on each solution, `where="industry=…"` on each industry; a page carries no terms, so `order="related"` has nothing to go by; Kntnt/konzilo#78 |
 | A featured post on the first page of a paged list only | Insights | The featured list repeats on every page; Kntnt/konzilo#77 |
-| A button text of the form's own | Book a site assessment | The core's "Send": Konzilo 0.5.0 lets a form have its own, and this form sets none yet |
 | The header's call to action in the design tool's preview | The design file | The preview and the presentation always say "Contact"; Kntnt/konzilo-design#8 |
 | Key figures at the top of a case study | The case studies | Number fields of the type, as a value list in a fact box beside the body; Kntnt/konzilo-design#15 |
 | A vacancy marked up as a job posting for search engines | The vacancies | Nothing: a site's own type may offer only the structured data types the core knows; Kntnt/konzilo#80 |

@@ -5,8 +5,8 @@
 //   2. scripts/demo-content.mjs makes the demo content with no refusal and no warning, and makes the same bytes
 //      when it is run again;
 //   3. `npm run build` builds every address of the table in design/README.md, "The site", each post and term
-//      of design/content/ in the place of its {slug}, but what the demo content leaves out (LEFT_OUT in
-//      scripts/demo-content.mjs).
+//      of design/content/ in the place of its {slug}, but a post scheduled for a later moment, which demo-content/
+//      holds and the build leaves out of the content it fills.
 //
 //   npm run check
 //
@@ -62,12 +62,16 @@ const warnings = built.split('\n').filter((line) => /\[WARN\]|\bwarn(ing)?\b/i.t
 console.log(`check: npm run build built ${pages} pages${warnings.length > 0 ? `, and warned:\n  ${warnings.join('\n  ')}` : ', with no warning'}`);
 
 // The posts and terms of design/content/ by their folders, each slug once; a post dated after the content's
-// moment is the scheduled one, which the demo content leaves out.
+// moment is scheduled for its date: demo-content/ holds its file, from which Compose's seed makes it scheduled, and
+// the build leaves it out of the content it fills, and so out of the site, until its moment.
 const frontmatterDate = (path) => /^date: (\S+)$/m.exec(readFileSync(path, 'utf8'))?.[1];
 const slugsIn = (folder) => readdirSync(join(DESIGN_CONTENT, folder)).filter((name) => /\.(md|json)$/.test(name)).map((name) => {
   const slug = name.replace(/\.(md|json)$/, '');
   const date = name.endsWith('.md') ? frontmatterDate(join(DESIGN_CONTENT, folder, name)) : undefined;
-  return { slug, scheduled: date !== undefined && new Date(date) > new Date(DEMO_MOMENT) };
+  const scheduled = date !== undefined && new Date(date) > new Date(DEMO_MOMENT) ? date : null;
+  if (scheduled && !existsSync(join(DEMO, folder, name))) fail(`demo-content/ holds no ${folder}/${name}, scheduled for ${scheduled}`);
+  if (scheduled && existsSync(join(ROOT, 'content', folder, name))) fail(`the build put ${folder}/${name}, scheduled for ${scheduled}, into content/`);
+  return { slug, scheduled };
 });
 const general = (address) => address.replace('{path}', '{slug}');
 const folderOf = (address) => {
@@ -90,18 +94,20 @@ for (const row of rows) {
   }
   for (const { slug, scheduled } of slugsIn(folderOf(row))) {
     const address = row.replace('{slug}', slug);
-    results.push({ address, built: isBuilt(page(address)), leftOut: scheduled ? 'scheduled, LEFT_OUT.scheduled' : null });
+    results.push({ address, built: isBuilt(page(address)), leftOut: scheduled ? `scheduled for ${scheduled}, in demo-content/ and not in content/` : null });
   }
 }
-// What the table names in its words, and the Home page's stand-in.
+// What the table names in its words, and the start page: the Home page, which the settings choose and the site shows
+// at / and at no other address.
 results.push({ address: '/insights/feed/ (the article feed)', built: existsSync(join(DIST, 'insights/feed/index.rss')) });
 const home = readFileSync(join(DESIGN_CONTENT, 'pages/index.md'), 'utf8');
 const homeTitle = JSON.parse(/^title: (.+)$/m.exec(home)[1]);
-results.push({ address: '/ shows the Home page (LEFT_OUT.home)', built: readFileSync(page('/'), 'utf8').includes(homeTitle) });
+results.push({ address: '/ shows the Home page, the start page the settings choose', built: readFileSync(page('/'), 'utf8').includes(homeTitle) });
+results.push({ address: '/home/ is not built, the start page being at / alone', built: !existsSync(page('/home/')) });
 
 for (const { address, built: done, leftOut } of results) console.log(`  ${done ? 'built     ' : leftOut ? 'left out  ' : 'NOT BUILT '} ${address}${leftOut && !done ? ` (${leftOut})` : ''}`);
 const missing = results.filter((one) => !one.built && !one.leftOut);
 const surplus = results.filter((one) => one.built && one.leftOut);
 if (surplus.length > 0) fail(`built though the demo content leaves it out: ${surplus.map((one) => one.address).join(', ')}`);
 if (missing.length > 0) fail(`not built: ${missing.map((one) => one.address).join(', ')}`);
-console.log(`check: every address of design/README.md's table is built, ${results.filter((one) => one.built).length} pages and checks, ${results.filter((one) => one.leftOut).length} left out on purpose`);
+console.log(`check: every address of design/README.md's table is built, ${results.filter((one) => one.built).length} pages and checks, ${results.filter((one) => one.leftOut).length} scheduled for later and left out`);

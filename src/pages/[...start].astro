@@ -1,29 +1,38 @@
 ---
-// The start page, at /. The core keeps / for the site's own start page, so the Home page of design/content/
-// stands as a page at /home/ (LEFT_OUT.home in scripts/demo-content.mjs), and this stand-in shows that page's body
-// here, as the design's bands through Konzilo Design's PageBody, with no trail, until it is settled whether an editor
-// may choose a page for the start page. The head is the start page's own, from the site's title and description, not
-// the page's.
+// The start page, at /. Where an Admin has chosen a page as the start page, in the Site settings under Start page, the
+// core's startPages() gives its entry, which the site shows at / and at no other address: its own address leads here,
+// and a list in it with pages of its own has its later pages at /page/2/ and on. It is drawn as any page's body is, as
+// the design's bands through Konzilo Design's PageBody, with no trail, and its head is the start page's, which the
+// core's Head writes from the entry. Where none is chosen, the start page is the site's own: its title and
+// description in the package's title band, and its newest articles as the design's cards.
 import Body from '@kntnt/konzilo/astro/Body.astro';
-import { entriesIn, entryAddress, startPages } from '@kntnt/konzilo/astro/languages';
+import { startPages } from '@kntnt/konzilo/astro/languages';
+import { listedPosts } from '@kntnt/konzilo/astro/post-lists';
+import { siteSettings } from '@kntnt/konzilo/astro/site-settings';
 import PageBody from '@kntnt/konzilo-design/page-parts/PageBody.astro';
+import TitleBand from '@kntnt/konzilo-design/page-parts/TitleBand.astro';
+import Cards from '@kntnt/konzilo-design/presentations/Cards.astro';
 import { render } from 'astro:content';
 import Site from '../layouts/Site.astro';
 import { givePageContext } from '../lib/design-page.js';
-
-// Where the Home page stands, as scripts/demo-content.mjs puts it.
-const HOME = '/home/';
 
 export function getStaticPaths() {
   return startPages('start');
 }
 
-const { language } = Astro.props;
-const home = (await entriesIn('pages', language)).find((entry) => entryAddress(entry) === HOME);
-if (!home) throw new Error(`The start page shows the page at ${HOME}, and the content has none.`);
-const { Content } = await render(home);
-await givePageContext(Astro, { entry: home, trail: false });
+const { entry, page } = Astro.props;
+const Content = entry ? (await render(entry)).Content : null;
+const settings = entry ? {} : ((await siteSettings(Astro.url)) ?? {});
+await givePageContext(Astro, { entry, title: entry ? entry.data.title : settings.title, trail: false });
+const articles = entry ? [] : await listedPosts({ type: 'article', number: 9 });
 ---
-<Site>
-  <PageBody><Body post={home}><Content /></Body></PageBody>
-</Site>
+{entry ? (
+  <Site entry={entry} page={page}>
+    <PageBody><Body post={entry} page={page}><Content /></Body></PageBody>
+  </Site>
+) : (
+  <Site>
+    <TitleBand trail={false} deck={settings.search?.description} />
+    <PageBody title={false}><Cards posts={articles} list={articles.list} /></PageBody>
+  </Site>
+)}

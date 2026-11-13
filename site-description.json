@@ -156,6 +156,7 @@
     "vacancyAllLabel": { "label": "Vacancy: the link under the other vacancies", "type": "string", "control": "text" },
     "vacancyAllPage": { "label": "Vacancy: the page that link leads to", "type": "post", "control": "post" },
     "vacancyAllAnchor": { "label": "Vacancy: the section of that page the link leads to, by its anchor", "type": "string", "control": "text" },
+    "vacancyApplyBy": { "label": "Vacancy: the words before its last day to apply, in a list of vacancies", "type": "string", "control": "text" },
     "termNewsletterHeading": { "label": "Term page: the newsletter band's heading", "type": "string", "control": "text" },
     "termNewsletterText": { "label": "Term page: the newsletter band's text", "type": "string", "control": "textarea" },
     "termNewsletterNote": { "label": "Term page: the small print under the form, a link written as Markdown", "type": "string", "control": "textarea" }
@@ -176,7 +177,7 @@
           "options": ["A new system for our site", "A system you already run for us", "Ampfield Pilot", "Working at Ampfield", "Press", "Something else"]
         },
         { "name": "message", "label": "Message", "kind": "textarea", "required": true, "maxLength": 3000, "help": "If it is about a site, tell us where it is, what the building is used for and roughly how much electricity it uses a year." },
-        { "name": "privacy", "label": "I have read the privacy policy", "kind": "acceptance", "help": "It says what we keep of this message, and for how long." }
+        { "name": "privacy", "label": "I have read the [privacy policy](/privacy-policy/)", "kind": "acceptance", "help": "It says what we keep of this message, and for how long." }
       ]
     },
     "assessment": {
@@ -210,14 +211,15 @@
           "help": "Tick as many as you like. The engineer looks at all four either way."
         },
         { "name": "message", "label": "Anything we should know", "kind": "textarea", "required": false, "maxLength": 3000, "help": "Such as the roof's age, plans to extend the building, or a date you need power by." },
-        { "name": "privacy", "label": "I have read the privacy policy", "kind": "acceptance", "help": "It says what we keep of this booking, and for how long." }
-      ]
+        { "name": "privacy", "label": "I have read the [privacy policy](/privacy-policy/)", "kind": "acceptance", "help": "It says what we keep of this booking, and for how long." }
+      ],
+      "button": "Book your assessment"
     },
     "newsletter": {
       "label": "Newsletter",
       "fields": [
         { "name": "email", "label": "E-mail", "kind": "email", "required": true },
-        { "name": "privacy", "label": "Send me Ampfield's newsletter. I have read the privacy policy.", "kind": "acceptance", "help": "One e-mail at the start of each month. Every issue has a link to unsubscribe." }
+        { "name": "privacy", "label": "Send me Ampfield's newsletter. I have read the [privacy policy](/privacy-policy/).", "kind": "acceptance", "help": "One e-mail at the start of each month. Every issue has a link to unsubscribe." }
       ]
     }
   }

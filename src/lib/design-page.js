@@ -1,20 +1,12 @@
 // The page's context that Konzilo Design's directive components and presentations read (its docs/spec/konzilo.md,
 // The directives and the presentations), given once by every template that renders a body or a presentation, in its
-// frontmatter, before <Body>: the design file, the post's title, which a hero shows as the page's H1, the trail's
-// levels as the core gives them, and the search page and the types a filtered list sends and counts by.
+// frontmatter, before <Body>: the design file, the post's title, which a hero shows as the page's H1, and the trail's
+// levels as the core gives them. What a filtered list is of, its count, its terms and the search page it sends to, the
+// core gives the presentation itself, as `list`.
 import { breadcrumbs } from '@kntnt/konzilo/astro/breadcrumbs';
 import { designPage } from '@kntnt/konzilo-design/design-props';
 import design from '../../design/site.design.json';
 import description from '../../site-description.json';
-
-// The core's own names of its built-in types, which the site description does not repeat.
-const BUILT_IN = { page: ['Page', 'Pages'], canvas: ['Canvas', 'Canvases'], article: ['Article', 'Articles'] };
-
-// Each type by its collection: its name, which a search sends, and its label and plural, which a count takes.
-const TYPES = Object.fromEntries(Object.entries(description.types).map(([name, type]) => [
-  type.collection,
-  { name, label: type.label ?? BUILT_IN[name]?.[0] ?? name, plural: type.plural ?? BUILT_IN[name]?.[1] ?? name },
-]));
 
 /**
  * The address of a term's page below the site's base, by its taxonomy's address in the site description, as Konzilo
@@ -39,8 +31,5 @@ export async function givePageContext(Astro, { entry, title = entry?.data?.title
     design,
     title,
     breadcrumbs: trail && entry ? await breadcrumbs(entry, Astro.url) : [],
-    search: `${import.meta.env.BASE_URL}${description.search.address.replace(/^\//, '')}`,
-    // LEFT_OUT.filterCounts: what a filtered list counts by, until the core hands it its `list`.
-    types: TYPES,
   });
 }

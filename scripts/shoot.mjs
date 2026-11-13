@@ -67,8 +67,10 @@ const widths = values.widths.split(',').map(Number);
 const HEIGHTS = { 390: 844, 768: 1024, 1024: 768, 1440: 900 };
 if (!existsSync(join(dist, 'index.html'))) fail(`${dist} holds no built site: run npm run build first`);
 
-// Every page built, by its name; and the 404 page, at an address nothing holds.
-const pages = new Map(filesIn(dist).filter((path) => path === 'index.html' || path.endsWith('/index.html')).map((path) => {
+// Every page built, by its name, but the pages the core writes for its redirects, such as a list's page/1/, which send
+// the browser on to another while it is shot; and the 404 page, at an address nothing holds.
+const redirects = (path) => /<meta http-equiv="refresh"/.test(readFileSync(join(dist, path), 'utf8'));
+const pages = new Map(filesIn(dist).filter((path) => (path === 'index.html' || path.endsWith('/index.html')) && !redirects(path)).map((path) => {
   const address = `/${path.slice(0, -'index.html'.length)}`;
   return [address === '/' ? 'home' : address.slice(1, -1).replaceAll('/', '-'), address];
 }));
@@ -96,14 +98,21 @@ async function searchAnswer(params) {
   }
   const { query_by: by, query_by_weights: weights, per_page: perPage } = searchParameters(JSON.parse(readFileSync(join(ROOT, 'site-description.json'), 'utf8')));
   const fields = by.split(',').map((field, at) => ({ field, weight: Number(weights.split(',')[at]) }));
-  const word = (params.get('q') ?? '').trim().toLowerCase();
-  const type = /type:=([\w-]+)/.exec(params.get('filter_by') ?? '')?.[1];
+  // The words, `*` for every post where terms alone are chosen; the type; and the terms by taxonomy, as the core's
+  // search-client.js sends them, `slugs_topics:=[`solar`,`storage`]`, the terms of one taxonomy by or.
+  const asked = (params.get('q') ?? '').trim().toLowerCase();
+  const word = asked === '*' ? '' : asked;
+  const filter = params.get('filter_by') ?? '';
+  const type = /type:=([\w-]+)/.exec(filter)?.[1];
+  const terms = [...filter.matchAll(/slugs_(\w+):=\[([^\]]*)\]/g)].map(([, taxonomy, slugs]) => [taxonomy, slugs.split(',').map((slug) => slug.replace(/`/g, '').trim())]);
   const page = Math.max(1, Number(params.get('page')) || 1);
   const holds = (text) => word !== '' && new RegExp(`(^|[^\\p{L}\\p{N}])${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'iu').test(text);
   const textOf = (value) => (Array.isArray(value) ? value.join(' ') : String(value ?? ''));
   const found = documents
     .filter((document) => !type || document.type === type)
+    .filter((document) => terms.every(([taxonomy, slugs]) => (document[`slugs_${taxonomy}`] ?? []).some((slug) => slugs.includes(slug))))
     .map((document) => {
+      if (word === '') return { document, score: 1000 + (document.date ?? 0) / 1e10 };
       const score = fields.reduce((sum, { field, weight }) => sum + (holds(textOf(document[field])) ? weight * 1000 : 0), 0);
       const count = (textOf(document.body).toLowerCase().match(new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) ?? []).length;
       return { document, score: score + count };
@@ -111,6 +120,7 @@ async function searchAnswer(params) {
     .filter(({ score }) => score >= 1000)
     .sort((a, b) => b.score - a.score || a.document.title.localeCompare(b.document.title));
   const snippet = (body) => {
+    if (word === '') return undefined;
     const words = body.split(/\s+/);
     const at = words.findIndex((one) => one.toLowerCase().replace(/^[^\p{L}\p{N}]+/u, '').startsWith(word));
     if (at < 0) return undefined;

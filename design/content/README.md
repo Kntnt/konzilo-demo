@@ -6,7 +6,7 @@ The text of every page of the demo site, in Konzilo's Markdown with Konzilo Desi
 
 | Path | Holds | Written by |
 |---|---|---|
-| `site.json` | The site's title, slogan and description, the publisher, the header's call to action and search box, the menu with a line per second-level entry (Customers is not in it), the footer cell by cell, and the forms `contact`, `assessment` and `newsletter` with their confirmations; an acceptance field's label writes its link to the privacy policy as Markdown, `[privacy policy](/privacy-policy/)`, which the mockups draw as a link and the core cannot yet | the pages' agent |
+| `site.json` | The site's title, slogan and description, the publisher, the header's call to action and search box, the menu with a line per second-level entry (Customers is not in it), the footer cell by cell, the forms `contact`, `assessment`, with a button text of its own, and `newsletter`, each with its confirmation, the note after the cookie declaration, and `templates`, the words the templates show that no post holds: an article's link under Read more; a case study's heading over its facts, "More case studies" with its link, and its closing band; a vacancy's action to how to apply, its menu's label, "Other vacancies" with its link, and the words before its last day to apply in a list of vacancies; and a term page's newsletter band. An acceptance field's label writes its link to the privacy policy as Markdown, `[privacy policy](/privacy-policy/)`, as a link anywhere in `site.json` is written | the pages' agent |
 | `pages/` | Every page but the term pages, at the path of its address: `pages/index.md` is `/`, `pages/solutions/index.md` is `/solutions/`, `pages/solutions/rooftop-solar.md` is `/solutions/rooftop-solar/` | the pages' agent |
 | `canvases/site-assessment.md` | The landing page at `/go/site-assessment/`, with no header and footer | the pages' agent |
 | `system/not-found.md` | The 404 page, as the post an Admin chooses for it | the pages' agent |
@@ -40,11 +40,11 @@ Front matter, then the body.
 
 **Writing:** British English. Percentages as `38%`, thousands with a comma, prices in euros, `MWp`, `kWh` and `m²` after a space.
 
-## Directive syntax assumed
+## Directive syntax
 
-Neither Konzilo nor Konzilo Design records the Markdown attributes of the design system's directives; `docs/spec/directives.md` gives what each renders. These are the readings every file here keeps to, for the build phase to settle once against the package's `components.json` when it exists.
+Konzilo Design declares its directives, with each attribute and the values it takes, in `src/directives/components.json`, which the site description takes by `componentsFrom`, and `docs/spec/directives.md` gives what each renders; the intake refuses a file that breaks them. These are the forms every file here keeps to.
 
-**Names and forms.** Containers `hero`, `section`, `aside`, `list`, `cards`, `accordion`, `tabs`, `toc` and `choice`; leaves `eyebrow` and `small`, each with its text as a label, `::eyebrow[…]`; the leaf `breadcrumbs` with no body. The five forms (cards, accordion, tabs, toc, choice) are directives of their own, as the gallery's comments name them (`:::cards`), not `:::list{form="…"}`, which ADR 0068's "the list … and its five forms" could also mean.
+**Names and forms.** Containers `hero`, `section`, `aside`, `list`, `cards`, `accordion`, `tabs`, `toc` and `choice`; leaves `eyebrow` and `small`, each with its text as a label, `::eyebrow[…]`; the leaf `breadcrumbs` with no body. The five forms (cards, accordion, tabs, toc, choice) are directives of their own (`:::cards`), not `:::list{form="…"}`.
 
 **Attributes**, each left out at its default:
 
@@ -74,7 +74,7 @@ Neither Konzilo nor Konzilo Design records the Markdown attributes of the design
 
 - **Elements.** `page`: paragraph, heading, list, quote, table, image, gallery, post-list, form and every directive above. `canvas`: paragraph, heading, list, image, form and the directives. The core's template leaves `quote` out of a page; the industry pages and Careers need it.
 - **Addresses.** `page` at `/{path}/`, `canvas` at `/go/{slug}/`, `article` at `/insights/{slug}/`, `case-study` at `/customers/{slug}/`, `job` at `/about/careers/{slug}/`; categories at `/insights/category/{slug}/` and authors at `/insights/author/{slug}/`; the article feed at `/insights/feed/`; search at `/search/`.
-- **Presentations** `cards`, `featured` and `filtered`; `filtered` with its rows, `filters="category topics search"` and the like, the attribute `directives.md` proposes and the core does not have yet.
+- **Presentations** `cards`, `featured` and `filtered`, and the site's own `rows`; `filtered` with its option `filters`, the rows it shows above the list, `filters="category topics search"` and the like.
 - **Forms** as `site.json` declares them; the confirmations go to `settings.json` under `forms`.
 
 **Assumed of the other agent's types,** for the post lists here to find anything:

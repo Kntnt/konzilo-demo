@@ -249,6 +249,7 @@
         { "name": "message", "label": "Anything we should know", "kind": "textarea", "required": false, "maxLength": 3000, "help": "Such as the roof's age, plans to extend the building, or a date you need power by." },
         { "name": "privacy", "label": "I have read the [privacy policy](/privacy-policy/)", "kind": "acceptance", "help": "It says what we keep of this booking, and for how long." }
       ],
+      "button": "Book your assessment",
       "confirmation": "Thank you. An engineer will call you within two working days to agree a day for the visit."
     },
     "newsletter": {
@@ -262,5 +263,37 @@
   },
   "cookieDeclaration": {
     "note": "Your browser may also keep things the site does not ask it to, such as its cache. You can remove what a site has stored in your browser's settings; that also removes your choice, and the site will ask again. Questions about this policy: privacy@ampfield.example."
+  },
+  "templates": {
+    "article": {
+      "more": { "label": "More articles", "href": "/insights/" }
+    },
+    "caseStudy": {
+      "factsHeading": "The project",
+      "moreHeading": "More case studies",
+      "more": { "label": "All case studies", "href": "/customers/" },
+      "closing": {
+        "heading": "Find out what your site can do",
+        "text": "An engineer visits, measures the roof, looks at the switch room and reads a year of your meter data. Within two weeks you have a report with the systems that fit, what they would give and what they cost.",
+        "actions": [
+          { "label": "Book a site assessment", "href": "/go/site-assessment/" },
+          { "label": "Ask for a reference", "href": "/contact/" }
+        ]
+      }
+    },
+    "vacancy": {
+      "apply": "How to apply",
+      "applyBy": "Apply by",
+      "menuLabel": "On this page",
+      "othersHeading": "Other vacancies",
+      "all": { "label": "All vacancies", "href": "/about/careers/#open-positions" }
+    },
+    "termPage": {
+      "newsletter": {
+        "heading": "One e-mail a month",
+        "text": "The month's articles, one chart from our analyst on prices and grid fees, and nothing else. Every issue has a link to unsubscribe.",
+        "note": "We keep your address only to send the newsletter. Read [how we handle personal data](/privacy-policy/)."
+      }
+    }
   }
 }

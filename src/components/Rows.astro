@@ -12,13 +12,14 @@
 import { ownSummary } from '@kntnt/konzilo/astro';
 import Pager from '@kntnt/konzilo/astro/Pager.astro';
 import { longDate } from '@kntnt/konzilo/astro/helpers';
+import { siteSettings } from '@kntnt/konzilo/astro/site-settings';
 import ContentLoop from '@kntnt/konzilo-design/components/ContentLoop.astro';
 import { getEntries } from 'astro:content';
 import description from '../../site-description.json';
 
 const { posts = [], empty, pager, 'data-konzilo-block': block } = Astro.props;
-// The words before a vacancy's last day to apply, the site's own.
-const APPLY_BY = 'Apply by';
+// The words before a vacancy's last day to apply, a setting of the site's own; without them, the day alone.
+const APPLY_BY = ((await siteSettings(Astro.url)) ?? {}).vacancyApplyBy;
 
 const day = (date) => ({ text: longDate(date, Astro.url), datetime: date.toISOString().slice(0, 10) });
 async function factsOf(entry) {
@@ -26,7 +27,7 @@ async function factsOf(entry) {
   if (entry.collection === 'jobs') {
     return {
       meta1: [data.location, data.team].filter(Boolean).map((text) => ({ text })),
-      meta2: [data.employment && { text: data.employment }, data.closingDate && { ...day(data.closingDate), text: `${APPLY_BY} ${longDate(data.closingDate, Astro.url)}` }].filter(Boolean),
+      meta2: [data.employment && { text: data.employment }, data.closingDate && { ...day(data.closingDate), text: APPLY_BY ? `${APPLY_BY} ${longDate(data.closingDate, Astro.url)}` : longDate(data.closingDate, Astro.url) }].filter(Boolean),
     };
   }
   if (entry.collection === 'case-studies') {

@@ -4,16 +4,20 @@
 // place a text is written. This script writes it as source files, as an editor's saves would leave them, and the
 // core's own intake command makes the content files from them, so that demo-content/ holds exactly what the core
 // would publish. It stops, writing nothing, at any refusal or warning of the intake, at any post that is not
-// live, and at anything in design/content/ it does not know how to carry over.
+// live, but one dated after the moment the content is made at, which waits for its date as a scheduled post, and at
+// anything in design/content/ it does not know how to carry over. A scheduled post's file is the one the intake
+// writes once its moment has come; demo-content/ holds it, and a build leaves it out until then.
 //
 //   node scripts/demo-content.mjs            make demo-content/ again, and remove content/ if it was a copy
 //   node scripts/demo-content.mjs --force    the same, even where nothing it is made from has changed
 //   node scripts/demo-content.mjs --credits  print each master in demo-content/ with its picture's credit, as JSON
 //
-// The same design always gives the same bytes: the intake runs at a fixed moment (scripts/lib/intake.mjs). So
-// where nothing it is made from has changed since it last made demo-content/, and demo-content/ is as it made
-// it, the script leaves both as they are: what it is made from is design/content/, design/images/,
-// design/logo/, site-description.json, these scripts and package-lock.json, which pins the core.
+// The same design always gives the same bytes: the intake runs at a fixed moment, DEMO_MOMENT in
+// scripts/lib/intake.mjs, and for a scheduled post's file at a fixed moment after its date. So where nothing it is
+// made from has changed since it last made demo-content/, and demo-content/ is as it made it, the script leaves both
+// as they are: what it is made from is design/content/, design/images/, design/logo/, the design file,
+// site-description.json, these scripts, package-lock.json, which pins the core and Konzilo Design by their tarballs
+// in vendor/, and the core's own code as installed (INPUTS).
 //
 // content/, the folder the site is built from ($KONZILO_CONTENT, else content/), is a copy of demo-content/
 // that `konzilo-demo-content` makes where there is none. Where content/ is that copy, this script removes it, so
@@ -26,44 +30,15 @@ import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFil
 import { basename, dirname, join, resolve } from 'node:path';
 import { parseArgs } from 'node:util';
 import { creditsOfMasters } from './lib/credits.mjs';
-import { digestOf, filesIn, replaceWithCopy, sameFiles } from './lib/files.mjs';
+import { digestOf, filesIn, replaceWithCopy } from './lib/files.mjs';
 import { coreModule, countsOf, DEMO_MOMENT, ROOT, runIntake, shortfalls } from './lib/intake.mjs';
 import { searchTexts } from '../src/lib/search-texts.js';
 
-// What the core cannot hold yet, and so is left out of the demo content, or stood in for, each with what it
-// waits for. To put one back, delete its entry and the code that names it (`LEFT_OUT.<name>`).
+// What the core cannot hold, and so is left out of the demo content, each with what it waits for. To put one back, delete its entry and the code that names it (`LEFT_OUT.<name>`).
 export const LEFT_OUT = {
-  scheduled: {
-    what: 'A post dated after the moment the content is made at: the scheduled article, grid-capacity-is-now-the-scarce-resource.md, dated 2027-12-01.',
-    waits: 'Demo content that can hold a scheduled post: a content file has no status, and Compose\'s seed writes every demo post as published (src/demo-source.js:125 in the core).',
-  },
-  menuDescriptions: {
-    what: 'The line of description under each second-level entry of the main menu, in design/content/site.json, is left out of the menu file. The frame stands in for it: withDescriptionsStandIn() in src/lib/frame.js takes the lines from site.json by each entry\'s address.',
-    waits: 'A description on a menu entry in the core, whose intake writes an entry as title, url and items alone (src/intake/menus.js), and Konzilo Design\'s menuProps passing it on; then this script writes it, and the stand-in goes.',
-  },
-  labelLinks: {
-    what: 'The link in a form field\'s label, "[privacy policy](/privacy-policy/)" in each acceptance field; site-description.json gives the label as its words alone.',
-    waits: 'A link in a form field\'s label: the core writes a label as plain text (src/site-description.js, FormView.astro).',
-  },
-  formButtons: {
-    what: 'A form\'s own button text. design/content/ gives none, and the design draws the core\'s "Send", so nothing is left out today.',
-    waits: 'A button text of a form\'s own, which ADR 0045 of the core promises and neither the site description nor ::form takes.',
-  },
   modified: {
     what: 'A post\'s own day of last change, `modified` in design/content/; each post\'s is its date.',
     waits: 'Nothing that is planned: the core derives `modified` from the post\'s history, and no source file sets it (src/intake/post-file.js:3).',
-  },
-  filterCounts: {
-    what: 'A filtered list\'s count and pills over all its pages: it counts and offers the terms of the posts its page shows, "Showing 9 articles" where the design says "Showing 9 of 17 articles", and on a topic\'s page it counts the case studies among them as articles. The page tells the presentation what it lists by the types givePageContext() gives it (src/lib/design-page.js).',
-    waits: 'The core\'s next release, which hands a presentation its `list`, with the terms and the count over every page (Konzilo Design\'s docs/spec/konzilo.md, The directives and the presentations).',
-  },
-  searchByTerm: {
-    what: 'A search from a term\'s page that keeps to the term: the filtered list sends the term its page settles as a hidden field, which the core\'s search does not read, so the search covers the whole site (src/components/TermPage.astro).',
-    waits: 'The core\'s search narrowed by terms, in its next release.',
-  },
-  home: {
-    what: 'The Home page at /: it stands at /home/, and the start route (src/pages/[...start].astro) shows its content at /.',
-    waits: 'The owner\'s decision whether an editor may choose a page for the start page; the core keeps / for the site\'s own start page (src/format/rules.json, src/intake/addresses.js).',
   },
 };
 
@@ -84,32 +59,40 @@ const IDENTITY = { logo: 'ampfield-logo', icon: 'ampfield-mark' };
 // The meta line of an article, as the mockups write it (design/mockups/src/lib/article.js, META_LINE_FORMAT).
 const META_LINE_FORMAT = 'By {authors} • Published {date} in {category}';
 
-// The words the templates show that no post holds, each a setting of the site's own (site-description.json), in the
-// mockups' words: design/mockups/src/lib/article.js (Read more), types.js (the case study and the vacancy) and terms.js
-// (a term's page). A page is named by its address and set as the post at it.
-const TEMPLATE_WORDS = {
-  articleMoreLabel: 'More articles',
-  articleMorePage: '/insights/',
-  caseStudyFactsHeading: 'The project',
-  caseStudyMoreHeading: 'More case studies',
-  caseStudyMoreLabel: 'All case studies',
-  caseStudyMorePage: '/customers/',
-  caseStudyClosingHeading: 'Find out what your site can do',
-  caseStudyClosingText: 'An engineer visits, measures the roof, looks at the switch room and reads a year of your meter data. Within two weeks you have a report with the systems that fit, what they would give and what they cost.',
-  caseStudyClosingAction: 'Book a site assessment',
-  caseStudyClosingActionPage: '/go/site-assessment/',
-  caseStudyClosingOtherAction: 'Ask for a reference',
-  caseStudyClosingOtherActionPage: '/contact/',
-  vacancyApplyLabel: 'How to apply',
-  vacancyMenuLabel: 'On this page',
-  vacancyOthersHeading: 'Other vacancies',
-  vacancyAllLabel: 'All vacancies',
-  vacancyAllPage: '/about/careers/',
-  vacancyAllAnchor: 'open-positions',
-  termNewsletterHeading: 'One e-mail a month',
-  termNewsletterText: 'The month\'s articles, one chart from our analyst on prices and grid fees, and nothing else. Every issue has a link to unsubscribe.',
-  termNewsletterNote: 'We keep your address only to send the newsletter. Read [how we handle personal data](/privacy-policy/).',
-};
+// The words the templates show that no post holds, `templates` in design/content/site.json, as the settings of the
+// site's own that hold them (site-description.json): each text as it is, and each link as its words and the post at
+// its address, set by the post's ID, with the section it leads to, after #, where a setting holds it.
+function templateSettings(templates, postId) {
+  const words = (value, where) => (typeof value === 'string' && value.trim() !== '' ? value : stop(`site.json: templates.${where} is no text`));
+  const page = (link, where) => postId(words(link?.href, `${where}.href`).split('#')[0], `site.json: templates.${where}`);
+  const { article, caseStudy, vacancy, termPage } = templates ?? stop('site.json: has no templates, the words the templates show');
+  const [main, other] = caseStudy?.closing?.actions ?? [];
+  return {
+    articleMoreLabel: words(article?.more?.label, 'article.more.label'),
+    articleMorePage: page(article?.more, 'article.more'),
+    caseStudyFactsHeading: words(caseStudy?.factsHeading, 'caseStudy.factsHeading'),
+    caseStudyMoreHeading: words(caseStudy?.moreHeading, 'caseStudy.moreHeading'),
+    caseStudyMoreLabel: words(caseStudy?.more?.label, 'caseStudy.more.label'),
+    caseStudyMorePage: page(caseStudy?.more, 'caseStudy.more'),
+    caseStudyClosingHeading: words(caseStudy?.closing?.heading, 'caseStudy.closing.heading'),
+    caseStudyClosingText: words(caseStudy?.closing?.text, 'caseStudy.closing.text'),
+    caseStudyClosingAction: words(main?.label, 'caseStudy.closing.actions.1.label'),
+    caseStudyClosingActionPage: page(main, 'caseStudy.closing.actions.1'),
+    caseStudyClosingOtherAction: words(other?.label, 'caseStudy.closing.actions.2.label'),
+    caseStudyClosingOtherActionPage: page(other, 'caseStudy.closing.actions.2'),
+    vacancyApplyLabel: words(vacancy?.apply, 'vacancy.apply'),
+    vacancyApplyBy: words(vacancy?.applyBy, 'vacancy.applyBy'),
+    vacancyMenuLabel: words(vacancy?.menuLabel, 'vacancy.menuLabel'),
+    vacancyOthersHeading: words(vacancy?.othersHeading, 'vacancy.othersHeading'),
+    vacancyAllLabel: words(vacancy?.all?.label, 'vacancy.all.label'),
+    vacancyAllPage: page(vacancy?.all, 'vacancy.all'),
+    vacancyAllAnchor: vacancy.all.href.split('#')[1],
+    termNewsletterHeading: words(termPage?.newsletter?.heading, 'termPage.newsletter.heading'),
+    termNewsletterText: words(termPage?.newsletter?.text, 'termPage.newsletter.text'),
+    termNewsletterNote: words(termPage?.newsletter?.note, 'termPage.newsletter.note'),
+  };
+}
+
 
 // Where a post of each kind is in design/content/, by the folder, and the post type it is.
 const POST_FOLDERS = { pages: 'page', canvases: 'canvas', articles: 'article', 'case-studies': 'case-study', jobs: 'job' };
@@ -133,8 +116,10 @@ const CACHE = join(ROOT, 'node_modules/.cache/konzilo-demo');
 const WORK = join(CACHE, 'demo-content');
 // What the last run made from what: { inputs, output }, each a digest.
 const MADE = join(CACHE, 'demo-content.json');
-// package-lock.json stands for the packages, the core and Konzilo Design, whose intake and directive checks run.
-const INPUTS = ['design/content', 'design/images', 'design/logo', 'design/site.design.json', 'site-description.json', 'scripts/demo-content.mjs', 'scripts/lib', 'package-lock.json'];
+// package-lock.json stands for the packages, the core and Konzilo Design, whose intake and directive checks run; the
+// core's own code is read too, which an install without saving, such as of a pack of an unreleased core, changes
+// while the lock stays as it was.
+const INPUTS = ['design/content', 'design/images', 'design/logo', 'design/site.design.json', 'site-description.json', 'scripts/demo-content.mjs', 'scripts/lib', 'package-lock.json', 'node_modules/@kntnt/konzilo/src'];
 
 // One digest of everything demo-content/ is made from.
 function inputsDigest() {
@@ -196,7 +181,7 @@ async function makeSource(site, out) {
     writeFileSync(join(out, path), contents);
     names.set(path, `design/content/${from}`);
   };
-  const left = { scheduled: [], menuDescriptions: [], labelLinks: [], modified: [] };
+  const left = { modified: [] };
 
   // Every picture by its id in design/images/credits.json, and every logo by its name in design/logo/.
   const credits = new Map(JSON.parse(readFileSync(join(IMAGES, 'credits.json'), 'utf8')).map((credit) => [credit.id, credit]));
@@ -242,10 +227,11 @@ async function makeSource(site, out) {
     if (notFound) {
       place = 'not-found';
     } else if (type.name === 'page' && fields.address === '/') {
-      // LEFT_OUT.home: the core keeps / for the site's start page.
+      // The start page: a page of its own slug, which the settings choose (startPage), and which the site shows at /
+      // and at no other address.
       if (path !== 'pages/index.md') stop(`${path}: the page at / is pages/index.md`);
       place = 'home';
-      address = fill(type.address, place);
+      address = '/';
     } else if (fields.address !== undefined) {
       const match = addressPattern(type.address).exec(fields.address) ?? stop(`${path}: ${fields.address} is no address of a ${type.name}, ${type.address}`);
       place = match[1];
@@ -311,13 +297,11 @@ async function makeSource(site, out) {
       if (!posts.some((one) => one.type === type && one.place === parent)) stop(`${path}: stands below ${parent}, which no ${type.name} is`);
       written.parent = idOf(type.collection, parent);
     }
-    written.status = 'published';
     const date = fields.date ?? (type.name === 'page' || type.name === 'canvas' ? DEMO_MOMENT : stop(`${path}: a ${type.name} has its date`));
-    if (new Date(date) > new Date(DEMO_MOMENT)) {
-      // LEFT_OUT.scheduled
-      left.scheduled.push(path);
-      continue;
-    }
+    // A post dated after the moment the content is made at is scheduled for its date, as an editor's save of it says;
+    // every other post is published.
+    post.scheduled = new Date(date) > new Date(DEMO_MOMENT) ? date : null;
+    written.status = post.scheduled ? 'scheduled' : 'published';
     written.date = date;
     for (const [key, value] of Object.entries(fields)) {
       if (['type', 'address', 'title', 'date'].includes(key)) continue;
@@ -351,7 +335,7 @@ async function makeSource(site, out) {
 
   // The settings and the menus, from design/content/site.json.
   const given = JSON.parse(read('site.json'));
-  const known = ['title', 'description', 'publisher', 'header', 'menu', 'footer', 'forms', 'cookieDeclaration', ...FRAME_ONLY.filter((one) => !one.includes('.'))];
+  const known = ['title', 'description', 'publisher', 'header', 'menu', 'footer', 'forms', 'cookieDeclaration', 'templates', ...FRAME_ONLY.filter((one) => !one.includes('.'))];
   const unknown = Object.keys(given).filter((key) => !known.includes(key));
   const carried = new Set(['cookieDeclaration.note', 'header.cta', 'header.menuWord', 'header.search', 'header.search.word', 'header.search.links', 'footer.upper.b1', 'footer.upper.a2', 'footer.lower.a1', 'footer.lower.b1', 'footer.lower.a2']);
   for (const [at, part] of Object.entries({ header: given.header, 'header.search': given.header.search ?? {}, 'footer.upper': given.footer.upper, 'footer.lower': given.footer.lower, cookieDeclaration: given.cookieDeclaration ?? {} })) {
@@ -367,11 +351,10 @@ async function makeSource(site, out) {
   const entries = (items, where) => items.map(({ title, url, items: under, description, ...rest }, at) => {
     const here = `${where}.${at + 1}`;
     if (Object.keys(rest).length > 0) stop(`site.json: the menu's entry ${here} holds ${Object.keys(rest).join(', ')}`);
-    // LEFT_OUT.menuDescriptions
-    if (description !== undefined) left.menuDescriptions.push(title);
     const lead = url === undefined ? {} : target(url, `site.json: the menu's entry ${here}`, null);
     const to = typeof lead === 'string' && lead.startsWith('konzilo:') ? { post: lead.slice('konzilo:'.length) } : url === undefined ? {} : { url: lead };
-    return { title, ...to, ...(under ? { items: entries(under, here) } : {}) };
+    // The line under the entry, as the large menu shows it.
+    return { title, ...to, ...(description !== undefined ? { description } : {}), ...(under ? { items: entries(under, here) } : {}) };
   });
   write('menus/main.json', jsonFile({ items: entries(given.menu.items, 'main') }), 'site.json');
   write('menus/social.json', jsonFile({ items: entries(given.footer.upper.b1.links.map(({ label, href }) => ({ title: label, url: href })), 'social') }), 'site.json');
@@ -385,18 +368,15 @@ async function makeSource(site, out) {
   const expected = Object.values(LEGAL_PAGES).map((address) => ({ label: postAt.get(address).fields.title, href: address }));
   if (JSON.stringify(legalLinks) !== JSON.stringify(expected)) stop(`site.json: footer.lower.a2.links must be the legal pages, each by its title, ${JSON.stringify(expected)}, since the frame shows the core's legal pages there`);
 
-  // The forms: their fields are site-description.json's, which must be site.json's but for the links in labels.
+  // The forms: their label, fields and own button text, where it gives one, are site-description.json's, which must be
+  // site.json's, a link in a field's label written as Markdown, as both take it; the confirmations are settings.
   const forms = {};
-  const plain = (label) => label.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
-  for (const [name, { confirmation, label, fields, ...rest }] of Object.entries(given.forms)) {
+  for (const [name, { confirmation, label, fields, button, editable, ...rest }] of Object.entries(given.forms)) {
     if (Object.keys(rest).length > 0) stop(`site.json: the form ${name} holds ${Object.keys(rest).join(', ')}`);
     forms[name] = { confirmation };
-    const wanted = { label, fields: fields.map((field) => {
-      if (plain(field.label) !== field.label) left.labelLinks.push(`${name}.${field.name}`);
-      return { ...field, label: plain(field.label) };
-    }) };
+    const wanted = { label, fields, ...(button !== undefined ? { button } : {}), ...(editable !== undefined ? { editable } : {}) };
     const declared = JSON.parse(readFileSync(join(ROOT, 'site-description.json'), 'utf8')).forms?.[name];
-    if (JSON.stringify(declared) !== JSON.stringify(wanted)) stop(`site-description.json: the form ${name} is not site.json's, with each link in a label as its words alone: ${JSON.stringify(wanted)}`);
+    if (JSON.stringify(declared) !== JSON.stringify(wanted)) stop(`site-description.json: the form ${name} is not site.json's: ${JSON.stringify(wanted)}`);
   }
   const declaredForms = Object.keys(JSON.parse(readFileSync(join(ROOT, 'site-description.json'), 'utf8')).forms ?? {});
   const extra = declaredForms.filter((name) => !Object.hasOwn(given.forms, name));
@@ -415,15 +395,13 @@ async function makeSource(site, out) {
     footerNote: given.footer.lower.b1.text,
     // The words after the cookie policy's declaration, where site.json gives them (design/content/README.md asks for them).
     cookieDeclarationNote: given.cookieDeclaration?.note,
-    ...Object.fromEntries(Object.entries(TEMPLATE_WORDS).map(([name, value]) => {
-      const setting = site.settings.find((one) => one.name === name) ?? stop(`site-description.json declares no setting ${name}, which TEMPLATE_WORDS gives`);
-      return [name, setting.type === 'post' ? postId(value, `TEMPLATE_WORDS.${name}`) : value];
-    })),
+    ...templateSettings(given.templates, postId),
     search: { description: given.description, publisher: given.publisher },
     metaLine: { types: { article: { format: META_LINE_FORMAT } } },
     legalPages,
     forms,
     notFound: { page: notFound.id },
+    startPage: { page: postId('/', 'the start page, pages/index.md') },
   };
   write('settings.json', jsonFile(settings), 'site.json');
 
@@ -432,9 +410,20 @@ async function makeSource(site, out) {
     cpSync(file, join(out, 'media', name));
   }
 
-  const live = posts.filter((post) => !left.scheduled.includes(post.path));
-  const addresses = new Map(live.filter((post) => !post.notFound).map((post) => [`${post.type.collection}/${post.id}.md`, { path: post.path, address: post.address }]));
-  return { left, posts: live, originals: originals.size, addresses, names };
+  const addresses = new Map(posts.filter((post) => !post.notFound).map((post) => [`${post.type.collection}/${post.id}.md`, { path: post.path, address: post.address }]));
+  return { left, posts, scheduled: posts.filter((post) => post.scheduled), originals: originals.size, addresses, names };
+}
+
+// Whether content/ is a copy of the demo content, as a build fills it: every file of it as demo-content/ holds it, and
+// every file of demo-content/ there but a post dated after now, which the core's konzilo-demo-content leaves out until
+// its moment.
+function isDemoCopy() {
+  if (!existsSync(DEMO)) return false;
+  const [inContent, inDemo] = [filesIn(CONTENT), filesIn(DEMO)];
+  const held = new Set(inContent);
+  if (!inContent.every((path) => inDemo.includes(path) && readFileSync(join(CONTENT, path)).equals(readFileSync(join(DEMO, path))))) return false;
+  const ahead = (path) => path.endsWith('.md') && new Date(/^date: (\S+)$/m.exec(readFileSync(join(DEMO, path), 'utf8'))?.[1] ?? 0) > new Date();
+  return inDemo.every((path) => held.has(path) || ahead(path));
 }
 
 async function main() {
@@ -444,7 +433,7 @@ async function main() {
     return;
   }
 
-  if (existsSync(CONTENT) && !sameFiles(CONTENT, DEMO)) {
+  if (existsSync(CONTENT) && !isDemoCopy()) {
     console.log(`demo-content: ${CONTENT} is no copy of demo-content/, so the site builds from content of its own; nothing is changed. Remove it to build from the demo content.`);
     return;
   }
@@ -463,9 +452,12 @@ async function main() {
   const content = join(WORK, 'content');
   rmSync(WORK, { recursive: true, force: true });
   const made = await makeSource(site, source);
+  const sourceFile = (post) => `${post.type.collection}/${post.id}.md`;
 
+  // The demo content, as the intake writes it at the moment the content is made at: every post live but the scheduled
+  // ones, which wait for their moments and have no file yet.
   const report = runIntake({ source, content });
-  const problems = shortfalls(report, made.names);
+  const problems = shortfalls(report, made.names, { waiting: made.scheduled.map((post) => ({ file: sourceFile(post), at: post.scheduled })) });
   // Each post at the address design/content/ gives it.
   for (const [file, { path, address }] of made.addresses) {
     const post = report.posts.find((one) => one.file === file);
@@ -473,6 +465,32 @@ async function main() {
     else if (post.state === 'live' && post.address !== address) problems.push(`moved: ${path} is at ${post.address}, not ${address}`);
   }
   if (report.posts.length !== made.posts.length) problems.push(`the intake read ${report.posts.length} posts, of ${made.posts.length} written`);
+
+  // The file of each scheduled post, as the intake writes it once its moment has come: the intake run again after every
+  // date the posts hold, which publishes each scheduled post at once, with its own date, and says that its moment had
+  // passed, the one warning expected of it. The file, and the masters it names, join the demo content, from which
+  // Compose's seed makes the post scheduled again, and which a build leaves out of the content it fills (the core's
+  // konzilo-demo-content) until its moment.
+  if (made.scheduled.length > 0) {
+    const later = new Date(Math.max(...made.scheduled.map((post) => new Date(post.scheduled).valueOf())) + 60_000).toISOString().replace(/\.\d{3}Z$/, 'Z');
+    const ahead = join(WORK, 'ahead');
+    const second = runIntake({ source, content: ahead, moment: later });
+    problems.push(...shortfalls(second, made.names, { passed: made.scheduled.map(sourceFile) }).map((line) => `at ${later}: ${line}`));
+    for (const post of made.scheduled) {
+      const found = second.posts.find((one) => one.file === sourceFile(post));
+      if (found?.state === 'live' && found.address !== post.address) problems.push(`moved: ${post.path} is at ${found.address}, not ${post.address}`);
+      const file = `${post.type.collection}/${post.place}.md`;
+      if (existsSync(join(content, file))) problems.push(`${post.path}: the intake wrote ${file} at ${DEMO_MOMENT}, before its moment, ${post.scheduled}`);
+      if (!existsSync(join(ahead, file))) {
+        problems.push(`${post.path}: the intake wrote no ${file} at ${later}`);
+        continue;
+      }
+      cpSync(join(ahead, file), join(content, file));
+      for (const [, name] of readFileSync(join(ahead, file), 'utf8').matchAll(/media\/([^)\s"'\\]+)/g)) {
+        if (!existsSync(join(content, 'media', name))) cpSync(join(ahead, 'media', name), join(content, 'media', name));
+      }
+    }
+  }
   if (problems.length > 0) stop(`the intake did not take the demo content as it is (its folders are kept in ${WORK}):\n  ${problems.join('\n  ')}`);
 
   // content/ goes first, so that a run cut short here leaves no copy of the old demo content beside the new.
@@ -484,9 +502,11 @@ async function main() {
 
   const files = filesIn(DEMO);
   const masters = files.filter((path) => path.startsWith('media/')).length;
-  console.log(`demo-content: ${report.posts.length} posts live (${countsOf(report)}), ${files.length} files, ${masters} masters of ${made.originals} originals; 0 refusals, 0 warnings`);
+  const live = report.posts.filter((post) => post.state === 'live').length;
+  const scheduled = made.scheduled.map((post) => `${post.path}, for ${post.scheduled}`).join('; ');
+  console.log(`demo-content: ${live} posts live (${countsOf(report)})${scheduled ? `, ${made.scheduled.length} scheduled (${scheduled})` : ''}, ${files.length} files, ${masters} masters of ${made.originals} originals; 0 refusals, 0 warnings`);
   const { left } = made;
-  console.log(`demo-content: left out: ${left.scheduled.length} scheduled (${left.scheduled.join(', ')}), ${left.menuDescriptions.length} menu descriptions, ${left.labelLinks.length} links in labels (${left.labelLinks.join(', ')}), ${left.modified.length} days of last change; Home stands at /home/ (LEFT_OUT in scripts/demo-content.mjs)`);
+  console.log(`demo-content: left out: ${left.modified.length} days of last change (LEFT_OUT in scripts/demo-content.mjs)`);
 }
 
 try {
