@@ -1,6 +1,6 @@
 read when planning work, briefing a subagent, or judging what one delivered
 
-How the design phase was run, and what it taught. The brief (`docs/brief.md`) sets the role: one session plans and orchestrates, and subagents on Opus or Sonnet do the work, at an effort up to and including extra high, never max.
+How the design phase and the build phase were run, and what they taught. The brief (`docs/brief.md`) sets the role: one session plans and orchestrates, and subagents on Opus or Sonnet do the work, at an effort up to and including extra high, never max.
 
 ## What worked
 
@@ -14,10 +14,18 @@ How the design phase was run, and what it taught. The brief (`docs/brief.md`) se
 - **Going back to the same agent** for a follow-up in the area it knows (the canvas, the design system in Claude) saved it from learning the area again. A fresh agent was better for a new round in Konzilo Design, where the repository's own documents carry what the agent needs.
 - **A brief says what is wanted and why,** names the files to read rather than retelling them, sets the boundaries (what is read-only, who commits, where scratch files go), and says what the report must hold. It does not say how.
 - **Faults go where they belong.** A fault in Konzilo or Konzilo Design is fixed there, with a test, and released when its own gate passes; the demo then takes the release up. Three releases of Konzilo Design were made this way in one day.
+- **One spec, a ticket for each piece, one merger.** What the core needed was one spec issue in Konzilo with a ticket for each piece, each built by its own agent on a branch in a worktree of its own, and merged into one integration branch by one agent, which then ran the gate and made the release. Konzilo's `docs/agents/waves.md` holds the procedure. Before the gate, a review of the whole branch on two axes, the repository's standards and the spec, found thirty-nine things the tickets had left between them.
+- **Building against what is not yet released.** The site was built against the core's integration branch by packing that branch into `node_modules`, with the pin in `package.json` unchanged and the work uncommitted, the whole tree kept safe under a Git ref of its own (`refs/backup/…`). It was committed when the release was out and pinned, after a fresh `npm ci`.
+- **Resuming an agent by its id** (SendMessage) long after its first report, also after the orchestrator's own context had been summarised. The site's agent and the image's agent each did several rounds that way.
 
 ## What to know
 
-- **Konzilo's gate** (`npm run gate`) takes half an hour on a quiet machine and over an hour on a busy one, and uses Docker and three browser engines. One at a time.
+- **Konzilo's gate** (`npm run gate`) takes half an hour on a quiet machine and over an hour on a busy one, and uses Docker and three browser engines. One at a time, and nothing else heavy beside it.
+- **The machine is one machine.** With four or five agents running tests at once, Konzilo's unit tests took three to ten minutes instead of one, and acceptance tests failed on their time limits alone. Two heavy jobs at most.
+- **Docker's disk fills.** The image's builds on Docker Desktop's shared builder left some fifty gigabytes of cache, the VM's disk filled, and nothing but a prune frees that cache, which this project forbids; Thomas allowed one. Build on a `buildx` builder of your own, by name, as `image/build.mjs` now does, watch it with `docker buildx du --builder <name>`, and remove it by name when the work is done.
+- **Node 26.13.1 can hang at its exit:** a build that has written everything and never ends, with no CPU. Kill that one process; `Kntnt/konzilo#54` holds how it is told from a slow run.
+- **Heights do not show every difference from a mockup.** One round compared the pages' heights with their mockups' and found nothing, while every table had grown wider. Compare what is drawn.
+- **A package on ghcr.io is private when first pushed.** Only its owner makes it public, in the package's settings on GitHub; no command does.
 - **Konzilo Design's tests** (`npm test`) take some ten minutes, of which the frame's tests in four browser variants are seven and a half, and need Playwright's browsers, which are installed.
 - **A released browser is not Playwright's build of it.** Thomas looks at pages in the installed Firefox, which had scroll timelines of its own when Playwright's Firefox had none, so a fault he saw at once passed every test. What he will look at is checked in the browser he uses; Konzilo Design's `docs/spec/header.md` says how a released Firefox, a Chromium-based browser and Safari are driven.
 - **A canvas or a design system in Claude cannot be opened from a session,** and their types' instructions say not to try. What is published there is checked by drawing the same content locally and comparing it with a screenshot. Only Thomas sees the real thing.
