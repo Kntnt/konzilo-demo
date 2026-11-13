@@ -34,6 +34,7 @@ docker buildx imagetools inspect ghcr.io/kntnt/konzilo-demo:X.Y.Z
 ## What was tried, and how
 
 - **1.0.0**, 2026-11-13, at `4d203d5`: Docker Desktop on a Mac with Apple silicon, arm64 natively and amd64 emulated, in Chromium and Firefox.
+- **With no sign-in**, once the package was public: the README's command with `DOCKER_CONFIG` set to an empty folder and `DOCKER_HOST` to Docker Desktop's socket, so that no stored sign-in could be used. It fetched the index the push had made and answered on all four addresses.
 - **Podman and nerdctl** were tried inside Linux containers on that Mac, since neither is installed on it: rootless Podman in `quay.io/podman/stable`, privileged, with `vfs` storage, and nerdctl with containerd in `debian:bookworm-slim` with the native snapshotter, the image flattened to one layer for both, since their usual storage does not work on Docker Desktop's kernel. The Podman container leaves three anonymous volumes behind when it is removed; remove them by name.
 - **Held to 2 GB of memory** (`image:check -- --limits`), the live preview has been killed while a save was built. The README asks for 4 GB.
 - **Not tried:** Windows, Docker Engine on Linux, OrbStack, Colima, Rancher Desktop, WebKit.
