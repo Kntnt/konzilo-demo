@@ -20,6 +20,7 @@ How the design phase and the build phase were run, and what they taught. The bri
 
 ## What to know
 
+- **Codex builds from a prompt that stands alone.** GPT-6.1 Sol through Codex built a ticket in Konzilo Design, with its tests, and then prepared that release and its take-up here, each in one run of about half an hour. What made it work: the prompt names the files to read and the rules, tells it to publish nothing, and asks for a report file, pictures and the exact commands to publish, which the orchestrator checks and runs. It judged a poor layout by looking and put the page back.
 - Keep the orchestrating session's turns few, give a written procedure to Sonnet, start no work beyond what is asked, and let Codex (the `agents:codex` skill) build bounded tickets in Konzilo and Konzilo Design, with tests as the judge and a Claude session to review.
 - **Konzilo's gate** (`npm run gate`) takes half an hour on a quiet machine and over an hour on a busy one, and uses Docker and three browser engines. One at a time, and nothing else heavy beside it.
 - **The machine is one machine.** With four or five agents running tests at once, Konzilo's unit tests took three to ten minutes instead of one, and acceptance tests failed on their time limits alone. Two heavy jobs at most.

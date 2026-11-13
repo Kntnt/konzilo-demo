@@ -37,6 +37,7 @@ docker buildx imagetools inspect ghcr.io/kntnt/konzilo-demo:X.Y.Z
 ## What was tried, and how
 
 - **1.0.0**, 2026-11-13, at `4d203d5`: Docker Desktop on a Mac with Apple silicon, arm64 natively and amd64 emulated, in Chromium and Firefox.
+- **1.2.0**, 2026-11-13, at `10c9064`, on Konzilo Design 0.12.0: the same, and on the logistics page that the quotation stands beside the card at 1440 px and under it at 390 px, by the boxes Playwright measures.
 - **1.1.0**, 2026-11-13, at `c8bfe55`: the same, by a Sonnet agent from this file alone, and Customers' filter by solution against the image's own search service: a word that all four case studies match, alone and narrowed to each of three solutions.
 - **With no sign-in**, once the package was public: the README's command with `DOCKER_CONFIG` set to an empty folder and `DOCKER_HOST` to Docker Desktop's socket, so that no stored sign-in could be used. It fetched the index the push had made and answered on all four addresses.
 - **Podman and nerdctl** were tried inside Linux containers on that Mac, since neither is installed on it: rootless Podman in `quay.io/podman/stable`, privileged, with `vfs` storage, and nerdctl with containerd in `debian:bookworm-slim` with the native snapshotter, the image flattened to one layer for both, since their usual storage does not work on Docker Desktop's kernel. The Podman container leaves three anonymous volumes behind when it is removed; remove them by name.
