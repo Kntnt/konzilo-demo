@@ -30,13 +30,14 @@ docker buildx imagetools inspect ghcr.io/kntnt/konzilo-demo:X.Y.Z
 ```
 
 - The push builds again from the same builder's cache, so that what is pushed is what was proved, but for the step that writes the image's date. If `HEAD` has moved since the proof, give `--site <commit>` to both builds.
-- Then prove what the registry holds: remove the local copies by name, run the README's command word for word, and run the two checks with `--no-build` against the pulled image.
+- Then prove what the registry holds: remove the local copies by name, run the README's command word for word, and run the two checks with `--no-build` against the pulled image. The README's command pulls `latest` alone, so pull the version's own tag by name before the checks.
 - Leave Docker as it was: `docker logout ghcr.io`, and remove by name the pulled images, the local image, the builder (`docker buildx rm kdemo-img-builder`, which takes its cache with it) and `moby/buildkit:buildx-stable-1` when no other builder uses it. Never a prune.
 - Publishing uses Thomas's `gh` token, which has `write:packages`. It is never printed.
 
 ## What was tried, and how
 
 - **1.0.0**, 2026-11-13, at `4d203d5`: Docker Desktop on a Mac with Apple silicon, arm64 natively and amd64 emulated, in Chromium and Firefox.
+- **1.1.0**, 2026-11-13, at `c8bfe55`: the same, by a Sonnet agent from this file alone, and Customers' filter by solution against the image's own search service: a word that all four case studies match, alone and narrowed to each of three solutions.
 - **With no sign-in**, once the package was public: the README's command with `DOCKER_CONFIG` set to an empty folder and `DOCKER_HOST` to Docker Desktop's socket, so that no stored sign-in could be used. It fetched the index the push had made and answered on all four addresses.
 - **Podman and nerdctl** were tried inside Linux containers on that Mac, since neither is installed on it: rootless Podman in `quay.io/podman/stable`, privileged, with `vfs` storage, and nerdctl with containerd in `debian:bookworm-slim` with the native snapshotter, the image flattened to one layer for both, since their usual storage does not work on Docker Desktop's kernel. The Podman container leaves three anonymous volumes behind when it is removed; remove them by name.
 - **Held to 2 GB of memory** (`image:check -- --limits`), the live preview has been killed while a save was built. The README asks for 4 GB.
