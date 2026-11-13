@@ -56,7 +56,7 @@ const LEGAL_PAGES = { privacyPolicy: '/privacy-policy/', cookiePolicy: '/cookie-
 // The site's identity in its settings: the logo and the site icon, files in design/logo/.
 const IDENTITY = { logo: 'ampfield-logo', icon: 'ampfield-mark' };
 
-// The meta line of an article, as Thomas asked for it (design/feedback.md, point 22).
+// The meta line of an article (design/README.md, "Rules the design keeps").
 const META_LINE_FORMAT = 'By {authors} • Published {date} in {category}';
 
 // The words the templates show that no post holds, `templates` in design/content/site.json, as the settings of the

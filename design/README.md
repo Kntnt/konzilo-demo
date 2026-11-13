@@ -24,7 +24,7 @@ What the demo site shows, who the fictional company is, and which pages are desi
 - **Slogan:** On-site energy for industry.
 - **Head office:** Fältverksgatan 6, 417 64 Gothenburg, Sweden, a street that does not exist. **Registration number:** 559214-3871, which fails the checksum of a real one. **VAT number:** SE559214387101.
 - **Addresses:** e-mail at `ampfield.example`; telephone numbers only from series reserved for fiction (Sweden: 031-390 06 00 to 99); street names that do not exist in their towns.
-- **Rules of thumb** every page and article keeps to (settled where the texts disagreed, `feedback.md` 24 to 28):
+- **Rules of thumb** every page and article keeps to:
   - A solar system bought outright pays for itself in 6 to 9 years where at least 80% of its output is used on site: 7 to 9 in Sweden and Denmark, 6 to 8 in the Netherlands and the United Kingdom, 6 to 8 for a 1 MWp roof.
   - An east–west roof gives 850 to 910 kWh a year for each kWp in the four countries (Ampfield's model, Gothenburg 870, Malmö 910, Rotterdam 900, Leeds 850); 850 to 1,000 holds for rooftop solar of every kind, south-facing rows giving about a tenth more per panel.
   - An east–west system takes about 6,500 to 7,000 m² of roof for each MWp: 10,000 m² holds about 1.5 MWp, 30,000 m² about 4.5 MWp.
@@ -63,14 +63,14 @@ Four have a case study: Norrvik Logistics, Brantevik Foods, Lindhagen Furniture 
 
 - **Colours:** a deep green as the primary colour, and a warm amber as the secondary. The design file holds the exact values.
 - **Type:** Konzilo Design's own choice for a new design, Mona Sans with Mona Sans Mono.
-- **Everything else:** Konzilo Design's defaults, unless a default plainly fails this site or Thomas asked otherwise (`feedback.md`): the header without its link menu, at the window's edge, sliding away and translucent; the footer at the window's edge, revealed by the page, which casts its shadow on it, and the text of its right column set at the column's end; the rule across the tabs above them; shadows; corners of 3 px; and the first heading and the display style light and a little narrow, as display type.
+- **Everything else:** Konzilo Design's defaults, unless a default plainly fails this site, with these exceptions: the header without its link menu, at the window's edge, sliding away and translucent; the footer at the window's edge, revealed by the page, which casts its shadow on it, and the text of its right column set at the column's end; the rule across the tabs above them; shadows; corners of 3 px; and the first heading and the display style light and a little narrow, as display type.
 - **Voice:** plain and concrete, written by engineers for people who run buildings and budgets. British English. Figures over adjectives. No hype.
 
 ## The site
 
 One language, British English.
 
-The last column says which pages the design phase drew as mockups, which Thomas approved on 2026-11-12, at Konzilo Design 0.6.1. The mockups were removed on 2026-11-13 and are in Git's history, as `design/mockups/` up to commit `fe519a0`; the built site is now the reference for the design.
+The last column says which pages the design phase drew as mockups. The built site is the reference for the design.
 
 | Address | Page | Type | Designed |
 |---|---|---|---|
@@ -117,13 +117,24 @@ Categories: Guides, Market and policy, Company news. Topics: Solar, Storage, Cha
 | Insights | Guides, Market and policy, Company news |
 | About | About us, Team, Careers, Contact |
 
-Customers is no section of its own (Thomas, 2026-11-12): each industry page lists the case studies of its industry, and the case studies keep their addresses under `/customers/` and Customers as their trail's top level. The menu reaches the header's megamenu only: the header shows no link menu, only the menu button, the search and its call to action, "Book a site assessment".
+Customers is no section of its own: each industry page lists the case studies of its industry, and the case studies keep their addresses under `/customers/` and Customers as their trail's top level. The menu reaches the header's megamenu only: the header shows no link menu, only the menu button, the search and its call to action, "Book a site assessment".
 
 ### The footer
 
 Konzilo Design's own arrangement and sample content, with Ampfield's words: the brand, the social links, one sentence about the company, the top level of the menu, the address, the legal pages, and the consent links. Beside the address stand three lines: "Registered office: Gothenburg", "Ampfield Energy is a fictional company." and "This site demonstrates Konzilo.", the word Konzilo a link to Konzilo's site, `https://www.konzilo.com/`. On a wide screen they end at the column's end, flush with the consent links under them. The registration and VAT numbers are not shown.
 
 The footer lies still at the window's bottom edge, under the page, which scrolls off it and casts its shadow on it; scrolled to the end, it stands where a footer at the page's end would.
+
+## Rules the design keeps
+
+- A section's head stands at the start edge, never centred.
+- An opening without a picture keeps its height, two thirds of the window's.
+- The page's shadow on the footer is gone at the page's end and returns when scrolling back up; it comes and goes at once, as the header's does.
+- Ampfield Pilot's tabs are "Measure only" and "Control too", after the question "Measure only, or control too?".
+- Insights keeps Latest above Earlier articles, which has Category, Topic and Search filters and shows nine articles a page, in three rows of three.
+- Term pages use the same filters and page size as Insights, without the row the page itself settles; a search includes the page's own term.
+- An article's meta line uses `By {authors} • Published {date} in {category}`, with the authors and category linked and topics as linked pills.
+- Contact and Book a site assessment link the words "privacy policy" in their acceptance labels to the privacy policy.
 
 ## Rules for every page
 
