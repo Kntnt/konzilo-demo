@@ -17,6 +17,18 @@ const TYPES = Object.fromEntries(Object.entries(description.types).map(([name, t
 ]));
 
 /**
+ * The address of a term's page below the site's base, by its taxonomy's address in the site description, as Konzilo
+ * Design's docs/spec/konzilo.md builds a topic's in its article template; null where the taxonomy has no pages. The core
+ * gives no helper for it (its metaLine() makes the category's link itself).
+ * @param {string} taxonomy The taxonomy's name in the site description: `topics`, `category` or `authors`.
+ * @param {{ id: string }} term The term's entry, its id its slug.
+ */
+export function termUrl(taxonomy, term) {
+  const address = description.taxonomies?.[taxonomy]?.address;
+  return address ? `${import.meta.env.BASE_URL.replace(/\/$/, '')}${address.replace('{slug}', term.id).replace('{path}', term.id)}` : null;
+}
+
+/**
  * Gives the page its context.
  * @param {object} Astro The template's Astro global.
  * @param {object} [options] `entry`, the post or term the page shows, whose trail the page takes; `title`, the H1 a
@@ -28,6 +40,7 @@ export async function givePageContext(Astro, { entry, title = entry?.data?.title
     title,
     breadcrumbs: trail && entry ? await breadcrumbs(entry, Astro.url) : [],
     search: `${import.meta.env.BASE_URL}${description.search.address.replace(/^\//, '')}`,
+    // LEFT_OUT.filterCounts: what a filtered list counts by, until the core hands it its `list`.
     types: TYPES,
   });
 }

@@ -1,11 +1,13 @@
 ---
 // The start page, at /. The core keeps / for the site's own start page, so the Home page of design/content/
 // stands as a page at /home/ (LEFT_OUT.home in scripts/demo-content.mjs), and this stand-in shows that page's body
-// here, drawn as any page's, with no trail, until it is settled whether an editor may choose a page for the start
-// page. The head is the start page's own, from the site's title and description, not the page's.
+// here, as the design's bands through Konzilo Design's PageBody, with no trail, until it is settled whether an editor
+// may choose a page for the start page. The head is the start page's own, from the site's title and description, not
+// the page's.
+import Body from '@kntnt/konzilo/astro/Body.astro';
 import { entriesIn, entryAddress, startPages } from '@kntnt/konzilo/astro/languages';
+import PageBody from '@kntnt/konzilo-design/page-parts/PageBody.astro';
 import { render } from 'astro:content';
-import PageBody from '../components/PageBody.astro';
 import Site from '../layouts/Site.astro';
 import { givePageContext } from '../lib/design-page.js';
 
@@ -23,5 +25,5 @@ const { Content } = await render(home);
 await givePageContext(Astro, { entry: home, trail: false });
 ---
 <Site>
-  <PageBody post={home}><Content /></PageBody>
+  <PageBody><Body post={home}><Content /></Body></PageBody>
 </Site>

@@ -49,16 +49,12 @@ export function frameProps({ design, settings, menus, legal, current, base, home
   const logos = logoAddresses(design.project, { base });
   const menu = withDescriptionsStandIn(menuProps(menus.main ?? [], { current, base }));
   const action = settings.headerActionPage && settings.headerActionLabel ? { label: settings.headerActionLabel, href: based(settings.headerActionPage.url) } : undefined;
-  // No list where there are no links: Konzilo Design (0.6.1 and 0.7.0) writes "0" in the search box for an empty one
-  // (SearchPanel.astro:27, `search.links?.length && …`).
-  const searchLinks = links(menus.search);
-
   const headerFor = headerProps(header, design.project, {
     menu,
     logos,
     home,
     menuWord: settings.headerMenuWord,
-    search: { action: based(search.address), label: search.label, word: settings.headerSearchWord, links: searchLinks.length > 0 ? searchLinks : undefined },
+    search: { action: based(search.address), label: search.label, word: settings.headerSearchWord, links: links(menus.search) },
     cta: action,
   });
 

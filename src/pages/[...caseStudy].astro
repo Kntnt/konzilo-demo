@@ -1,13 +1,32 @@
 ---
-// A case study, the site's own type `case-study`, at its address, /customers/<slug>/ (site-description.json).
-// A plain stand-in for the design's case study: its customer, its headline and its body through the core's
-// Body.
+// A case study, the site's own type `case-study`, at its address, /customers/<slug>/ (site-description.json), made like
+// an article as Konzilo Design's docs/spec/konzilo.md (The templates, A type of the site's own) places it and the
+// mockups have it (design/mockups/src/lib/types.js):
+//
+// - its opening from its fields, the customer over the headline: the core's eyebrow, which the type takes and the demo
+//   content fills from `customer` (scripts/demo-content.mjs, EYEBROW_FROM), else `customer` itself;
+// - its body, with the project's facts beside it in place of the following menu: an Aside Block of a Value List of
+//   the type's fields (src/lib/facts.js), the industry linked to the page whose teaser headline is its name;
+// - "More case studies": those the core's relatedPosts() ranks, filled up to three with the newest, and a link to the
+//   rest;
+// - and the band that closes it, leading on to a site assessment.
+//
+// The Value List and the closing band are drawn by Konzilo Design's components through the core's Body, from their
+// plain rendering (src/lib/template-bands.js). Every word the template shows that no post holds, the facts' heading,
+// "More case studies" and its link, and the closing band, is a setting of the site's own.
 import Body from '@kntnt/konzilo/astro/Body.astro';
-import { entryPages } from '@kntnt/konzilo/astro/languages';
-import { render } from 'astro:content';
-import StandIn from '../components/StandIn.astro';
+import { entryPages, entryUrl } from '@kntnt/konzilo/astro/languages';
+import { listedPosts, relatedPosts, RELATED_POSTS } from '@kntnt/konzilo/astro/post-lists';
+import { siteSettings } from '@kntnt/konzilo/astro/site-settings';
+import AsideBlock from '@kntnt/konzilo-design/components/AsideBlock.astro';
+import ArticleBody from '@kntnt/konzilo-design/page-parts/ArticleBody.astro';
+import ArticleOpening from '@kntnt/konzilo-design/page-parts/ArticleOpening.astro';
+import ReadMore from '@kntnt/konzilo-design/page-parts/ReadMore.astro';
+import { getCollection, render } from 'astro:content';
 import Site from '../layouts/Site.astro';
 import { givePageContext } from '../lib/design-page.js';
+import { factsOf } from '../lib/facts.js';
+import { actions, section, values } from '../lib/template-bands.js';
 
 export function getStaticPaths() {
   return entryPages('case-studies', 'caseStudy');
@@ -16,11 +35,32 @@ export function getStaticPaths() {
 const { entry, page } = Astro.props;
 const { Content } = await render(entry);
 await givePageContext(Astro, { entry, title: entry.data.headline });
+const settings = (await siteSettings(Astro.url)) ?? {};
+
+const industryPage = (await getCollection('pages')).find((one) => one.data.teaser?.headline === entry.data.industry);
+const facts = factsOf(entry, 'case-study', ['customer', 'industry', 'location', 'built', 'solarCapacity', 'storageCapacity', 'chargePoints', 'contract', 'inService'], Astro.url, { industry: industryPage ? entryUrl(industryPage) : undefined });
+
+// The other case studies: the related ones, filled up to three with the newest not already among them.
+let others = await relatedPosts(entry);
+if (others.length < RELATED_POSTS) others = [...others, ...(await listedPosts({ type: 'case-study', number: RELATED_POSTS - others.length }, { post: entry }))];
+const more = settings.caseStudyMoreLabel && settings.caseStudyMorePage ? { label: settings.caseStudyMoreLabel, href: settings.caseStudyMorePage.url } : undefined;
+
+const closing = settings.caseStudyClosingHeading ? section({
+  surface: 'tint',
+  heading: settings.caseStudyClosingHeading,
+  text: settings.caseStudyClosingText,
+  blocks: [actions([
+    { label: settings.caseStudyClosingAction, href: settings.caseStudyClosingActionPage?.url },
+    { label: settings.caseStudyClosingOtherAction, href: settings.caseStudyClosingOtherActionPage?.url },
+  ])],
+}) : '';
 ---
 <Site entry={entry} page={page}>
-  <StandIn>
-    <p>{entry.data.customer}</p>
-    <h1>{entry.data.headline}</h1>
+  <ArticleOpening entry={entry} eyebrow={entry.data.customer} />
+  <ArticleBody>
     <Body post={entry} page={page}><Content /></Body>
-  </StandIn>
+    <AsideBlock slot="aside" heading={settings.caseStudyFactsHeading} surface="raised"><Body post={entry} html={values(facts)} /></AsideBlock>
+  </ArticleBody>
+  <ReadMore posts={others} heading={settings.caseStudyMoreHeading} more={more} surface="raised" />
+  {closing && <Body post={entry} html={closing} />}
 </Site>

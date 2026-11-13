@@ -1,12 +1,13 @@
 ---
-// The core's cookie declaration on the page the site settings choose as the cookie policy, after its body, in a band of
-// its own in the reading column, as the mockup places it (design/mockups/pages/cookie-policy.astro), and nothing on any
-// other page. After it, where the site settings give one, the note design/content/README.md asks for ("What the legal
-// pages assume"), a link written in it as Markdown drawn as a link, and an e-mail address standing alone linked to it,
-// as GFM links one in body text and the mockup has it.
+// The core's cookie declaration on the page the site settings choose as the cookie policy, and nothing on any other
+// page: in a Reading Area at the start, as the mockup places it (design/mockups/pages/cookie-policy.astro), which the
+// page's PageBody puts in a section of its own after the body. After it, where the site settings give one, the note
+// design/content/README.md asks for ("What the legal pages assume"), a link written in it as Markdown drawn as a link,
+// and an e-mail address standing alone linked to it, as GFM links one in body text and the mockup has it.
 import CookieDeclaration from '@kntnt/konzilo/astro/CookieDeclaration.astro';
 import { entryUrl } from '@kntnt/konzilo/astro/languages';
 import { siteSettings } from '@kntnt/konzilo/astro/site-settings';
+import ReadingArea from '@kntnt/konzilo-design/components/ReadingArea.astro';
 
 const { entry } = Astro.props;
 const settings = (await siteSettings(Astro.url)) ?? {};
@@ -19,16 +20,8 @@ const note = settings.cookieDeclarationNote
   : null;
 ---
 {here && (
-  <section class="kn-band kn-section">
-    <div class="kn-band-content">
-      <div class="kn-section-body kn-body-text">
-        <div class="kn-reading-area" data-kn-side="start" data-kn-stack="before">
-          <div class="kn-reading-area-flow">
-            <CookieDeclaration />
-            {note && <p set:html={note} />}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <ReadingArea side="start">
+    <CookieDeclaration />
+    {note && <p set:html={note} />}
+  </ReadingArea>
 )}

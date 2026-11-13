@@ -1,17 +1,23 @@
 ---
-// The search page, which the core's integration puts at /search/, the address site-description.json declares:
-// the core's Search, its form, its results and its messages, in the site's words (astro.config.mjs). A plain
-// stand-in for the design's search page.
-import Search from '@kntnt/konzilo/astro/Search.astro';
+// The search page, which the core's integration puts at /search/, the address site-description.json declares, as
+// Konzilo Design's docs/spec/konzilo.md (The templates, The search page) places it: the package's title band, the trail
+// and the page's title as its H1, then the core's Search, its form, its results and its messages, in a Reading Area in
+// a section of its own. Its words are the core's search texts in the site's words, from design/content/system/search.md
+// (astro.config.mjs).
+import { breadcrumbs } from '@kntnt/konzilo/astro/breadcrumbs';
 import { pageTexts } from '@kntnt/konzilo/astro/languages';
-import StandIn from './StandIn.astro';
+import Search from '@kntnt/konzilo/astro/Search.astro';
+import ReadingArea from '@kntnt/konzilo-design/components/ReadingArea.astro';
+import { designPage } from '@kntnt/konzilo-design/design-props';
+import PageBody from '@kntnt/konzilo-design/page-parts/PageBody.astro';
+import TitleBand from '@kntnt/konzilo-design/page-parts/TitleBand.astro';
+import design from '../../design/site.design.json';
 import Site from '../layouts/Site.astro';
 
 const { title } = pageTexts(Astro.url).search;
+designPage(Astro, { design, title, breadcrumbs: await breadcrumbs(null, Astro.url, { title }) });
 ---
 <Site title={title}>
-  <StandIn>
-    <h1>{title}</h1>
-    <Search />
-  </StandIn>
+  <TitleBand />
+  <PageBody title={false}><ReadingArea side="end"><Search /></ReadingArea></PageBody>
 </Site>

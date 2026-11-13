@@ -1,12 +1,28 @@
 ---
-// A vacancy, the site's own type `job`, at its address, /about/careers/<slug>/ (site-description.json). A
-// plain stand-in for the design's vacancy: its title and its body through the core's Body.
+// A vacancy, the site's own type `job`, at its address, /about/careers/<slug>/ (site-description.json), made like an
+// article as Konzilo Design's docs/spec/konzilo.md (The templates, A type of the site's own) places a type with no
+// picture and the mockups have it (design/mockups/src/lib/types.js):
+//
+// - its opening on tint, with its excerpt as its deck and, under it, its facts, a Value List of the type's fields
+//   (src/lib/facts.js), and one main action to the body's crosshead on how to apply;
+// - its body with its following menu;
+// - "Other vacancies", the others by their last day to apply, soonest first, in the site's own `rows` presentation,
+//   and a link to the section of the careers page that lists them.
+//
+// The Value List, the action and the band of other vacancies are drawn by Konzilo Design's components and the site's
+// presentation through the core's Body, from their plain rendering (src/lib/template-bands.js). Every word the
+// template shows that no post holds, the action, the menu's label, "Other vacancies" and its link, is a setting of the
+// site's own; the action leads to the crosshead in its words, by the id the core gives a crosshead.
 import Body from '@kntnt/konzilo/astro/Body.astro';
 import { entryPages } from '@kntnt/konzilo/astro/languages';
+import { siteSettings } from '@kntnt/konzilo/astro/site-settings';
+import ArticleBody from '@kntnt/konzilo-design/page-parts/ArticleBody.astro';
+import ArticleOpening from '@kntnt/konzilo-design/page-parts/ArticleOpening.astro';
 import { render } from 'astro:content';
-import StandIn from '../components/StandIn.astro';
 import Site from '../layouts/Site.astro';
 import { givePageContext } from '../lib/design-page.js';
+import { factsOf } from '../lib/facts.js';
+import { actions, headingId, postList, section, values } from '../lib/template-bands.js';
 
 export function getStaticPaths() {
   return entryPages('jobs', 'job');
@@ -15,10 +31,25 @@ export function getStaticPaths() {
 const { entry, page } = Astro.props;
 const { Content } = await render(entry);
 await givePageContext(Astro, { entry, title: entry.data.title });
+const settings = (await siteSettings(Astro.url)) ?? {};
+
+// The opening takes the excerpt as its deck, where an article has its standfirst.
+const opening = { ...entry, data: { ...entry.data, standfirst: entry.data.excerpt } };
+const after = values(factsOf(entry, 'job', ['location', 'team', 'employment', 'closingDate'], Astro.url))
+  + actions([{ label: settings.vacancyApplyLabel, href: settings.vacancyApplyLabel ? `#${headingId(settings.vacancyApplyLabel)}` : undefined }]);
+
+const all = settings.vacancyAllPage ? `${settings.vacancyAllPage.url}${settings.vacancyAllAnchor ? `#${settings.vacancyAllAnchor}` : ''}` : undefined;
+const others = section({
+  surface: 'raised',
+  heading: settings.vacancyOthersHeading,
+  blocks: [
+    postList({ type: 'job', presentation: 'rows', order: 'closingDate', direction: 'ascending', number: 10 }),
+    actions([{ label: settings.vacancyAllLabel, href: all }]),
+  ],
+});
 ---
 <Site entry={entry} page={page}>
-  <StandIn>
-    <h1>{entry.data.title}</h1>
-    <Body post={entry} page={page}><Content /></Body>
-  </StandIn>
+  <ArticleOpening entry={opening} surface="tint"><Body post={entry} html={after} slot="after" /></ArticleOpening>
+  <ArticleBody label={settings.vacancyMenuLabel}><Body post={entry} page={page}><Content /></Body></ArticleBody>
+  <Body post={entry} html={others} />
 </Site>

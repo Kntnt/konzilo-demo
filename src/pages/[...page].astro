@@ -1,15 +1,16 @@
 ---
-// A page at its address, /<path>/: the slugs of its parents and its own (site-description.json). Its body is bands,
-// heroes and sections, which Konzilo Design's components draw, so it stands in Page's <main> with nothing around it,
-// the page's context given first (src/lib/design-page.js): the hero shows the page's title as its H1, and the trail its
-// levels. Blocks outside a hero or a section stand in a section of their own (PageBody.astro). Each post list stands in
-// the presentation it names, and each form in the site's form. On the page the site settings choose as the cookie
-// policy, the core's cookie declaration follows the body. A page whose post list has pages of its own has them at
+// A page at its address, /<path>/: the slugs of its parents and its own (site-description.json), as Konzilo Design's
+// docs/spec/konzilo.md (The templates, A page) places it: its body as the design's bands through the package's
+// PageBody, which puts a run of loose blocks in a section of its own and the title band first where the body opens with
+// no hero, the page's context given first (src/lib/design-page.js). Each post list stands in the presentation it
+// names, and each form in the site's form. On the page the site settings choose as the cookie policy, the core's cookie
+// declaration follows the body in a section of its own. A page whose post list has pages of its own has them at
 // <address>page/2/ and on.
+import Body from '@kntnt/konzilo/astro/Body.astro';
 import { entryPages } from '@kntnt/konzilo/astro/languages';
+import PageBody from '@kntnt/konzilo-design/page-parts/PageBody.astro';
 import { render } from 'astro:content';
 import CookiePolicyDeclaration from '../components/CookiePolicyDeclaration.astro';
-import PageBody from '../components/PageBody.astro';
 import Site from '../layouts/Site.astro';
 import { givePageContext } from '../lib/design-page.js';
 
@@ -22,6 +23,8 @@ const { Content } = await render(entry);
 await givePageContext(Astro, { entry });
 ---
 <Site entry={entry} page={page}>
-  <PageBody post={entry} page={page}><Content /></PageBody>
-  <CookiePolicyDeclaration entry={entry} />
+  <PageBody>
+    <Body post={entry} page={page}><Content /></Body>
+    <CookiePolicyDeclaration entry={entry} />
+  </PageBody>
 </Site>

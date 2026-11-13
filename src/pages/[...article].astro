@@ -1,14 +1,20 @@
 ---
-// An article at its address, /insights/<slug>/ (site-description.json). A plain stand-in for the design's
-// article: its main headline, its meta line, by the format the site settings give articles, and its body
-// through the core's Body.
+// An article at its address, /insights/<slug>/ (site-description.json), as Konzilo Design's docs/spec/konzilo.md (The
+// templates, An article) places it: its opening from its fields, with the meta line the core writes by the format the
+// site settings give articles and its topics as pills linked to their pages; its body with the following menu; and
+// "Read more", the posts the core's relatedPosts() ranks, with a link to the rest whose words and page are the site's
+// settings. The category over the headline and the menu's label and "Read more" are the package's own.
 import Body from '@kntnt/konzilo/astro/Body.astro';
+import { metaLine } from '@kntnt/konzilo/astro/helpers';
 import { entryPages } from '@kntnt/konzilo/astro/languages';
-import { render } from 'astro:content';
-import MetaLine from '../components/MetaLine.astro';
-import StandIn from '../components/StandIn.astro';
+import { relatedPosts } from '@kntnt/konzilo/astro/post-lists';
+import { siteSettings } from '@kntnt/konzilo/astro/site-settings';
+import ArticleBody from '@kntnt/konzilo-design/page-parts/ArticleBody.astro';
+import ArticleOpening from '@kntnt/konzilo-design/page-parts/ArticleOpening.astro';
+import ReadMore from '@kntnt/konzilo-design/page-parts/ReadMore.astro';
+import { getEntries, render } from 'astro:content';
 import Site from '../layouts/Site.astro';
-import { givePageContext } from '../lib/design-page.js';
+import { givePageContext, termUrl } from '../lib/design-page.js';
 
 export function getStaticPaths() {
   return entryPages('articles', 'article');
@@ -17,11 +23,13 @@ export function getStaticPaths() {
 const { entry, page } = Astro.props;
 const { Content } = await render(entry);
 await givePageContext(Astro, { entry, title: entry.data.headline });
+const settings = (await siteSettings(Astro.url)) ?? {};
+// Each topic with the address of its page.
+const topics = (await getEntries(entry.data.topics ?? [])).map((topic) => ({ name: topic.data.name, url: termUrl('topics', topic) }));
+const more = settings.articleMoreLabel && settings.articleMorePage ? { label: settings.articleMoreLabel, href: settings.articleMorePage.url } : undefined;
 ---
 <Site entry={entry} page={page}>
-  <StandIn>
-    <h1>{entry.data.headline}</h1>
-    <MetaLine entry={entry} />
-    <Body post={entry} page={page}><Content /></Body>
-  </StandIn>
+  <ArticleOpening entry={entry} metaLine={await metaLine(entry, Astro.url)} topics={topics} />
+  <ArticleBody><Body post={entry} page={page}><Content /></Body></ArticleBody>
+  <ReadMore posts={await relatedPosts(entry)} more={more} surface="raised" />
 </Site>

@@ -53,6 +53,14 @@ export const LEFT_OUT = {
     what: 'A post\'s own day of last change, `modified` in design/content/; each post\'s is its date.',
     waits: 'Nothing that is planned: the core derives `modified` from the post\'s history, and no source file sets it (src/intake/post-file.js:3).',
   },
+  filterCounts: {
+    what: 'A filtered list\'s count and pills over all its pages: it counts and offers the terms of the posts its page shows, "Showing 9 articles" where the design says "Showing 9 of 17 articles", and on a topic\'s page it counts the case studies among them as articles. The page tells the presentation what it lists by the types givePageContext() gives it (src/lib/design-page.js).',
+    waits: 'The core\'s next release, which hands a presentation its `list`, with the terms and the count over every page (Konzilo Design\'s docs/spec/konzilo.md, The directives and the presentations).',
+  },
+  searchByTerm: {
+    what: 'A search from a term\'s page that keeps to the term: the filtered list sends the term its page settles as a hidden field, which the core\'s search does not read, so the search covers the whole site (src/components/TermPage.astro).',
+    waits: 'The core\'s search narrowed by terms, in its next release.',
+  },
   home: {
     what: 'The Home page at /: it stands at /home/, and the start route (src/pages/[...start].astro) shows its content at /.',
     waits: 'The owner\'s decision whether an editor may choose a page for the start page; the core keeps / for the site\'s own start page (src/format/rules.json, src/intake/addresses.js).',
@@ -75,6 +83,33 @@ const IDENTITY = { logo: 'ampfield-logo', icon: 'ampfield-mark' };
 
 // The meta line of an article, as the mockups write it (design/mockups/src/lib/article.js, META_LINE_FORMAT).
 const META_LINE_FORMAT = 'By {authors} • Published {date} in {category}';
+
+// The words the templates show that no post holds, each a setting of the site's own (site-description.json), in the
+// mockups' words: design/mockups/src/lib/article.js (Read more), types.js (the case study and the vacancy) and terms.js
+// (a term's page). A page is named by its address and set as the post at it.
+const TEMPLATE_WORDS = {
+  articleMoreLabel: 'More articles',
+  articleMorePage: '/insights/',
+  caseStudyFactsHeading: 'The project',
+  caseStudyMoreHeading: 'More case studies',
+  caseStudyMoreLabel: 'All case studies',
+  caseStudyMorePage: '/customers/',
+  caseStudyClosingHeading: 'Find out what your site can do',
+  caseStudyClosingText: 'An engineer visits, measures the roof, looks at the switch room and reads a year of your meter data. Within two weeks you have a report with the systems that fit, what they would give and what they cost.',
+  caseStudyClosingAction: 'Book a site assessment',
+  caseStudyClosingActionPage: '/go/site-assessment/',
+  caseStudyClosingOtherAction: 'Ask for a reference',
+  caseStudyClosingOtherActionPage: '/contact/',
+  vacancyApplyLabel: 'How to apply',
+  vacancyMenuLabel: 'On this page',
+  vacancyOthersHeading: 'Other vacancies',
+  vacancyAllLabel: 'All vacancies',
+  vacancyAllPage: '/about/careers/',
+  vacancyAllAnchor: 'open-positions',
+  termNewsletterHeading: 'One e-mail a month',
+  termNewsletterText: 'The month\'s articles, one chart from our analyst on prices and grid fees, and nothing else. Every issue has a link to unsubscribe.',
+  termNewsletterNote: 'We keep your address only to send the newsletter. Read [how we handle personal data](/privacy-policy/).',
+};
 
 // Where a post of each kind is in design/content/, by the folder, and the post type it is.
 const POST_FOLDERS = { pages: 'page', canvases: 'canvas', articles: 'article', 'case-studies': 'case-study', jobs: 'job' };
@@ -381,6 +416,10 @@ async function makeSource(site, out) {
     footerNote: given.footer.lower.b1.text,
     // The words after the cookie policy's declaration, where site.json gives them (design/content/README.md asks for them).
     cookieDeclarationNote: given.cookieDeclaration?.note,
+    ...Object.fromEntries(Object.entries(TEMPLATE_WORDS).map(([name, value]) => {
+      const setting = site.settings.find((one) => one.name === name) ?? stop(`site-description.json declares no setting ${name}, which TEMPLATE_WORDS gives`);
+      return [name, setting.type === 'post' ? postId(value, `TEMPLATE_WORDS.${name}`) : value];
+    })),
     search: { description: given.description, publisher: given.publisher },
     metaLine: { types: { article: { format: META_LINE_FORMAT } } },
     // Whether a trail ends with the page itself is the core's setting by type, which wins over the design's where it

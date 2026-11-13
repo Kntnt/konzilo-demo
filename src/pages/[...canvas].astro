@@ -1,10 +1,11 @@
 ---
 // A canvas, the core's blank page, at its address, /go/<slug>/ (site-description.json). The frame gives it neither
-// header nor footer, so its body, bands drawn by Konzilo Design's components with the page's context given first,
-// is the whole page.
+// header nor footer, so its body, as the design's bands through Konzilo Design's PageBody, with the page's context
+// given first, is the whole page.
+import Body from '@kntnt/konzilo/astro/Body.astro';
 import { entryPages } from '@kntnt/konzilo/astro/languages';
+import PageBody from '@kntnt/konzilo-design/page-parts/PageBody.astro';
 import { render } from 'astro:content';
-import PageBody from '../components/PageBody.astro';
 import Site from '../layouts/Site.astro';
 import { givePageContext } from '../lib/design-page.js';
 
@@ -17,5 +18,5 @@ const { Content } = await render(entry);
 await givePageContext(Astro, { entry });
 ---
 <Site entry={entry} page={page}>
-  <PageBody post={entry} page={page}><Content /></PageBody>
+  <PageBody><Body post={entry} page={page}><Content /></Body></PageBody>
 </Site>

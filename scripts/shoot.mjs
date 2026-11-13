@@ -24,17 +24,26 @@
 //
 // A page's name is its address with the slashes as hyphens, as the mockups name theirs: / is `home`,
 // /solutions/rooftop-solar/ is `solutions-rooftop-solar`; `not-found` is the 404 page. An address, such as
-// /insights/page/2/, may be given in a name's place. Each shot prints what the frame was doing, read from computed
-// style: whether the header's bar is in the window and casts its shadow, whether the page casts its shadow on the
-// footer, and whether the footer fits to be revealed.
+// /insights/page/2/ or /search/?q=battery, may be given in a name's place; the shot takes the address's name without
+// its query. Each shot prints what the frame was doing, read from computed style: whether the header's bar is in the
+// window and casts its shadow, whether the page casts its shadow on the footer, and whether the footer fits to be
+// revealed.
+//
+// The search page's results come from the core's search service, which runs in the image and not here. The shots'
+// server answers its route, /_konzilo/search, in its stead, from the core's own search documents of content/
+// (searchDocuments() of @kntnt/konzilo/search): a document whose title, terms, excerpt or body holds a word that starts
+// with the query's, ranked by the weights the core gives Typesense (searchParameters()), then how often its body holds
+// it, ten a page, with the body's words round the first match as the snippet. It stands in for Typesense's ranking,
+// so a shot of results shows how the page looks, not what the search finds.
 
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, join, normalize, resolve } from 'node:path';
 import { parseArgs } from 'node:util';
+import { searchDocuments, searchParameters } from '@kntnt/konzilo/search';
 import sharp from 'sharp';
 import { filesIn } from './lib/files.mjs';
-import { ROOT } from './lib/intake.mjs';
+import { coreModule, ROOT } from './lib/intake.mjs';
 
 const { values, positionals } = parseArgs({
   allowPositionals: true,
@@ -67,7 +76,10 @@ pages.set('not-found', '/no-page-is-here/');
 const wanted = values.all ? [...pages.keys()] : positionals;
 if (wanted.length === 0) fail('name the pages to shoot, such as: npm run shoot -- home, or every page with --all');
 const shots = wanted.map((given) => {
-  if (given.startsWith('/')) return { name: given === '/' ? 'home' : given.replace(/^\/|\/$/g, '').replaceAll('/', '-'), address: given };
+  if (given.startsWith('/')) {
+    const path = given.split('?')[0];
+    return { name: path === '/' ? 'home' : path.replace(/^\/|\/$/g, '').replaceAll('/', '-'), address: given };
+  }
   if (!pages.has(given)) fail(`no page is called ${given}; the pages are ${[...pages.keys()].join(', ')}`);
   return { name: given, address: pages.get(given) };
 });
@@ -75,8 +87,52 @@ const shots = wanted.map((given) => {
 // dist/ over HTTP: an address that ends in / is its folder's index.html, a file is itself, and any other address the
 // 404 page with its status, as the web server answers.
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.ico': 'image/x-icon', '.woff2': 'font/woff2', '.xml': 'application/xml', '.txt': 'text/plain; charset=utf-8', '.rss': 'application/rss+xml', '.webmanifest': 'application/manifest+json' };
-const server = createServer((request, response) => {
-  const path = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
+// The search service's answer, in its stead (above): Typesense's shape, as the core's search-client.js reads it.
+let documents = null;
+async function searchAnswer(params) {
+  if (documents === null) {
+    const { readSiteDescription } = await coreModule('src/site-description.js');
+    documents = searchDocuments({ site: readSiteDescription(join(ROOT, 'site-description.json')), content: resolve(ROOT, process.env.KONZILO_CONTENT ?? 'content') }).documents;
+  }
+  const { query_by: by, query_by_weights: weights, per_page: perPage } = searchParameters(JSON.parse(readFileSync(join(ROOT, 'site-description.json'), 'utf8')));
+  const fields = by.split(',').map((field, at) => ({ field, weight: Number(weights.split(',')[at]) }));
+  const word = (params.get('q') ?? '').trim().toLowerCase();
+  const type = /type:=([\w-]+)/.exec(params.get('filter_by') ?? '')?.[1];
+  const page = Math.max(1, Number(params.get('page')) || 1);
+  const holds = (text) => word !== '' && new RegExp(`(^|[^\\p{L}\\p{N}])${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'iu').test(text);
+  const textOf = (value) => (Array.isArray(value) ? value.join(' ') : String(value ?? ''));
+  const found = documents
+    .filter((document) => !type || document.type === type)
+    .map((document) => {
+      const score = fields.reduce((sum, { field, weight }) => sum + (holds(textOf(document[field])) ? weight * 1000 : 0), 0);
+      const count = (textOf(document.body).toLowerCase().match(new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) ?? []).length;
+      return { document, score: score + count };
+    })
+    .filter(({ score }) => score >= 1000)
+    .sort((a, b) => b.score - a.score || a.document.title.localeCompare(b.document.title));
+  const snippet = (body) => {
+    const words = body.split(/\s+/);
+    const at = words.findIndex((one) => one.toLowerCase().replace(/^[^\p{L}\p{N}]+/u, '').startsWith(word));
+    if (at < 0) return undefined;
+    const from = Math.max(0, at - 8);
+    return words.slice(from, at + 9).map((one, index) => (from + index === at ? one.replace(/[\p{L}\p{N}-]+/u, (match) => `<mark>${match}</mark>`) : one)).join(' ');
+  };
+  const hits = found.slice((page - 1) * perPage, page * perPage).map(({ document }) => {
+    const { body, ...shown } = document;
+    const marked = snippet(body);
+    return { document: shown, highlights: marked ? [{ field: 'body', snippet: marked }] : [] };
+  });
+  return { found: found.length, hits, request_params: { per_page: perPage } };
+}
+
+const server = createServer(async (request, response) => {
+  const address = new URL(request.url, 'http://localhost');
+  if (address.pathname === '/_konzilo/search') {
+    response.writeHead(200, { 'content-type': 'application/json' });
+    response.end(JSON.stringify(await searchAnswer(address.searchParams)));
+    return;
+  }
+  const path = decodeURIComponent(address.pathname);
   const file = normalize(join(dist, path.endsWith('/') ? `${path}index.html` : path));
   const found = file.startsWith(dist) && existsSync(file) && statSync(file).isFile();
   response.writeHead(found ? 200 : 404, { 'content-type': TYPES[extname(found ? file : '404.html')] ?? 'application/octet-stream' });

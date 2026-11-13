@@ -1,18 +1,26 @@
 ---
 // A term's page, which the core's integration puts at the address of each taxonomy that declares one
 // (site-description.json): an author at /insights/author/<slug>/, a category at /insights/category/<path>/, a topic at
-// /insights/topic/<slug>/. The core's termPages() gives each term its posts of every type that takes the taxonomy,
-// newest first, nine a page as the design has them, with the later pages at <address>page/2/ and on.
+// /insights/topic/<slug>/, as Konzilo Design's docs/spec/konzilo.md (The templates, A term's page) places it and the
+// mockups have it (design/mockups/src/lib/terms.js):
 //
-// Its posts stand in the design's `filtered` presentation, which the page calls itself with the term it settles, so that
-// the row of that taxonomy goes and a search keeps to the term: a category's page has the rows Topic and Search, a
-// topic's Category and Search, and an author's all three (design/feedback.md, point 21). The term's opening, its name
-// and description, is a plain stand-in until Konzilo Design's page parts for templates give it.
-import Filtered from '@kntnt/konzilo-design/presentations/Filtered.astro';
+// - the term's opening on tint, the package's TermOpening: the trail, the taxonomy's word as its eyebrow, the term's
+//   name as the H1 and its description as the deck;
+// - its posts of every type that takes the taxonomy, newest first, nine a page as the design has them, with the later
+//   pages at <address>page/2/ and on, in the design's `filtered` presentation, which the page calls itself with the term
+//   it settles, so that the row of that taxonomy goes and a search keeps to the term: a category's page has the rows
+//   Topic and Search, a topic's Category and Search, and an author's all three (design/feedback.md, point 21);
+// - and the newsletter band Insights ends with, its words the site's settings, drawn by Konzilo Design's components
+//   and the site's form through the core's Body, from its plain rendering (src/lib/template-bands.js).
+import Body from '@kntnt/konzilo/astro/Body.astro';
 import { termPages } from '@kntnt/konzilo/astro/post-lists';
+import { siteSettings } from '@kntnt/konzilo/astro/site-settings';
+import PageBody from '@kntnt/konzilo-design/page-parts/PageBody.astro';
+import TermOpening from '@kntnt/konzilo-design/page-parts/TermOpening.astro';
+import Filtered from '@kntnt/konzilo-design/presentations/Filtered.astro';
 import Site from '../layouts/Site.astro';
 import { givePageContext } from '../lib/design-page.js';
-import StandIn from './StandIn.astro';
+import { form, section, small } from '../lib/template-bands.js';
 
 export async function getStaticPaths({ routePattern }) {
   return termPages(routePattern, { number: 9 });
@@ -20,18 +28,25 @@ export async function getStaticPaths({ routePattern }) {
 
 // The taxonomy of a term, by its collection.
 const TAXONOMIES = { authors: 'authors', categories: 'category', topics: 'topics' };
+// The form the newsletter band holds.
+const NEWSLETTER = 'newsletter';
 
 const { term, page, posts, pager, empty } = Astro.props;
 await givePageContext(Astro, { entry: term, title: term.data.name });
+const settings = (await siteSettings(Astro.url)) ?? {};
+const newsletter = settings.termNewsletterHeading ? section({
+  surface: 'tint',
+  anchor: 'newsletter',
+  heading: settings.termNewsletterHeading,
+  text: settings.termNewsletterText,
+  blocks: [form(NEWSLETTER), small(settings.termNewsletterNote)],
+}) : '';
 ---
 <Site entry={term} page={page}>
-  <StandIn>
-    <h1>{term.data.name}</h1>
-    {term.data.description && <p>{term.data.description}</p>}
-  </StandIn>
-  <section class="kn-band kn-section">
-    <div class="kn-band-content">
-      <Filtered posts={posts} pager={pager} empty={empty} options={{ filters: 'category topics search' }} settled={{ taxonomy: TAXONOMIES[term.collection], term: term.id }} />
-    </div>
-  </section>
+  <TermOpening term={term} surface="tint" />
+  <PageBody title={false}>
+    {/* LEFT_OUT.searchByTerm: the settled term goes with a search, which the core's search does not narrow by yet. */}
+    <Filtered posts={posts} pager={pager} empty={empty} options={{ filters: 'category topics search' }} settled={{ taxonomy: TAXONOMIES[term.collection], term: term.id }} />
+  </PageBody>
+  {newsletter && <Body html={newsletter} />}
 </Site>
