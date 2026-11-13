@@ -87,7 +87,7 @@ What we usually find at a park of ten to fifteen stores.
 
 ::::
 
-::::section{anchor="case-studies"}
+::::section{anchor="case-studies" body="columns"}
 
 ::eyebrow[Case studies]
 
@@ -101,15 +101,11 @@ What we usually find at a park of ten to fifteen stores.
 
 ::post-list{type="case-study" where="industry=Retail and commercial property" presentation="cards"}
 
-::::
-
-:::section{surface="raised"}
-
 > In daylight the roofs now cover the landlord supply on all eleven of our parks. Our tenants ask what their units' emissions are, and we can tell them, park by park. The chargers bring drivers who stay for an hour.
 >
 > <cite>James Holroyd, Head of Sustainability, Westerport Retail Parks</cite>
 
-:::
+::::
 
 ::::section{surface="accent"}
 

@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@kntnt/konzilo": "file:vendor/kntnt-konzilo-0.5.0.tgz",
-    "@kntnt/konzilo-design": "file:vendor/kntnt-konzilo-design-0.11.0.tgz",
+    "@kntnt/konzilo-design": "file:vendor/kntnt-konzilo-design-0.12.0.tgz",
     "astro": "7.4.2"
   },
   "devDependencies": {

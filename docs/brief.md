@@ -56,7 +56,7 @@ The work will find problems, shortcomings and bugs in Konzilo and Konzilo Design
 - **Konzilo's site template** stays plain. Konzilo Design may later gain its own way to turn a new site into a designed one.
 - **Consent records and reports of breaches of the security policy** (Konzilo's ADR 0044) are built after the demo, as a spec of their own.
 - **A section's head** always stands at the start edge, never centred. **An opening without a picture** keeps its height, two thirds of the window's.
-- **The demo shows Konzilo and Konzilo Design where they are.** When a release gives what a page wanted, the page takes it up, also where the design drew something else. A table fills its column, as Konzilo Design means it to, and the case studies are filtered by solution. Home's comparison stays a table, and the industries' customer quotation keeps its own band until it can stand beside the teaser.
+- **The demo shows Konzilo and Konzilo Design where they are.** When a release gives what a page wanted, the page takes it up, also where the design drew something else. A table fills its column, as Konzilo Design means it to, and the case studies are filtered by solution. Home's comparison stays a table, and the industries' customer quotation stands beside the teaser where the cards fit. Manufacturing keeps the quotation in its own band because two teasers are too narrow beside it.
 - **The built site** is the reference for the design.
 - **The canvas and the design system in Claude** are left as they are. They are no part of the project.
 - **Zlib and WTFPL** are allowed among Konzilo's licenses: `pako` and `truncate-utf8-bytes`, within the editor's own bundle.

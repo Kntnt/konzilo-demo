@@ -93,7 +93,7 @@ What we usually find at a warehouse of 30,000 m² in Sweden, Denmark, the Nether
 
 ::::
 
-::::section{anchor="case-studies"}
+::::section{anchor="case-studies" body="columns"}
 
 ::eyebrow[Case studies]
 
@@ -107,15 +107,11 @@ What we usually find at a warehouse of 30,000 m² in Sweden, Denmark, the Nether
 
 ::post-list{type="case-study" where="industry=Logistics and warehousing" presentation="cards"}
 
-::::
-
-:::section{surface="raised"}
-
 > We had six roofs, about 60,000 m² in all, that did nothing for us. Now they give us 38% of the electricity we use in a year, and our vans charge in the same yards they load in. One company answers for all of it, which is what I wanted.
 >
 > <cite>Karin Öberg, Head of Property, Norrvik Logistics</cite>
 
-:::
+::::
 
 ::::section{surface="accent"}
 

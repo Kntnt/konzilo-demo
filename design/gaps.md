@@ -20,8 +20,7 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A source under a simple table | The articles | A footnote on the paragraph before the table, or a structured table with a caption; Kntnt/konzilo#93 |
 | A list of vacancies | A vacancy, under "Other vacancies" | A presentation `rows` of the site's own, made from the Content Loop; Konzilo Design's are `cards`, `featured` and `filtered`; Kntnt/konzilo-design#12 |
 | A person's card with a portrait | Team | Ordinary cards with pictures cut to their wide format; the Card's `person` variant has no directive; Kntnt/konzilo-design#15 |
-| A list of one teaser that fills its row, such as a wide card with its picture beside the text | Logistics and warehousing, Retail and commercial property: each lists the one case study of its industry | The ordinary card, a third of the row, since a series of one card stands in three columns; Kntnt/konzilo-design#17 |
-| A customer's words beside the teasers of that customer's case study | The industry pages | The quotation in a band of its own on `raised` after the list. A section's body is stacked, so nothing can stand beside a card; Kntnt/konzilo-design#22 |
+| A list of one teaser that fills its row, such as a wide card with its picture beside the text | Logistics and warehousing, Retail and commercial property: each lists the one case study of its industry | The ordinary card fills its column beside the quotation; a wide card with its picture beside the text is still missing; Kntnt/konzilo-design#17 |
 
 ## Faults and shortcomings in Konzilo Design
 
