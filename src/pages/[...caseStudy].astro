@@ -11,9 +11,9 @@
 //   rest;
 // - and the band that closes it, leading on to a site assessment.
 //
-// The Value List and the closing band are drawn by Konzilo Design's components through the core's Body, from their
-// plain rendering (src/lib/template-bands.js). Every word the template shows that no post holds, the facts' heading,
-// "More case studies" and its link, and the closing band, is a setting of the site's own.
+// The Value List and the closing band are Konzilo Design's page parts, ValueList and Section, as its
+// docs/spec/konzilo.md places them. Every word the template shows that no post holds, the facts' heading, "More case
+// studies" and its link, and the closing band, is a setting of the site's own.
 import Body from '@kntnt/konzilo/astro/Body.astro';
 import { entryPages, entryUrl } from '@kntnt/konzilo/astro/languages';
 import { listedPosts, relatedPosts, RELATED_POSTS } from '@kntnt/konzilo/astro/post-lists';
@@ -22,11 +22,12 @@ import AsideBlock from '@kntnt/konzilo-design/components/AsideBlock.astro';
 import ArticleBody from '@kntnt/konzilo-design/page-parts/ArticleBody.astro';
 import ArticleOpening from '@kntnt/konzilo-design/page-parts/ArticleOpening.astro';
 import ReadMore from '@kntnt/konzilo-design/page-parts/ReadMore.astro';
+import Section from '@kntnt/konzilo-design/page-parts/Section.astro';
+import ValueList from '@kntnt/konzilo-design/page-parts/ValueList.astro';
 import { getCollection, render } from 'astro:content';
 import Site from '../layouts/Site.astro';
 import { givePageContext } from '../lib/design-page.js';
 import { factsOf } from '../lib/facts.js';
-import { actions, section, values } from '../lib/template-bands.js';
 
 export function getStaticPaths() {
   return entryPages('case-studies', 'caseStudy');
@@ -45,22 +46,17 @@ let others = await relatedPosts(entry);
 if (others.length < RELATED_POSTS) others = [...others, ...(await listedPosts({ type: 'case-study', number: RELATED_POSTS - others.length }, { post: entry }))];
 const more = settings.caseStudyMoreLabel && settings.caseStudyMorePage ? { label: settings.caseStudyMoreLabel, href: settings.caseStudyMorePage.url } : undefined;
 
-const closing = settings.caseStudyClosingHeading ? section({
-  surface: 'tint',
-  heading: settings.caseStudyClosingHeading,
-  text: settings.caseStudyClosingText,
-  blocks: [actions([
-    { label: settings.caseStudyClosingAction, href: settings.caseStudyClosingActionPage?.url },
-    { label: settings.caseStudyClosingOtherAction, href: settings.caseStudyClosingOtherActionPage?.url },
-  ])],
-}) : '';
+const closingActions = [
+  { label: settings.caseStudyClosingAction, href: settings.caseStudyClosingActionPage?.url },
+  { label: settings.caseStudyClosingOtherAction, href: settings.caseStudyClosingOtherActionPage?.url },
+];
 ---
 <Site entry={entry} page={page}>
   <ArticleOpening entry={entry} eyebrow={entry.data.customer} />
   <ArticleBody>
     <Body post={entry} page={page}><Content /></Body>
-    <AsideBlock slot="aside" heading={settings.caseStudyFactsHeading} surface="raised"><Body post={entry} html={values(facts)} /></AsideBlock>
+    <AsideBlock slot="aside" heading={settings.caseStudyFactsHeading} surface="raised"><ValueList items={facts} /></AsideBlock>
   </ArticleBody>
   <ReadMore posts={others} heading={settings.caseStudyMoreHeading} more={more} surface="raised" />
-  {closing && <Body post={entry} html={closing} />}
+  {settings.caseStudyClosingHeading && <Section surface="tint" heading={settings.caseStudyClosingHeading} deck={settings.caseStudyClosingText} actions={closingActions} />}
 </Site>

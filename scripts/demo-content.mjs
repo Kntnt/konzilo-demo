@@ -402,7 +402,6 @@ async function makeSource(site, out) {
   const extra = declaredForms.filter((name) => !Object.hasOwn(given.forms, name));
   if (extra.length > 0) stop(`site-description.json declares the forms ${extra.join(', ')}, which site.json has not got`);
 
-  const trailCurrent = JSON.parse(readFileSync(join(DESIGN, 'site.design.json'), 'utf8')).resolved?.breadcrumbs?.current === true;
   const settings = {
     title: given.title,
     logo: { src: picture(`logo:${IDENTITY.logo}`, 'the site\'s logo'), alt: given.title },
@@ -422,9 +421,6 @@ async function makeSource(site, out) {
     })),
     search: { description: given.description, publisher: given.publisher },
     metaLine: { types: { article: { format: META_LINE_FORMAT } } },
-    // Whether a trail ends with the page itself is the core's setting by type, which wins over the design's where it
-    // leaves the page out: each type takes the design file's choice (breadcrumbs.current).
-    breadcrumbs: { types: Object.fromEntries(Object.keys(site.types).map((name) => [name, { current: trailCurrent }])) },
     legalPages,
     forms,
     notFound: { page: notFound.id },

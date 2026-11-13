@@ -8,16 +8,13 @@ import CookieDeclaration from '@kntnt/konzilo/astro/CookieDeclaration.astro';
 import { entryUrl } from '@kntnt/konzilo/astro/languages';
 import { siteSettings } from '@kntnt/konzilo/astro/site-settings';
 import ReadingArea from '@kntnt/konzilo-design/components/ReadingArea.astro';
+import { settingHtml } from '../lib/setting-text.js';
 
 const { entry } = Astro.props;
 const settings = (await siteSettings(Astro.url)) ?? {};
 const chosen = settings.legalPages?.cookiePolicy?.url;
 const here = chosen !== undefined && chosen === entryUrl(entry);
-const escape = (text) => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const LINK_OR_ADDRESS = /\[([^\]]+)\]\(([^)\s]+)\)|([A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,})/g;
-const note = settings.cookieDeclarationNote
-  ? escape(settings.cookieDeclarationNote).replace(LINK_OR_ADDRESS, (_, label, href, address) => (address ? `<a href="mailto:${address}">${address}</a>` : `<a href="${href}">${label}</a>`))
-  : null;
+const note = settings.cookieDeclarationNote ? settingHtml(settings.cookieDeclarationNote, { addresses: true }) : null;
 ---
 {here && (
   <ReadingArea side="start">
