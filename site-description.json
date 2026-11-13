@@ -76,6 +76,7 @@
         },
         "inService": { "label": "In service since", "type": "date", "control": "date" },
         "featured": { "label": "Featured", "type": "boolean", "control": "toggle" },
+        "solutions": { "taxonomy": "solutions" },
         "topics": { "taxonomy": "topics" },
         "seo": {}
       }
@@ -111,7 +112,8 @@
   "taxonomies": {
     "authors": { "address": "/insights/author/{slug}/" },
     "category": { "address": "/insights/category/{path}/" },
-    "topics": { "address": "/insights/topic/{slug}/" }
+    "topics": { "address": "/insights/topic/{slug}/" },
+    "solutions": { "label": "Solution", "plural": "Solutions", "collection": "solutions" }
   },
   "presentations": {
     "cards": { "label": "Cards", "options": {} },

@@ -14,6 +14,7 @@ solarCapacity: 2.2
 contract: "Power purchase agreement"
 inService: 2025-03-28
 featured: false
+solutions: ["rooftop-solar"]
 topics: ["financing","solar"]
 ---
 

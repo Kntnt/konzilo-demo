@@ -11,8 +11,7 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A customer's words set large, with name and role | The industries, Careers | A quotation with `<cite>`; the Quotation component has no directive; Kntnt/konzilo-design#20 |
 | A call-to-action band | Every marketing page | A section on the `accent` Surface with a heading and actions; the CTA Band component has no directive; Kntnt/konzilo-design#15 |
 | The control for objecting to the counting of visits, placed in a page | Privacy policy | Nothing: the site counts no visits, and the policy says so; Kntnt/konzilo#82 |
-| Case studies filtered by solution | Customers | The `filtered` presentation's rows of topics and search; the solutions are no taxonomy, and the topics Solar, Storage and Charging stand in for three of them |
-| Related case studies on a page | The solutions, the industries | One case study picked by hand on each solution, `where="industry=…"` on each industry; a page carries no terms, so `order="related"` has nothing to go by; Kntnt/konzilo#78 |
+| Related case studies on a page | The solutions, the industries | One case study picked by hand on each solution, `where="industry=…"` on each industry; a page carries no terms, so `order="related"` has nothing to go by; Kntnt/konzilo#78. Since the case studies take the taxonomy `solutions`, a solution's page could list its own by `include="solutions:…"`; not taken up |
 | A featured post on the first page of a paged list only | Insights | The featured list repeats on every page; Kntnt/konzilo#77 |
 | The header's call to action in the design tool's preview | The design file | The preview and the presentation always say "Contact"; Kntnt/konzilo-design#8 |
 | Key figures at the top of a case study | The case studies | Number fields of the type, as a value list in a fact box beside the body; Kntnt/konzilo-design#15 |
@@ -21,9 +20,8 @@ What the design phase wanted and could not have, and the faults it found on the 
 | A source under a simple table | The articles | A footnote on the paragraph before the table, or a structured table with a caption; Kntnt/konzilo#93 |
 | A list of vacancies | A vacancy, under "Other vacancies" | A presentation `rows` of the site's own, made from the Content Loop; Konzilo Design's are `cards`, `featured` and `filtered`; Kntnt/konzilo-design#12 |
 | A person's card with a portrait | Team | Ordinary cards with pictures cut to their wide format; the Card's `person` variant has no directive; Kntnt/konzilo-design#15 |
-| Two options compared side by side under a head that is not centred | Home | A table. Konzilo Design 0.9.0 keeps a head over two cards at the start edge; the page has not taken it up |
 | A list of one teaser that fills its row, such as a wide card with its picture beside the text | Logistics and warehousing, Retail and commercial property: each lists the one case study of its industry | The ordinary card, a third of the row, since a series of one card stands in three columns; Kntnt/konzilo-design#17 |
-| A customer's words beside the teasers of that customer's case study | The industry pages | The quotation in a band of its own on `raised` after the list. Its reason, a head centred over two cards, went with Konzilo Design 0.9.0; the page has not taken it up |
+| A customer's words beside the teasers of that customer's case study | The industry pages | The quotation in a band of its own on `raised` after the list. A section's body is stacked, so nothing can stand beside a card; Kntnt/konzilo-design#22 |
 
 ## Faults and shortcomings in Konzilo Design
 
@@ -49,6 +47,7 @@ What the design phase wanted and could not have, and the faults it found on the 
 |---|---|
 | Everything cannot run in one container | Since 0.5.0 each program finds its peers and its folders by settings, but the core offers no recipe for one container, so a site that wants one image writes its own Dockerfile and supervisor; Kntnt/konzilo#84 |
 | Only the hostname `localhost` is accepted | `origin()` in `src/astro/public-site.js` refuses `127.0.0.1` and `*.localhost`; Kntnt/konzilo#94 |
+| Demo content cannot hold a draft | The seed writes every post as published or scheduled, so the Reviewer finds nothing in the live preview that the public site does not show; Kntnt/konzilo#96 |
 | A component that draws its items from its tree loses nested components and the lightbox | Tabs, accordions, cards and a choice's answers hold only text, lists and pictures without their lightbox; Konzilo Design's checks refuse a form, a post list or a site's own component in them (Kntnt/konzilo-design#16 waits on this), and a section takes its body from its slot meanwhile; Kntnt/konzilo#55 |
 | A visitor's choice about consent is not kept on the server | The public pages send a record of each choice to `/_konzilo/consent`; the service handles only forms and answers 404. ADR 0044 says such records are kept for 13 months, and the cookie declaration shows a consent ID that nobody can look up; Kntnt/konzilo#90 |
 | Reports of breaches of the security policy are not kept | Pages report to `/_konzilo/violations`; no handler exists. ADR 0044 says 30 days; Kntnt/konzilo#91 |

@@ -11,7 +11,7 @@ The text of every page of the demo site, in Konzilo's Markdown with Konzilo Desi
 | `canvases/site-assessment.md` | The landing page at `/go/site-assessment/`, with no header and footer | the pages' agent |
 | `system/not-found.md` | The 404 page, as the post an Admin chooses for it | the pages' agent |
 | `system/search.md` | The search page's words, by the core's keys, and an example query with what it should find | the pages' agent |
-| `articles/`, `case-studies/`, `jobs/`, `authors/`, `categories/`, `topics/`, `editorial.md` | The articles, case studies, vacancies and their terms | the posts' agent |
+| `articles/`, `case-studies/`, `jobs/`, `authors/`, `categories/`, `topics/`, `solutions/`, `editorial.md` | The articles, case studies, vacancies and their terms | the posts' agent |
 
 ## A file's form
 
@@ -73,14 +73,13 @@ Konzilo Design declares its directives, with each attribute and the values it ta
 ## What the site description must declare
 
 - **Elements.** `page`: paragraph, heading, list, quote, table, image, gallery, post-list, form and every directive above. `canvas`: paragraph, heading, list, image, form and the directives. The core's template leaves `quote` out of a page; the industry pages and Careers need it.
-- **Addresses.** `page` at `/{path}/`, `canvas` at `/go/{slug}/`, `article` at `/insights/{slug}/`, `case-study` at `/customers/{slug}/`, `job` at `/about/careers/{slug}/`; categories at `/insights/category/{slug}/` and authors at `/insights/author/{slug}/`; the article feed at `/insights/feed/`; search at `/search/`.
+- **Addresses.** `page` at `/{path}/`, `canvas` at `/go/{slug}/`, `article` at `/insights/{slug}/`, `case-study` at `/customers/{slug}/`, `job` at `/about/careers/{slug}/`; categories at `/insights/category/{slug}/`, topics at `/insights/topic/{slug}/` and authors at `/insights/author/{slug}/`, and the case studies' solutions at none, since each solution is a page of its own under `/solutions/`; the article feed at `/insights/feed/`; search at `/search/`.
 - **Presentations** `cards`, `featured` and `filtered`, and the site's own `rows`; `filtered` with its option `filters`, the rows it shows above the list, `filters="category topics search"` and the like.
 - **Forms** as `site.json` declares them; the confirmations go to `settings.json` under `forms`.
 
 **Assumed of the other agent's types,** for the post lists here to find anything:
 
-- `case-study` takes the taxonomy `topics` (`solar`, `storage`, `charging`, `financing`, `grid`, `reporting`); a field `industry`, a select of the three industry pages' names, which each industry page lists by `where="industry=Logistics and warehousing"` and so on; and a boolean field `featured`, `true` for Norrvik Logistics alone, which Home shows.
-- Brantevik Foods' case study carries `reporting`, so that the Ampfield Pilot page lists it; otherwise that list shows its `empty` text.
+- `case-study` takes the taxonomy `topics` (`solar`, `storage`, `charging`, `financing`, `grid`, `reporting`), whose pages list the case studies beside the articles; the site's own taxonomy `solutions` (`rooftop-solar`, `battery-storage`, `fleet-charging`, `ampfield-pilot`), with no pages, by which Customers filters; a field `industry`, a select of the three industry pages' names, which each industry page lists by `where="industry=Logistics and warehousing"` and so on; and a boolean field `featured`, `true` for Norrvik Logistics alone, which Home shows.
 - `job` posts exist at `/about/careers/{slug}/`.
 
 ## What the legal pages assume
@@ -88,7 +87,7 @@ Konzilo Design declares its directives, with each attribute and the values it ta
 The privacy policy, the cookie policy and the forms' fine print state facts the build must make true:
 
 - **No statistics:** no tag manager (`tagManager.manager` is `None`) and no departure in the site description's `consent.departures`. The site counts no visits, so the policies name no statistics service, no right to object to counting and nothing stored for measuring.
-- **One embed:** the video in `articles/can-your-roof-carry-solar-panels.md`, on YouTube, the one embed service the posts use. The core puts YouTube under Marketing, since its provider advertises, so the registry holds two services, the consent's own storage and YouTube, and the categories Necessary and Marketing. `../mockups/pages/cookie-policy.astro` holds the declaration the core makes of it.
+- **One embed:** the video in `articles/can-your-roof-carry-solar-panels.md`, on YouTube, the one embed service the posts use. The core puts YouTube under Marketing, since its provider advertises, so the registry holds two services, the consent's own storage and YouTube, and the categories Necessary and Marketing. The cookie policy shows the declaration the core makes of them, which `src/components/CookiePolicyDeclaration.astro` places.
 - **Forms:** a retention of 90 days for `contact` and `assessment`, and 30 days for `newsletter`.
 - **Hosting:** a server in Sweden, backups in the EU. The web server keeps no log of visits, as the core's Caddyfile writes none; the log of addresses not found that Konzilo's ADR 0040 decides is not built, and the privacy policy says there is none.
 - **No copy of a choice, and no reports kept:** the public site's pages send the record of each choice to `/_konzilo/consent` and each violation of the security policy to `/_konzilo/violations`, but the core's service takes neither yet (Konzilo's ADR 0044 keeps records for 13 months and reports for 30 days), so the privacy policy says Ampfield keeps no copy of a visitor's choice. When the core keeps them, the privacy policy must say so.

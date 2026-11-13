@@ -1,6 +1,6 @@
 # Editorial content
 
-The site's articles, case studies and vacancies, and the terms that sort them: what each file holds, the two post types of the site's own that they need, and the assumptions made where neither Konzilo nor Konzilo Design records the exact Markdown.
+The site's articles, case studies and vacancies, and the terms that sort them: what each file holds, the two post types and the taxonomy of the site's own that they need, and the readings of the directives the texts were written by, before Konzilo Design recorded how each is written.
 
 | Folder | Holds |
 |---|---|
@@ -8,6 +8,7 @@ The site's articles, case studies and vacancies, and the terms that sort them: w
 | `case-studies/` | Four case studies, the site's own type `case-study` |
 | `jobs/` | Three vacancies, the site's own type `job` |
 | `authors/`, `categories/`, `topics/` | The terms of the article's three built-in taxonomies |
+| `solutions/` | The terms of the case studies' own taxonomy `solutions`, one for each of the four solutions |
 
 ## The form of the files
 
@@ -40,7 +41,8 @@ Address `/customers/{slug}/`, collection `case-studies`. The fields, in this ord
 | `contract` | `string` | `select` | How it was paid for | `Bought outright`, `Power purchase agreement` |
 | `inService` | `date` | `date` | In service since | The day the last part went into service |
 | `featured` | `boolean` | `toggle` | Featured | The home page lists the case with `where="featured=true"`; Norrvik Logistics alone is `true` |
-| `topics` | `{ "taxonomy": "topics" }` | | Topics | The article's built-in topics, so that the customers page can filter by them and the Pilot page can list `include="topics:reporting"` |
+| `solutions` | `{ "taxonomy": "solutions" }` | | Solutions | The site's own taxonomy, `label` Solution and `plural` Solutions, with no address, so its terms have no pages: each solution is a page of its own under `/solutions/`. The solutions the case is about, by which the customers page filters: Brantevik Foods `rooftop-solar`, `battery-storage` and `ampfield-pilot`; Lindhagen Furniture `rooftop-solar`; Norrvik Logistics and Westerport Retail Parks `rooftop-solar`, `fleet-charging` and `ampfield-pilot`. Fleet charging covers visitors' chargers too, as its page says |
+| `topics` | `{ "taxonomy": "topics" }` | | Topics | The article's built-in topics, so that each topic's page lists the case studies on it beside the articles |
 | `seo` | core | | | Not set in these files |
 
 Structured data types: `["Article"]`. Body elements: `paragraph`, `heading`, `list`, `quote`, `table`, `footnotes`, `image`, `gallery`, and the design system's `aside` and `eyebrow`.

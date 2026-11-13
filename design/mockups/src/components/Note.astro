@@ -1,8 +1,0 @@
----
-// A catalogue's note between bands: what a renderer is, and which Markdown gives it. Not part of any design.
-interface Props { what: string; markdown?: string; chapter?: boolean }
-const { what, markdown, chapter = false } = Astro.props;
----
-{chapter
-  ? <div class="mk-chapter"><div><h2>{what}</h2>{markdown && <p set:html={markdown} />}</div></div>
-  : <aside class="mk-label" aria-label="Catalogue note"><div><p class="mk-what">{what}</p>{markdown && <p><Fragment set:html={markdown} /></p>}<slot /></div></aside>}

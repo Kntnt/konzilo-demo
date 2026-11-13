@@ -1,9 +1,0 @@
----
-// Every content file a run builds, by its mockup name (astro.config.mjs sets MOCKUP_CONTENT_PAGES).
-import Post from '../components/Post.astro';
-export function getStaticPaths() {
-  return (process.env.MOCKUP_CONTENT_PAGES ?? '').split(',').filter(Boolean).map((page) => ({ params: { page } }));
-}
-const { page } = Astro.params;
----
-<Post name={page} />

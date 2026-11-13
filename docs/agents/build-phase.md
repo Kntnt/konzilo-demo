@@ -2,6 +2,8 @@ read when asking why the build was made as it was
 
 What the design phase learned that the build phase stood on. It is the knowledge of 2026-11-12: Konzilo at 0.4.0 and one fix, Konzilo Design at 0.6.1. The build phase ended on 2026-11-13, with Konzilo 0.5.0, Konzilo Design 0.11.0 and the image 1.0.0, and put right most of what is listed here; this file is the record of where it began and is not kept up to date. `docs/agents/status.md` and `design/gaps.md` say what holds now.
 
+The mockups it names, `design/mockups/` and its renderers in `design/mockups/src/lib/`, were removed on 2026-11-13, when the built site became the reference for the design; they are in Git's history up to commit `fe519a0`.
+
 ## The end result, as settled
 
 `docs/brief.md` holds it. In short: a public image `ghcr.io/kntnt/konzilo-demo`, started by `docker run --rm -p 127.0.0.1:8080-8083:8080-8083 ghcr.io/kntnt/konzilo-demo`, the same in every shell and with `podman` or `nerdctl` (not yet tried with those two), on amd64 and arm64, which prints the site's address when it is ready. Signing in is exactly as Konzilo has it; three people exist, one in each role; buttons on the sign-in pages only fill in a chosen person's details.

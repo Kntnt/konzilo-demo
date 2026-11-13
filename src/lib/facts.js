@@ -1,5 +1,5 @@
 // A post's facts, the values of its type's own fields, as a case study and a vacancy show them beside or under their
-// opening (design/mockups/src/lib/types.js): each under its label in the site description, a unit the label gives after
+// opening, as the approved design had them: each under its label in the site description, a unit the label gives after
 // its last comma ("Solar capacity, MWp") put after the value instead, a number in the page's language, a day as a <time>
 // in the core's long form, and a value linked where the template names its page. A field without a value is left out.
 import { longDate } from '@kntnt/konzilo/astro/helpers';

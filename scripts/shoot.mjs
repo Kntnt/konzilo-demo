@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-// Screenshots of the built site, as the mockups shoot theirs (design/mockups/scripts/shoot.mjs), so that a page can be
-// put beside its mockup: the same page names, widths and states, in light mode. It serves dist/ over HTTP itself, as
-// the site's pages name their files by addresses from the root, and builds nothing: run `npm run build` first.
+// Screenshots of the built site, each page under a name of its own, at a phone's width and a wide window's and in the
+// frame's states below, in light mode, the site's one mode, so that a page can be put beside a shot of it taken
+// earlier, such as before a change. It serves dist/ over HTTP itself, as the site's pages name their files by
+// addresses from the root, and builds nothing: run `npm run build` first.
 //
 //   npm run shoot -- <page> [<page> …]       shots/<page>-1440.png and shots/<page>-390.png, the whole page
 //   npm run shoot -- --all                   every page built
@@ -9,25 +10,25 @@
 //       menu      the header's menu open
 //       search    the header's search box open
 //       scrolled  scrolled down by the wheel and a little back up, the header come back over the content
-//       down      scrolled down by the wheel, the header slid away (the mockups have no such shot)
+//       down      scrolled down by the wheel, the header slid away
 //       end       scrolled down by the wheel to the very end, the footer revealed
 //       ending    likewise, but half the footer's height short of the end, the page leaving the footer
 //   --widths 1024,768   other widths
 //   --banner            with the consent banner, which is otherwise answered once, "Reject optional", before the shots
-//   --compare           also each shot beside the mockup's of the same name, design/mockups/shots/<name>.png, in
-//                       shots/compare/, with the parts of a tall pair, about 2,000 px each, beside it
+//   --compare <folder>  also each shot beside the shot of the same name in that folder, taken earlier, such as before
+//                       a change, the earlier on the left, in compare/ of the folder written to, with the parts of a
+//                       tall pair, about 2,000 px each, beside it
 //   --firefox [path]    in the installed Firefox, not Playwright's Chromium, driven by puppeteer-core over WebDriver
 //                       BiDi as Konzilo Design's docs/spec/header.md says, into shots/firefox/; with no path, the
 //                       FIREFOX environment variable, else /Applications/Firefox.app/Contents/MacOS/firefox. Motion
 //                       is not reduced there, as in the browser a visitor uses
 //   --dist <folder>, --out <folder>   read and write elsewhere
 //
-// A page's name is its address with the slashes as hyphens, as the mockups name theirs: / is `home`,
-// /solutions/rooftop-solar/ is `solutions-rooftop-solar`; `not-found` is the 404 page. An address, such as
-// /insights/page/2/ or /search/?q=battery, may be given in a name's place; the shot takes the address's name without
-// its query. Each shot prints what the frame was doing, read from computed style: whether the header's bar is in the
-// window and casts its shadow, whether the page casts its shadow on the footer, and whether the footer fits to be
-// revealed.
+// A page's name is its address with the slashes as hyphens: / is `home`, /solutions/rooftop-solar/ is
+// `solutions-rooftop-solar`; `not-found` is the 404 page. An address, such as /insights/page/2/ or /search/?q=battery,
+// may be given in a name's place; the shot takes the address's name without its query. Each shot prints what the
+// frame was doing, read from computed style: whether the header's bar is in the window and casts its shadow, whether
+// the page casts its shadow on the footer, and whether the footer fits to be revealed.
 //
 // The search page's results come from the core's search service, which runs in the image and not here. The shots'
 // server answers its route, /_konzilo/search, in its stead, from the core's own search documents of content/
@@ -49,7 +50,7 @@ const { values, positionals } = parseArgs({
   allowPositionals: true,
   options: {
     all: { type: 'boolean' }, state: { type: 'string', default: 'closed' }, widths: { type: 'string', default: '1440,390' },
-    banner: { type: 'boolean' }, compare: { type: 'boolean' }, firefox: { type: 'boolean' },
+    banner: { type: 'boolean' }, compare: { type: 'string' }, firefox: { type: 'boolean' },
     dist: { type: 'string' }, out: { type: 'string' },
   },
 });
@@ -62,7 +63,8 @@ if (!STATES.includes(values.state)) fail(`--state is one of ${STATES.join(', ')}
 const dist = resolve(values.dist ?? join(ROOT, 'dist'));
 const firefoxPath = values.firefox ? (positionals[0]?.startsWith('/') && positionals[0].endsWith('firefox') ? positionals.shift() : process.env.FIREFOX ?? '/Applications/Firefox.app/Contents/MacOS/firefox') : null;
 const out = resolve(values.out ?? join(ROOT, 'shots', ...(firefoxPath ? ['firefox'] : [])));
-const mockups = join(ROOT, 'design/mockups/shots');
+const earlier = values.compare === undefined ? null : resolve(values.compare);
+if (earlier === out) fail('--compare names the folder the shots are written to: give the folder of the earlier shots');
 const widths = values.widths.split(',').map(Number);
 const HEIGHTS = { 390: 844, 768: 1024, 1024: 768, 1440: 900 };
 if (!existsSync(join(dist, 'index.html'))) fail(`${dist} holds no built site: run npm run build first`);
@@ -202,7 +204,7 @@ const frameState = () => {
 };
 
 // The whole page. Where the footer lies at the window's edge, a full-page capture paints it at the window's bottom,
-// so its last rows, as tall as the footer, are taken from the window scrolled to the end, as the mockups do.
+// so its last rows, as tall as the footer, are taken from the window scrolled to the end.
 async function wholePage(tab, settle) {
   // A picture that loads lazily loads only near the window, which a full-page capture does not move: load them all.
   await tab.evaluate(() => Promise.all([...document.images].map((image) => {
@@ -275,18 +277,19 @@ async function shoot(tab, { width, state, settle }) {
   return { picture, said };
 }
 
-// A shot beside its mockup's, the mockup's on the left, each under its label, and the parts of a tall pair.
+// A shot beside the earlier one of its name, the earlier on the left, each under its label, and the parts of a tall
+// pair.
 async function compare(name, file) {
-  const mockup = join(mockups, name);
-  if (!existsSync(mockup)) return 'no mockup shot of that name';
-  const [left, right] = [mockup, file];
+  const before = join(earlier, name);
+  if (!existsSync(before)) return 'no earlier shot of that name';
+  const [left, right] = [before, file];
   const [a, b] = await Promise.all([sharp(left).metadata(), sharp(right).metadata()]);
   const gap = 40;
   const top = 44;
   const width = a.width + gap + b.width;
   const height = top + Math.max(a.height, b.height);
   const label = (text, x) => `<text x="${x}" y="30" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#333">${text}</text>`;
-  const svg = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${top}">${label('Mockup', 0)}${label('Site', a.width + gap)}</svg>`);
+  const svg = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${top}">${label('Before', 0)}${label('After', a.width + gap)}</svg>`);
   const pair = await sharp({ create: { width, height, channels: 3, background: '#d9d9d9' } })
     .composite([{ input: svg, left: 0, top: 0 }, { input: left, left: 0, top }, { input: right, left: a.width + gap, top }])
     .png().toBuffer();
@@ -330,7 +333,7 @@ try {
         continue;
       }
       writeFileSync(file, picture);
-      const paired = values.compare ? `; beside its mockup: ${await compare(file.split('/').at(-1), file)}` : '';
+      const paired = earlier ? `; beside the earlier: ${await compare(file.split('/').at(-1), file)}` : '';
       console.log(`${file.replace(ROOT, '')}: ${said}${paired}`);
     }
   }

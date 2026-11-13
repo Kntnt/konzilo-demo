@@ -6,11 +6,14 @@ What the scripts' own headers do not say. `image/build.mjs`, `image/checks/visit
 
 Both packages are pinned by a tarball in `vendor/`, each the asset of its release on GitHub: `kntnt-konzilo-<version>.tgz` and `kntnt-konzilo-design-<version>.tgz`.
 
-1. Put the release's tarball in `vendor/`, name it in `package.json`, bring the lock up to it, and remove the old tarball. Then remove `node_modules` and run `npm ci`, so that the tree is what the lock says.
-2. For Konzilo Design, run `konzilo-design resolve` on `design/site.design.json`.
-3. `npm run check` and `npm run check:seed` pass with no refusal and no warning.
-4. `npm run build`, then `npm run shoot -- --all --compare`, and look at what differs from the mockups. Compare what is drawn, not the pages' heights alone.
-5. The image takes the core's source at the tag of the pinned tarball's version, from `~/Projects/konzilo` when that clone has the tag, else from GitHub, and stops unless every file of the tarball is the same at the tag (`image/lib/core.mjs`). So a core that is not released cannot go into an image.
+The built site is the reference for the design: a release is judged by how the pages look beside how they looked before it.
+
+1. Before anything else, `npm run build`, then `npm run shoot -- --all --out shots/before`: every page as it is.
+2. Put the release's tarball in `vendor/`, name it in `package.json`, bring the lock up to it, and remove the old tarball. Then remove `node_modules` and run `npm ci`, so that the tree is what the lock says.
+3. For Konzilo Design, run `konzilo-design resolve` on `design/site.design.json`.
+4. `npm run check` and `npm run check:seed` pass with no refusal and no warning.
+5. `npm run build`, then `npm run shoot -- --all --compare shots/before`, and look at each page beside its earlier self in `shots/compare/`, in the parts of about 2,000 px the script cuts a tall pair into. Compare what is drawn, not the pages' heights alone.
+6. The image takes the core's source at the tag of the pinned tarball's version, from `~/Projects/konzilo` when that clone has the tag, else from GitHub, and stops unless every file of the tarball is the same at the tag (`image/lib/core.mjs`). So a core that is not released cannot go into an image.
 
 ## Publishing the image
 

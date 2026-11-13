@@ -2,6 +2,8 @@
 
 Given on 2026-11-12, when the design was first presented, in Swedish; this is what it says. Each point names where it is put right: in Konzilo Design, where the fault is the design system's, or here, where it is this site's design, text or pictures. The last column says what was done, with Konzilo Design 0.4.0 in the mockups, for points 29 to 33 with 0.5.0, and for point 34 with 0.6.0 and then 0.6.1, which the mockups are now built with.
 
+The mockups it names were removed from the repository on 2026-11-13, when the built site became the reference for the design. They are in Git's history, as `design/mockups/` up to commit `fe519a0`.
+
 ## In general
 
 | # | What he said | Where | Done |

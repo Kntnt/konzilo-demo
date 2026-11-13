@@ -15,6 +15,7 @@ storageCapacity: 4
 contract: "Bought outright"
 inService: 2025-04-11
 featured: false
+solutions: ["ampfield-pilot","battery-storage","rooftop-solar"]
 topics: ["solar","storage"]
 ---
 

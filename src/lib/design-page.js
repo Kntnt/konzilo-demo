@@ -20,6 +20,12 @@ export function termUrl(taxonomy, term) {
   return address ? `${import.meta.env.BASE_URL.replace(/\/$/, '')}${address.replace('{slug}', term.id).replace('{path}', term.id)}` : null;
 }
 
+// The word for each of the site's own taxonomies, its label in the site description, which a filtered list's row of
+// its terms takes as its legend; the core's taxonomies keep Konzilo Design's words, "Category", "Topic" and "Author".
+const words = {
+  taxonomies: Object.fromEntries(Object.entries(description.taxonomies ?? {}).filter(([, taxonomy]) => typeof taxonomy.label === 'string').map(([name, taxonomy]) => [name, taxonomy.label])),
+};
+
 /**
  * Gives the page its context.
  * @param {object} Astro The template's Astro global.
@@ -31,5 +37,6 @@ export async function givePageContext(Astro, { entry, title = entry?.data?.title
     design,
     title,
     breadcrumbs: trail && entry ? await breadcrumbs(entry, Astro.url) : [],
+    words,
   });
 }

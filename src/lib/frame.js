@@ -1,5 +1,5 @@
 // The frame's props: Konzilo Design's Page, Header and Footer, wired as its docs/spec/konzilo.md shows a Konzilo site
-// wiring them, and as the mockups do (design/mockups/src/lib/site.js). Every word comes from where an Admin changes it:
+// wiring them, as the approved design had them. Every word comes from where an Admin changes it:
 // the menus (`main`, `social`, `search`), the site's settings, the core's search texts, or the design file.
 import { footerBrand, footerFromDesign, headerProps, logoAddresses, menuProps, pageProps } from '@kntnt/konzilo-design/design-props';
 import { iconHtml, serviceOf } from '@kntnt/konzilo-design/directives';

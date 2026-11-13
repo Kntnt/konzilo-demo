@@ -15,6 +15,7 @@ chargePoints: 340
 contract: "Bought outright"
 inService: 2026-09-18
 featured: false
+solutions: ["ampfield-pilot","fleet-charging","rooftop-solar"]
 topics: ["charging","reporting","solar"]
 ---
 

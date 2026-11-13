@@ -30,9 +30,9 @@ description: "Case studies of rooftop solar, battery storage, fleet charging and
 
 ## Case studies
 
-Choose solar, storage, charging, financing or reporting to see the sites that have it, or several to see the sites with any of them. A search looks within what you have chosen.
+Choose rooftop solar, battery storage, fleet charging or Ampfield Pilot to see the sites that have it, or several to see the sites with any of them. A search looks within what you have chosen.
 
-::post-list{type="case-study" presentation="filtered" filters="topics search" empty="No case study is published yet. Ask us for a reference instead."}
+::post-list{type="case-study" presentation="filtered" filters="solutions search" empty="No case study is published yet. Ask us for a reference instead."}
 
 :::
 

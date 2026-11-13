@@ -12,7 +12,6 @@ What the demo site shows, who the fictional company is, and which pages are desi
 | `export/` | What Konzilo Design exports from the design file: the export for agents (`design-md/` and its ZIP), the presentation's ZIP, and four pictures of the design in `preview/`. `design-md`, `design-presentation` and `fonts` run only from Konzilo Design's repository (`~/Projects/konzilo-design/bin/`), not from the package |
 | `content/` | The text of every page, in Konzilo's Markdown |
 | `images/` | The pictures, with `credits.json` |
-| `mockups/` | Every designed page, built as static HTML from the design system's own components |
 
 ## The company
 
@@ -71,6 +70,8 @@ Four have a case study: Norrvik Logistics, Brantevik Foods, Lindhagen Furniture 
 
 One language, British English.
 
+The last column says which pages the design phase drew as mockups, which Thomas approved on 2026-11-12, at Konzilo Design 0.6.1. The mockups were removed on 2026-11-13 and are in Git's history, as `design/mockups/` up to commit `fe519a0`; the built site is now the reference for the design.
+
 | Address | Page | Type | Designed |
 |---|---|---|---|
 | `/` | Home | page | yes, and at phone width |
@@ -105,7 +106,7 @@ One language, British English.
 
 Also designed: the header with its menu open, with its search box open, and come back over a scrolled page, and the footer revealed at the end of a page, at desktop and phone width.
 
-Categories: Guides, Market and policy, Company news. Topics: Solar, Storage, Charging, Financing, Grid, Reporting.
+Categories: Guides, Market and policy, Company news. Topics: Solar, Storage, Charging, Financing, Grid, Reporting. Solutions, the case studies' own taxonomy, by which Customers filters them: Rooftop solar, Battery storage, Fleet charging, Ampfield Pilot. Its terms have no pages, since each solution is a page of its own under `/solutions/`.
 
 ### The menu
 
