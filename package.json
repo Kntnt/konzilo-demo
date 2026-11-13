@@ -16,7 +16,11 @@
     "build": "astro build",
     "check": "node scripts/check.mjs",
     "check:seed": "node scripts/check-seed.mjs",
-    "shoot": "node scripts/shoot.mjs"
+    "shoot": "node scripts/shoot.mjs",
+    "image:build": "node image/build.mjs",
+    "image:test": "node --test image/tests/",
+    "image:check": "node image/checks/visitor.mjs",
+    "image:check:arches": "node image/checks/arches.mjs"
   },
   "dependencies": {
     "@kntnt/konzilo": "file:vendor/kntnt-konzilo-0.5.0.tgz",

@@ -1,0 +1,27 @@
+# The build's main context is the site, as the image serves it. The image's own files come in as the named
+# context `image` and the core as `core` (image/build.mjs), so they are left out here, with what is made from
+# the site and what is no part of it.
+
+.git
+**/.DS_Store
+**/node_modules
+**/*.bak.json
+
+# The image's own files, and the project's documents.
+Dockerfile
+.dockerignore
+image
+docs
+
+# Made from the site: the image makes demo-content/ and public/logos/ again, and builds dist/ in Konzilo's
+# builder; content/ is a local copy's.
+dist
+.astro
+content
+demo-content
+public/logos
+shots
+
+# The design phase's own: the mockups and what was exported from Konzilo Design.
+design/mockups
+design/export

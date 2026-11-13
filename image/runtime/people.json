@@ -1,0 +1,29 @@
+{
+  "about": "The three people who run Ampfield Energy's website, one in each of Konzilo's roles. Their passwords are the same in every copy of the image, and the sign-in pages show them, since the demo is reached from the visitor's own computer alone. Each name begins as its role does.",
+  "people": [
+    {
+      "role": "Admin",
+      "team": "admins",
+      "name": "Ada Lindholm",
+      "user": "ada",
+      "password": "ampfield-admin",
+      "does": "everything an Editor does, and the site's settings, menus and legal pages"
+    },
+    {
+      "role": "Editor",
+      "team": "editors",
+      "name": "Edvin Hale",
+      "user": "edvin",
+      "password": "ampfield-editor",
+      "does": "writes, schedules and publishes posts"
+    },
+    {
+      "role": "Reviewer",
+      "team": "reviewers",
+      "name": "Rosa Quinlan",
+      "user": "rosa",
+      "password": "ampfield-reviewer",
+      "does": "reads what is coming, in the live preview, and changes nothing"
+    }
+  ]
+}
